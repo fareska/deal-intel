@@ -1,0 +1,7 @@
+{% macro citations(ids) -%}
+{% if ids %} <span class="citations">{% for item in ids %}{{ item }}{% if not loop.last %}, {% endif %}{% endfor %}</span>{% endif %}
+{%- endmacro %}
+
+{% macro claim(line) -%}
+<p>{{ line.text }}{{ citations(line.citations) }}</p>
+{%- endmacro %}

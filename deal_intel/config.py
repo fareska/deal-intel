@@ -122,6 +122,20 @@ class Settings(BaseSettings):
         return self
 
 
+class ClientSettings(BaseSettings):
+    """HTTP-client settings only. Run commands load this and never require DATABASE_URL."""
+
+    model_config = SettingsConfigDict(env_file=".env", extra="ignore")
+
+    api_base_url: str = "http://localhost:8000"
+    api_timeout_seconds: float = 30.0
+
+
 @lru_cache
 def get_settings() -> Settings:
     return Settings()
+
+
+@lru_cache
+def get_client_settings() -> ClientSettings:
+    return ClientSettings()

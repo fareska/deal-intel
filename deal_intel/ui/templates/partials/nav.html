@@ -1,0 +1,14 @@
+{% from "partials/links.html" import ui_href with context %}
+{% set nav_links = [
+  ("Home", ui_prefix),
+  ("New run", ui_prefix ~ "/runs/new"),
+  ("Approvals", ui_prefix ~ "/approvals"),
+] %}
+<nav class="site-nav" aria-label="Main">
+  <a class="brand" href="{{ ui_href(ui_prefix) }}">Deal Intelligence</a>
+  <ul>
+    {% for label, path in nav_links %}
+    <li><a href="{{ ui_href(path) }}"{% if request.url.path == path %} aria-current="page"{% endif %}>{{ label }}</a></li>
+    {% endfor %}
+  </ul>
+</nav>

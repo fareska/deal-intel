@@ -1,0 +1,55 @@
+flowchart TB
+    %% Logical view. Solid boxes are implemented (M0-M3); dashed boxes are planned (milestone in the label).
+    subgraph Clients
+        UI["Web UI: new run, brief, approvals, trace (planned M5)"]
+        CLI["CLI: HTTP client (planned M5); ingest and generate-slack (implemented)"]
+    end
+
+    subgraph App["FastAPI process"]
+        API["/runs, /approvals, /ui routes (planned M5); /healthz, /readyz (implemented)"]
+        READ["Read-time permission check (planned M5)"]
+        EXEC["Run executor, bounded thread pool (planned M4)"]
+        subgraph Runner["Run state machine (planned M4)"]
+            GATE["Permission gate: permissions/gate.py"]
+            RET["ScopedRetriever and packs: retrieval/retriever.py"]
+            SNAP["Deal snapshot tool: agents/deal_snapshot.py"]
+            CI["Conversation intelligence agent, tools"]
+            SM["Stakeholder map agent, single call"]
+            NS["Negotiation strategy agent, tools"]
+            POL["Policy engine (planned M4)"]
+            GR["Guardrails: validators (implemented), render checks and canaries (planned M4)"]
+            REN["Renderer (planned M4)"]
+        end
+        LLMC["LLM client: llm/client.py, routing, tool loop, retries, cache, cost"]
+        TR["Tracer: observability/tracing.py"]
+    end
+
+    PG[("Postgres 16: reference, evidence_chunks, llm_calls, trace_spans, agent_output_cache; runs, approvals, briefs (planned M4)")]
+    CLAUDE["Claude API via llm/anthropic_client.py"]
+    HUMAN["Approvers"]
+
+    UI --> API
+    CLI --> API
+    API --> READ --> PG
+    API --> EXEC --> GATE
+    GATE -- "AccessScope" --> RET
+    RET --> SNAP
+    RET --> CI
+    RET --> SM
+    SNAP --> NS
+    CI --> NS
+    SM --> NS
+    NS --> POL --> GR --> REN --> PG
+    CI --> LLMC
+    SM --> LLMC
+    NS --> LLMC
+    LLMC --> CLAUDE
+    CI -.->|"search_evidence, get_evidence"| RET
+    NS -.->|"search_evidence, get_evidence"| RET
+    RET --> PG
+    LLMC --> PG
+    TR --> PG
+    POL --> HUMAN --> UI
+
+    classDef planned stroke-dasharray: 5 5
+    class UI,API,READ,EXEC,POL,REN planned

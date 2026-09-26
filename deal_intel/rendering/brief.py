@@ -218,3 +218,17 @@ def latest_brief(session: Session, run_id: str) -> BriefRow | None:
         select(BriefRow).where(BriefRow.run_id == run_id).order_by(BriefRow.version.desc()).limit(1)
     )
     return session.scalar(statement)
+
+
+def list_brief_versions(session: Session, run_id: str) -> list[BriefVersion]:
+    statement = select(BriefRow).where(BriefRow.run_id == run_id).order_by(BriefRow.version)
+    return [
+        BriefVersion(
+            run_id=row.run_id,
+            version=row.version,
+            source=BriefSource(row.source),
+            max_access_level=AccessLevel(row.max_access_level),
+            rendered_at=row.rendered_at,
+        )
+        for row in session.scalars(statement)
+    ]

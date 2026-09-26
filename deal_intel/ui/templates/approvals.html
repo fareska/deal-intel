@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block title %}Approvals · Deal Intelligence{% endblock %}
+{% block content %}
+<section class="panel">
+  <h1>Approvals</h1>
+  {% if not viewer_id %}
+  <p>Choose a user under “Viewing as” to see items they may decide.</p>
+  {% elif not approvals %}
+  <p class="muted">No pending or escalated approvals for this user.</p>
+  {% else %}
+  <table class="approvals">
+    <thead>
+      <tr>
+        <th>Subject</th>
+        <th>Role</th>
+        <th>Recommendation</th>
+        <th>Status</th>
+        <th>Decision</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for item in approvals %}
+      {% include "partials/approval_row.html" %}
+      {% endfor %}
+    </tbody>
+  </table>
+  {% endif %}
+</section>
+{% endblock %}

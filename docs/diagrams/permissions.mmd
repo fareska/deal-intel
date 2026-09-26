@@ -1,0 +1,26 @@
+flowchart TB
+    %% Access-control flow. Solid steps are implemented; dashed steps are planned (milestone in the label).
+    REQ["Request: user_id, opportunity_id"] --> VAL{"Identifier format valid? (validate_identifiers)"}
+    VAL -- "no" --> INV["InvalidInput before any lookup"]
+    VAL -- "yes" --> LOOK["Lookups: user, opportunity, account (permissions/lookups.py)"]
+    LOOK --> DECIDE{"decide(): pure function"}
+    DECIDE -- "unknown user or opportunity, account not allowed, restricted account" --> DEN["Denied: reason_code only; one generic message"]
+    DECIDE -- "allowed" --> SCOPE["AccessScope: account, opportunity, source_types, max_access_level, pricing and policy flags, can_request_approval"]
+
+    SCOPE --> SR["ScopedRetriever(session, scope): refuses anything but an AccessScope"]
+    SR --> PRED["_scope_predicates: the only place a scope becomes SQL"]
+    PRED -.-|"mirrored by, tested row for row"| MIRROR["permissions/scope.py: chunk_is_in_scope"]
+    PRED --> PACK["Evidence packs (build_pack) and tool results (search_evidence, get_evidence)"]
+    PACK --> ASSERT{"assert_pack_in_scope / assert_chunks_in_scope"}
+    MIRROR --> ASSERT
+    ASSERT -- "violation" --> SV["ScopeViolation: zero model calls, counts only in the message"]
+    ASSERT -- "in scope" --> MODEL["LLM client: framed evidence to Claude"]
+    MODEL --> VALID["Citation validator: ids must be in pack or tool results of this call"]
+    VALID --> RENDER["Render-time canary scan over brief, JSON, denial payloads, spans (planned M4)"]
+    RENDER --> STORE[("Stored brief with max_access_level (planned M4)")]
+    STORE --> READT{"Read-time check: requester, or scope covers account at the brief's level (planned M5)"}
+    READT -- "no, or unknown run" --> NF["Same 404 for unauthorised and unknown (planned M5)"]
+    READT -- "yes" --> OUT["Brief, trace (redacted below brief level)"]
+
+    classDef planned stroke-dasharray: 5 5
+    class RENDER,STORE,READT,NF,OUT planned

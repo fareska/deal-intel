@@ -18,6 +18,7 @@ from deal_intel.contracts.runs import (
     INTERRUPTIBLE_STATES,
     STAGE_ORDER,
     SUBAGENT_STAGES,
+    WORKING_STATES,
     FailureDetail,
     RunErrorCode,
     RunEvent,
@@ -33,6 +34,10 @@ from deal_intel.db.writes import column_values
 
 COMPLETION_STATES: frozenset[RunState] = frozenset({RunState.COMPLETED, RunState.DENIED})
 REUSABLE_STATES: tuple[RunState, ...] = (RunState.COMPLETED, RunState.AWAITING_APPROVAL)
+IN_FLIGHT_STATES: frozenset[RunState] = WORKING_STATES | {RunState.QUEUED}
+IDEMPOTENT_STATES: frozenset[RunState] = (
+    frozenset(REUSABLE_STATES) | IN_FLIGHT_STATES | {RunState.FAILED}
+)
 NO_ATTEMPT = 0
 
 
@@ -180,6 +185,39 @@ def first_unsettled_stage(outputs: Mapping[StageName, StageOutput]) -> StageName
 def latest_attempt(session: Session, run_id: str) -> int:
     statement = select(func.max(RunEventRow.attempt)).where(RunEventRow.run_id == run_id)
     return session.scalar(statement) or NO_ATTEMPT
+
+
+def find_run_for_key(session: Session, idempotency_key: str) -> RunRecord | None:
+    """The newest non-degraded run that already used this key, including failed and in-flight."""
+    statement = (
+        select(RunRow)
+        .where(
+            RunRow.idempotency_key == idempotency_key,
+            RunRow.state.in_([state.value for state in IDEMPOTENT_STATES]),
+            RunRow.degraded.is_(False),
+        )
+        .order_by(RunRow.created_at.desc(), RunRow.run_id)
+        .limit(1)
+    )
+    row = session.scalar(statement)
+    return None if row is None else run_record(row)
+
+
+def find_in_flight_run(session: Session, opportunity_id: str, user_id: str) -> RunRecord | None:
+    """A queued or working run for this pair that has not stored its key yet."""
+    statement = (
+        select(RunRow)
+        .where(
+            RunRow.opportunity_id == opportunity_id,
+            RunRow.user_id == user_id,
+            RunRow.fresh.is_(False),
+            RunRow.state.in_([state.value for state in IN_FLIGHT_STATES]),
+        )
+        .order_by(RunRow.created_at.desc(), RunRow.run_id)
+        .limit(1)
+    )
+    row = session.scalar(statement)
+    return None if row is None else run_record(row)
 
 
 def find_reusable_run(session: Session, idempotency_key: str, run_id: str) -> str | None:

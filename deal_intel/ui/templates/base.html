@@ -1,0 +1,30 @@
+{#
+  Simulated identity: the viewer travels as the `user_id` query parameter on every link and form,
+  exactly as the API receives it. There is no login and no cookie, so a URL always shows whose view
+  it renders; switching user reloads the current page with a different `user_id`.
+
+  Security: autoescape is on for every template. Insert values with {{ }} only, never `|safe`,
+  and add no inline <script>, style="", or on* attributes; the CSP blocks them anyway.
+#}
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  {# HTMX must not inject its indicator <style> tag or evaluate strings: the CSP forbids both. #}
+  <meta name="htmx-config" content='{"includeIndicatorStyles": false, "allowEval": false, "allowScriptTags": false}'>
+  <title>{% block title %}Deal Intelligence{% endblock %}</title>
+  <link rel="stylesheet" href="{{ static_prefix }}/app.css">
+  {# Vendored and pinned; see static/VERSIONS.md. Pages still work without it via plain form posts. #}
+  <script src="{{ static_prefix }}/htmx.min.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    {% include "partials/nav.html" %}
+    {% include "partials/viewer_selector.html" %}
+  </header>
+  <main class="content">
+    {% block content %}{% endblock %}
+  </main>
+</body>
+</html>

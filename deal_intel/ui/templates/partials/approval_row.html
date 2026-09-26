@@ -1,0 +1,35 @@
+<tr id="approval-{{ item.approval_id }}">
+  <td>
+    <p>{{ item.subject_id }}</p>
+    <p class="muted">{{ item.rule_ids | join(", ") }}</p>
+  </td>
+  <td>{{ item.required_role }}</td>
+  <td>
+    <p>{{ item.recommendation_text }}</p>
+    {% if item.rationale %}<p class="muted">{{ item.rationale }}</p>{% endif %}
+    {% if item.proposed_values %}<p class="muted">{{ item.proposed_values }}</p>{% endif %}
+    {% for excerpt in item.evidence_excerpts %}
+    <p class="muted">{{ excerpt.citation }} — {{ excerpt.excerpt }}</p>
+    {% endfor %}
+  </td>
+  <td>{{ item.status }}</td>
+  <td>
+    {% if item.status == "pending" and viewer_id %}
+    <form method="post"
+          action="{{ ui_prefix }}/approvals/{{ item.approval_id }}/decision"
+          hx-post="{{ ui_prefix }}/approvals/{{ item.approval_id }}/decision"
+          hx-target="closest tr"
+          hx-swap="outerHTML">
+      <input type="hidden" name="user_id" value="{{ viewer_id }}">
+      <label>
+        Note
+        <input type="text" name="note" maxlength="{{ decision_note_max_chars }}">
+      </label>
+      <button type="submit" name="decision" value="approved">Approve</button>
+      <button type="submit" name="decision" value="rejected">Reject</button>
+    </form>
+    {% else %}
+    <span>{{ item.status }}</span>
+    {% endif %}
+  </td>
+</tr>

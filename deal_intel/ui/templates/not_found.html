@@ -1,0 +1,14 @@
+{#
+  Rendered for unknown and unauthorised resources alike, so it must never vary with the reason.
+#}
+{% extends "base.html" %}
+{% from "partials/links.html" import ui_href with context %}
+{% block title %}Not found · Deal Intelligence{% endblock %}
+{% block content %}
+<section class="panel">
+  <h1>Not found</h1>
+  <p>The page or record does not exist, or you do not have access to it.</p>
+  {% include "partials/request_id.html" %}
+  <p><a href="{{ ui_href(ui_prefix) }}">Back to home</a></p>
+</section>
+{% endblock %}

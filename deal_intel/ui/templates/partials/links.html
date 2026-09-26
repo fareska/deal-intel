@@ -1,0 +1,4 @@
+{# Import `with context`: every UI link keeps the current simulated identity. #}
+{% macro ui_href(path) -%}
+{{ path }}{% if viewer_id %}?{{ viewer_param }}={{ viewer_id | urlencode }}{% endif %}
+{%- endmacro %}

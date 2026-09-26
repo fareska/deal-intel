@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="panel">
+  <h1>Deal Intelligence</h1>
+  {% if viewer_id %}
+  <p>You are viewing as <strong>{{ viewer_id }}</strong>. Every page shows only what this user may see.</p>
+  {% else %}
+  <p>Choose a user under "Viewing as" to begin. The identity is simulated: it travels in the page address, and every page shows only what that user may see.</p>
+  {% endif %}
+</section>
+{% endblock %}

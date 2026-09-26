@@ -1,0 +1,26 @@
+{#
+  Pages that load `users` get a selector; pages without them (error pages, which must not touch
+  the database) show the current identity and a link back to the landing page to change it.
+#}
+{% from "partials/links.html" import ui_href with context %}
+{% if users is defined and users %}
+<form class="viewer" method="get" action="{{ request.url.path }}">
+  <label for="viewer-select">Viewing as</label>
+  <select id="viewer-select" name="{{ viewer_param }}">
+    <option value=""{% if not viewer_id %} selected{% endif %}>Choose a user</option>
+    {% for user in users %}
+    <option value="{{ user.user_id }}"{% if user.user_id == viewer_id %} selected{% endif %}>{{ user.user_name }} ({{ user.user_id }}, {{ user.role }})</option>
+    {% endfor %}
+  </select>
+  <button type="submit">Switch</button>
+  {% if viewer_id and viewer_id not in users | map(attribute="user_id") %}
+  <span class="viewer-unknown">{{ viewer_id }} is not a known user.</span>
+  {% endif %}
+</form>
+{% else %}
+<p class="viewer">
+  <span>Viewing as</span>
+  <strong>{{ viewer_id or "no user selected" }}</strong>
+  <a href="{{ ui_href(ui_prefix) }}">Change</a>
+</p>
+{% endif %}

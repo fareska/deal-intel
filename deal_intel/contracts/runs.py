@@ -48,6 +48,10 @@ STARTABLE_STATES: frozenset[RunState] = frozenset({RunState.QUEUED, RunState.FAI
 FINISHED_STATES: frozenset[RunState] = frozenset(
     {RunState.DENIED, RunState.COMPLETED, RunState.FAILED}
 )
+REPLAYABLE_STATES: frozenset[RunState] = frozenset({RunState.COMPLETED, RunState.AWAITING_APPROVAL})
+WAIT_STATES: frozenset[RunState] = frozenset(
+    {RunState.COMPLETED, RunState.AWAITING_APPROVAL, RunState.DENIED, RunState.FAILED}
+)
 
 
 class StageName(StrEnum):

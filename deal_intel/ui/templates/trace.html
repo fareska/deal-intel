@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% from "partials/links.html" import ui_href with context %}
+{% block title %}Trace {{ status.run_id }} · Deal Intelligence{% endblock %}
+{% block content %}
+<section class="panel">
+  <h1>Trace</h1>
+  <p>Run {{ status.run_id }} · {{ status.state }}{% if trace.redacted %} · redacted{% endif %}</p>
+  <p><a href="{{ ui_href(ui_prefix ~ '/runs/' ~ status.run_id) }}">Back to brief</a></p>
+  <ol class="span-tree">
+    {% for span in trace.spans %}
+    <li class="depth-{{ depths[loop.index0] }}">
+      <span class="span-kind">{{ span.kind }}</span>
+      <span class="span-name">{{ span.name }}</span>
+      <span class="span-status">{{ span.status }}</span>
+      {% if span.duration_ms is not none %}<span>{{ span.duration_ms }} ms</span>{% endif %}
+      {% if span.attributes.input_tokens is defined %}<span>{{ span.attributes.input_tokens }} in</span>{% endif %}
+      {% if span.attributes.output_tokens is defined %}<span>{{ span.attributes.output_tokens }} out</span>{% endif %}
+      {% if span.attributes.cost_usd is defined %}<span>{{ span.attributes.cost_usd }} USD</span>{% endif %}
+      {% if span.attributes.evidence_ids is defined %}
+      <span class="muted">evidence {{ span.attributes.evidence_ids | join(", ") }}</span>
+      {% endif %}
+    </li>
+    {% endfor %}
+  </ol>
+</section>
+{% endblock %}

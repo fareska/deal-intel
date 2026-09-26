@@ -1,0 +1,152 @@
+{% extends "base.html" %}
+{% from "partials/links.html" import ui_href with context %}
+{% from "partials/citations.html" import citations, claim %}
+{% block title %}Brief {{ status.run_id }} · Deal Intelligence{% endblock %}
+{% block content %}
+{% include "partials/run_status.html" %}
+{% if brief %}
+<section class="panel{% if brief.confidence.warnings or brief.confidence.conflicts %} highlight{% endif %}" id="confidence">
+  <h2>Confidence and Review Warnings</h2>
+  {% if status.degraded or brief.metadata.degraded %}
+  <p class="banner-degraded">This brief is degraded: one or more inputs were missing.</p>
+  {% endif %}
+  <p>Agent confidence:
+    {% for name, value in brief.confidence.agent_confidence.items() %}
+    {{ name }} {{ value }}{% if not loop.last %}; {% endif %}
+    {% endfor %}
+  </p>
+  {% if brief.confidence.warnings %}
+  <ul>
+    {% for warning in brief.confidence.warnings %}
+    <li>{{ warning }}</li>
+    {% endfor %}
+  </ul>
+  {% endif %}
+  {% if brief.confidence.conflicts %}
+  <h3>Conflicts</h3>
+  {% for line in brief.confidence.conflicts %}
+  {{ claim(line) }}
+  {% endfor %}
+  {% endif %}
+  {% if brief.confidence.escalated %}
+  <p>Escalated: {{ brief.confidence.escalated | join(", ") }}</p>
+  {% endif %}
+  {% if brief.confidence.pending %}
+  <p>Pending: {{ brief.confidence.pending | join(", ") }}</p>
+  {% endif %}
+</section>
+
+<section class="panel">
+  <h2>Cost and tokens</h2>
+  <p>Total {{ status.cost_usd }} USD · {{ status.input_tokens }} input tokens</p>
+  {% if status.usage_by_agent %}
+  <table>
+    <thead><tr><th>Agent</th><th>Input</th><th>Output</th><th>Cache read</th><th>Cost</th></tr></thead>
+    <tbody>
+      {% for usage in status.usage_by_agent %}
+      <tr>
+        <td>{{ usage.agent_name }}</td>
+        <td>{{ usage.input_tokens }}</td>
+        <td>{{ usage.output_tokens }}</td>
+        <td>{{ usage.cache_read_tokens }}</td>
+        <td>{{ usage.cost_usd }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  {% endif %}
+</section>
+
+<section class="panel">
+  <h2>Version history</h2>
+  <ul>
+    {% for item in versions %}
+    <li>v{{ item.version }} · {{ item.source }} · {{ item.rendered_at }}</li>
+    {% endfor %}
+  </ul>
+  <form method="post" action="{{ ui_prefix }}/runs/{{ status.run_id }}/replay{% if viewer_id %}?{{ viewer_param }}={{ viewer_id }}{% endif %}">
+    <button type="submit">Replay</button>
+  </form>
+  <p><a href="{{ ui_href(ui_prefix ~ '/runs/' ~ status.run_id ~ '/trace') }}">Trace</a></p>
+</section>
+
+<section class="panel">
+  <h2>Deal Snapshot</h2>
+  {% for line in brief.deal_snapshot.lines %}{{ claim(line) }}{% endfor %}
+  {% for line in brief.deal_snapshot.pricing_notes %}{{ claim(line) }}{% endfor %}
+  <p>Pricing visibility: {{ brief.deal_snapshot.pricing_visibility }}</p>
+</section>
+
+<section class="panel">
+  <h2>Executive Summary</h2>
+  {% for line in brief.executive_summary.sentences %}{{ claim(line) }}{% endfor %}
+</section>
+
+<section class="panel">
+  <h2>Buyer Goals and Business Drivers</h2>
+  {% for line in brief.buyer_goals.goals %}{{ claim(line) }}{% endfor %}
+  {% for line in brief.buyer_goals.drivers %}{{ claim(line) }}{% endfor %}
+  {% for line in brief.buyer_goals.objections %}{{ claim(line) }}{% endfor %}
+  {% for line in brief.buyer_goals.competitors %}{{ claim(line) }}{% endfor %}
+</section>
+
+<section class="panel">
+  <h2>Stakeholder Map</h2>
+  {% for person in brief.stakeholder_map.stakeholders %}
+  <p>{{ person.name }}, {{ person.title }} · {{ person.role_in_deal }} · {{ person.stance }}{{ citations(person.citations) }}</p>
+  {% endfor %}
+  {% for line in brief.stakeholder_map.off_crm_people %}{{ claim(line) }}{% endfor %}
+  {% for line in brief.stakeholder_map.unmatched_speakers %}{{ claim(line) }}{% endfor %}
+</section>
+
+<section class="panel">
+  <h2>Negotiation State</h2>
+  {% if brief.negotiation_state.assessment %}{{ claim(brief.negotiation_state.assessment) }}{% endif %}
+  {% if brief.negotiation_state.customer_position %}{{ claim(brief.negotiation_state.customer_position) }}{% endif %}
+  {% if brief.negotiation_state.vendor_position %}{{ claim(brief.negotiation_state.vendor_position) }}{% endif %}
+  {% for line in brief.negotiation_state.open_items %}{{ claim(line) }}{% endfor %}
+  {% if brief.negotiation_state.urgency %}{{ claim(brief.negotiation_state.urgency) }}{% endif %}
+  {% for line in brief.negotiation_state.commitments %}{{ claim(line) }}{% endfor %}
+  {% for line in brief.negotiation_state.action_items %}{{ claim(line) }}{% endfor %}
+</section>
+
+<section class="panel">
+  <h2>Recommended Next Actions</h2>
+  {% for action in brief.next_actions.actions %}
+  <article class="action">
+    <p>{{ action.action }}{{ citations(action.citations) }}</p>
+    <p class="muted">Owner {{ action.owner_role }} · {{ action.rationale.text }}</p>
+    {% for label in action.labels %}
+    <p class="label">{{ label | approval_label }}</p>
+    {% endfor %}
+  </article>
+  {% endfor %}
+  {% for item in brief.next_actions.policy_items %}
+  <article class="action">
+    <p>{{ item.summary }}{{ citations(item.citations) }}</p>
+    {% for label in item.labels %}
+    <p class="label">{{ label | approval_label }}</p>
+    {% endfor %}
+  </article>
+  {% endfor %}
+</section>
+
+<section class="panel">
+  <h2>Missing Information</h2>
+  <ul>
+    {% for item in brief.missing_information.items %}
+    <li>{{ item }}</li>
+    {% endfor %}
+  </ul>
+</section>
+
+<section class="panel">
+  <h2>Source Evidence</h2>
+  <ul>
+    {% for entry in brief.source_evidence.entries %}
+    <li>{{ entry.citation }} — {{ entry.excerpt }}</li>
+    {% endfor %}
+  </ul>
+</section>
+{% endif %}
+{% endblock %}

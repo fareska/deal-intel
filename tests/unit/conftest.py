@@ -1,19 +1,24 @@
 import threading
 from collections import Counter
-from collections.abc import Callable, Mapping
+from collections.abc import Callable, Iterator, Mapping
 from dataclasses import dataclass, field
 from datetime import UTC, datetime, timedelta
 from decimal import Decimal
 from pathlib import Path
 
 import pytest
+from fastapi import FastAPI
+from fastapi.testclient import TestClient
 from pydantic import BaseModel
 from sqlalchemy import select
 from sqlalchemy.orm import Session, sessionmaker
 
 from deal_intel.agents.base import AgentRuntime
 from deal_intel.agents.deal_snapshot import build_deal_snapshot
+from deal_intel.agents.pipeline import AgentSuite
 from deal_intel.agents.prompt_loader import load_prompt
+from deal_intel.api.main import create_app
+from deal_intel.api.runtime import AppRuntime, build_runtime
 from deal_intel.config import Settings, get_settings
 from deal_intel.contracts.agents.agent_run import AgentRun
 from deal_intel.contracts.agents.common import AgentName
@@ -447,6 +452,47 @@ def committed_session(ingested_session: Session) -> Session:
     return ingested_session
 
 
+class DispatchingAgents:
+    """Routes each call to the stub suite for that opportunity so one app can serve all demos."""
+
+    def __init__(self, suites: dict[str, StubAgents]):
+        self._suites = suites
+
+    def _suite(self, opportunity_id: str) -> StubAgents:
+        return self._suites[opportunity_id]
+
+    def deal_snapshot(self, session: Session, retriever: ScopedRetriever):
+        return self._suite(retriever.scope.opportunity_id).deal_snapshot(session, retriever)
+
+    def conversation_intelligence(self, runtime: AgentRuntime, pack_build: PackBuild | None):
+        return self._suite(runtime.retriever.scope.opportunity_id).conversation_intelligence(
+            runtime, pack_build
+        )
+
+    def stakeholder_map(self, runtime: AgentRuntime, pack_build: PackBuild | None):
+        return self._suite(runtime.retriever.scope.opportunity_id).stakeholder_map(
+            runtime, pack_build
+        )
+
+    def negotiation_strategy(
+        self,
+        runtime: AgentRuntime,
+        snapshot,
+        findings,
+        stakeholders,
+        pack_build: PackBuild | None,
+    ):
+        return self._suite(runtime.retriever.scope.opportunity_id).negotiation_strategy(
+            runtime, snapshot, findings, stakeholders, pack_build
+        )
+
+
+def dispatching_agents(run_bench: RunBench) -> AgentSuite:
+    return DispatchingAgents(
+        {OPP_1001: run_bench.agents(OPP_1001), OPP_1003: run_bench.agents(OPP_1003)}
+    )
+
+
 @pytest.fixture
 def run_bench(
     committed_session: Session, session_factory: sessionmaker[Session], tmp_path: Path
@@ -457,3 +503,30 @@ def run_bench(
         FakeLlmProvider(tmp_path), settings=settings, session_factory=session_factory, tracer=tracer
     )
     return RunBench(session_factory=session_factory, settings=settings, llm=llm, tracer=tracer)
+
+
+@pytest.fixture
+def api_runtime(run_bench: RunBench) -> Iterator[AppRuntime]:
+    runtime = build_runtime(
+        settings=run_bench.settings,
+        session_factory=run_bench.session_factory,
+        agents=dispatching_agents(run_bench),
+        llm=run_bench.llm,
+        tracer=run_bench.tracer,
+        clock=run_bench.clock,
+        inline=True,
+    )
+    runtime.start()
+    yield runtime
+    runtime.shutdown()
+
+
+@pytest.fixture
+def api_app(api_runtime: AppRuntime) -> FastAPI:
+    return create_app(api_runtime)
+
+
+@pytest.fixture
+def api_client(api_app: FastAPI) -> Iterator[TestClient]:
+    with TestClient(api_app) as client:
+        yield client

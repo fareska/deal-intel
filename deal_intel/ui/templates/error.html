@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% from "partials/links.html" import ui_href with context %}
+{% block title %}Error · Deal Intelligence{% endblock %}
+{% block content %}
+<section class="panel panel-error">
+  <h1>Something went wrong</h1>
+  <p>{{ error.message }}</p>
+  <p class="muted">Error code: <code>{{ error.code }}</code></p>
+  {% include "partials/request_id.html" %}
+  <p><a href="{{ ui_href(ui_prefix) }}">Back to home</a></p>
+</section>
+{% endblock %}

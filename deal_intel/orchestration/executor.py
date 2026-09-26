@@ -42,31 +42,49 @@ class RunExecutor:
         session_factory: sessionmaker[Session],
         settings: Settings,
         clock: Callable[[], datetime] = utc_now,
+        inline: bool = False,
     ) -> None:
         self._runner = runner
         self._session_factory = session_factory
         self._settings = settings
         self._clock = clock
+        self._inline = inline
+        self._started = False
         self._pool: ThreadPoolExecutor | None = None
 
     def start(self) -> list[str]:
         """Returns the ids of the runs the sweep marked interrupted."""
         with self._session_factory.begin() as session:
             interrupted = mark_interrupted_runs(session, self._clock())
-        self._pool = ThreadPoolExecutor(
-            max_workers=self._settings.run_executor_workers,
-            thread_name_prefix=WORKER_THREAD_PREFIX,
-        )
+        if not self._inline:
+            self._pool = ThreadPoolExecutor(
+                max_workers=self._settings.run_executor_workers,
+                thread_name_prefix=WORKER_THREAD_PREFIX,
+            )
+        self._started = True
         if interrupted:
             logger.warning("interrupted runs marked failed", extra={"run_count": len(interrupted)})
         return interrupted
 
     def submit(self, run_id: str) -> Future[RunRecord]:
-        if self._pool is None:
+        if not self._started:
             raise ExecutorNotStarted
         self.require_budget()
+        if self._inline:
+            return self._run_inline(run_id)
+        if self._pool is None:
+            raise ExecutorNotStarted
         future = self._pool.submit(copy_context().run, self._runner.run, run_id)
         future.add_done_callback(crash_logger(run_id))
+        return future
+
+    def _run_inline(self, run_id: str) -> Future[RunRecord]:
+        future: Future[RunRecord] = Future()
+        try:
+            future.set_result(self._runner.run(run_id))
+        except Exception as error:
+            future.set_exception(error)
+        crash_logger(run_id)(future)
         return future
 
     def require_budget(self) -> None:
@@ -78,6 +96,7 @@ class RunExecutor:
             raise DailyBudgetExceeded
 
     def shutdown(self, wait: bool = True) -> None:
+        self._started = False
         if self._pool is not None:
             self._pool.shutdown(wait=wait)
             self._pool = None

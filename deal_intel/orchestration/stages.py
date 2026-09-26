@@ -160,12 +160,14 @@ def retrieve_stage(env: StageEnv) -> Commit:
     return commit
 
 
-def idempotency_key(run: RunRecord, evidence_hash: str, settings: Settings) -> str:
+def idempotency_key_for(
+    opportunity_id: str, user_id: str, evidence_hash: str, settings: Settings
+) -> str:
     """Same reader, same evidence, same prompts, same models: the same brief."""
     return json_sha256(
         {
-            "opportunity_id": run.opportunity_id,
-            "user_id": run.user_id,
+            "opportunity_id": opportunity_id,
+            "user_id": user_id,
             "evidence_hash": evidence_hash,
             "prompt_hashes": {
                 name.value: load_prompt(name, spec.prompt_version).content_hash
@@ -176,6 +178,10 @@ def idempotency_key(run: RunRecord, evidence_hash: str, settings: Settings) -> s
             },
         }
     )
+
+
+def idempotency_key(run: RunRecord, evidence_hash: str, settings: Settings) -> str:
+    return idempotency_key_for(run.opportunity_id, run.user_id, evidence_hash, settings)
 
 
 def deal_snapshot_stage(env: StageEnv) -> Commit:

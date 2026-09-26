@@ -1,0 +1,34 @@
+stateDiagram-v2
+    %% Run state machine (planned M4). State names match docs/PLAN.md section 3.
+    [*] --> QUEUED: POST /runs
+    QUEUED --> AUTHORIZING: executor picks up the run
+    AUTHORIZING --> DENIED: gate returns Denied
+    AUTHORIZING --> RETRIEVING: gate returns Allowed (AccessScope)
+    RETRIEVING --> ANALYZING: packs and evidence hash stored
+    ANALYZING --> SYNTHESIZING: snapshot, findings, stakeholder map stored
+    SYNTHESIZING --> VALIDATING: strategy output stored
+    VALIDATING --> AWAITING_APPROVAL: at least one pending approval
+    VALIDATING --> COMPLETED: no pending approvals
+    AWAITING_APPROVAL --> COMPLETED: no pending approvals remain
+
+    AUTHORIZING --> FAILED
+    RETRIEVING --> FAILED
+    ANALYZING --> FAILED
+    SYNTHESIZING --> FAILED
+    VALIDATING --> FAILED
+
+    DENIED --> [*]
+    COMPLETED --> [*]
+    FAILED --> [*]
+
+    note right of FAILED
+        Resumable: the resume endpoint starts a new attempt
+        that skips stages with successful outputs.
+        Startup sweep marks runs left in working states
+        FAILED with INTERRUPTED.
+    end note
+
+    note right of ANALYZING
+        A failed subagent sets the degraded flag
+        and the run continues.
+    end note
