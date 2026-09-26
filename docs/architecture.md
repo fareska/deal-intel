@@ -7,7 +7,7 @@ Status markers: every section says whether it describes code that exists or desi
 - `> Status: implemented (Mx)` means the behaviour is in the repository and the cited modules can be read.
 - `> Status: planned (Mx)` means the section is taken from `docs/PLAN.md` and must be checked against the code when milestone Mx lands.
 
-At the time of writing, M0 to M2 and the first part of M3 are committed; the rest of M3 (agent harness, tools, the three agents) is in the working tree. Orchestration, policy, rendering (M4), the API, UI and CLI routes (M5), and the evaluation suite (M6) are not built.
+At the time of writing, M0 to M6 are in the working tree. M7 live artifacts (recorded fixtures, measured cost and latency, SVG exports, screenshots) are not yet produced.
 
 Companion documents: `docs/security.md` (threat model and controls). Diagram sources live in `docs/diagrams/*.mmd`; the copies embedded here must be kept in sync with them.
 
@@ -436,12 +436,19 @@ The production path restores what C1 and C2 removed: a managed queue with worker
 
 ## 17. Measured values
 
-These are filled in from live runs and the evaluation suite; no estimate is given here.
+Filled from `scripts/evaluate.py` and live runs. Values stay TBD until M7 records fixtures.
 
-- Cost per brief, by agent: TBD (measured in M7)
-- Input, output, and cache-read tokens per brief: TBD (measured in M7)
-- Run latency, end to end and per stage: TBD (measured in M7)
-- Tool calls per agent call: TBD (measured in M7)
-- Guardrail drops and retries by check: TBD (measured in M7)
-- Evaluation metrics (citation validity, grounded-number rate, section completeness, approval routing accuracy, denial correctness, degraded rate): TBD (measured in M7)
-- Model routing decision (two-model routing against a single model at low effort): TBD (measured in M7)
+| Metric | Baseline | Source |
+|---|---|---|
+| Citation validity | TBD | `tests/fixtures/eval_baseline.json` |
+| Grounded-number rate | TBD | same |
+| Section completeness | TBD | same |
+| Approval routing accuracy | TBD | same |
+| Denial correctness | TBD | same |
+| Degraded rate | TBD | same |
+| Mean cost USD / tokens per brief | TBD | same |
+| Guardrail drops by check | TBD | same |
+| Cost per brief, by agent | TBD | measured in M7 |
+| Run latency, end to end and per stage | TBD | measured in M7 |
+| Tool calls per agent call | TBD | measured in M7 |
+| Model routing (two-model vs single at low effort) | TBD | measured in M7 |
