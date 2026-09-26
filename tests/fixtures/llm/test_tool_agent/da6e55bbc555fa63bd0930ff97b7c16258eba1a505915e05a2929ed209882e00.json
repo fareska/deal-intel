@@ -1,0 +1,43 @@
+[
+  {
+    "model": "claude-haiku-4-5-20251001",
+    "stop_reason": "tool_use",
+    "usage": {
+      "input_tokens": 1000,
+      "output_tokens": 500,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0
+    },
+    "tool_calls": [
+      {
+        "call_id": "toolu_01",
+        "name": "search_evidence",
+        "arguments": {
+          "query": "verbally okayed discount",
+          "k": 3
+        }
+      }
+    ],
+    "output": null
+  },
+  {
+    "model": "claude-haiku-4-5-20251001",
+    "stop_reason": "end_turn",
+    "usage": {
+      "input_tokens": 1000,
+      "output_tokens": 500,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0
+    },
+    "tool_calls": [],
+    "output": {
+      "claims": [
+        {
+          "statement": "Deal Desk reportedly okayed a discount verbally, with nothing in writing yet.",
+          "evidence_ids": ["slack:SLK-1003-02"],
+          "confidence": "medium"
+        }
+      ]
+    }
+  }
+]

@@ -60,6 +60,10 @@ def chunk_kind_of(chunk_id: str) -> ChunkKind:
     return ChunkKind(chunk_id.split(CHUNK_ID_SEPARATOR)[0])
 
 
+def chunk_source_key_of(chunk_id: str) -> str:
+    return chunk_id.split(CHUNK_ID_SEPARATOR)[1]
+
+
 def chunk_segment_of(chunk_id: str) -> int | None:
     parts = chunk_id.split(CHUNK_ID_SEPARATOR)
     return int(parts[2]) if len(parts) == 3 else None

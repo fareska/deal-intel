@@ -1,0 +1,17 @@
+[
+  {
+    "model": "claude-haiku-4-5-20251001",
+    "stop_reason": "end_turn",
+    "usage": {
+      "input_tokens": 1000,
+      "output_tokens": 500,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0
+    },
+    "tool_calls": [],
+    "output": {
+      "city": "Lisbon",
+      "population": 545923
+    }
+  }
+]

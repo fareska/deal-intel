@@ -1,14 +1,16 @@
-from collections.abc import Iterator
+from collections.abc import Callable, Iterator
 from pathlib import Path
 
 import pytest
 from alembic import command
 from alembic.config import Config
 from sqlalchemy import Engine, create_engine, text
-from sqlalchemy.orm import Session
+from sqlalchemy.orm import Session, sessionmaker
 
 import deal_intel.db.models  # noqa: F401  registers every table on Base.metadata
 from deal_intel.config import get_settings
+from deal_intel.contracts.access import AccessLevel
+from deal_intel.contracts.evidence import CHUNK_SOURCE_TYPES, PackChunk, chunk_kind_of
 from deal_intel.db.base import Base
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
@@ -43,6 +45,40 @@ def db_session(migrated_engine: Engine) -> Iterator[Session]:
     with Session(migrated_engine) as session:
         yield session
     truncate_all_tables(migrated_engine)
+
+
+@pytest.fixture
+def session_factory(db_session: Session) -> sessionmaker[Session]:
+    """Short committed sessions, as the tracer and LLM client use; `db_session` truncates after."""
+    return sessionmaker(bind=db_session.get_bind(), expire_on_commit=False)
+
+
+type PackChunkFactory = Callable[[str, str], PackChunk]
+
+
+@pytest.fixture(scope="session")
+def pack_chunk() -> PackChunkFactory:
+    """Builds a pack chunk from an id and its text, for tests that need evidence without a DB."""
+
+    def build(chunk_id: str, text_value: str) -> PackChunk:
+        kind = chunk_kind_of(chunk_id)
+        return PackChunk(
+            chunk_id=chunk_id,
+            citation=chunk_id,
+            kind=kind,
+            source_type=CHUNK_SOURCE_TYPES[kind],
+            opportunity_id="OPP-1003",
+            account_id="ACC-2003",
+            access_level=AccessLevel.STANDARD,
+            event_date=None,
+            author_or_speakers=None,
+            text=text_value,
+            content_hash=chunk_id,
+            score=1.0,
+            estimated_tokens=len(text_value.split()) or 1,
+        )
+
+    return build
 
 
 def truncate_all_tables(engine: Engine) -> None:
