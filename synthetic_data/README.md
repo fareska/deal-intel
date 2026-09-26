@@ -89,3 +89,21 @@ The file is tab-separated and contains:
 - `update_text`
 
 Each row is clearly marked synthetic. The updates add account-team context, reinforce known facts, and introduce ambiguity or possible conflicts that the prototype must surface in the brief.
+
+### How it is produced
+
+The nine rows (three per opportunity) are written by hand in `deal_intel/retrieval/slack_dataset.py` and frozen there, so running the generator again produces the same file byte for byte. No LLM is involved. To write the file, run:
+
+```bash
+deal-intel generate-slack --path synthetic_data
+```
+
+Before writing, the command checks every row against the other files in this folder and refuses to write if any check fails:
+
+- Each update is dated after the opportunity's latest Gong call and before its close date.
+- The account and update id match the opportunity.
+- `source_access_level` is never below the opportunity's baseline, so rows about a restricted account are at least `restricted`.
+- Any row that mentions a discount, reduction, concession, or percentage is `sensitive_pricing`.
+- Every row carries the standard synthetic notice and contains no email addresses, phone-like numbers, tabs, or line breaks.
+
+The expected effect of each update on the brief (reinforces, adds context, or conflicts) is recorded in `tests/fixtures/slack_golden.json`.

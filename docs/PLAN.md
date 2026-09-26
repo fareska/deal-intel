@@ -156,7 +156,7 @@ Done when:
 - Chunk counts: 27 Gong summaries, at least 9 transcript windows, 15 contacts, 5 pricing, 10 policy rules, 3 opportunities, 3 accounts, 9 Slack.
 - Access levels: `PN-4004`/`PN-4005` and `SLK-1003-01`/`-02` are `sensitive_pricing`; `SLK-1003-03` is `restricted`; `PN-4001`..`PN-4003` are `standard`.
 - For every allowed pair, every row returned by `list()` satisfies the Python predicate, and the Python predicate over the whole table selects exactly those rows.
-- `USR-5007/OPP-1001` retrieves no `slack`, `pricing`, or `policies` chunk; `USR-5003/OPP-1003` search for "discount concession procurement" ranks `pricing:PN-4004` and a `CALL-027` window in the top five; "verbally okayed discount" ranks `slack:SLK-1003-02` in the top three.
+- `USR-5007/OPP-1001` retrieves no `slack`, `pricing`, or `policies` chunk; `USR-5003/OPP-1003` search for "discount concession procurement" ranks `pricing:PN-4004` in the top five and a `CALL-027` window in the top ten (`ts_rank_cd` scores term proximity, and CALL-027 spreads the three terms across turns); "verbally okayed discount" ranks `slack:SLK-1003-02` in the top three.
 - Ingest twice: same snapshot id, no new rows.
 
 ### M2 LLM harness and tracing
@@ -265,7 +265,7 @@ Approval checkpoint: live runs spend model tokens (expected under a few dollars 
 
 ### M8 Optional
 
-- Hybrid retrieval (T26): deterministic hashing embeddings for tests, provider slot for a real embedding model, reciprocal rank fusion over two already-scoped lists, top-five hit-rate comparison.
+- Hybrid retrieval (T26): deterministic hashing embeddings for tests, provider slot for a real embedding model, reciprocal rank fusion over two already-scoped lists, top-five hit-rate comparison. Labelled cases include `USR-5003/OPP-1003` "discount concession procurement" expecting a `CALL-027` window (lexical ranks it seventh).
 - Grounding judge (T27): advisory support labels for summary sentences and actions, surfaced in warnings.
 - OTel exporter behind configuration, using the existing `Tracer` protocol.
 
@@ -275,7 +275,7 @@ All rows carry `synthetic_notice = "SYNTHETIC: generated for the exam dataset; n
 
 | Id | Date | Role | Level | Kind | Content | Grounding |
 |---|---|---|---|---|---|---|
-| `SLK-1001-01` | 2026-04-27 | AE | standard | reinforces | Recap of the 04-24 document review: no new discount request, legal only needs the data-retention policy excerpt, procurement expects the signature package next; owner matrix and payment schedule still due 04-28 | `CALL-008`, `CALL-009`, `PN-4002` |
+| `SLK-1001-01` | 2026-04-27 | AE | standard | reinforces | Recap of the 04-24 document review: no new commercial asks, legal only needs the data-retention policy excerpt, procurement expects the signature package next; owner matrix and payment schedule still due 04-28 | `CALL-008`, `CALL-009`, `PN-4002`; worded without "discount" so the row stays standard under the pricing-keyword rule |
 | `SLK-1001-02` | 2026-04-29 | CSM | standard | adds context | Iris Calder is out of office 05-04 to 05-08; her deputy can receive the signature package but cannot sign; finance approval of the payment schedule needs to land before 05-04 or signature slips toward the 05-17 close | new; extends the "finance approval of payment schedule" gap from `CALL-008` |
 | `SLK-1001-03` | 2026-05-02 | SE | standard | conflicts | Pavel Stone now wants the two legacy-appliance sites migrated before the pilot sites, contrary to the pilot-first sequencing from the March planning session; unclear whether Marco Devlin agrees | contradicts `CALL-002` |
 | `SLK-1002-01` | 2026-04-28 | SE | standard | adds context | Clara Esteves says plant readiness sign-off for the first cutover factory sits with a site IT lead who is not in the contact list; they asked for on-site support during cutover week | new stakeholder, absent from `contacts.tsv` |

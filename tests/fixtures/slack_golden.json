@@ -1,0 +1,65 @@
+[
+  {
+    "update_id": "SLK-1001-01",
+    "kind": "reinforces",
+    "expected_section": "Negotiation State",
+    "expected_effect": "confirms no new commercial ask after the 04-24 document review and that the signature package is next",
+    "keywords": ["signature package", "retention"]
+  },
+  {
+    "update_id": "SLK-1001-02",
+    "kind": "adds_context",
+    "expected_section": "Missing Information",
+    "expected_effect": "surfaces the procurement director's absence and the payment-schedule approval deadline before it",
+    "keywords": ["out of office", "deputy"]
+  },
+  {
+    "update_id": "SLK-1001-03",
+    "kind": "conflicts",
+    "expected_section": "Confidence and Review Warnings",
+    "expected_effect": "appears as a conflict with the pilot-first sequencing agreed in the March planning session",
+    "keywords": ["legacy", "pilot"]
+  },
+  {
+    "update_id": "SLK-1002-01",
+    "kind": "adds_context",
+    "expected_section": "Stakeholder Map",
+    "expected_effect": "adds the off-CRM site IT lead who signs off plant readiness",
+    "keywords": ["site IT lead", "on-site"]
+  },
+  {
+    "update_id": "SLK-1002-02",
+    "kind": "conflicts",
+    "expected_section": "Confidence and Review Warnings",
+    "expected_effect": "appears as a conflict with the export retest and incident owner map still required by the latest call and CRM next step",
+    "keywords": ["closeout", "closed"]
+  },
+  {
+    "update_id": "SLK-1002-03",
+    "kind": "reinforces",
+    "expected_section": "Negotiation State",
+    "expected_effect": "reinforces that finance approves only a staged payment tied to closeout acceptance",
+    "keywords": ["staged payment", "capped enablement"]
+  },
+  {
+    "update_id": "SLK-1003-01",
+    "kind": "reinforces",
+    "expected_section": "Negotiation State",
+    "expected_effect": "reinforces continued procurement pressure for the larger reduction or a shorter term",
+    "keywords": ["shorter term", "in writing"]
+  },
+  {
+    "update_id": "SLK-1003-02",
+    "kind": "conflicts",
+    "expected_section": "Confidence and Review Warnings",
+    "expected_effect": "appears as an unverified conflict with the pending Deal Desk status and is never treated as an approval",
+    "keywords": ["verbally"]
+  },
+  {
+    "update_id": "SLK-1003-03",
+    "kind": "adds_context",
+    "expected_section": "Missing Information",
+    "expected_effect": "adds the board sponsor review date and the still-missing research exception-owner confirmation",
+    "keywords": ["board sponsor review", "05-19"]
+  }
+]
