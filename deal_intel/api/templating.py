@@ -10,6 +10,7 @@ from fastapi.templating import Jinja2Templates
 from deal_intel.api.request_context import current_request_id
 from deal_intel.contracts.api import DECISION_NOTE_MAX_CHARS
 from deal_intel.contracts.reference import USER_ID_PATTERN
+from deal_intel.contracts.runs import WAIT_STATES
 from deal_intel.rendering.labels import label_text
 
 UI_ROOT = Path(__file__).resolve().parents[1] / "ui"
@@ -35,6 +36,13 @@ STATUS_POLL_SECONDS = 2
 FRESH_FIELD = "fresh"
 
 WELL_FORMED_USER_ID = re.compile(USER_ID_PATTERN)
+_TERMINAL_STATUS_VALUES = frozenset(state.value for state in WAIT_STATES)
+
+
+def polls_run_status(state: object) -> bool:
+    """True while the run is still working, so HTMX does not reload a finished page."""
+    value = getattr(state, "value", state)
+    return value not in _TERMINAL_STATUS_VALUES
 
 
 def is_ui_path(path: str) -> bool:
@@ -77,6 +85,7 @@ def build_environment() -> jinja2.Environment:
         lstrip_blocks=True,
     )
     environment.filters["approval_label"] = label_text
+    environment.globals["polls_run_status"] = polls_run_status
     return environment
 
 

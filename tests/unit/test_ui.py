@@ -3,10 +3,11 @@ from fastapi.testclient import TestClient
 from deal_intel.api.main import create_app
 from deal_intel.api.middleware import SECURITY_HEADERS
 from deal_intel.api.runtime import build_runtime
-from deal_intel.api.templating import UI_PATH_PREFIX
+from deal_intel.api.templating import UI_PATH_PREFIX, polls_run_status
 from deal_intel.contracts.agents.common import AgentName
 from deal_intel.contracts.approvals import ApprovalStatus, Decision
 from deal_intel.contracts.brief import SECTION_HEADINGS
+from deal_intel.contracts.runs import RunState
 from tests.unit.api_harness import (
     DEAL_DESK,
     NARROW_READER,
@@ -22,6 +23,16 @@ from tests.unit.test_ui_base import ESCAPED_PAYLOAD, NOT_FOUND_TEXT, SCRIPT_PAYL
 
 HTMX_HEADER = {"HX-Request": "true"}
 ACCOUNT_2003 = "ACC-2003"
+
+
+def test_polls_run_status_only_while_working() -> None:
+    assert polls_run_status(RunState.ANALYZING)
+    assert polls_run_status(RunState.QUEUED)
+    assert not polls_run_status(RunState.FAILED)
+    assert not polls_run_status(RunState.DENIED)
+    assert not polls_run_status(RunState.COMPLETED)
+    assert not polls_run_status(RunState.AWAITING_APPROVAL)
+    assert not polls_run_status("FAILED")
 
 
 def test_new_run_page_has_selectors_and_fresh_checkbox(api_client) -> None:
@@ -44,6 +55,8 @@ def test_brief_page_renders_nine_sections_and_citations(api_client) -> None:
         assert heading in response.text
     assert "OPP-1001" in response.text
     assert "Confidence and Review Warnings" in response.text
+    assert "hx-trigger" not in response.text
+    assert "Trace" in response.text
 
 
 def test_narrow_reader_sees_the_generic_not_found_page(api_client) -> None:
@@ -142,6 +155,9 @@ def test_denied_ui_run_shows_status_not_a_brief(api_client) -> None:
     assert response.status_code == 200
     assert "DENIED" in response.text
     assert "Deal Snapshot" not in response.text
+    assert "hx-trigger" not in response.text
+    assert "Eclipse" not in response.text
+    assert "Trace" in response.text
 
 
 def pending_approval_id(client) -> str:

@@ -41,6 +41,7 @@ from deal_intel.contracts.agents.negotiation_strategy import (
 )
 from deal_intel.contracts.agents.stakeholder_map import (
     Influence,
+    OffCrmPerson,
     RoleInDeal,
     Stakeholder,
     StakeholderMap,
@@ -83,6 +84,7 @@ def evidence_chunks(dataset_root: Path, sensitivity: SensitivityRule) -> list[Ev
 # Hand-authored agent outputs for the run tests. Every cited id is a real chunk the scenario's
 # reader may see, so the runner, policy engine, and renderer work on genuine evidence.
 OPP_1001 = "OPP-1001"
+OPP_1002 = "OPP-1002"
 OPP_1003 = "OPP-1003"
 STUB_MODEL = "stub-model"
 STUB_USAGE = LlmUsage(input_tokens=1000, output_tokens=200)
@@ -95,6 +97,12 @@ PREP_CALL = "gong_summary:CALL-008"
 REVIEW_CALL = "gong_summary:CALL-009"
 IRIS_CONTACT = "contact:CON-3003"
 AMARA_CONTACT = "contact:CON-3005"
+OPP_1002_CHUNK = "sfdc_opp:OPP-1002"
+CLOSEOUT_CALL = "gong_summary:CALL-018"
+CLOSEOUT_SLACK = "slack:SLK-1002-02"
+SITE_LEAD_SLACK = "slack:SLK-1002-01"
+JULIAN_CONTACT = "contact:CON-3006"
+CLARA_CONTACT = "contact:CON-3007"
 OPP_1003_CHUNK = "sfdc_opp:OPP-1003"
 PRESSURE_CALL = "gong_summary:CALL-021"
 APPROVAL_PATH_CALL = "gong_summary:CALL-027"
@@ -230,6 +238,7 @@ def opp_1003_outputs() -> dict[AgentName, BaseModel]:
                     confidence=Confidence.MEDIUM,
                 )
             ],
+            review_notes=["slack:SLK-1003-02 reports a verbal approval that is not recorded."],
         ),
         AgentName.STAKEHOLDER_MAP: StakeholderMap(
             stakeholders=[
@@ -267,8 +276,67 @@ def opp_1003_outputs() -> dict[AgentName, BaseModel]:
     }
 
 
+def opp_1002_outputs() -> dict[AgentName, BaseModel]:
+    return {
+        AgentName.CONVERSATION_INTELLIGENCE: ConversationFindings(
+            buyer_goals=[finding("The buyer wants factory downtime risk handled.", CLOSEOUT_CALL)],
+            objections=[finding("Operations wants better failover visibility.", CLOSEOUT_CALL)],
+            conflicts=[
+                Conflict(
+                    topic="Closeout pack status",
+                    claim_a="An update says the closeout pack already went out.",
+                    claim_b="The latest call still lists the export retest as open.",
+                    assessment="The item cannot be both closed and still required.",
+                    evidence_ids=[CLOSEOUT_SLACK, CLOSEOUT_CALL],
+                    confidence=Confidence.MEDIUM,
+                )
+            ],
+        ),
+        AgentName.STAKEHOLDER_MAP: StakeholderMap(
+            stakeholders=[
+                person("Julian Maro", "CIO", RoleInDeal.ECONOMIC_BUYER, JULIAN_CONTACT),
+                person(
+                    "Clara Esteves",
+                    "Director of Plant Systems",
+                    RoleInDeal.CHAMPION,
+                    CLARA_CONTACT,
+                ),
+            ],
+            off_crm_people=[
+                OffCrmPerson(
+                    description="Site IT lead who signs off plant readiness",
+                    role_in_deal=RoleInDeal.TECHNICAL_DECISION_MAKER,
+                    stance_summary="Asked for on-site support during cutover week.",
+                    evidence_ids=[SITE_LEAD_SLACK],
+                    confidence=Confidence.MEDIUM,
+                )
+            ],
+        ),
+        AgentName.NEGOTIATION_STRATEGY: StrategyOutput(
+            executive_summary=summary(
+                OPP_1002_CHUNK,
+                "The expansion is staged by factory.",
+                "Closeout evidence is still an open commercial item.",
+                "Plant readiness needs a named site owner.",
+            ),
+            negotiation_state=NegotiationState(
+                stage_assessment="Expansion negotiation with an open closeout item.",
+                customer_position="The customer wants staged rollout and proof of closeout.",
+                vendor_position="The team is preparing the closeout pack.",
+                evidence_ids=[OPP_1002_CHUNK, CLOSEOUT_CALL],
+                confidence=Confidence.MEDIUM,
+            ),
+            next_actions=[
+                action("A1", "Confirm the closeout pack contents with operations.", CLOSEOUT_CALL),
+                action("A2", "Name the site IT lead on the cutover plan.", SITE_LEAD_SLACK),
+            ],
+        ),
+    }
+
+
 STUB_OUTPUTS: Mapping[str, Callable[[], dict[AgentName, BaseModel]]] = {
     OPP_1001: opp_1001_outputs,
+    OPP_1002: opp_1002_outputs,
     OPP_1003: opp_1003_outputs,
 }
 
@@ -489,7 +557,11 @@ class DispatchingAgents:
 
 def dispatching_agents(run_bench: RunBench) -> AgentSuite:
     return DispatchingAgents(
-        {OPP_1001: run_bench.agents(OPP_1001), OPP_1003: run_bench.agents(OPP_1003)}
+        {
+            OPP_1001: run_bench.agents(OPP_1001),
+            OPP_1002: run_bench.agents(OPP_1002),
+            OPP_1003: run_bench.agents(OPP_1003),
+        }
     )
 
 

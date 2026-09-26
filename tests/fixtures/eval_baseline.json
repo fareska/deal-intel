@@ -1,0 +1,13 @@
+{
+  "citation_validity_rate": 1.0,
+  "grounded_number_rate": 0.9875,
+  "section_completeness": 0.9722222222222222,
+  "approval_routing_accuracy": 1.0,
+  "denial_correctness": 1.0,
+  "degraded_rate": 0.0,
+  "mean_cost_usd": "0.022500",
+  "mean_input_tokens": 2250,
+  "mean_output_tokens": 450,
+  "guardrail_drops_by_check": {},
+  "scenarios": 4
+}

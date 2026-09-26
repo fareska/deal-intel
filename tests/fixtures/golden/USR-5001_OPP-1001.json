@@ -1,0 +1,70 @@
+{
+  "sections": {
+    "Deal Snapshot": [
+      "source=synthetic_data/pricing/pricing_notes.tsv, pricing_note_id=PN-4001",
+      "source=synthetic_data/pricing/pricing_notes.tsv, pricing_note_id=PN-4002",
+      "source=synthetic_data/salesforce/accounts.tsv, account_id=ACC-2001",
+      "source=synthetic_data/salesforce/accounts.tsv, account_id=ACC-2001",
+      "source=synthetic_data/salesforce/accounts.tsv, account_id=ACC-2001",
+      "source=synthetic_data/salesforce/accounts.tsv, account_id=ACC-2001",
+      "source=synthetic_data/salesforce/accounts.tsv, account_id=ACC-2001",
+      "source=synthetic_data/salesforce/accounts.tsv, account_id=ACC-2001",
+      "source=synthetic_data/salesforce/accounts.tsv, account_id=ACC-2001",
+      "source=synthetic_data/salesforce/opportunities.tsv, opportunity_id=OPP-1001",
+      "source=synthetic_data/salesforce/opportunities.tsv, opportunity_id=OPP-1001",
+      "source=synthetic_data/salesforce/opportunities.tsv, opportunity_id=OPP-1001",
+      "source=synthetic_data/salesforce/opportunities.tsv, opportunity_id=OPP-1001",
+      "source=synthetic_data/salesforce/opportunities.tsv, opportunity_id=OPP-1001",
+      "source=synthetic_data/salesforce/opportunities.tsv, opportunity_id=OPP-1001",
+      "source=synthetic_data/salesforce/opportunities.tsv, opportunity_id=OPP-1001",
+      "source=synthetic_data/salesforce/opportunities.tsv, opportunity_id=OPP-1001",
+      "source=synthetic_data/salesforce/opportunities.tsv, opportunity_id=OPP-1001",
+      "source=synthetic_data/salesforce/opportunities.tsv, opportunity_id=OPP-1001",
+      "source=synthetic_data/salesforce/opportunities.tsv, opportunity_id=OPP-1001",
+      "source=synthetic_data/salesforce/opportunities.tsv, opportunity_id=OPP-1001",
+      "source=synthetic_data/salesforce/opportunities.tsv, opportunity_id=OPP-1001",
+      "source=synthetic_data/salesforce/opportunities.tsv, opportunity_id=OPP-1001",
+      "source=synthetic_data/salesforce/opportunities.tsv, opportunity_id=OPP-1001",
+      "source=synthetic_data/salesforce/opportunities.tsv, opportunity_id=OPP-1001",
+      "source=synthetic_data/salesforce/opportunities.tsv, opportunity_id=OPP-1001"
+    ],
+    "Executive Summary": [
+      "source=synthetic_data/salesforce/opportunities.tsv, opportunity_id=OPP-1001",
+      "source=synthetic_data/salesforce/opportunities.tsv, opportunity_id=OPP-1001",
+      "source=synthetic_data/salesforce/opportunities.tsv, opportunity_id=OPP-1001"
+    ],
+    "Buyer Goals and Business Drivers": [
+      "source=synthetic_data/gong/gong_call_summaries.tsv, call_id=CALL-008",
+      "source=synthetic_data/gong/gong_call_summaries.tsv, call_id=CALL-008",
+      "source=synthetic_data/gong/gong_call_summaries.tsv, call_id=CALL-009"
+    ],
+    "Stakeholder Map": [
+      "source=synthetic_data/salesforce/contacts.tsv, contact_id=CON-3003",
+      "source=synthetic_data/salesforce/contacts.tsv, contact_id=CON-3005"
+    ],
+    "Negotiation State": [
+      "source=synthetic_data/gong/gong_call_summaries.tsv, call_id=CALL-009",
+      "source=synthetic_data/gong/gong_call_summaries.tsv, call_id=CALL-009",
+      "source=synthetic_data/gong/gong_call_summaries.tsv, call_id=CALL-009",
+      "source=synthetic_data/gong/gong_call_summaries.tsv, call_id=CALL-009",
+      "source=synthetic_data/gong/gong_call_summaries.tsv, call_id=CALL-009",
+      "source=synthetic_data/gong/gong_call_summaries.tsv, call_id=CALL-009",
+      "source=synthetic_data/salesforce/opportunities.tsv, opportunity_id=OPP-1001",
+      "source=synthetic_data/salesforce/opportunities.tsv, opportunity_id=OPP-1001",
+      "source=synthetic_data/salesforce/opportunities.tsv, opportunity_id=OPP-1001",
+      "source=synthetic_data/salesforce/opportunities.tsv, opportunity_id=OPP-1001",
+      "source=synthetic_data/salesforce/opportunities.tsv, opportunity_id=OPP-1001"
+    ],
+    "Recommended Next Actions": [
+      "source=synthetic_data/gong/gong_call_summaries.tsv, call_id=CALL-008",
+      "source=synthetic_data/gong/gong_call_summaries.tsv, call_id=CALL-008",
+      "source=synthetic_data/gong/gong_call_summaries.tsv, call_id=CALL-009",
+      "source=synthetic_data/gong/gong_call_summaries.tsv, call_id=CALL-009"
+    ],
+    "Missing Information": [],
+    "Source Evidence": [],
+    "Confidence and Review Warnings": []
+  },
+  "labels": [],
+  "rule_ids": []
+}

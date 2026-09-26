@@ -101,6 +101,7 @@ class Settings(BaseSettings):
     api_base_url: str = "http://localhost:8000"
     api_timeout_seconds: float = 30.0
     api_max_request_body_bytes: int = 65_536
+    eval_tolerance: float = 0.02
 
     @field_validator("reliability_weights")
     @classmethod

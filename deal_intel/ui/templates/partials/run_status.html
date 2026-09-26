@@ -1,8 +1,10 @@
 {% from "partials/links.html" import ui_href with context %}
 <section class="panel" id="run-status"
+         {% if polls_run_status(status.state) %}
          hx-get="{{ ui_prefix }}/runs/{{ run_id }}/status{% if viewer_id %}?{{ viewer_param }}={{ viewer_id }}{% endif %}"
          hx-trigger="every {{ status_poll_seconds }}s"
-         hx-swap="outerHTML">
+         hx-swap="outerHTML"
+         {% endif %}>
   <h2>Run status</h2>
   <p><strong>{{ status.state }}</strong>{% if status.degraded %} · degraded{% endif %}</p>
   <p class="muted">Run {{ status.run_id }} · {{ status.opportunity_id }} · requested by {{ status.user_id }}</p>
@@ -10,4 +12,5 @@
   <p>{{ status.message }}</p>
   {% endif %}
   <p><a href="{{ ui_href(ui_prefix ~ '/runs/' ~ run_id) }}">Refresh status</a></p>
+  <p><a href="{{ ui_href(ui_prefix ~ '/runs/' ~ run_id ~ '/trace') }}">Trace</a></p>
 </section>

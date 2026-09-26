@@ -1,3 +1,4 @@
+import os
 import shutil
 from collections.abc import Callable, Iterator
 from pathlib import Path
@@ -5,6 +6,8 @@ from pathlib import Path
 import pytest
 from alembic import command
 from alembic.config import Config
+from fastapi import FastAPI
+from fastapi.testclient import TestClient
 from sqlalchemy import Engine, create_engine, text
 from sqlalchemy.orm import Session, sessionmaker
 
@@ -20,6 +23,16 @@ from deal_intel.retrieval.sensitivity import SensitivityRule
 from deal_intel.retrieval.slack_dataset import write_slack_dataset
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
+LIVE_LLM_TESTS_ENV = "LIVE_LLM_TESTS"
+
+
+def pytest_collection_modifyitems(config: pytest.Config, items: list[pytest.Item]) -> None:
+    if os.environ.get(LIVE_LLM_TESTS_ENV) == "1":
+        return
+    skip_live = pytest.mark.skip(reason=f"set {LIVE_LLM_TESTS_ENV}=1 to run live model tests")
+    for item in items:
+        if "live" in item.keywords:
+            item.add_marker(skip_live)
 
 
 @pytest.fixture(scope="session")
@@ -114,6 +127,61 @@ def pack_chunk() -> PackChunkFactory:
         )
 
     return build
+
+
+@pytest.fixture
+def committed_session(ingested_session: Session) -> Session:
+    """The runner reads through its own sessions, so the ingested data must be committed."""
+    ingested_session.commit()
+    return ingested_session
+
+
+@pytest.fixture
+def run_bench(committed_session: Session, session_factory: sessionmaker[Session], tmp_path: Path):
+    from deal_intel.config import get_settings
+    from deal_intel.llm.client import LlmClient
+    from deal_intel.llm.fake_client import FakeLlmProvider
+    from deal_intel.observability.tracing import PostgresTracer
+    from tests.unit.conftest import RunBench
+
+    settings = get_settings()
+    tracer = PostgresTracer(session_factory)
+    llm = LlmClient(
+        FakeLlmProvider(tmp_path), settings=settings, session_factory=session_factory, tracer=tracer
+    )
+    return RunBench(session_factory=session_factory, settings=settings, llm=llm, tracer=tracer)
+
+
+@pytest.fixture
+def api_runtime(run_bench) -> Iterator:
+    from deal_intel.api.runtime import build_runtime
+    from tests.unit.conftest import dispatching_agents
+
+    runtime = build_runtime(
+        settings=run_bench.settings,
+        session_factory=run_bench.session_factory,
+        agents=dispatching_agents(run_bench),
+        llm=run_bench.llm,
+        tracer=run_bench.tracer,
+        clock=run_bench.clock,
+        inline=True,
+    )
+    runtime.start()
+    yield runtime
+    runtime.shutdown()
+
+
+@pytest.fixture
+def api_app(api_runtime) -> FastAPI:
+    from deal_intel.api.main import create_app
+
+    return create_app(api_runtime)
+
+
+@pytest.fixture
+def api_client(api_app: FastAPI) -> Iterator[TestClient]:
+    with TestClient(api_app) as client:
+        yield client
 
 
 def truncate_all_tables(engine: Engine) -> None:

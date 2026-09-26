@@ -1,5 +1,4 @@
 {% extends "base.html" %}
-{% from "partials/links.html" import ui_href with context %}
 {% from "partials/citations.html" import citations, claim %}
 {% block title %}Brief {{ status.run_id }} · Deal Intelligence{% endblock %}
 {% block content %}
@@ -67,7 +66,6 @@
   <form method="post" action="{{ ui_prefix }}/runs/{{ status.run_id }}/replay{% if viewer_id %}?{{ viewer_param }}={{ viewer_id }}{% endif %}">
     <button type="submit">Replay</button>
   </form>
-  <p><a href="{{ ui_href(ui_prefix ~ '/runs/' ~ status.run_id ~ '/trace') }}">Trace</a></p>
 </section>
 
 <section class="panel">

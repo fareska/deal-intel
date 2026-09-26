@@ -1,0 +1,5 @@
+{
+  "OPP-1001": {"pricing_note_rules": []},
+  "OPP-1002": {"pricing_note_rules": []},
+  "OPP-1003": {"pricing_note_rules": ["R1", "R2", "R3"]}
+}

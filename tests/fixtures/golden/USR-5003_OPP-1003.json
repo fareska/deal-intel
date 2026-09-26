@@ -1,0 +1,76 @@
+{
+  "sections": {
+    "Deal Snapshot": [
+      "source=synthetic_data/pricing/pricing_notes.tsv, pricing_note_id=PN-4004",
+      "source=synthetic_data/pricing/pricing_notes.tsv, pricing_note_id=PN-4005",
+      "source=synthetic_data/salesforce/accounts.tsv, account_id=ACC-2003",
+      "source=synthetic_data/salesforce/accounts.tsv, account_id=ACC-2003",
+      "source=synthetic_data/salesforce/accounts.tsv, account_id=ACC-2003",
+      "source=synthetic_data/salesforce/accounts.tsv, account_id=ACC-2003",
+      "source=synthetic_data/salesforce/accounts.tsv, account_id=ACC-2003",
+      "source=synthetic_data/salesforce/accounts.tsv, account_id=ACC-2003",
+      "source=synthetic_data/salesforce/accounts.tsv, account_id=ACC-2003",
+      "source=synthetic_data/salesforce/opportunities.tsv, opportunity_id=OPP-1003",
+      "source=synthetic_data/salesforce/opportunities.tsv, opportunity_id=OPP-1003",
+      "source=synthetic_data/salesforce/opportunities.tsv, opportunity_id=OPP-1003",
+      "source=synthetic_data/salesforce/opportunities.tsv, opportunity_id=OPP-1003",
+      "source=synthetic_data/salesforce/opportunities.tsv, opportunity_id=OPP-1003",
+      "source=synthetic_data/salesforce/opportunities.tsv, opportunity_id=OPP-1003",
+      "source=synthetic_data/salesforce/opportunities.tsv, opportunity_id=OPP-1003",
+      "source=synthetic_data/salesforce/opportunities.tsv, opportunity_id=OPP-1003",
+      "source=synthetic_data/salesforce/opportunities.tsv, opportunity_id=OPP-1003",
+      "source=synthetic_data/salesforce/opportunities.tsv, opportunity_id=OPP-1003",
+      "source=synthetic_data/salesforce/opportunities.tsv, opportunity_id=OPP-1003",
+      "source=synthetic_data/salesforce/opportunities.tsv, opportunity_id=OPP-1003",
+      "source=synthetic_data/salesforce/opportunities.tsv, opportunity_id=OPP-1003",
+      "source=synthetic_data/salesforce/opportunities.tsv, opportunity_id=OPP-1003",
+      "source=synthetic_data/salesforce/opportunities.tsv, opportunity_id=OPP-1003",
+      "source=synthetic_data/salesforce/opportunities.tsv, opportunity_id=OPP-1003",
+      "source=synthetic_data/salesforce/opportunities.tsv, opportunity_id=OPP-1003"
+    ],
+    "Executive Summary": [
+      "source=synthetic_data/salesforce/opportunities.tsv, opportunity_id=OPP-1003",
+      "source=synthetic_data/salesforce/opportunities.tsv, opportunity_id=OPP-1003",
+      "source=synthetic_data/salesforce/opportunities.tsv, opportunity_id=OPP-1003"
+    ],
+    "Buyer Goals and Business Drivers": [
+      "source=synthetic_data/gong/gong_call_summaries.tsv, call_id=CALL-021",
+      "source=synthetic_data/gong/gong_call_summaries.tsv, call_id=CALL-021"
+    ],
+    "Stakeholder Map": [
+      "source=synthetic_data/salesforce/contacts.tsv, contact_id=CON-3013",
+      "source=synthetic_data/salesforce/contacts.tsv, contact_id=CON-3014"
+    ],
+    "Negotiation State": [
+      "source=synthetic_data/gong/gong_call_summaries.tsv, call_id=CALL-021",
+      "source=synthetic_data/gong/gong_call_summaries.tsv, call_id=CALL-021",
+      "source=synthetic_data/gong/gong_call_summaries.tsv, call_id=CALL-021",
+      "source=synthetic_data/salesforce/opportunities.tsv, opportunity_id=OPP-1003",
+      "source=synthetic_data/salesforce/opportunities.tsv, opportunity_id=OPP-1003",
+      "source=synthetic_data/salesforce/opportunities.tsv, opportunity_id=OPP-1003"
+    ],
+    "Recommended Next Actions": [
+      "source=synthetic_data/gong/gong_call_summaries.tsv, call_id=CALL-021",
+      "source=synthetic_data/gong/gong_call_summaries.tsv, call_id=CALL-021",
+      "source=synthetic_data/pricing/pricing_notes.tsv, pricing_note_id=PN-4004",
+      "source=synthetic_data/pricing/pricing_notes.tsv, pricing_note_id=PN-4004",
+      "source=synthetic_data/pricing/pricing_notes.tsv, pricing_note_id=PN-4005"
+    ],
+    "Missing Information": [],
+    "Source Evidence": [],
+    "Confidence and Review Warnings": [
+      "source=synthetic_data/gong/gong_call_summaries.tsv, call_id=CALL-027",
+      "source=synthetic_data/slack/account_team_updates.tsv, update_id=SLK-1003-02"
+    ]
+  },
+  "labels": [
+    "escalated",
+    "pending",
+    "pending"
+  ],
+  "rule_ids": [
+    "R1",
+    "R2",
+    "R3"
+  ]
+}

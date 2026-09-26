@@ -32,6 +32,7 @@ def test_default_models_are_the_confirmed_ids_and_are_priced(
 
     assert settings.model_strategy == DEFAULT_MODEL_STRATEGY == "claude-opus-5-5"
     assert settings.model_extraction == DEFAULT_MODEL_EXTRACTION == "claude-haiku-4-5-20251001"
+    assert settings.eval_tolerance == 0.02
     assert {DEFAULT_MODEL_STRATEGY, DEFAULT_MODEL_EXTRACTION} <= set(
         settings.model_prices_usd_per_mtok
     )
