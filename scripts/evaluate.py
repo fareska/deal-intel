@@ -199,7 +199,7 @@ def report_from_artifacts(directory: Path) -> MetricsReport:
 
 def brief_paths(directory: Path) -> list[Path]:
     paths: list[Path] = []
-    for path in sorted(directory.glob("*.json")):
+    for path in sorted(directory.rglob("*.json")):
         try:
             Brief.model_validate_json(path.read_bytes())
         except ValidationError:
