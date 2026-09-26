@@ -113,20 +113,23 @@ def test_usr_5003_opp_1003_awaits_then_completes_after_deal_desk_decisions(run_b
 
     assert record.state is RunState.AWAITING_APPROVAL
     rows = approval_rows(run_bench, record.run_id)
-    deal_desk = [
-        row
-        for row in rows
-        if row.required_role == ApproverRole.DEAL_DESK and row.status == ApprovalStatus.PENDING
-    ]
+    pending = [row for row in rows if row.status == ApprovalStatus.PENDING]
     assert any(
-        row.subject_id == HIGH_DISCOUNT_NOTE and DEAL_DESK_APPROVER in row.eligible_user_ids
-        for row in deal_desk
+        row.subject_id == HIGH_DISCOUNT_NOTE
+        and row.required_role == ApproverRole.DEAL_DESK
+        and DEAL_DESK_APPROVER in row.eligible_user_ids
+        for row in pending
     )
     roles = {(row.required_role, row.status) for row in rows}
     assert (ApproverRole.SALES_LEADER.value, ApprovalStatus.ESCALATED.value) in roles
     assert (ApproverRole.LEGAL.value, ApprovalStatus.ESCALATED.value) in roles
+    assert {row.required_role for row in pending} <= {
+        ApproverRole.DEAL_DESK,
+        ApproverRole.HUMAN_REVIEWER,
+    }
+    assert all(DEAL_DESK_APPROVER in row.eligible_user_ids for row in pending)
 
-    for approval in deal_desk:
+    for approval in pending:
         with run_bench.session_factory.begin() as session:
             decide(
                 session,

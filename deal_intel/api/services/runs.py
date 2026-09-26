@@ -21,6 +21,7 @@ from deal_intel.contracts.api import (
     denial_message,
 )
 from deal_intel.contracts.brief import Brief, BriefSource
+from deal_intel.contracts.llm import LlmCallRecord
 from deal_intel.contracts.runs import (
     REPLAYABLE_STATES,
     STARTABLE_STATES,
@@ -45,7 +46,13 @@ from deal_intel.orchestration.stages import idempotency_key_for
 from deal_intel.permissions.gate import authorize
 from deal_intel.permissions.read import brief_level_of, can_read_run, reader_level
 from deal_intel.policy.store import pending_approval_count
-from deal_intel.rendering.brief import ReplayUnavailable, latest_brief, list_brief_versions, replay
+from deal_intel.rendering.brief import (
+    ReplayUnavailable,
+    latest_brief,
+    list_brief_rows,
+    list_brief_versions,
+    replay,
+)
 from deal_intel.retrieval.retriever import ScopedRetriever
 
 SAFE_TRACE_ATTRIBUTE_KEYS = frozenset(
@@ -225,6 +232,24 @@ def brief_versions(session: Session, run_id: str, reader_user_id: str) -> list[B
     return [
         BriefVersionSummary(version=item.version, source=item.source, rendered_at=item.rendered_at)
         for item in list_brief_versions(session, run.run_id)
+    ]
+
+
+def readable_brief_rows(session: Session, run_id: str, reader_user_id: str) -> list[BriefRow]:
+    run = load_readable_run(session, run_id, reader_user_id)
+    return list_brief_rows(session, run.run_id)
+
+
+def llm_calls_for_reader(session: Session, run_id: str, reader_user_id: str) -> list[LlmCallRecord]:
+    run = load_readable_run(session, run_id, reader_user_id)
+    statement = (
+        select(LlmCallRow)
+        .where(LlmCallRow.run_id == run.run_id)
+        .order_by(LlmCallRow.created_at, LlmCallRow.call_id)
+    )
+    return [
+        LlmCallRecord.model_validate(row, from_attributes=True)
+        for row in session.scalars(statement)
     ]
 
 

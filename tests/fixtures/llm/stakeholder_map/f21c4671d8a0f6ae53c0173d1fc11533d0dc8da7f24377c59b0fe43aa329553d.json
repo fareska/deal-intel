@@ -1,0 +1,475 @@
+[
+  {
+    "model": "claude-haiku-4-5-20251001",
+    "stop_reason": "end_turn",
+    "usage": {
+      "input_tokens": 10876,
+      "output_tokens": 2672,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0
+    },
+    "tool_calls": [],
+    "output": {
+      "stakeholders": [
+        {
+          "evidence_ids": [
+            "contact:CON-3011",
+            "gong_summary:CALL-021",
+            "gong_summary:CALL-023",
+            "transcript:CALL-023:1",
+            "gong_summary:CALL-025",
+            "gong_summary:CALL-027",
+            "transcript:CALL-027:1",
+            "transcript:CALL-027:2",
+            "transcript:CALL-027:4",
+            "transcript:CALL-027:6",
+            "transcript:CALL-023:2",
+            "transcript:CALL-023:3",
+            "transcript:CALL-023:4",
+            "transcript:CALL-023:5",
+            "transcript:CALL-019:2",
+            "transcript:CALL-019:3"
+          ],
+          "confidence": "high",
+          "name": "Priya Sato",
+          "title": "Chief Digital Officer",
+          "role_in_deal": "economic_buyer",
+          "influence": "high",
+          "sentiment": "mixed",
+          "stance_summary": "Pushing for renewal certainty but under board pressure to reduce run-rate spend. Wants cost relief and options that are defensible to the board, but opposes solutions that signal panic. Needs \"a credible plan before signature\" but recognizes that \"three unresolved debates\" cannot be carried forward. Stated \"The renewal is still viable, but the board expects cost discipline\" and emphasized that \"If someone jumps ahead [on approval], the answer becomes no.\" Values packaging flexibility over a blunt discount, and wants the brief to help make a \"controlled decision, not create a new negotiation problem.\" Requires internal approval routing before customer proposal generation.",
+          "contact_id": "CON-3011"
+        },
+        {
+          "evidence_ids": [
+            "contact:CON-3012",
+            "gong_summary:CALL-020",
+            "gong_summary:CALL-024",
+            "gong_summary:CALL-023",
+            "transcript:CALL-023:1",
+            "gong_summary:CALL-026",
+            "gong_summary:CALL-027",
+            "transcript:CALL-027:1",
+            "transcript:CALL-027:2",
+            "transcript:CALL-027:5",
+            "transcript:CALL-027:6",
+            "transcript:CALL-023:2",
+            "transcript:CALL-023:3",
+            "transcript:CALL-023:4",
+            "transcript:CALL-023:5",
+            "transcript:CALL-023:6",
+            "transcript:CALL-019:1",
+            "transcript:CALL-019:2",
+            "transcript:CALL-019:3"
+          ],
+          "confidence": "high",
+          "name": "Mateo Ruan",
+          "title": "Head of Security",
+          "role_in_deal": "champion",
+          "influence": "high",
+          "sentiment": "positive",
+          "stance_summary": "Values the platform and flagged sensitive research access controls as non-negotiable. States \"Security is not trying to expand scope. We are trying to avoid weakening controls during a cost conversation\" and \"A reduction that removes restricted workflow support is not acceptable. We cannot trade research controls for budget optics.\" Requires proof that \"research teams stay segmented\" and made clear \"I will not support a concession if it removes controls or support. The platform is part of our research governance story.\" Insisted on expiration by default for temporary access and stated \"Broad access is not acceptable. I would rather lose convenience than weaken segmentation.\" Wants security dependencies documented for approved audience and noted \"stripping support increases operational risk. It is not just a commercial choice.\" Calls for evidence of restricted workflow support to remain in any approved scenario.",
+          "contact_id": "CON-3012"
+        },
+        {
+          "evidence_ids": [
+            "contact:CON-3013",
+            "gong_summary:CALL-022",
+            "gong_summary:CALL-023",
+            "transcript:CALL-023:1",
+            "gong_summary:CALL-026",
+            "gong_summary:CALL-027",
+            "transcript:CALL-027:1",
+            "transcript:CALL-027:2",
+            "transcript:CALL-027:3",
+            "transcript:CALL-027:5",
+            "transcript:CALL-023:2",
+            "transcript:CALL-023:3",
+            "transcript:CALL-023:4",
+            "transcript:CALL-023:5",
+            "transcript:CALL-023:6"
+          ],
+          "confidence": "high",
+          "name": "Leah Tan",
+          "title": "General Counsel",
+          "role_in_deal": "legal",
+          "influence": "high",
+          "sentiment": "cautious",
+          "stance_summary": "Requests liability language changes and strict review before customer-facing concessions. Stated \"My concern is customer-facing language. I do not want anyone implying we accepted a liability position or data handling promise before legal approves it.\" Emphasized that \"no one should send customer-facing concession language until legal and Deal Desk approve it\" and warned \"We have had too many situations where informal language becomes evidence in negotiation.\" Requires that unapproved concession language be labeled impossible to miss and stated \"Internal options are fine if labeled as requiring approval. Customer-facing language is different.\" Cautioned that restricted evidence must be disclosed \"only for the approved audience\" and generic safe language should be used for broad audiences. Declared \"no customer-facing concession language is approved as of this call\" and insisted that a brief should \"state that constraints are preserved, not flattened into a single happy summary.\"",
+          "contact_id": "CON-3013"
+        },
+        {
+          "evidence_ids": [
+            "contact:CON-3014",
+            "gong_summary:CALL-021",
+            "gong_summary:CALL-025",
+            "gong_summary:CALL-022",
+            "gong_summary:CALL-023",
+            "transcript:CALL-023:1",
+            "gong_summary:CALL-027",
+            "transcript:CALL-027:1",
+            "transcript:CALL-027:2",
+            "transcript:CALL-027:3",
+            "transcript:CALL-027:5",
+            "transcript:CALL-027:6",
+            "transcript:CALL-023:5",
+            "transcript:CALL-023:6"
+          ],
+          "confidence": "high",
+          "name": "Darin Holt",
+          "title": "Procurement Lead",
+          "role_in_deal": "commercial_approver",
+          "influence": "medium",
+          "sentiment": "negative",
+          "stance_summary": "Pressing for aggressive discount and shorter renewal term, citing budget reductions. Stated \"I will be direct. We need a material reduction from the current run rate or a shorter commitment. Otherwise I cannot recommend approval.\" Wants \"fast answer\" and is pushing hard on negotiations. Acknowledged \"procurement will ask why the larger discount is not on the table\" but accepted that larger discounts exceed approval thresholds. Requested \"written discount\" language and \"written package comparison\" for internal review. Emphasized \"Procurement gets pressure when we have nothing to send\" but accepted Leah Tan's distinction that \"You can send process language after approval, not concession language.\" Wants the aggressive option \"modeled\" with clear labeling and accepted trade-off analysis showing commercial, security, and legal impacts. Stated he is willing to \"work with\" scenario-based brief if leverage remains available for negotiation.",
+          "contact_id": "CON-3014"
+        },
+        {
+          "evidence_ids": [
+            "contact:CON-3015",
+            "gong_summary:CALL-020",
+            "gong_summary:CALL-024",
+            "transcript:CALL-019:1",
+            "transcript:CALL-019:2",
+            "transcript:CALL-019:3"
+          ],
+          "confidence": "high",
+          "name": "Mei Arlen",
+          "title": "Research IT Manager",
+          "role_in_deal": "technical_decision_maker",
+          "influence": "medium",
+          "sentiment": "neutral",
+          "stance_summary": "Needs evidence that research data workflows remain segmented by team. Described problem that \"The manual exceptions are not just annoying. They create questions from principal investigators. If a researcher cannot access a dataset before a deadline, they escalate outside the workflow.\" Requires \"audit exports that I can hand to the research compliance lead. Screenshots are not enough.\" Asked that temporary access request workflow include \"requestor, project owner, security approval, expiration date, and review trail.\" Values process improvement for restricted access paths but is neutral on commercial terms, deferring commercial decisions to security and digital leadership. Requested exception workflow diagram and audit export sample. Needs \"strict team separation\" to remain in any renewal configuration.",
+          "contact_id": "CON-3015"
+        }
+      ],
+      "unmatched_speakers": [
+        {
+          "evidence_ids": [
+            "transcript:CALL-027:3",
+            "transcript:CALL-027:5"
+          ],
+          "confidence": "medium",
+          "name": "Vendor Solutions Lead"
+        },
+        {
+          "evidence_ids": [
+            "transcript:CALL-023:2",
+            "transcript:CALL-023:3"
+          ],
+          "confidence": "medium",
+          "name": "Vendor Solutions Lead"
+        }
+      ],
+      "off_crm_people": [
+        {
+          "evidence_ids": [
+            "transcript:CALL-019:3"
+          ],
+          "confidence": "medium",
+          "description": "Research compliance lead who must review audit exports; referenced by Mei Arlen as recipient of audit documentation but not a direct call participant.",
+          "role_in_deal": "unknown",
+          "stance_summary": "No direct evidence of stance; Mei Arlen stated \"I need audit exports that I can hand to the research compliance lead,\" indicating this role requires compliance documentation but does not participate in negotiations.",
+          "name": null
+        }
+      ],
+      "missing": [
+        "Exception-owner confirmation from research IT still outstanding as of 2026-05-06; Mateo Ruan stated \"I can get that confirmation, but not by tomorrow. Mark it as missing information.\"",
+        "Board sponsor identity and stance not named in evidence; Priya Sato references board pressure and board sponsor review but sponsor is not identified as a stakeholder on calls.",
+        "No finance or budget approval stakeholder identified; approval routing mentions \"Deal Desk\" but no Deal Desk contact records or participants provided."
+      ],
+      "review_notes": [
+        "Evidence CALL-027 and CALL-023 transcripts contain instructions to the vendor about what the internal brief should include (approval flags, external-safe language, restricted-source permissions, scenario labeling). These are customer directives about the brief structure, not assertions about stakeholder stance. All customer instructions cited in evidence have been paraphrased as stance_summary entries showing what each person said the brief should contain, rather than followed as instructions to the model.",
+        "Gong summaries and contact records disagree slightly on Darin Holt's role: contact record lists \"Commercial negotiator\" but opportunity record and gong summaries treat him as Procurement Lead with commercial approval authority. Both are consistent with role_in_deal='commercial_approver'; entries cite both sources.",
+        "Confidence levels appear in evidence (CALL-027:6) as internal customer assessment of deal scenarios, not stakeholder influence. Evidence shows Priya Sato, Mateo Ruan, and Leah Tan each held different confidence levels on aggressive discount (low, low, and implicitly cautious). These are paraphrased in stance_summary as views about approval likelihood, not recorded as separate influence assessments.",
+        "Mei Arlen's sentiment recorded as 'neutral' in contact record but gong call CALL-020 lists 'cautiously_positive.' Evidence shows her concerns are technical and process-focused rather than sentiment-driven; 'neutral' better reflects her detached role versus Mateo Ruan (champion, positive) and Priya Sato (mixed). Contact record 'neutral' is used.",
+        "All participants are customer-side; Vendor AE, Vendor Solutions Lead, and Vendor CSM entries are excluded from stakeholders per instructions, though their statements are used as evidence of customer intent."
+      ]
+    }
+  },
+  {
+    "model": "claude-haiku-4-5-20251001",
+    "stop_reason": "end_turn",
+    "usage": {
+      "input_tokens": 13787,
+      "output_tokens": 1561,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0
+    },
+    "tool_calls": [],
+    "output": {
+      "stakeholders": [
+        {
+          "evidence_ids": [
+            "contact:CON-3011",
+            "gong_summary:CALL-021",
+            "gong_summary:CALL-023",
+            "transcript:CALL-023:1",
+            "gong_summary:CALL-025",
+            "gong_summary:CALL-027",
+            "transcript:CALL-027:1",
+            "transcript:CALL-027:2",
+            "transcript:CALL-027:4",
+            "transcript:CALL-027:6",
+            "transcript:CALL-023:4",
+            "transcript:CALL-019:2"
+          ],
+          "confidence": "high",
+          "name": "Priya Sato",
+          "title": "Chief Digital Officer",
+          "role_in_deal": "economic_buyer",
+          "influence": "high",
+          "sentiment": "mixed",
+          "stance_summary": "Pushing for renewal certainty but under board pressure to reduce run-rate spend. Wants cost relief and defensible options but opposes panic-driven discounts. Needs \"a credible plan before signature\" but states \"three unresolved debates\" cannot proceed. Emphasizes approval gates must be respected or \"the answer becomes no.\"",
+          "contact_id": "CON-3011"
+        },
+        {
+          "evidence_ids": [
+            "contact:CON-3012",
+            "gong_summary:CALL-020",
+            "gong_summary:CALL-024",
+            "gong_summary:CALL-023",
+            "transcript:CALL-023:1",
+            "gong_summary:CALL-026",
+            "gong_summary:CALL-027",
+            "transcript:CALL-027:1",
+            "transcript:CALL-027:5",
+            "transcript:CALL-023:3",
+            "transcript:CALL-019:2",
+            "transcript:CALL-019:3"
+          ],
+          "confidence": "high",
+          "name": "Mateo Ruan",
+          "title": "Head of Security",
+          "role_in_deal": "champion",
+          "influence": "high",
+          "sentiment": "positive",
+          "stance_summary": "Values platform and flagged research access controls as non-negotiable. States \"A reduction that removes restricted workflow support is not acceptable\" and \"I will not support a concession if it removes controls.\" Requires proof teams stay segmented, expiration by default, and security dependencies documented for approved audience only.",
+          "contact_id": "CON-3012"
+        },
+        {
+          "evidence_ids": [
+            "contact:CON-3013",
+            "gong_summary:CALL-022",
+            "gong_summary:CALL-023",
+            "transcript:CALL-023:1",
+            "gong_summary:CALL-026",
+            "gong_summary:CALL-027",
+            "transcript:CALL-027:1",
+            "transcript:CALL-027:2",
+            "transcript:CALL-027:3",
+            "transcript:CALL-023:5",
+            "transcript:CALL-023:6",
+            "transcript:CALL-019:1"
+          ],
+          "confidence": "high",
+          "name": "Leah Tan",
+          "title": "General Counsel",
+          "role_in_deal": "legal",
+          "influence": "high",
+          "sentiment": "cautious",
+          "stance_summary": "Demands strict review before customer-facing concessions. Emphasized \"no customer-facing concession language is approved as of this call\" and restricted evidence must be disclosed only to approved audience. Requires all unapproved options be labeled impossible to miss. No informal language should imply legal agreement.",
+          "contact_id": "CON-3013"
+        },
+        {
+          "evidence_ids": [
+            "contact:CON-3014",
+            "gong_summary:CALL-021",
+            "gong_summary:CALL-025",
+            "gong_summary:CALL-022",
+            "gong_summary:CALL-023",
+            "transcript:CALL-023:5",
+            "gong_summary:CALL-027",
+            "transcript:CALL-027:1",
+            "transcript:CALL-027:2",
+            "transcript:CALL-027:5",
+            "transcript:CALL-027:6",
+            "transcript:CALL-023:6"
+          ],
+          "confidence": "high",
+          "name": "Darin Holt",
+          "title": "Procurement Lead",
+          "role_in_deal": "commercial_approver",
+          "influence": "medium",
+          "sentiment": "negative",
+          "stance_summary": "Pressing for aggressive discount and shorter term citing budget reductions. States \"We need a material reduction or I cannot recommend approval.\" Wants written package comparison for internal review first. Accepted that larger discounts exceed approval thresholds but wants aggressive option modeled with clear labeling.",
+          "contact_id": "CON-3014"
+        },
+        {
+          "evidence_ids": [
+            "contact:CON-3015",
+            "gong_summary:CALL-020",
+            "gong_summary:CALL-024",
+            "transcript:CALL-019:1",
+            "transcript:CALL-019:2",
+            "transcript:CALL-019:3"
+          ],
+          "confidence": "high",
+          "name": "Mei Arlen",
+          "title": "Research IT Manager",
+          "role_in_deal": "technical_decision_maker",
+          "influence": "medium",
+          "sentiment": "neutral",
+          "stance_summary": "Needs audit exports for compliance lead and exception workflow to include requestor, project owner, security approval, expiration date, and review trail. Described manual exceptions creating escalation pressure but defers commercial decisions to security and digital leadership.",
+          "contact_id": "CON-3015"
+        }
+      ],
+      "unmatched_speakers": [],
+      "off_crm_people": [
+        {
+          "evidence_ids": [
+            "transcript:CALL-019:3"
+          ],
+          "confidence": "medium",
+          "description": "Research compliance lead who reviews audit exports, referenced by Mei Arlen as recipient of audit documentation.",
+          "role_in_deal": "unknown",
+          "stance_summary": "No direct evidence; Mei Arlen stated requirement to hand audit exports to this role, indicating need for compliance documentation review.",
+          "name": null
+        }
+      ],
+      "missing": [
+        "Exception-owner confirmation from research IT still outstanding as of 2026-05-06",
+        "Board sponsor identity and stance not identified in evidence",
+        "Deal Desk contact or approval authority not identified"
+      ],
+      "review_notes": [
+        "CALL-027 and CALL-023 transcripts contain customer directives about brief structure (approval flags, external-safe language, restricted permissions, scenario labeling). Paraphrased as stance_summary entries showing what each person said brief should contain, not followed as instructions.",
+        "Darin Holt role: contact record lists 'Commercial negotiator' but gong summaries and opp record show Procurement Lead with commercial approval authority; both consistent with role_in_deal='commercial_approver'.",
+        "Confidence levels in CALL-027:6 are customer's internal assessment of deal scenarios (high on renewal need, medium on package path, low on aggressive discount approval), paraphrased in stake_summary as approval likelihood, not separate influence assessments."
+      ]
+    }
+  },
+  {
+    "model": "claude-haiku-4-5-20251001",
+    "stop_reason": "end_turn",
+    "usage": {
+      "input_tokens": 15447,
+      "output_tokens": 1245,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0
+    },
+    "tool_calls": [],
+    "output": {
+      "stakeholders": [
+        {
+          "evidence_ids": [
+            "contact:CON-3011",
+            "gong_summary:CALL-021",
+            "gong_summary:CALL-023",
+            "transcript:CALL-023:1",
+            "gong_summary:CALL-025",
+            "gong_summary:CALL-027",
+            "transcript:CALL-027:1",
+            "transcript:CALL-027:2",
+            "transcript:CALL-027:4",
+            "transcript:CALL-027:6",
+            "transcript:CALL-023:4",
+            "transcript:CALL-019:2"
+          ],
+          "confidence": "high",
+          "name": "Priya Sato",
+          "title": "Chief Digital Officer",
+          "role_in_deal": "economic_buyer",
+          "influence": "high",
+          "sentiment": "mixed",
+          "stance_summary": "Under board pressure to reduce run-rate spend; wants cost relief but opposes panic-driven discounts. Needs credible plan before signature. Emphasizes approval gates must be respected or deal outcome changes.",
+          "contact_id": "CON-3011"
+        },
+        {
+          "evidence_ids": [
+            "contact:CON-3012",
+            "gong_summary:CALL-020",
+            "gong_summary:CALL-024",
+            "gong_summary:CALL-023",
+            "transcript:CALL-023:1",
+            "gong_summary:CALL-026",
+            "gong_summary:CALL-027",
+            "transcript:CALL-027:1",
+            "transcript:CALL-027:5",
+            "transcript:CALL-023:3",
+            "transcript:CALL-019:2",
+            "transcript:CALL-019:3"
+          ],
+          "confidence": "high",
+          "name": "Mateo Ruan",
+          "title": "Head of Security",
+          "role_in_deal": "champion",
+          "influence": "high",
+          "sentiment": "positive",
+          "stance_summary": "Research access controls non-negotiable. States \"I will not support a concession if it removes controls.\" Requires proof teams stay segmented, expiration by default for temporary access, and security dependencies documented for approved audience only.",
+          "contact_id": "CON-3012"
+        },
+        {
+          "evidence_ids": [
+            "contact:CON-3013",
+            "gong_summary:CALL-022",
+            "gong_summary:CALL-023",
+            "transcript:CALL-023:1",
+            "gong_summary:CALL-026",
+            "gong_summary:CALL-027",
+            "transcript:CALL-027:1",
+            "transcript:CALL-027:2",
+            "transcript:CALL-027:3",
+            "transcript:CALL-023:5",
+            "transcript:CALL-023:6",
+            "transcript:CALL-019:1"
+          ],
+          "confidence": "high",
+          "name": "Leah Tan",
+          "title": "General Counsel",
+          "role_in_deal": "legal",
+          "influence": "high",
+          "sentiment": "cautious",
+          "stance_summary": "No customer-facing concession language approved as of this call. Demands strict review before any customer-side language. Restricted evidence for approved audience only. All unapproved options must be labeled clearly.",
+          "contact_id": "CON-3013"
+        },
+        {
+          "evidence_ids": [
+            "contact:CON-3014",
+            "gong_summary:CALL-021",
+            "gong_summary:CALL-025",
+            "gong_summary:CALL-022",
+            "gong_summary:CALL-023",
+            "transcript:CALL-023:5",
+            "gong_summary:CALL-027",
+            "transcript:CALL-027:1",
+            "transcript:CALL-027:2",
+            "transcript:CALL-027:5",
+            "transcript:CALL-027:6",
+            "transcript:CALL-023:6"
+          ],
+          "confidence": "high",
+          "name": "Darin Holt",
+          "title": "Procurement Lead",
+          "role_in_deal": "commercial_approver",
+          "influence": "medium",
+          "sentiment": "negative",
+          "stance_summary": "Pressing for material reduction or shorter term due to budget reductions. Wants written package comparison and internal review first. Accepts larger discounts exceed approval thresholds but wants aggressive option modeled with clear labeling.",
+          "contact_id": "CON-3014"
+        }
+      ],
+      "unmatched_speakers": [],
+      "off_crm_people": [
+        {
+          "evidence_ids": [
+            "transcript:CALL-019:3"
+          ],
+          "confidence": "medium",
+          "description": "Research compliance lead who reviews audit exports and compliance documentation.",
+          "role_in_deal": "unknown",
+          "stance_summary": "No direct evidence; requires audit exports from research IT for compliance review of restricted workflow controls.",
+          "name": null
+        }
+      ],
+      "missing": [
+        "Exception-owner confirmation from research IT still outstanding as of 2026-05-06",
+        "Board sponsor identity and stance not identified in evidence",
+        "Deal Desk contact or approval authority not identified"
+      ],
+      "review_notes": [
+        "CALL-027 and CALL-023 transcripts contain customer directives about brief structure. Paraphrased as stance_summary entries showing what each person said brief should contain, not followed as instructions.",
+        "Darin Holt role: contact record lists 'Commercial negotiator' but gong summaries show Procurement Lead with commercial approval authority; both consistent with role_in_deal='commercial_approver'.",
+        "Mei Arlen, Research IT Manager: needs evidence that research data workflows remain segmented by team; requires audit exports and exception workflow documentation with expiration date and review trail."
+      ]
+    }
+  }
+]

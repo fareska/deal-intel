@@ -38,16 +38,22 @@ def approval_views(session: Session, approval_ids: Sequence[str]) -> list[Approv
     ]
 
 
-def latest_events(session: Session, approval_ids: Sequence[str]) -> dict[str, ApprovalEvent]:
+def events_for(session: Session, approval_ids: Sequence[str]) -> list[ApprovalEvent]:
+    if not approval_ids:
+        return []
     statement = (
         select(ApprovalEventRow)
         .where(ApprovalEventRow.approval_id.in_(approval_ids))
         .order_by(ApprovalEventRow.event_id)
     )
-    return {
-        row.approval_id: ApprovalEvent.model_validate(row, from_attributes=True)
+    return [
+        ApprovalEvent.model_validate(row, from_attributes=True)
         for row in session.scalars(statement)
-    }
+    ]
+
+
+def latest_events(session: Session, approval_ids: Sequence[str]) -> dict[str, ApprovalEvent]:
+    return {event.approval_id: event for event in events_for(session, approval_ids)}
 
 
 def pending_approval_count(session: Session, run_id: str) -> int:

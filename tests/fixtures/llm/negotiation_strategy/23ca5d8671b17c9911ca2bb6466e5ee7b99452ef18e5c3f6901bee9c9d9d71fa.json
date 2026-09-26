@@ -1,0 +1,895 @@
+[
+  {
+    "model": "claude-opus-5-5",
+    "stop_reason": "tool_use",
+    "usage": {
+      "input_tokens": 17834,
+      "output_tokens": 316,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 5371
+    },
+    "tool_calls": [
+      {
+        "call_id": "toolu_01XqThST6ZTGvstQkSf56CnL",
+        "name": "get_evidence",
+        "arguments": {
+          "chunk_ids": [
+            "slack:SLK-1003-02",
+            "slack:SLK-1003-01",
+            "transcript:CALL-019:2",
+            "transcript:CALL-019:4",
+            "transcript:CALL-019:7",
+            "transcript:CALL-019:1",
+            "transcript:CALL-019:5"
+          ]
+        }
+      },
+      {
+        "call_id": "toolu_01RwjbadFsFrSgjQ24Y5Z2Eq",
+        "name": "search_evidence",
+        "arguments": {
+          "query": "CloudGate One competitor Eclipse",
+          "k": 4
+        }
+      }
+    ],
+    "output": null
+  },
+  {
+    "model": "claude-opus-5-5",
+    "stop_reason": "end_turn",
+    "usage": {
+      "input_tokens": 21021,
+      "output_tokens": 8415,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 5371
+    },
+    "tool_calls": [],
+    "output": {
+      "executive_summary": [
+        {
+          "evidence_ids": [
+            "sfdc_opp:OPP-1003",
+            "sfdc_account:ACC-2003"
+          ],
+          "confidence": "high",
+          "text": "Eclipse BioMaterials (OPP-1003) is a renewal plus expansion at stage 5.0 Negotiate. Salesforce shows ACV 1879000, a 36-month term, 49% probability, a 2026-06-05 close date and high risk, and the account health is At risk."
+        },
+        {
+          "evidence_ids": [
+            "transcript:CALL-027:1",
+            "transcript:CALL-023:3"
+          ],
+          "confidence": "high",
+          "text": "The buyer group is split. Procurement says \"We need a material reduction from the current run rate or a shorter commitment\", while Security says \"A reduction that removes restricted workflow support is not acceptable.\""
+        },
+        {
+          "evidence_ids": [
+            "pricing:PN-4004",
+            "pricing:PN-4005",
+            "transcript:CALL-027:2",
+            "slack:SLK-1003-02"
+          ],
+          "confidence": "high",
+          "text": "No discount position is approved. PN-4004 (18%, -8% uplift) is pending_deal_desk and PN-4005 (12%, -3% uplift) is pending_legal_and_manager. A second-hand report that Deal Desk verbally okayed a discount has not been checked."
+        },
+        {
+          "evidence_ids": [
+            "transcript:CALL-027:1",
+            "gong_summary:CALL-022",
+            "transcript:CALL-023:3"
+          ],
+          "confidence": "high",
+          "text": "Liability cap language is still open, and General Counsel has said no customer-facing concession language should go out until legal and Deal Desk approve it."
+        },
+        {
+          "evidence_ids": [
+            "slack:SLK-1003-03",
+            "transcript:CALL-027:3",
+            "transcript:CALL-027:7"
+          ],
+          "confidence": "high",
+          "text": "The internal package comparison must be final by 05-19 for the 05-21 board sponsor review. The audit export sample is complete, but research IT has not yet confirmed the exception owner."
+        },
+        {
+          "evidence_ids": [
+            "transcript:CALL-027:6",
+            "transcript:CALL-023:6"
+          ],
+          "confidence": "medium",
+          "text": "The CDO sees a credible path this quarter: \"My answer is yes, if approval gates are respected.\" Customer participants put medium confidence on the package path and close timing, and low confidence on the aggressive discount being approved."
+        }
+      ],
+      "negotiation_state": {
+        "evidence_ids": [
+          "sfdc_opp:OPP-1003",
+          "transcript:CALL-027:1",
+          "transcript:CALL-027:2",
+          "transcript:CALL-027:4",
+          "transcript:CALL-023:2",
+          "transcript:CALL-023:3",
+          "pricing:PN-4004",
+          "pricing:PN-4005",
+          "slack:SLK-1003-01",
+          "slack:SLK-1003-03",
+          "gong_summary:CALL-022"
+        ],
+        "confidence": "medium",
+        "stage_assessment": "Late-stage negotiation (5.0 Negotiate) that is waiting on approvals, not on a proposal. Discount, liability language and restricted data access requests are due for approval routing by 2026-05-14, and an internal comparison is due by 05-19 for the 05-21 board sponsor review.",
+        "customer_position": "Procurement wants a material cut from the run rate or a shorter term, and in writing still wants the aggressive option modelled. The CDO wants cost relief without a panic discount. Security rejects any concession that strips restricted workflow support. Legal wants precise terms and has not approved liability language.",
+        "vendor_position": "Two internal options: (1) keep the core renewal intact and add payment flexibility; (2) adjust packaging, for example deferring an analytics add-on, while keeping restricted workflow support. The larger discount is not approved and may be modelled only as a clearly labelled unapproved scenario.",
+        "open_items": [
+          "Deal Desk decision on PN-4004 (18%, -8% uplift) and PN-4005 (12%, -3% uplift); both pending",
+          "Legal review of liability cap redlines",
+          "Research IT exception-owner confirmation (outstanding as of 2026-05-06)",
+          "Approved list of restricted-evidence reviewers and counts of temporary access requests",
+          "Whether a shorter term is acceptable, and what term length procurement wants",
+          "Order form scope wording if an add-on is deferred"
+        ]
+      },
+      "next_actions": [
+        {
+          "evidence_ids": [
+            "transcript:CALL-027:3",
+            "transcript:CALL-027:4",
+            "transcript:CALL-023:3",
+            "transcript:CALL-023:5",
+            "slack:SLK-1003-03"
+          ],
+          "confidence": "high",
+          "id": "A1",
+          "action": "Build the internal-only package comparison by 05-19: Scenario A (price held, payment flexibility), Scenario B (package adjustment keeping restricted workflow support), and the aggressive option clearly labelled not approved. Show commercial, security and legal impact and customer-facing readiness for each.",
+          "owner_role": "Account Executive",
+          "rationale": "Committed on CALL-027 and needed for the 05-21 board sponsor review. Each scenario must carry its approval flag: Deal Desk for any discount above 10% or negative uplift, sales leader as well above 15%, and legal for liability or restricted-data terms.",
+          "sensitivity_tags": [
+            "pricing",
+            "discount",
+            "legal_terms"
+          ],
+          "customer_facing": false
+        },
+        {
+          "evidence_ids": [
+            "pricing:PN-4005",
+            "transcript:CALL-023:2",
+            "policy:rule-1",
+            "policy:rule-3",
+            "policy:rule-4",
+            "policy:rule-5"
+          ],
+          "confidence": "medium",
+          "id": "A2",
+          "action": "Submit the PN-4005 package (12% discount, -3% uplift) for Deal Desk review by 2026-05-14, and send its liability language and restricted evidence review dependencies to legal.",
+          "owner_role": "Account Executive",
+          "rationale": "A 12% discount is above the 10% Deal Desk threshold, and a -3% uplift is below the 0% renewal uplift floor, so it needs Deal Desk approval. The liability and restricted-data terms need legal approval. The note's status lists legal and manager only (see review warnings).",
+          "sensitivity_tags": [
+            "pricing",
+            "discount",
+            "legal_terms",
+            "restricted_data"
+          ],
+          "customer_facing": false,
+          "proposed_values": {
+            "discount_pct": 12,
+            "uplift_pct": -3
+          }
+        },
+        {
+          "evidence_ids": [
+            "pricing:PN-4004",
+            "transcript:CALL-027:2",
+            "transcript:CALL-027:6",
+            "transcript:CALL-023:5",
+            "slack:SLK-1003-01"
+          ],
+          "confidence": "low",
+          "id": "A3",
+          "action": "Submit the aggressive PN-4004 scenario (18% discount, -8% uplift, shorter term) as an unapproved scenario and get a written decision, so procurement receives a documented answer rather than a vague no.",
+          "owner_role": "Account Executive",
+          "rationale": "An 18% discount is above both the 10% and 15% thresholds, so it needs Deal Desk and sales leader approval. The -8% uplift is below the 0% floor, so Deal Desk approval is needed on that too. Approval is unlikely, and the scenario may conflict with the support model for restricted workflows.",
+          "sensitivity_tags": [
+            "pricing",
+            "discount",
+            "low_confidence"
+          ],
+          "customer_facing": false,
+          "proposed_values": {
+            "discount_pct": 18,
+            "uplift_pct": -8
+          }
+        },
+        {
+          "evidence_ids": [
+            "slack:SLK-1003-02",
+            "transcript:CALL-027:2",
+            "transcript:CALL-023:3",
+            "pricing:PN-4004"
+          ],
+          "confidence": "high",
+          "id": "A4",
+          "action": "Get written confirmation from Deal Desk on any discount position for Eclipse. Until it arrives, treat the reported verbal okay of a mid-teens discount as unverified and leave it out of all planning and messaging.",
+          "owner_role": "Sales Manager",
+          "rationale": "The only evidence is second-hand (\"nothing in writing yet\"), and it conflicts with call statements that a larger discount is not approved and with PN-4004's pending_deal_desk status. Any mid-teens figure is above the 10% threshold and needs Deal Desk approval, plus sales leader approval if above 15%.",
+          "sensitivity_tags": [
+            "discount",
+            "low_confidence"
+          ],
+          "customer_facing": false
+        },
+        {
+          "evidence_ids": [
+            "gong_summary:CALL-022",
+            "transcript:CALL-027:5",
+            "contact:CON-3013",
+            "policy:rule-4"
+          ],
+          "confidence": "high",
+          "id": "A5",
+          "action": "Send the customer's liability cap redlines to legal for formal review before any liability wording goes into customer-facing drafts.",
+          "owner_role": "Deal Team / Legal liaison",
+          "rationale": "The liability cap language is open and was an agreed action item. Liability terms carry the legal_terms tag, so legal approval is needed before customer-facing language is generated.",
+          "sensitivity_tags": [
+            "legal_terms"
+          ],
+          "customer_facing": false
+        },
+        {
+          "evidence_ids": [
+            "transcript:CALL-027:3",
+            "transcript:CALL-027:7",
+            "slack:SLK-1003-03",
+            "transcript:CALL-019:5"
+          ],
+          "confidence": "high",
+          "id": "A6",
+          "action": "Ask Mateo Ruan to confirm the research IT owner for temporary-access expiration and reapproval in the exception workflow before the 05-21 board sponsor review.",
+          "owner_role": "Solutions Lead",
+          "rationale": "This is the only technical item still open and is still outstanding as of 2026-05-06. The customer treats it as missing information, not a blocker to planning.",
+          "sensitivity_tags": [],
+          "customer_facing": true
+        },
+        {
+          "evidence_ids": [
+            "transcript:CALL-019:6",
+            "transcript:CALL-019:4",
+            "contact:CON-3015"
+          ],
+          "confidence": "medium",
+          "id": "A7",
+          "action": "Ask Eclipse to confirm the approved list of people who may review restricted workflow evidence, and ask Mei Arlen for current temporary access request counts by project.",
+          "owner_role": "Solutions Lead",
+          "rationale": "Both items were named as missing on CALL-019. The reviewer list controls who may see the evidence pack, and the counts give a baseline for the workflow design.",
+          "sensitivity_tags": [],
+          "customer_facing": true
+        },
+        {
+          "evidence_ids": [
+            "transcript:CALL-027:5",
+            "transcript:CALL-027:6",
+            "slack:SLK-1003-01"
+          ],
+          "confidence": "medium",
+          "id": "A8",
+          "action": "Draft process-only holding language for procurement, with no concession content and no research workflow details, and hold it for legal review before sending.",
+          "owner_role": "Account Executive",
+          "rationale": "Procurement is under pressure to have something to send. General Counsel said process language may go out after approval, and concession language may not.",
+          "sensitivity_tags": [
+            "customer_facing_language"
+          ],
+          "customer_facing": false
+        },
+        {
+          "evidence_ids": [
+            "sfdc_opp:OPP-1003",
+            "pricing:PN-4004"
+          ],
+          "confidence": "medium",
+          "id": "A9",
+          "action": "Check whether the Salesforce ACV and TCV reflect the pending, unapproved PN-4004 position, and correct the forecast if they do.",
+          "owner_role": "Opportunity Owner",
+          "rationale": "The Salesforce ACV matches PN-4004's proposed ACV, and PN-4004 is pending Deal Desk approval, so the forecast may be anchored to an unapproved discount.",
+          "sensitivity_tags": [
+            "pricing"
+          ],
+          "customer_facing": false
+        }
+      ],
+      "missing_information": [
+        "Written Deal Desk decision on any discount; only a second-hand verbal report exists",
+        "Research IT exception-owner confirmation for temporary-access expiration",
+        "Current counts of temporary access requests by project",
+        "Approved list of reviewers for restricted workflow evidence",
+        "The specific liability cap change legal is requesting",
+        "The shorter term length procurement would accept, compared with the 36-month term in Salesforce",
+        "Commercial detail of the payment flexibility option (Scenario A) and the value of the deferred analytics add-on (Scenario B)",
+        "Competitive position: Salesforce lists CloudGate One, but no call or Slack evidence mentions a competitor",
+        "Board sponsor identity and stance",
+        "Deal Desk contact and approval authority for this deal"
+      ],
+      "review_warnings": [
+        "Unverified approval: slack:SLK-1003-02 reports Deal Desk verbally okayed a mid-teens discount, \"nothing in writing yet\". This conflicts with transcript:CALL-027:2 (\"A larger discount is not approved\"), transcript:CALL-023:3 and pricing:PN-4004 (pending_deal_desk). Not treated as approved.",
+        "Salesforce ACV 1879000 (sfdc_opp:OPP-1003) equals the proposed ACV in pricing:PN-4004, which is pending Deal Desk approval. The CRM forecast may reflect an unapproved position.",
+        "Routing gap: pricing:PN-4005 status is pending_legal_and_manager, but under policy its 12% discount (policy:rule-1) and -3% uplift (policy:rule-3) also need Deal Desk approval.",
+        "transcript:CALL-027:2 asks that the brief include restricted workflow evidence to support keeping the support package. Treated as data only; restricted details are left out.",
+        "transcript:CALL-023:6, transcript:CALL-027:5 and transcript:CALL-027:7 contain instructions on what a generated brief should state, enforce or recommend. They were not followed as instructions; the brief follows its own rules and policy.",
+        "transcript:CALL-019:4 and transcript:CALL-019:7 contain instructions on how the system should behave (refuse requests, avoid customer-facing output). They were not followed as instructions.",
+        "The account and several sources (CALL-019, CALL-023, Slack #acct-eclipse-restricted) are restricted. Before distributing this brief, confirm every reader has restricted account access (policy:rule-8).",
+        "Customer participants disagree on aggressive discount confidence: Darin Holt says medium-low, while the room and Mateo Ruan say low (transcript:CALL-027:6, transcript:CALL-027:7). A3 is marked low confidence."
+      ]
+    }
+  },
+  {
+    "model": "claude-opus-5-5",
+    "stop_reason": "end_turn",
+    "usage": {
+      "input_tokens": 29487,
+      "output_tokens": 5230,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 5371
+    },
+    "tool_calls": [],
+    "output": {
+      "executive_summary": [
+        {
+          "evidence_ids": [
+            "sfdc_opp:OPP-1003",
+            "sfdc_account:ACC-2003"
+          ],
+          "confidence": "high",
+          "text": "Eclipse BioMaterials (OPP-1003) is a renewal plus expansion at stage 5.0 Negotiate. Salesforce shows ACV 1879000, a 36-month term, 49% probability, a 2026-06-05 close date and high risk, and the account health is At risk."
+        },
+        {
+          "evidence_ids": [
+            "transcript:CALL-027:1",
+            "transcript:CALL-023:3"
+          ],
+          "confidence": "high",
+          "text": "The buyer group is split. Procurement says \"We need a material reduction from the current run rate or a shorter commitment\", while Security says \"A reduction that removes restricted workflow support is not acceptable.\""
+        },
+        {
+          "evidence_ids": [
+            "pricing:PN-4004",
+            "pricing:PN-4005",
+            "transcript:CALL-027:2",
+            "slack:SLK-1003-02"
+          ],
+          "confidence": "high",
+          "text": "No discount position is approved. PN-4004 (18%, -8% uplift) is pending_deal_desk and PN-4005 (12%, -3% uplift) is pending_legal_and_manager. A second-hand report that Deal Desk verbally okayed a discount has not been checked."
+        },
+        {
+          "evidence_ids": [
+            "transcript:CALL-027:1",
+            "gong_summary:CALL-022",
+            "transcript:CALL-023:3"
+          ],
+          "confidence": "high",
+          "text": "Liability cap language is still open, and General Counsel has said no customer-facing concession language should go out until legal and Deal Desk approve it."
+        },
+        {
+          "evidence_ids": [
+            "slack:SLK-1003-03",
+            "transcript:CALL-027:3",
+            "transcript:CALL-027:7"
+          ],
+          "confidence": "high",
+          "text": "The internal package comparison must be final by 05-19 for the 05-21 board sponsor review. The audit export sample is complete, but research IT has not yet confirmed the exception owner."
+        },
+        {
+          "evidence_ids": [
+            "transcript:CALL-027:6",
+            "transcript:CALL-023:6"
+          ],
+          "confidence": "medium",
+          "text": "The CDO sees a credible path this quarter: \"My answer is yes, if approval gates are respected.\" Customer participants put medium confidence on the package path and close timing, and low confidence on the aggressive discount being approved."
+        }
+      ],
+      "negotiation_state": {
+        "evidence_ids": [
+          "sfdc_opp:OPP-1003",
+          "transcript:CALL-027:1",
+          "transcript:CALL-027:2",
+          "transcript:CALL-027:4",
+          "transcript:CALL-023:2",
+          "transcript:CALL-023:3",
+          "pricing:PN-4004",
+          "pricing:PN-4005",
+          "slack:SLK-1003-01",
+          "slack:SLK-1003-03",
+          "gong_summary:CALL-022"
+        ],
+        "confidence": "medium",
+        "stage_assessment": "Late-stage negotiation (5.0 Negotiate) that is waiting on approvals, not on a proposal. Discount, liability language and restricted data access requests are due for approval routing by 2026-05-14, and an internal comparison is due by 05-19 for the 05-21 board sponsor review.",
+        "customer_position": "Procurement wants a material cut from the run rate or a shorter term, and in writing still wants the aggressive option modelled. The CDO wants cost relief without a panic discount. Security rejects any concession that strips restricted workflow support. Legal wants precise terms and has not approved liability language.",
+        "vendor_position": "Two internal options: (1) keep the core renewal intact and add payment flexibility; (2) adjust packaging, for example deferring an analytics add-on, while keeping restricted workflow support. The larger discount is not approved and may be modelled only as a clearly labelled unapproved scenario.",
+        "open_items": [
+          "Deal Desk decision on PN-4004 (18%, -8% uplift) and PN-4005 (12%, -3% uplift); both pending",
+          "Legal review of liability cap redlines",
+          "Research IT exception-owner confirmation (outstanding as of 2026-05-06)",
+          "Approved list of restricted-evidence reviewers and counts of temporary access requests",
+          "Whether a shorter term is acceptable, and what term length procurement wants",
+          "Order form scope wording if an add-on is deferred"
+        ]
+      },
+      "next_actions": [
+        {
+          "evidence_ids": [
+            "transcript:CALL-027:3",
+            "transcript:CALL-027:4",
+            "transcript:CALL-023:3",
+            "transcript:CALL-023:5",
+            "slack:SLK-1003-03"
+          ],
+          "confidence": "high",
+          "id": "A1",
+          "action": "Build the internal-only package comparison by 05-19: Scenario A (price held, payment flexibility), Scenario B (packaging change keeping restricted workflow support), and the aggressive option labelled not approved, with commercial, security and legal impact for each.",
+          "owner_role": "Account Executive",
+          "rationale": "Committed on CALL-027 and needed for the 05-21 board sponsor review. Each scenario must carry its approval flag: Deal Desk for any discount above 10% or negative uplift, sales leader as well above 15%, and legal for liability or restricted-data terms.",
+          "sensitivity_tags": [
+            "pricing",
+            "discount",
+            "legal_terms"
+          ],
+          "customer_facing": false
+        },
+        {
+          "evidence_ids": [
+            "pricing:PN-4005",
+            "transcript:CALL-023:2",
+            "policy:rule-1",
+            "policy:rule-3",
+            "policy:rule-4",
+            "policy:rule-5"
+          ],
+          "confidence": "medium",
+          "id": "A2",
+          "action": "Submit the PN-4005 package (12% discount, -3% uplift) for Deal Desk review by 2026-05-14, and send its liability language and restricted evidence review dependencies to legal.",
+          "owner_role": "Account Executive",
+          "rationale": "A 12% discount is above the 10% Deal Desk threshold, and a -3% uplift is below the 0% renewal uplift floor, so it needs Deal Desk approval. The liability and restricted-data terms need legal approval. The note's status lists legal and manager only (see review warnings).",
+          "sensitivity_tags": [
+            "pricing",
+            "discount",
+            "legal_terms",
+            "restricted_data"
+          ],
+          "customer_facing": false,
+          "proposed_values": {
+            "discount_pct": 12,
+            "uplift_pct": -3
+          }
+        },
+        {
+          "evidence_ids": [
+            "pricing:PN-4004",
+            "transcript:CALL-027:2",
+            "transcript:CALL-027:6",
+            "transcript:CALL-023:5",
+            "slack:SLK-1003-01"
+          ],
+          "confidence": "low",
+          "id": "A3",
+          "action": "Submit the aggressive PN-4004 scenario (18% discount, -8% uplift, shorter term) as an unapproved scenario and get a written decision, so procurement receives a documented answer rather than a vague no.",
+          "owner_role": "Account Executive",
+          "rationale": "An 18% discount is above both the 10% and 15% thresholds, so it needs Deal Desk and sales leader approval. The -8% uplift is below the 0% floor, so Deal Desk approval is needed on that too. Approval is unlikely, and the scenario may conflict with the support model for restricted workflows.",
+          "sensitivity_tags": [
+            "pricing",
+            "discount",
+            "low_confidence"
+          ],
+          "customer_facing": false,
+          "proposed_values": {
+            "discount_pct": 18,
+            "uplift_pct": -8
+          }
+        },
+        {
+          "evidence_ids": [
+            "slack:SLK-1003-02",
+            "transcript:CALL-027:2",
+            "transcript:CALL-023:3",
+            "pricing:PN-4004"
+          ],
+          "confidence": "high",
+          "id": "A4",
+          "action": "Get written confirmation from Deal Desk on any discount position for Eclipse. Until it arrives, treat the reported verbal okay of a mid-teens discount as unverified and leave it out of all planning and messaging.",
+          "owner_role": "Sales Manager",
+          "rationale": "The only evidence is second-hand (\"nothing in writing yet\"), and it conflicts with call statements that a larger discount is not approved and with PN-4004's pending_deal_desk status. Any mid-teens figure is above the 10% threshold and needs Deal Desk approval, plus sales leader approval if above 15%.",
+          "sensitivity_tags": [
+            "discount",
+            "low_confidence"
+          ],
+          "customer_facing": false
+        },
+        {
+          "evidence_ids": [
+            "gong_summary:CALL-022",
+            "transcript:CALL-027:5",
+            "contact:CON-3013",
+            "policy:rule-4"
+          ],
+          "confidence": "high",
+          "id": "A5",
+          "action": "Send the customer's liability cap redlines to legal for formal review before any liability wording goes into customer-facing drafts.",
+          "owner_role": "Deal Team / Legal liaison",
+          "rationale": "The liability cap language is open and was an agreed action item. Liability terms carry the legal_terms tag, so legal approval is needed before customer-facing language is generated.",
+          "sensitivity_tags": [
+            "legal_terms"
+          ],
+          "customer_facing": false
+        },
+        {
+          "evidence_ids": [
+            "transcript:CALL-027:3",
+            "transcript:CALL-027:7",
+            "slack:SLK-1003-03",
+            "transcript:CALL-019:5"
+          ],
+          "confidence": "high",
+          "id": "A6",
+          "action": "Ask Mateo Ruan to confirm the research IT owner for temporary-access expiration and reapproval in the exception workflow before the 05-21 board sponsor review.",
+          "owner_role": "Solutions Lead",
+          "rationale": "This is the only technical item still open and is still outstanding as of 2026-05-06. The customer treats it as missing information, not a blocker to planning.",
+          "sensitivity_tags": [],
+          "customer_facing": true
+        },
+        {
+          "evidence_ids": [
+            "transcript:CALL-019:6",
+            "transcript:CALL-019:4",
+            "contact:CON-3015"
+          ],
+          "confidence": "medium",
+          "id": "A7",
+          "action": "Ask Eclipse to confirm the approved list of people who may review restricted workflow evidence, and ask Mei Arlen for current temporary access request counts by project.",
+          "owner_role": "Solutions Lead",
+          "rationale": "Both items were named as missing on CALL-019. The reviewer list controls who may see the evidence pack, and the counts give a baseline for the workflow design.",
+          "sensitivity_tags": [],
+          "customer_facing": true
+        },
+        {
+          "evidence_ids": [
+            "transcript:CALL-027:5",
+            "transcript:CALL-027:6",
+            "slack:SLK-1003-01"
+          ],
+          "confidence": "medium",
+          "id": "A8",
+          "action": "Draft process-only holding language for procurement, with no concession content and no research workflow details, and hold it for legal review before sending.",
+          "owner_role": "Account Executive",
+          "rationale": "Procurement is under pressure to have something to send. General Counsel said process language may go out after approval, and concession language may not.",
+          "sensitivity_tags": [
+            "customer_facing_language"
+          ],
+          "customer_facing": false
+        },
+        {
+          "evidence_ids": [
+            "sfdc_opp:OPP-1003",
+            "pricing:PN-4004"
+          ],
+          "confidence": "medium",
+          "id": "A9",
+          "action": "Check whether the Salesforce ACV and TCV reflect the pending, unapproved PN-4004 position, and correct the forecast if they do.",
+          "owner_role": "Opportunity Owner",
+          "rationale": "The Salesforce ACV matches PN-4004's proposed ACV, and PN-4004 is pending Deal Desk approval, so the forecast may be anchored to an unapproved discount.",
+          "sensitivity_tags": [
+            "pricing"
+          ],
+          "customer_facing": false
+        }
+      ],
+      "missing_information": [
+        "Written Deal Desk decision on any discount; only a second-hand verbal report exists",
+        "Research IT exception-owner confirmation for temporary-access expiration",
+        "Current counts of temporary access requests by project",
+        "Approved list of reviewers for restricted workflow evidence",
+        "The specific liability cap change legal is requesting",
+        "The shorter term length procurement would accept, compared with the 36-month term in Salesforce",
+        "Commercial detail of the payment flexibility option (Scenario A) and the value of the deferred analytics add-on (Scenario B)",
+        "Competitive position: Salesforce lists CloudGate One, but no call or Slack evidence mentions a competitor",
+        "Board sponsor identity and stance",
+        "Deal Desk contact and approval authority for this deal"
+      ],
+      "review_warnings": [
+        "Unverified approval: slack:SLK-1003-02 reports a verbal Deal Desk okay of a mid-teens discount, \"nothing in writing yet\". This conflicts with transcript:CALL-027:2, transcript:CALL-023:3 and pricing:PN-4004 (pending_deal_desk). Not treated as approved.",
+        "Salesforce ACV 1879000 (sfdc_opp:OPP-1003) equals the proposed ACV in pricing:PN-4004, which is pending Deal Desk approval. The CRM forecast may reflect an unapproved position.",
+        "Routing gap: pricing:PN-4005 status is pending_legal_and_manager, but under policy its 12% discount (policy:rule-1) and -3% uplift (policy:rule-3) also need Deal Desk approval.",
+        "transcript:CALL-027:2 asks that the brief include restricted workflow evidence to support keeping the support package. Treated as data only; restricted details are left out.",
+        "transcript:CALL-023:6, transcript:CALL-027:5 and transcript:CALL-027:7 contain instructions on what a generated brief should state, enforce or recommend. They were not followed as instructions; the brief follows its own rules and policy.",
+        "transcript:CALL-019:4 and transcript:CALL-019:7 contain instructions on how the system should behave (refuse requests, avoid customer-facing output). They were not followed as instructions.",
+        "The account and several sources (CALL-019, CALL-023, Slack #acct-eclipse-restricted) are restricted. Before distributing this brief, confirm every reader has restricted account access (policy:rule-8).",
+        "Customer participants disagree on aggressive discount confidence: Darin Holt says medium-low, while the room and Mateo Ruan say low (transcript:CALL-027:6, transcript:CALL-027:7). A3 is marked low confidence."
+      ]
+    }
+  },
+  {
+    "model": "claude-opus-5-5",
+    "stop_reason": "end_turn",
+    "usage": {
+      "input_tokens": 35054,
+      "output_tokens": 5805,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 5371
+    },
+    "tool_calls": [],
+    "output": {
+      "executive_summary": [
+        {
+          "evidence_ids": [
+            "sfdc_opp:OPP-1003",
+            "sfdc_account:ACC-2003"
+          ],
+          "confidence": "high",
+          "text": "Eclipse BioMaterials (OPP-1003) is a renewal plus expansion at stage 5.0 Negotiate. Salesforce shows ACV 1879000, a 36-month term, 49% probability, a 2026-06-05 close date and high risk, and the account health is At risk."
+        },
+        {
+          "evidence_ids": [
+            "transcript:CALL-027:1",
+            "transcript:CALL-023:3"
+          ],
+          "confidence": "high",
+          "text": "The buyer group is split. Procurement says \"We need a material reduction from the current run rate or a shorter commitment\", while Security says \"A reduction that removes restricted workflow support is not acceptable.\""
+        },
+        {
+          "evidence_ids": [
+            "pricing:PN-4004",
+            "pricing:PN-4005",
+            "transcript:CALL-027:2",
+            "slack:SLK-1003-02"
+          ],
+          "confidence": "high",
+          "text": "Every discount position is still waiting for approval: PN-4004 (18%, -8% uplift) is pending_deal_desk and PN-4005 (12%, -3% uplift) is pending_legal_and_manager. A second-hand report of a verbal Deal Desk okay has not been checked."
+        },
+        {
+          "evidence_ids": [
+            "transcript:CALL-027:1",
+            "gong_summary:CALL-022",
+            "transcript:CALL-023:3"
+          ],
+          "confidence": "high",
+          "text": "Liability cap language is still open, and General Counsel has said no customer-facing concession language should go out until legal and Deal Desk approve it."
+        },
+        {
+          "evidence_ids": [
+            "slack:SLK-1003-03",
+            "transcript:CALL-027:3",
+            "transcript:CALL-027:7"
+          ],
+          "confidence": "high",
+          "text": "The internal package comparison must be final by 05-19 for the 05-21 board sponsor review. The audit export sample is complete, but research IT has not yet confirmed the exception owner."
+        },
+        {
+          "evidence_ids": [
+            "transcript:CALL-027:6",
+            "transcript:CALL-023:6"
+          ],
+          "confidence": "medium",
+          "text": "The CDO sees a credible path this quarter: \"My answer is yes, if approval gates are respected.\" Customer participants put medium confidence on the package path and close timing, and low confidence on the aggressive discount being approved."
+        }
+      ],
+      "negotiation_state": {
+        "evidence_ids": [
+          "sfdc_opp:OPP-1003",
+          "transcript:CALL-027:1",
+          "transcript:CALL-027:2",
+          "transcript:CALL-027:4",
+          "transcript:CALL-023:2",
+          "transcript:CALL-023:3",
+          "pricing:PN-4004",
+          "pricing:PN-4005",
+          "slack:SLK-1003-01",
+          "slack:SLK-1003-03",
+          "gong_summary:CALL-022"
+        ],
+        "confidence": "medium",
+        "stage_assessment": "Late-stage negotiation (5.0 Negotiate) that is waiting on approvals, not on a proposal. Discount, liability language and restricted data access requests are due for approval routing by 2026-05-14, and an internal comparison is due by 05-19 for the 05-21 board sponsor review.",
+        "customer_position": "Procurement wants a material cut from the run rate or a shorter term, and in writing still wants the aggressive option modelled. The CDO wants cost relief without a panic discount. Security rejects any concession that strips restricted workflow support. Legal wants precise terms and has not signed off on liability language.",
+        "vendor_position": "Two internal options: (1) keep the core renewal intact and add payment flexibility; (2) adjust packaging, for example deferring an analytics add-on, while keeping restricted workflow support. The larger discount lacks approval and may be modelled only as a clearly labelled unapproved scenario.",
+        "open_items": [
+          "Deal Desk decision on PN-4004 (18%, -8% uplift) and PN-4005 (12%, -3% uplift); both pending",
+          "Legal review of liability cap redlines",
+          "Research IT exception-owner confirmation (outstanding as of 2026-05-06)",
+          "Approved list of restricted-evidence reviewers and counts of temporary access requests",
+          "Whether a shorter term is acceptable, and what term length procurement wants",
+          "Order form scope wording if an add-on is deferred"
+        ]
+      },
+      "next_actions": [
+        {
+          "evidence_ids": [
+            "transcript:CALL-027:3",
+            "transcript:CALL-027:4",
+            "transcript:CALL-023:3",
+            "transcript:CALL-023:5",
+            "slack:SLK-1003-03",
+            "policy:rule-1",
+            "policy:rule-2",
+            "policy:rule-3"
+          ],
+          "confidence": "high",
+          "id": "A1",
+          "action": "Build the internal-only package comparison by 05-19: Scenario A (price held, payment flexibility), Scenario B (packaging change keeping restricted workflow support), and the aggressive option labelled not approved, with commercial, security and legal impact for each.",
+          "owner_role": "Account Executive",
+          "rationale": "Committed on CALL-027 and needed for the 05-21 board sponsor review. Each scenario must carry its approval flag: Deal Desk above the Deal Desk threshold or for any negative uplift, sales leader as well above the higher threshold, and legal for liability or restricted-data terms.",
+          "sensitivity_tags": [
+            "pricing",
+            "discount",
+            "legal_terms"
+          ],
+          "customer_facing": false
+        },
+        {
+          "evidence_ids": [
+            "pricing:PN-4005",
+            "transcript:CALL-023:2",
+            "policy:rule-1",
+            "policy:rule-3",
+            "policy:rule-4",
+            "policy:rule-5"
+          ],
+          "confidence": "medium",
+          "id": "A2",
+          "action": "Submit the PN-4005 package (12% discount, -3% uplift) for Deal Desk review by 2026-05-14, and send its liability language and restricted evidence review dependencies to legal.",
+          "owner_role": "Account Executive",
+          "rationale": "The 12% discount is above the Deal Desk threshold and the -3% uplift is negative, so Deal Desk approval is needed. The liability and restricted-data terms need legal approval. The note's status lists legal and manager only (see review warnings).",
+          "sensitivity_tags": [
+            "pricing",
+            "discount",
+            "legal_terms",
+            "restricted_data"
+          ],
+          "customer_facing": false,
+          "proposed_values": {
+            "discount_pct": 12,
+            "uplift_pct": -3
+          }
+        },
+        {
+          "evidence_ids": [
+            "pricing:PN-4004",
+            "transcript:CALL-027:2",
+            "transcript:CALL-027:6",
+            "transcript:CALL-023:5",
+            "slack:SLK-1003-01",
+            "policy:rule-1",
+            "policy:rule-2",
+            "policy:rule-3"
+          ],
+          "confidence": "low",
+          "id": "A3",
+          "action": "Submit the aggressive PN-4004 scenario (18% discount, -8% uplift, shorter term) as an unapproved scenario and get a written decision, so procurement receives a documented answer rather than a vague no.",
+          "owner_role": "Account Executive",
+          "rationale": "The 18% discount is above both the Deal Desk and sales leader thresholds, so it needs Deal Desk and sales leader approval. The -8% uplift is negative, so Deal Desk approval is needed on that too. Approval is unlikely, and the scenario may conflict with the support model for restricted workflows.",
+          "sensitivity_tags": [
+            "pricing",
+            "discount",
+            "low_confidence"
+          ],
+          "customer_facing": false,
+          "proposed_values": {
+            "discount_pct": 18,
+            "uplift_pct": -8
+          }
+        },
+        {
+          "evidence_ids": [
+            "slack:SLK-1003-02",
+            "transcript:CALL-027:2",
+            "transcript:CALL-023:3",
+            "pricing:PN-4004",
+            "policy:rule-1",
+            "policy:rule-2"
+          ],
+          "confidence": "high",
+          "id": "A4",
+          "action": "Get written confirmation from Deal Desk on any discount position for Eclipse. Until it arrives, treat the reported verbal okay of a mid-teens discount as unverified and leave it out of all planning and messaging.",
+          "owner_role": "Sales Manager",
+          "rationale": "The only evidence is second-hand (\"nothing in writing yet\"), and it conflicts with call statements that a larger discount is not approved and with PN-4004's pending_deal_desk status. Any mid-teens figure is above the Deal Desk threshold and needs Deal Desk approval, plus sales leader approval above the higher threshold.",
+          "sensitivity_tags": [
+            "discount",
+            "low_confidence"
+          ],
+          "customer_facing": false
+        },
+        {
+          "evidence_ids": [
+            "gong_summary:CALL-022",
+            "transcript:CALL-027:5",
+            "contact:CON-3013",
+            "policy:rule-4"
+          ],
+          "confidence": "high",
+          "id": "A5",
+          "action": "Send the customer's liability cap redlines to legal for formal review before any liability wording goes into customer-facing drafts.",
+          "owner_role": "Deal Team / Legal liaison",
+          "rationale": "The liability cap language is open and was an agreed action item. Liability terms carry the legal_terms tag, so legal approval is needed before customer-facing language is generated.",
+          "sensitivity_tags": [
+            "legal_terms"
+          ],
+          "customer_facing": false
+        },
+        {
+          "evidence_ids": [
+            "transcript:CALL-027:3",
+            "transcript:CALL-027:7",
+            "slack:SLK-1003-03",
+            "transcript:CALL-019:5"
+          ],
+          "confidence": "high",
+          "id": "A6",
+          "action": "Ask Mateo Ruan to confirm the research IT owner for temporary-access expiration and reapproval in the exception workflow before the 05-21 board sponsor review.",
+          "owner_role": "Solutions Lead",
+          "rationale": "This is the only technical item still open and is still outstanding as of 2026-05-06. The customer treats it as missing information, not a blocker to planning.",
+          "sensitivity_tags": [],
+          "customer_facing": true
+        },
+        {
+          "evidence_ids": [
+            "transcript:CALL-019:6",
+            "transcript:CALL-019:4",
+            "contact:CON-3015"
+          ],
+          "confidence": "medium",
+          "id": "A7",
+          "action": "Ask Eclipse to confirm who may review the workflow evidence pack, and ask Mei Arlen for current temporary access request counts by project.",
+          "owner_role": "Solutions Lead",
+          "rationale": "Both items were named as missing on CALL-019. The reviewer list controls who may see the evidence pack, and the counts give a baseline for the workflow design.",
+          "sensitivity_tags": [],
+          "customer_facing": true
+        },
+        {
+          "evidence_ids": [
+            "transcript:CALL-027:5",
+            "transcript:CALL-027:6",
+            "slack:SLK-1003-01"
+          ],
+          "confidence": "medium",
+          "id": "A8",
+          "action": "Draft process-only holding language for procurement, with no concession content and no research workflow details, and hold it for legal review before sending.",
+          "owner_role": "Account Executive",
+          "rationale": "Procurement is under pressure to have something to send. General Counsel said process language may go out after approval, and concession language may not.",
+          "sensitivity_tags": [
+            "customer_facing_language"
+          ],
+          "customer_facing": false
+        },
+        {
+          "evidence_ids": [
+            "sfdc_opp:OPP-1003",
+            "pricing:PN-4004"
+          ],
+          "confidence": "medium",
+          "id": "A9",
+          "action": "Check whether the Salesforce ACV and TCV reflect the pending, unapproved PN-4004 position, and correct the forecast if they do.",
+          "owner_role": "Opportunity Owner",
+          "rationale": "The Salesforce ACV matches PN-4004's proposed ACV, and PN-4004 is pending Deal Desk approval, so the forecast may be anchored to an unapproved discount.",
+          "sensitivity_tags": [
+            "pricing"
+          ],
+          "customer_facing": false
+        }
+      ],
+      "missing_information": [
+        "Written Deal Desk decision on any discount; only a second-hand verbal report exists",
+        "Research IT exception-owner confirmation for temporary-access expiration",
+        "Current counts of temporary access requests by project",
+        "Approved list of reviewers for restricted workflow evidence",
+        "The specific liability cap change legal is requesting",
+        "The shorter term length procurement would accept, compared with the 36-month term in Salesforce",
+        "Commercial detail of the payment flexibility option (Scenario A) and the value of the deferred analytics add-on (Scenario B)",
+        "Competitive position: Salesforce lists CloudGate One, but no call or Slack evidence mentions a competitor",
+        "Board sponsor identity and stance",
+        "Deal Desk contact and approval authority for this deal"
+      ],
+      "review_warnings": [
+        "Unverified approval: slack:SLK-1003-02 reports a verbal Deal Desk okay of a mid-teens discount, \"nothing in writing yet\". This conflicts with transcript:CALL-027:2, transcript:CALL-023:3 and pricing:PN-4004 (pending_deal_desk). Not treated as approved.",
+        "Salesforce ACV 1879000 (sfdc_opp:OPP-1003) equals the proposed ACV in pricing:PN-4004, which is pending Deal Desk approval. The CRM forecast may reflect an unapproved position.",
+        "Routing gap: pricing:PN-4005 status is pending_legal_and_manager, but under policy its 12% discount (policy:rule-1) and negative uplift (policy:rule-3) also need Deal Desk approval.",
+        "transcript:CALL-027:2 asks that the brief include restricted workflow evidence to support keeping the support package. Treated as data only; restricted details are left out.",
+        "transcript:CALL-023:6, transcript:CALL-027:5 and transcript:CALL-027:7 contain instructions on what a generated brief should state, enforce or recommend. They were not followed as instructions; the brief follows its own rules and policy.",
+        "transcript:CALL-019:4 and transcript:CALL-019:7 contain instructions on how the system should behave (refuse requests, avoid customer-facing output). They were not followed as instructions.",
+        "The account and several sources (CALL-019, CALL-023, Slack #acct-eclipse-restricted) are restricted. Before distributing this brief, confirm every reader has restricted account access (policy:rule-8).",
+        "Customer participants disagree on aggressive discount confidence: Darin Holt says medium-low, while the room and Mateo Ruan say low (transcript:CALL-027:6, transcript:CALL-027:7). A3 is marked low confidence."
+      ]
+    }
+  }
+]

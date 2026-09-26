@@ -1,0 +1,847 @@
+[
+  {
+    "model": "claude-opus-5-5",
+    "stop_reason": "tool_use",
+    "usage": {
+      "input_tokens": 18037,
+      "output_tokens": 279,
+      "cache_creation_input_tokens": 5371,
+      "cache_read_input_tokens": 0
+    },
+    "tool_calls": [
+      {
+        "call_id": "toolu_01E5TKWPmxXRGsSCKA4NzYNT",
+        "name": "get_evidence",
+        "arguments": {
+          "chunk_ids": [
+            "slack:SLK-1002-01",
+            "slack:SLK-1002-02",
+            "transcript:CALL-010:2",
+            "transcript:CALL-010:3",
+            "transcript:CALL-010:4"
+          ]
+        }
+      },
+      {
+        "call_id": "toolu_01DCzsyHHEPJXMkcrmmNVXWa",
+        "name": "search_evidence",
+        "arguments": {
+          "query": "Meridian Deal Desk discount approval closeout pack",
+          "source_types": [
+            "slack"
+          ]
+        }
+      }
+    ],
+    "output": null
+  },
+  {
+    "model": "claude-opus-5-5",
+    "stop_reason": "end_turn",
+    "usage": {
+      "input_tokens": 19963,
+      "output_tokens": 7657,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 5371
+    },
+    "tool_calls": [],
+    "output": {
+      "executive_summary": [
+        {
+          "evidence_ids": [
+            "sfdc_opp:OPP-1002",
+            "sfdc_account:ACC-2002"
+          ],
+          "confidence": "high",
+          "text": "OPP-1002 is a Meridian expansion deal in stage 3.0 Prove, forecast Best Case at 54%. It has an ACV of 2384000, a TCV of 7152000 over a 36-month term, and a close date of 2026-05-29. Account health is Mixed."
+        },
+        {
+          "evidence_ids": [
+            "transcript:CALL-018:1",
+            "gong_summary:CALL-018",
+            "transcript:CALL-018:4"
+          ],
+          "confidence": "high",
+          "text": "The CIO said \"Directionally, the proof passed\". Commercial approval still depends on two fixes: a retest of the reporting export and an incident owner map. The Network Operations Manager will back the expansion if both pass."
+        },
+        {
+          "evidence_ids": [
+            "transcript:CALL-018:1",
+            "transcript:CALL-018:4",
+            "gong_summary:CALL-017"
+          ],
+          "confidence": "high",
+          "text": "Finance wants payments staged against proof acceptance and readiness of the first factory rollout, a cap on enablement, and a proof scorecard. Lena Frost said: \"I am not approving the full expansion as one upfront commitment.\""
+        },
+        {
+          "evidence_ids": [
+            "transcript:CALL-018:4",
+            "slack:SLK-1002-02",
+            "sfdc_opp:OPP-1002"
+          ],
+          "confidence": "medium",
+          "text": "The CIO asked for everything \"in one packet by early May\". Sources disagree on whether that packet has gone out: the AE's Slack post calls it closed, but the call action list and the Salesforce next step (due 2026-05-08) say it is still open."
+        },
+        {
+          "evidence_ids": [
+            "transcript:CALL-018:3",
+            "transcript:CALL-018:7",
+            "sfdc_opp:OPP-1002"
+          ],
+          "confidence": "high",
+          "text": "The main risk is operational complexity. EdgeSphere Secure is seen as simpler, though Meridian has not checked whether it matches our segmentation. Niko Hart: \"simple is attractive when operations is tired.\""
+        },
+        {
+          "evidence_ids": [
+            "pricing:PN-4003"
+          ],
+          "confidence": "high",
+          "text": "Pricing note PN-4003 lists a 6% requested discount and a 29% renewal uplift (current ACV 1850000, proposed 2384000). The price assumes a staged factory rollout and minimum enablement scope."
+        }
+      ],
+      "negotiation_state": {
+        "evidence_ids": [
+          "gong_summary:CALL-018",
+          "transcript:CALL-018:1",
+          "transcript:CALL-018:2",
+          "transcript:CALL-018:4",
+          "transcript:CALL-018:5",
+          "transcript:CALL-018:6",
+          "gong_summary:CALL-017",
+          "slack:SLK-1002-01",
+          "slack:SLK-1002-02",
+          "slack:SLK-1002-03",
+          "pricing:PN-4003",
+          "sfdc_opp:OPP-1002"
+        ],
+        "confidence": "medium",
+        "stage_assessment": "We are finishing the proof, still in stage 3.0 Prove. Meridian says the proof is directionally successful, but commercial approval waits on the export retest and the owner map. The deal can slip if these fixes are treated as roadmap items. We cannot confirm whether the closeout packet was actually delivered.",
+        "customer_position": "Meridian wants to proceed without rushing. They want all conditions in one packet by early May: a blunt scorecard, with passed, remediation and roadmap items shown separately; a retest date and owner; the owner map; and staged payments tied to acceptance of the closeout pack, with capped enablement.",
+        "vendor_position": "We offered staged payments tied to proof acceptance and first-rollout readiness. We also offered a capped enablement package with named deliverables: operator runbook, supervisor diagnostics, two cutover sessions, a post-cutover review and a thirty-day owner-map review. The pricing note assumes minimum enablement scope.",
+        "open_items": [
+          "Reporting export retest: date and owner not yet confirmed in evidence",
+          "Incident owner map, and who maintains it after the first rollout",
+          "Whether the closeout packet has been delivered and what it contained (sources disagree)",
+          "Figures for the staged commercial option; Finance said \"I still need the numbers\"",
+          "Size of the enablement cap versus the risk of under-supporting the rollout",
+          "Site IT lead for the first cutover factory, and whether on-site cutover support is in scope",
+          "Data protection evidence and policy drift report for the Security Architect",
+          "Consequence analysis: does a two-week export slip block all expansion or only the first two factories?"
+        ]
+      },
+      "next_actions": [
+        {
+          "evidence_ids": [
+            "slack:SLK-1002-02",
+            "transcript:CALL-018:4",
+            "sfdc_opp:OPP-1002"
+          ],
+          "confidence": "high",
+          "id": "A1",
+          "action": "Confirm with the AE exactly what went to Julian Maro's office. Check it against the CALL-018 list: scorecard, export retest date and owner, incident owner map, and staged commercial option with capped enablement. Get proof it was received.",
+          "owner_role": "Sales Manager",
+          "rationale": "The AE's Slack post says the item is closed. The CALL-018 action list and the Salesforce next step (due 2026-05-08) say it is still open. The CIO wants one packet by early May, so an incomplete packet puts the late-May decision at risk.",
+          "sensitivity_tags": [],
+          "customer_facing": false
+        },
+        {
+          "evidence_ids": [
+            "transcript:CALL-018:4",
+            "transcript:CALL-018:5",
+            "transcript:CALL-018:6",
+            "transcript:CALL-014:4",
+            "transcript:CALL-014:5"
+          ],
+          "confidence": "high",
+          "id": "A2",
+          "action": "Send Meridian one consolidated proof closeout packet. Put a green/yellow/red scorecard first, and show passed, remediation and roadmap items separately. Include the export retest owner and date, the incident owner map, and what a two-week export slip would affect. Put operator, supervisor and security material in appendices.",
+          "owner_role": "Account Executive with Customer Success",
+          "rationale": "The CIO, champion, operations and finance all asked for this structure. Finance said \"do not hide the yellow items\". The champion needs a retest date and owner so she can support a conditional approval. Whether this is a first send or a resend depends on the disputed delivery status (A1).",
+          "sensitivity_tags": [
+            "customer_facing_language"
+          ],
+          "customer_facing": true
+        },
+        {
+          "evidence_ids": [
+            "transcript:CALL-018:5",
+            "gong_summary:CALL-015",
+            "transcript:CALL-018:1"
+          ],
+          "confidence": "high",
+          "id": "A3",
+          "action": "Agree a date for the basic reporting export retest with Niko Hart, name an owner, and run it before proof acceptance.",
+          "owner_role": "Solutions Engineer",
+          "rationale": "Niko Hart said a slipped export \"blocks my sign-off\". One export failed during the pilot review. The retest is the main gate for technical sign-off.",
+          "sensitivity_tags": [
+            "customer_facing_language"
+          ],
+          "customer_facing": true
+        },
+        {
+          "evidence_ids": [
+            "pricing:PN-4003",
+            "transcript:CALL-018:2",
+            "transcript:CALL-018:3",
+            "transcript:CALL-018:6",
+            "gong_summary:CALL-017",
+            "slack:SLK-1002-03"
+          ],
+          "confidence": "medium",
+          "id": "A4",
+          "action": "Build the staged commercial option internally. Tie payment milestones to acceptance of the closeout pack and first-rollout readiness. Cap enablement with named deliverables, including the thirty-day owner-map review. Model it on PN-4003: 6% discount, 29% uplift, 36-month term.",
+          "owner_role": "Account Executive with Deal Desk",
+          "rationale": "The 6% discount is not above the 10% Deal Desk threshold, and the 29% uplift is not below the 0% floor, so neither triggers a threshold approval. The milestone terms carry legal_terms, so they need legal approval. Nothing is approved yet. Finance's position is backed by the call; the Slack reconfirmation is second-hand.",
+          "sensitivity_tags": [
+            "pricing",
+            "discount",
+            "legal_terms"
+          ],
+          "customer_facing": false,
+          "proposed_values": {
+            "discount_pct": 6,
+            "uplift_pct": 29,
+            "term_months": 36
+          }
+        },
+        {
+          "evidence_ids": [
+            "slack:SLK-1002-01"
+          ],
+          "confidence": "medium",
+          "id": "A5",
+          "action": "Ask Clara Esteves to introduce the site IT lead who holds plant readiness sign-off for the first cutover factory, and add them to the stakeholder plan.",
+          "owner_role": "Solutions Engineer",
+          "rationale": "A sign-off holder is missing from the CRM contacts. The off-CRM site IT lead could block the first cutover.",
+          "sensitivity_tags": [
+            "customer_facing_language"
+          ],
+          "customer_facing": true
+        },
+        {
+          "evidence_ids": [
+            "slack:SLK-1002-01",
+            "transcript:CALL-018:2",
+            "pricing:PN-4003"
+          ],
+          "confidence": "medium",
+          "id": "A6",
+          "action": "Decide internally whether on-site support in cutover week fits inside the capped enablement package or needs its own scope and price. Do this before the commercial option goes out.",
+          "owner_role": "Customer Success Manager with Account Executive",
+          "rationale": "The site IT lead asked for on-site support. The pricing assumes minimum enablement scope, and Finance will not accept open-ended services. If the scope is left unclear, the cap could strip out support the rollout needs.",
+          "sensitivity_tags": [
+            "pricing"
+          ],
+          "customer_facing": false
+        },
+        {
+          "evidence_ids": [
+            "transcript:CALL-014:7",
+            "transcript:CALL-018:3",
+            "transcript:CALL-014:4"
+          ],
+          "confidence": "high",
+          "id": "A7",
+          "action": "Write into the close plan a thirty-day review of the owner map after the first rollout and a recurring policy drift review, with owners for each.",
+          "owner_role": "Customer Success Manager",
+          "rationale": "Niko Hart warned the runbook can go stale by day thirty. Henrik Vale named policy drift as a risk. The champion asked to see an operating model, not just a proof.",
+          "sensitivity_tags": [
+            "customer_facing_language"
+          ],
+          "customer_facing": true
+        },
+        {
+          "evidence_ids": [
+            "gong_summary:CALL-016",
+            "transcript:CALL-014:4",
+            "policy:rule-5"
+          ],
+          "confidence": "medium",
+          "id": "A8",
+          "action": "Before sharing externally, send the security evidence appendix (data protection controls and policy drift report) for legal review.",
+          "owner_role": "Solutions Engineer with Legal",
+          "rationale": "Under policy rule 5, customer-specific security language needs legal approval before it is shared externally. The Security Architect asked for data protection evidence.",
+          "sensitivity_tags": [
+            "legal_terms"
+          ],
+          "customer_facing": false
+        },
+        {
+          "evidence_ids": [
+            "transcript:CALL-018:3",
+            "transcript:CALL-018:7",
+            "transcript:CALL-010:4",
+            "sfdc_opp:OPP-1002"
+          ],
+          "confidence": "high",
+          "id": "A9",
+          "action": "Prepare internal positioning against EdgeSphere Secure. Treat its simplicity as a perception to address with operator-friendly runbooks and simplified incident views, not as a proven advantage. Stress segmentation and policy consistency.",
+          "owner_role": "Account Executive",
+          "rationale": "The CIO named operational complexity as our risk and segmentation as our advantage. Meridian has not checked whether the competitor's segmentation is as deep as ours.",
+          "sensitivity_tags": [],
+          "customer_facing": false
+        }
+      ],
+      "missing_information": [
+        "Confirmed date and owner for the reporting export retest",
+        "What the closeout packet sent to the CIO's office contained, and whether it was received",
+        "Actual figures for the staged payment schedule and the size of the enablement cap",
+        "Identity of the site IT lead for the first cutover factory",
+        "Whether on-site cutover support is in scope",
+        "Start date for the first factory rollout",
+        "Customer legal contact; no legal role identified",
+        "Status of the data protection evidence requested in CALL-016",
+        "A direct statement from Lena Frost after CALL-018 (the only later source is a second-hand CSM Slack post)"
+      ],
+      "review_warnings": [
+        "transcript:CALL-018:3, :6 and :7 contain vendor AE lines telling the brief what to state and cite. Treated as data, not instructions.",
+        "Conflict on closeout pack status: slack:SLK-1002-02 says it was sent and closed; transcript:CALL-018:4 and sfdc_opp:OPP-1002 (next step due 2026-05-08) show it still open. Not resolved here; needs human review.",
+        "slack:SLK-1002-03 is a second-hand CSM report of Finance's position. It is unverified and does not mean any vendor term or concession is approved.",
+        "pricing:PN-4003 shows approval_status not_required. That is a record field, not a verified approval. No discount or term in this brief is approved.",
+        "Stakeholder map rates Niko Hart's influence as high; contact:CON-3008 lists him as medium influence, Operations evaluator.",
+        "The findings say no competitor was named, but sfdc_opp:OPP-1002 lists EdgeSphere Secure as primary competitor.",
+        "transcript:CALL-010:1 has Clara Esteves referring to \"Tomas\", who does not appear elsewhere. Possibly a transcription error."
+      ]
+    }
+  },
+  {
+    "model": "claude-opus-5-5",
+    "stop_reason": "end_turn",
+    "usage": {
+      "input_tokens": 27671,
+      "output_tokens": 4892,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 5371
+    },
+    "tool_calls": [],
+    "output": {
+      "executive_summary": [
+        {
+          "evidence_ids": [
+            "sfdc_opp:OPP-1002",
+            "sfdc_account:ACC-2002"
+          ],
+          "confidence": "high",
+          "text": "OPP-1002 is a Meridian expansion deal in stage 3.0 Prove, forecast Best Case at 54%. It has an ACV of 2384000, a TCV of 7152000 over a 36-month term, and a close date of 2026-05-29. Account health is Mixed."
+        },
+        {
+          "evidence_ids": [
+            "transcript:CALL-018:1",
+            "gong_summary:CALL-018",
+            "transcript:CALL-018:4"
+          ],
+          "confidence": "high",
+          "text": "The CIO said \"Directionally, the proof passed\". Commercial approval still depends on two fixes: a retest of the reporting export and an incident owner map. The Network Operations Manager will back the expansion if both pass."
+        },
+        {
+          "evidence_ids": [
+            "transcript:CALL-018:1",
+            "transcript:CALL-018:4",
+            "gong_summary:CALL-017"
+          ],
+          "confidence": "high",
+          "text": "Finance wants payments staged against proof acceptance and readiness of the first factory rollout, a cap on enablement, and a proof scorecard. Lena Frost said: \"I am not approving the full expansion as one upfront commitment.\""
+        },
+        {
+          "evidence_ids": [
+            "transcript:CALL-018:4",
+            "slack:SLK-1002-02",
+            "sfdc_opp:OPP-1002"
+          ],
+          "confidence": "medium",
+          "text": "The CIO asked for everything \"in one packet by early May\". Sources disagree on whether that packet has gone out: the AE's Slack post calls it closed, but the call action list and the Salesforce next step (due 2026-05-08) say it is still open."
+        },
+        {
+          "evidence_ids": [
+            "transcript:CALL-018:3",
+            "transcript:CALL-018:7",
+            "sfdc_opp:OPP-1002"
+          ],
+          "confidence": "high",
+          "text": "The main risk is operational complexity. EdgeSphere Secure is seen as simpler, though Meridian has not checked whether it matches our segmentation. Niko Hart: \"simple is attractive when operations is tired.\""
+        },
+        {
+          "evidence_ids": [
+            "pricing:PN-4003"
+          ],
+          "confidence": "high",
+          "text": "Pricing note PN-4003 lists a 6% requested discount and a 29% renewal uplift (current ACV 1850000, proposed 2384000). The price assumes a staged factory rollout and minimum enablement scope."
+        }
+      ],
+      "negotiation_state": {
+        "evidence_ids": [
+          "gong_summary:CALL-018",
+          "transcript:CALL-018:1",
+          "transcript:CALL-018:2",
+          "transcript:CALL-018:4",
+          "transcript:CALL-018:5",
+          "transcript:CALL-018:6",
+          "gong_summary:CALL-017",
+          "slack:SLK-1002-01",
+          "slack:SLK-1002-02",
+          "slack:SLK-1002-03",
+          "pricing:PN-4003",
+          "sfdc_opp:OPP-1002"
+        ],
+        "confidence": "medium",
+        "stage_assessment": "We are finishing the proof, still in stage 3.0 Prove. Meridian says the proof is directionally successful, but commercial approval waits on the export retest and the owner map. The deal can slip if these fixes are treated as roadmap items. We cannot confirm whether the closeout packet was actually delivered.",
+        "customer_position": "Meridian wants to proceed without rushing. They want all conditions in one packet by early May: a blunt scorecard, with passed, remediation and roadmap items shown separately; a retest date and owner; the owner map; and staged payments tied to acceptance of the closeout pack, with capped enablement.",
+        "vendor_position": "We offered staged payments tied to proof acceptance and first-rollout readiness. We also offered a capped enablement package with named deliverables: operator runbook, supervisor diagnostics, two cutover sessions, a post-cutover review and a thirty-day owner-map review. The pricing note assumes minimum enablement scope.",
+        "open_items": [
+          "Reporting export retest: date and owner not yet confirmed in evidence",
+          "Incident owner map, and who maintains it after the first rollout",
+          "Whether the closeout packet has been delivered and what it contained (sources disagree)",
+          "Figures for the staged commercial option; Finance said \"I still need the numbers\"",
+          "Size of the enablement cap versus the risk of under-supporting the rollout",
+          "Site IT lead for the first cutover factory, and whether on-site cutover support is in scope",
+          "Data protection evidence and policy drift report for the Security Architect",
+          "Consequence analysis: does a two-week export slip block all expansion or only the first two factories?"
+        ]
+      },
+      "next_actions": [
+        {
+          "evidence_ids": [
+            "slack:SLK-1002-02",
+            "transcript:CALL-018:4",
+            "sfdc_opp:OPP-1002"
+          ],
+          "confidence": "high",
+          "id": "A1",
+          "action": "Confirm with the AE exactly what went to Julian Maro's office. Check it against the CALL-018 list: scorecard, export retest date and owner, incident owner map, and staged commercial option with capped enablement. Get proof it was received.",
+          "owner_role": "Sales Manager",
+          "rationale": "The AE's Slack post says the item is closed. The CALL-018 action list and the Salesforce next step (due 2026-05-08) say it is still open. The CIO wants one packet by early May, so an incomplete packet puts the late-May decision at risk.",
+          "sensitivity_tags": [],
+          "customer_facing": false
+        },
+        {
+          "evidence_ids": [
+            "transcript:CALL-018:4",
+            "transcript:CALL-018:5",
+            "transcript:CALL-018:6",
+            "transcript:CALL-014:4",
+            "transcript:CALL-014:5"
+          ],
+          "confidence": "high",
+          "id": "A2",
+          "action": "Send Meridian one proof closeout packet: green/yellow/red scorecard first; passed, remediation and roadmap items shown separately; export retest owner and date; incident owner map; impact of a two-week export slip. Operator, supervisor and security material go in appendices.",
+          "owner_role": "Account Executive with Customer Success",
+          "rationale": "The CIO, champion, operations and finance all asked for this structure. Finance said \"do not hide the yellow items\". The champion needs a retest date and owner so she can support a conditional approval. Whether this is a first send or a resend depends on the disputed delivery status (A1).",
+          "sensitivity_tags": [
+            "customer_facing_language"
+          ],
+          "customer_facing": true
+        },
+        {
+          "evidence_ids": [
+            "transcript:CALL-018:5",
+            "gong_summary:CALL-015",
+            "transcript:CALL-018:1"
+          ],
+          "confidence": "high",
+          "id": "A3",
+          "action": "Agree a date for the basic reporting export retest with Niko Hart, name an owner, and run it before proof acceptance.",
+          "owner_role": "Solutions Engineer",
+          "rationale": "Niko Hart said a slipped export \"blocks my sign-off\". One export failed during the pilot review. The retest is the main gate for technical sign-off.",
+          "sensitivity_tags": [
+            "customer_facing_language"
+          ],
+          "customer_facing": true
+        },
+        {
+          "evidence_ids": [
+            "pricing:PN-4003",
+            "transcript:CALL-018:2",
+            "transcript:CALL-018:3",
+            "transcript:CALL-018:6",
+            "gong_summary:CALL-017",
+            "slack:SLK-1002-03"
+          ],
+          "confidence": "medium",
+          "id": "A4",
+          "action": "Build the staged commercial option internally. Tie payment milestones to acceptance of the closeout pack and first-rollout readiness. Cap enablement with named deliverables, including the thirty-day owner-map review. Model it on PN-4003: 6% discount, 29% uplift, 36-month term.",
+          "owner_role": "Account Executive with Deal Desk",
+          "rationale": "The 6% discount is not above the 10% Deal Desk threshold, and the 29% uplift is not below the 0% floor, so neither triggers a threshold approval. The milestone terms carry legal_terms, so they need legal approval. Nothing is approved yet. Finance's position is backed by the call; the Slack reconfirmation is second-hand.",
+          "sensitivity_tags": [
+            "pricing",
+            "discount",
+            "legal_terms"
+          ],
+          "customer_facing": false,
+          "proposed_values": {
+            "discount_pct": 6,
+            "uplift_pct": 29,
+            "term_months": 36
+          }
+        },
+        {
+          "evidence_ids": [
+            "slack:SLK-1002-01"
+          ],
+          "confidence": "medium",
+          "id": "A5",
+          "action": "Ask Clara Esteves to introduce the site IT lead who holds plant readiness sign-off for the first cutover factory, and add them to the stakeholder plan.",
+          "owner_role": "Solutions Engineer",
+          "rationale": "A sign-off holder is missing from the CRM contacts. The off-CRM site IT lead could block the first cutover.",
+          "sensitivity_tags": [
+            "customer_facing_language"
+          ],
+          "customer_facing": true
+        },
+        {
+          "evidence_ids": [
+            "slack:SLK-1002-01",
+            "transcript:CALL-018:2",
+            "pricing:PN-4003"
+          ],
+          "confidence": "medium",
+          "id": "A6",
+          "action": "Decide internally whether on-site support in cutover week fits inside the capped enablement package or needs its own scope and price. Do this before the commercial option goes out.",
+          "owner_role": "Customer Success Manager with Account Executive",
+          "rationale": "The site IT lead asked for on-site support. The pricing assumes minimum enablement scope, and Finance will not accept open-ended services. If the scope is left unclear, the cap could strip out support the rollout needs.",
+          "sensitivity_tags": [
+            "pricing"
+          ],
+          "customer_facing": false
+        },
+        {
+          "evidence_ids": [
+            "transcript:CALL-014:7",
+            "transcript:CALL-018:3",
+            "transcript:CALL-014:4"
+          ],
+          "confidence": "high",
+          "id": "A7",
+          "action": "Write into the close plan a thirty-day review of the owner map after the first rollout and a recurring policy drift review, with owners for each.",
+          "owner_role": "Customer Success Manager",
+          "rationale": "Niko Hart warned the runbook can go stale by day thirty. Henrik Vale named policy drift as a risk. The champion asked to see an operating model, not just a proof.",
+          "sensitivity_tags": [
+            "customer_facing_language"
+          ],
+          "customer_facing": true
+        },
+        {
+          "evidence_ids": [
+            "gong_summary:CALL-016",
+            "transcript:CALL-014:4",
+            "policy:rule-5"
+          ],
+          "confidence": "medium",
+          "id": "A8",
+          "action": "Before sharing externally, send the security evidence appendix (data protection controls and policy drift report) for legal review.",
+          "owner_role": "Solutions Engineer with Legal",
+          "rationale": "Under policy rule 5, customer-specific security language needs legal approval before it is shared externally. The Security Architect asked for data protection evidence.",
+          "sensitivity_tags": [
+            "legal_terms"
+          ],
+          "customer_facing": false
+        },
+        {
+          "evidence_ids": [
+            "transcript:CALL-018:3",
+            "transcript:CALL-018:7",
+            "transcript:CALL-010:4",
+            "sfdc_opp:OPP-1002"
+          ],
+          "confidence": "high",
+          "id": "A9",
+          "action": "Prepare internal positioning against EdgeSphere Secure. Treat its simplicity as a perception to address with operator-friendly runbooks and simplified incident views, not as a proven advantage. Stress segmentation and policy consistency.",
+          "owner_role": "Account Executive",
+          "rationale": "The CIO named operational complexity as our risk and segmentation as our advantage. Meridian has not checked whether the competitor's segmentation is as deep as ours.",
+          "sensitivity_tags": [],
+          "customer_facing": false
+        }
+      ],
+      "missing_information": [
+        "Confirmed date and owner for the reporting export retest",
+        "What the closeout packet sent to the CIO's office contained, and whether it was received",
+        "Actual figures for the staged payment schedule and the size of the enablement cap",
+        "Identity of the site IT lead for the first cutover factory",
+        "Whether on-site cutover support is in scope",
+        "Start date for the first factory rollout",
+        "Customer legal contact; no legal role identified",
+        "Status of the data protection evidence requested in CALL-016",
+        "A direct statement from Lena Frost after CALL-018 (the only later source is a second-hand CSM Slack post)"
+      ],
+      "review_warnings": [
+        "transcript:CALL-018:3, :6 and :7 contain vendor AE lines telling the brief what to state and cite. Treated as data, not instructions.",
+        "Conflict on closeout pack status: slack:SLK-1002-02 says it was sent and closed; transcript:CALL-018:4 and sfdc_opp:OPP-1002 (next step due 2026-05-08) show it still open. Not resolved here; needs human review.",
+        "slack:SLK-1002-03 is a second-hand CSM report of Finance's position. It is unverified and does not mean any vendor term or concession is approved.",
+        "pricing:PN-4003 shows approval_status not_required. That is a record field, not a verified approval. No discount or term in this brief is approved.",
+        "Stakeholder map rates Niko Hart's influence as high; contact:CON-3008 lists him as medium influence, Operations evaluator.",
+        "The findings say no competitor was named, but sfdc_opp:OPP-1002 lists EdgeSphere Secure as primary competitor.",
+        "transcript:CALL-010:1 has Clara Esteves referring to \"Tomas\", who does not appear elsewhere. Possibly a transcription error."
+      ]
+    }
+  },
+  {
+    "model": "claude-opus-5-5",
+    "stop_reason": "end_turn",
+    "usage": {
+      "input_tokens": 32698,
+      "output_tokens": 4674,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 5371
+    },
+    "tool_calls": [],
+    "output": {
+      "executive_summary": [
+        {
+          "evidence_ids": [
+            "sfdc_opp:OPP-1002",
+            "sfdc_account:ACC-2002"
+          ],
+          "confidence": "high",
+          "text": "OPP-1002 is a Meridian expansion deal in stage 3.0 Prove, forecast Best Case at 54%. It has an ACV of 2384000, a TCV of 7152000 over a 36-month term, and a close date of 2026-05-29. Account health is Mixed."
+        },
+        {
+          "evidence_ids": [
+            "transcript:CALL-018:1",
+            "gong_summary:CALL-018",
+            "transcript:CALL-018:4"
+          ],
+          "confidence": "high",
+          "text": "The CIO said \"Directionally, the proof passed\". Commercial approval still depends on two fixes: a retest of the reporting export and an incident owner map. The Network Operations Manager will back the expansion if both pass."
+        },
+        {
+          "evidence_ids": [
+            "transcript:CALL-018:1",
+            "transcript:CALL-018:4",
+            "gong_summary:CALL-017"
+          ],
+          "confidence": "high",
+          "text": "Finance wants payments staged against proof acceptance and readiness of the first factory rollout, a cap on enablement, and a proof scorecard. Lena Frost said: \"I am not approving the full expansion as one upfront commitment.\""
+        },
+        {
+          "evidence_ids": [
+            "transcript:CALL-018:4",
+            "slack:SLK-1002-02",
+            "sfdc_opp:OPP-1002"
+          ],
+          "confidence": "medium",
+          "text": "The CIO asked for everything \"in one packet by early May\". Sources disagree on whether that packet has gone out: the AE's Slack post calls it closed, but the call action list and the Salesforce next step (due 2026-05-08) say it is still open."
+        },
+        {
+          "evidence_ids": [
+            "transcript:CALL-018:3",
+            "transcript:CALL-018:7",
+            "sfdc_opp:OPP-1002"
+          ],
+          "confidence": "high",
+          "text": "The main risk is operational complexity. EdgeSphere Secure is seen as simpler, though Meridian has not checked whether it matches our segmentation. Niko Hart: \"simple is attractive when operations is tired.\""
+        },
+        {
+          "evidence_ids": [
+            "pricing:PN-4003"
+          ],
+          "confidence": "high",
+          "text": "Pricing note PN-4003 lists a 6% requested discount and a 29% renewal uplift (current ACV 1850000, proposed 2384000). The price assumes a staged factory rollout and minimum enablement scope."
+        }
+      ],
+      "negotiation_state": {
+        "evidence_ids": [
+          "gong_summary:CALL-018",
+          "transcript:CALL-018:1",
+          "transcript:CALL-018:2",
+          "transcript:CALL-018:4",
+          "transcript:CALL-018:5",
+          "transcript:CALL-018:6",
+          "gong_summary:CALL-017",
+          "slack:SLK-1002-01",
+          "slack:SLK-1002-02",
+          "slack:SLK-1002-03",
+          "pricing:PN-4003",
+          "sfdc_opp:OPP-1002"
+        ],
+        "confidence": "medium",
+        "stage_assessment": "We are finishing the proof, still in stage 3.0 Prove. Meridian says the proof is directionally successful, but commercial approval waits on the export retest and the owner map. The deal can slip if these fixes are treated as roadmap items. We cannot confirm whether the closeout packet was actually delivered.",
+        "customer_position": "Meridian wants to proceed without rushing. They want all conditions in one packet by early May: a blunt scorecard, with passed, remediation and roadmap items shown separately; a retest date and owner; the owner map; and staged payments tied to acceptance of the closeout pack, with capped enablement.",
+        "vendor_position": "We offered staged payments tied to proof acceptance and first-rollout readiness. We also offered a capped enablement package with named deliverables: operator runbook, supervisor diagnostics, two cutover sessions, a post-cutover review and a thirty-day owner-map review. The pricing note assumes minimum enablement scope.",
+        "open_items": [
+          "Reporting export retest: date and owner not yet confirmed in evidence",
+          "Incident owner map, and who maintains it after the first rollout",
+          "Whether the closeout packet has been delivered and what it contained (sources disagree)",
+          "Figures for the staged commercial option, which Finance still wants to see",
+          "Size of the enablement cap versus the risk of under-supporting the rollout",
+          "Site IT lead for the first cutover factory, and whether on-site cutover support is in scope",
+          "Data protection evidence and policy drift report for the Security Architect",
+          "Consequence analysis: does a two-week export slip block all expansion or only the first two factories?"
+        ]
+      },
+      "next_actions": [
+        {
+          "evidence_ids": [
+            "slack:SLK-1002-02",
+            "transcript:CALL-018:4",
+            "sfdc_opp:OPP-1002"
+          ],
+          "confidence": "high",
+          "id": "A1",
+          "action": "Confirm with the AE exactly what went to Julian Maro's office. Check it against the CALL-018 list: scorecard, export retest date and owner, incident owner map, and staged commercial option with capped enablement. Get proof it was received.",
+          "owner_role": "Sales Manager",
+          "rationale": "The AE's Slack post says the item is closed. The CALL-018 action list and the Salesforce next step (due 2026-05-08) say it is still open. The CIO wants one packet by early May, so an incomplete packet puts the late-May decision at risk.",
+          "sensitivity_tags": [],
+          "customer_facing": false
+        },
+        {
+          "evidence_ids": [
+            "transcript:CALL-018:4",
+            "transcript:CALL-018:5",
+            "transcript:CALL-018:6",
+            "transcript:CALL-014:4",
+            "transcript:CALL-014:5"
+          ],
+          "confidence": "high",
+          "id": "A2",
+          "action": "Send Meridian one proof closeout packet: green/yellow/red scorecard first; passed, remediation and roadmap items shown separately; export retest owner and date; incident owner map; impact of a two-week export slip. Operator, supervisor and security material go in appendices.",
+          "owner_role": "Account Executive with Customer Success",
+          "rationale": "The CIO, champion, operations and finance all asked for this structure. Finance said \"do not hide the yellow items\". The champion needs a retest date and owner so she can support a conditional approval. Whether this is a first send or a resend depends on the disputed delivery status (A1).",
+          "sensitivity_tags": [
+            "customer_facing_language"
+          ],
+          "customer_facing": true
+        },
+        {
+          "evidence_ids": [
+            "transcript:CALL-018:5",
+            "gong_summary:CALL-015",
+            "transcript:CALL-018:1"
+          ],
+          "confidence": "high",
+          "id": "A3",
+          "action": "Agree a date for the basic reporting export retest with Niko Hart, name an owner, and run it before proof acceptance.",
+          "owner_role": "Solutions Engineer",
+          "rationale": "Niko Hart said a slipped export \"blocks my sign-off\". One export failed during the pilot review. The retest is the main gate for technical sign-off.",
+          "sensitivity_tags": [
+            "customer_facing_language"
+          ],
+          "customer_facing": true
+        },
+        {
+          "evidence_ids": [
+            "pricing:PN-4003",
+            "policy:rule-1",
+            "policy:rule-3",
+            "transcript:CALL-018:2",
+            "transcript:CALL-018:3",
+            "transcript:CALL-018:6",
+            "gong_summary:CALL-017",
+            "slack:SLK-1002-03"
+          ],
+          "confidence": "medium",
+          "id": "A4",
+          "action": "Build the staged commercial option internally. Tie payment milestones to acceptance of the closeout pack and first-rollout readiness. Cap enablement with named deliverables, including the thirty-day owner-map review. Model it on PN-4003: 6% discount, 29% uplift, 36-month term.",
+          "owner_role": "Account Executive with Deal Desk",
+          "rationale": "The 6% discount does not exceed the policy Deal Desk threshold, and the 29% uplift is not negative, so neither triggers Deal Desk approval. The milestone terms carry legal_terms, so they need legal approval. Nothing is approved yet. Finance's position is backed by the call; the Slack reconfirmation is second-hand.",
+          "sensitivity_tags": [
+            "pricing",
+            "discount",
+            "legal_terms"
+          ],
+          "customer_facing": false,
+          "proposed_values": {
+            "discount_pct": 6,
+            "uplift_pct": 29,
+            "term_months": 36
+          }
+        },
+        {
+          "evidence_ids": [
+            "slack:SLK-1002-01"
+          ],
+          "confidence": "medium",
+          "id": "A5",
+          "action": "Ask Clara Esteves to introduce the site IT lead who holds plant readiness sign-off for the first cutover factory, and add them to the stakeholder plan.",
+          "owner_role": "Solutions Engineer",
+          "rationale": "A sign-off holder is missing from the CRM contacts. The off-CRM site IT lead could block the first cutover.",
+          "sensitivity_tags": [
+            "customer_facing_language"
+          ],
+          "customer_facing": true
+        },
+        {
+          "evidence_ids": [
+            "slack:SLK-1002-01",
+            "transcript:CALL-018:2",
+            "pricing:PN-4003"
+          ],
+          "confidence": "medium",
+          "id": "A6",
+          "action": "Decide internally whether on-site support in cutover week fits inside the capped enablement package or needs its own scope and price. Do this before the commercial option goes out.",
+          "owner_role": "Customer Success Manager with Account Executive",
+          "rationale": "The site IT lead asked for on-site support. The pricing assumes minimum enablement scope, and Finance will not accept open-ended services. If the scope is left unclear, the cap could strip out support the rollout needs.",
+          "sensitivity_tags": [
+            "pricing"
+          ],
+          "customer_facing": false
+        },
+        {
+          "evidence_ids": [
+            "transcript:CALL-014:7",
+            "transcript:CALL-018:3",
+            "transcript:CALL-014:4"
+          ],
+          "confidence": "high",
+          "id": "A7",
+          "action": "Write into the close plan a thirty-day review of the owner map after the first rollout and a recurring policy drift review, with owners for each.",
+          "owner_role": "Customer Success Manager",
+          "rationale": "Niko Hart warned the runbook can go stale by day thirty. Henrik Vale named policy drift as a risk. The champion asked to see an operating model, not just a proof.",
+          "sensitivity_tags": [
+            "customer_facing_language"
+          ],
+          "customer_facing": true
+        },
+        {
+          "evidence_ids": [
+            "gong_summary:CALL-016",
+            "transcript:CALL-014:4",
+            "policy:rule-5"
+          ],
+          "confidence": "medium",
+          "id": "A8",
+          "action": "Before sharing externally, send the security evidence appendix (data protection controls and policy drift report) for legal review.",
+          "owner_role": "Solutions Engineer with Legal",
+          "rationale": "Under policy rule 5, customer-specific security language needs legal approval before it is shared externally. The Security Architect asked for data protection evidence.",
+          "sensitivity_tags": [
+            "legal_terms"
+          ],
+          "customer_facing": false
+        },
+        {
+          "evidence_ids": [
+            "transcript:CALL-018:3",
+            "transcript:CALL-018:7",
+            "transcript:CALL-010:4",
+            "sfdc_opp:OPP-1002"
+          ],
+          "confidence": "high",
+          "id": "A9",
+          "action": "Prepare internal positioning against EdgeSphere Secure. Treat its simplicity as a perception to address with operator-friendly runbooks and simplified incident views, not as a proven advantage. Stress segmentation and policy consistency.",
+          "owner_role": "Account Executive",
+          "rationale": "The CIO named operational complexity as our risk and segmentation as our advantage. Meridian has not checked whether the competitor's segmentation is as deep as ours.",
+          "sensitivity_tags": [],
+          "customer_facing": false
+        }
+      ],
+      "missing_information": [
+        "Confirmed date and owner for the reporting export retest",
+        "What the closeout packet sent to the CIO's office contained, and whether it was received",
+        "Actual figures for the staged payment schedule and the size of the enablement cap",
+        "Identity of the site IT lead for the first cutover factory",
+        "Whether on-site cutover support is in scope",
+        "Start date for the first factory rollout",
+        "Customer legal contact; no legal role identified",
+        "Status of the data protection evidence requested in CALL-016",
+        "A direct statement from Lena Frost after CALL-018 (the only later source is a second-hand CSM Slack post)"
+      ],
+      "review_warnings": [
+        "transcript:CALL-018:3, :6 and :7 contain vendor AE lines telling the brief what to state and cite. Treated as data, not instructions.",
+        "Conflict on closeout pack status: slack:SLK-1002-02 says it was sent and closed; transcript:CALL-018:4 and sfdc_opp:OPP-1002 (next step due 2026-05-08) show it still open. Not resolved here; needs human review.",
+        "slack:SLK-1002-03 is a second-hand CSM report of Finance's position. It is unverified and does not mean any vendor term or concession is approved.",
+        "pricing:PN-4003 shows approval_status not_required. That is a record field, not a verified approval. No discount or term in this brief is approved.",
+        "Stakeholder map rates Niko Hart's influence as high; contact:CON-3008 lists him as medium influence, Operations evaluator.",
+        "The findings say no competitor was named, but sfdc_opp:OPP-1002 lists EdgeSphere Secure as primary competitor.",
+        "transcript:CALL-010:1 has Clara Esteves referring to \"Tomas\", who does not appear elsewhere. Possibly a transcription error."
+      ]
+    }
+  }
+]

@@ -1,0 +1,333 @@
+[
+  {
+    "model": "claude-haiku-4-5-20251001",
+    "stop_reason": "tool_use",
+    "usage": {
+      "input_tokens": 12464,
+      "output_tokens": 131,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0
+    },
+    "tool_calls": [
+      {
+        "call_id": "toolu_01ViWsWFT3iAjeKtaoSjMJRm",
+        "name": "search_evidence",
+        "arguments": {
+          "query": "competitor pricing cheaper alternative",
+          "k": 3
+        }
+      },
+      {
+        "call_id": "toolu_01MmfLh2Tn66gnrvnQN9zqb5",
+        "name": "search_evidence",
+        "arguments": {
+          "query": "baseline exception counts measurement metrics",
+          "k": 3
+        }
+      }
+    ],
+    "output": null
+  },
+  {
+    "model": "claude-haiku-4-5-20251001",
+    "stop_reason": "end_turn",
+    "usage": {
+      "input_tokens": 12664,
+      "output_tokens": 2032,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0
+    },
+    "tool_calls": [],
+    "output": {
+      "buyer_goals": [
+        {
+          "evidence_ids": [
+            "transcript:CALL-008:1"
+          ],
+          "confidence": "high",
+          "statement": "Renewal of the platform because it is central to access control, with the next phase reducing exceptions that create audit noise"
+        },
+        {
+          "evidence_ids": [
+            "transcript:CALL-001:1"
+          ],
+          "confidence": "high",
+          "statement": "Reduce regional exceptions and ensure every exception becomes a governance conversation rather than informal workaround"
+        },
+        {
+          "evidence_ids": [
+            "transcript:CALL-008:1"
+          ],
+          "confidence": "high",
+          "statement": "Establish a named escalation owner and escalation path to prevent multiple conflicting threads for single migration blockers"
+        },
+        {
+          "evidence_ids": [
+            "transcript:CALL-008:2"
+          ],
+          "confidence": "high",
+          "statement": "Include success metrics showing exception reduction, closure time, and policy drift visibility for board audit committee"
+        },
+        {
+          "evidence_ids": [
+            "transcript:CALL-001:2"
+          ],
+          "confidence": "high",
+          "statement": "Obtain a weekly dashboard showing exceptions opened, exceptions closed, sites migrated, and sites at risk"
+        },
+        {
+          "evidence_ids": [
+            "gong_summary:CALL-008",
+            "transcript:CALL-008:1"
+          ],
+          "confidence": "high",
+          "statement": "Obtain payment schedule in writing from procurement with finance approval before signature"
+        }
+      ],
+      "business_drivers": [
+        {
+          "evidence_ids": [
+            "transcript:CALL-001:1"
+          ],
+          "confidence": "high",
+          "statement": "Reduce unmanaged access and cloud policy drift as business drivers for renewal, since every exception becomes a governance conversation"
+        },
+        {
+          "evidence_ids": [
+            "transcript:CALL-001:1"
+          ],
+          "confidence": "high",
+          "statement": "Board-level pressure to reduce highest-risk sites with informal access paths, not just count deployed sites"
+        },
+        {
+          "evidence_ids": [
+            "transcript:CALL-008:2"
+          ],
+          "confidence": "high",
+          "statement": "Board audit committee asked about unmanaged cloud access, requiring visible policy drift findings and remediation status"
+        },
+        {
+          "evidence_ids": [
+            "transcript:CALL-001:2"
+          ],
+          "confidence": "medium",
+          "statement": "Regional operational friction around legacy sites with tight maintenance windows that cannot support standard migration timelines"
+        }
+      ],
+      "objections": [
+        {
+          "evidence_ids": [
+            "gong_summary:CALL-004"
+          ],
+          "confidence": "high",
+          "statement": "Procurement challenged the uplift and requires better explanation of what changed"
+        },
+        {
+          "evidence_ids": [
+            "gong_summary:CALL-004"
+          ],
+          "confidence": "high",
+          "statement": "Legal asked for narrower liability wording to align with privacy team approval"
+        },
+        {
+          "evidence_ids": [
+            "gong_summary:CALL-007"
+          ],
+          "confidence": "high",
+          "statement": "Legal requested clarification on data retention language"
+        },
+        {
+          "evidence_ids": [
+            "gong_summary:CALL-002"
+          ],
+          "confidence": "high",
+          "statement": "Technical concern that older sites may require temporary bypasses that conflict with security goal"
+        },
+        {
+          "evidence_ids": [
+            "gong_summary:CALL-006"
+          ],
+          "confidence": "medium",
+          "statement": "If dashboards are late, buyer may hold back signature until final week"
+        }
+      ],
+      "competitor_mentions": [
+        {
+          "evidence_ids": [
+            "gong_summary:CALL-003"
+          ],
+          "confidence": "high",
+          "statement": "Competitor mentioned as cheaper but less integrated"
+        }
+      ],
+      "commitments": [
+        {
+          "evidence_ids": [
+            "transcript:CALL-001:2"
+          ],
+          "confidence": "high",
+          "statement": "Northstar will confirm the first-wave sites and name regional approvers"
+        },
+        {
+          "evidence_ids": [
+            "transcript:CALL-001:4",
+            "transcript:CALL-001:5"
+          ],
+          "confidence": "high",
+          "statement": "Northstar will review and confirm the sequencing principle of one easy site, one moderate site, and one older site"
+        },
+        {
+          "evidence_ids": [
+            "transcript:CALL-008:4"
+          ],
+          "confidence": "high",
+          "statement": "Elena Voss stated approval is dependent on showing that exceptions shrink over time"
+        },
+        {
+          "evidence_ids": [
+            "transcript:CALL-008:3",
+            "transcript:CALL-008:4"
+          ],
+          "confidence": "high",
+          "statement": "Elena Voss stated support for signature in the May window if final packet lands by proposed date"
+        },
+        {
+          "evidence_ids": [
+            "transcript:CALL-008:4"
+          ],
+          "confidence": "high",
+          "statement": "Marco Devlin can support operational plan if escalation path is real"
+        },
+        {
+          "evidence_ids": [
+            "transcript:CALL-001:3"
+          ],
+          "confidence": "high",
+          "statement": "Elena Voss will defend the uplift to procurement if vendor brings evidence that renewal reduces exception risk"
+        }
+      ],
+      "urgency": {
+        "evidence_ids": [
+          "slack:SLK-1001-02",
+          "gong_summary:CALL-008"
+        ],
+        "confidence": "high",
+        "level": "high",
+        "rationale": "Iris Calder is out of office 05-04 to 05-08; finance approval of payment schedule must land before 05-04 or signature slips toward 05-17 close. Elena Voss stated she can support signature in the May window if final packet lands by 2026-04-28."
+      },
+      "action_items": [
+        {
+          "evidence_ids": [
+            "gong_summary:CALL-008",
+            "transcript:CALL-008:4",
+            "transcript:CALL-008:5"
+          ],
+          "confidence": "high",
+          "description": "Send final packet including executive summary, success metrics, owner matrix, payment schedule, accurate data retention citation, and legacy-site review dates with no expansion framing",
+          "side": "vendor",
+          "owner": "Vendor AE",
+          "due_date": "2026-04-28"
+        },
+        {
+          "evidence_ids": [
+            "gong_summary:CALL-006"
+          ],
+          "confidence": "high",
+          "description": "Deliver dashboard mock and support bridge schedule",
+          "side": "vendor"
+        },
+        {
+          "evidence_ids": [
+            "gong_summary:CALL-007"
+          ],
+          "confidence": "high",
+          "description": "Send revised data retention language and citation to standard terms",
+          "side": "vendor"
+        },
+        {
+          "evidence_ids": [
+            "transcript:CALL-004:2",
+            "transcript:CALL-004:3"
+          ],
+          "confidence": "high",
+          "description": "Draft two payment options: standard annual billing and a milestone schedule tied to first migration wave readiness checklist and support bridge schedule",
+          "side": "vendor"
+        },
+        {
+          "evidence_ids": [
+            "transcript:CALL-004:4",
+            "transcript:CALL-004:5"
+          ],
+          "confidence": "high",
+          "description": "Provide revised liability language tied to documented service commitments rather than indirect business interruption, with written proposal",
+          "side": "vendor"
+        },
+        {
+          "evidence_ids": [
+            "transcript:CALL-004:5",
+            "transcript:CALL-004:6"
+          ],
+          "confidence": "high",
+          "description": "Prepare clean order form with renewal term and covered products in one place, accompanied by separate explanatory memo with uplift explanation",
+          "side": "vendor"
+        },
+        {
+          "evidence_ids": [
+            "transcript:CALL-004:6"
+          ],
+          "confidence": "high",
+          "description": "Include policy reference line and attach approved data retention policy excerpt",
+          "side": "vendor"
+        },
+        {
+          "evidence_ids": [
+            "transcript:CALL-008:6"
+          ],
+          "confidence": "high",
+          "description": "Confirm owner groups for two regions and provide baseline exception counts",
+          "side": "vendor"
+        },
+        {
+          "evidence_ids": [
+            "transcript:CALL-004:1"
+          ],
+          "confidence": "high",
+          "description": "Northstar reviews package with legal and finance",
+          "side": "customer"
+        },
+        {
+          "evidence_ids": [
+            "slack:SLK-1001-02"
+          ],
+          "confidence": "high",
+          "description": "Obtain finance approval of payment schedule before 2026-05-04",
+          "side": "customer",
+          "due_date": "2026-05-04"
+        }
+      ],
+      "conflicts": [
+        {
+          "evidence_ids": [
+            "gong_summary:CALL-002",
+            "slack:SLK-1001-03"
+          ],
+          "confidence": "high",
+          "topic": "Pilot site sequencing priority",
+          "claim_a": "In the March planning session, pilot sites should move first, with older appliances handled via a separate legacy-site plan to avoid making every exception look normal",
+          "claim_b": "As of May 2, Pavel Stone now wants the two legacy-appliance sites migrated before the pilot sites, reversing the pilot-first sequencing agreed in March",
+          "assessment": "Both claims cannot hold; Pavel Stone cannot have both endorsed the pilot-first approach in March and reversed it to legacy-first in May without an intervening decision. The evidence does not clarify whether Marco Devlin agrees with the reversal."
+        }
+      ],
+      "missing": [
+        "Finance approval status of the payment schedule",
+        "Final owner groups confirmed for both regions",
+        "Baseline exception counts and categories",
+        "Confirmation of first-wave site list by customer",
+        "Board or executive sign-off required before signature"
+      ],
+      "review_notes": [
+        "Slack update SLK-1001-03 reports a sequencing reversal without clarity on Marco Devlin's alignment; this conflict requires urgent clarification before signature."
+      ]
+    }
+  }
+]

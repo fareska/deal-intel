@@ -7,8 +7,9 @@ from sqlalchemy import any_, select
 from sqlalchemy.orm import Session
 
 from deal_intel.api.errors import Forbidden, NotFound
+from deal_intel.api.services.runs import load_readable_run
 from deal_intel.contracts.api import ApprovalResponse, DecisionRequest
-from deal_intel.contracts.approvals import ApprovalRecord, ApprovalStatus
+from deal_intel.contracts.approvals import ApprovalEvent, ApprovalRecord, ApprovalStatus
 from deal_intel.contracts.brief import Brief, EvidenceEntry
 from deal_intel.contracts.runs import RunRecord
 from deal_intel.db.models import ApprovalRow
@@ -21,7 +22,7 @@ from deal_intel.policy.engine import (
     decide,
     expire_overdue,
 )
-from deal_intel.policy.store import approval_record, latest_events
+from deal_intel.policy.store import approval_record, events_for, latest_events
 from deal_intel.rendering.brief import latest_brief
 
 LISTABLE_STATUSES: tuple[ApprovalStatus, ...] = (
@@ -53,6 +54,21 @@ def approvals_for(
         note = events[record.approval_id].note if record.approval_id in events else None
         views.append(approval_response(session, record, run, note))
     return views
+
+
+def approvals_for_run(
+    session: Session, run_id: str, reader_user_id: str
+) -> tuple[list[ApprovalRecord], list[ApprovalEvent]]:
+    run = load_readable_run(session, run_id, reader_user_id)
+    rows = list(
+        session.scalars(
+            select(ApprovalRow)
+            .where(ApprovalRow.run_id == run.run_id)
+            .order_by(ApprovalRow.created_at, ApprovalRow.approval_id)
+        )
+    )
+    records = [approval_record(row) for row in rows]
+    return records, events_for(session, [record.approval_id for record in records])
 
 
 def eligible_approvals_query(user_id: str, statuses: Sequence[ApprovalStatus]):

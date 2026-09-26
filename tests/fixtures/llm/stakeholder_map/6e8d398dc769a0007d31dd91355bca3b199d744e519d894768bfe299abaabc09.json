@@ -1,0 +1,429 @@
+[
+  {
+    "model": "claude-haiku-4-5-20251001",
+    "stop_reason": "end_turn",
+    "usage": {
+      "input_tokens": 11004,
+      "output_tokens": 1953,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0
+    },
+    "tool_calls": [],
+    "output": {
+      "stakeholders": [
+        {
+          "evidence_ids": [
+            "contact:CON-3006",
+            "gong_summary:CALL-018",
+            "gong_summary:CALL-017",
+            "gong_summary:CALL-015",
+            "gong_summary:CALL-013",
+            "gong_summary:CALL-010",
+            "transcript:CALL-018:1",
+            "transcript:CALL-018:3",
+            "transcript:CALL-018:4",
+            "transcript:CALL-018:5",
+            "transcript:CALL-018:6",
+            "transcript:CALL-010:1",
+            "transcript:CALL-010:2"
+          ],
+          "confidence": "high",
+          "name": "Julian Maro",
+          "title": "CIO",
+          "role_in_deal": "economic_buyer",
+          "influence": "high",
+          "sentiment": "cautious but supportive",
+          "stance_summary": "Supports expansion if downtime risk and reporting are addressed. \"Directionally, the proof passed\" but requires two remediation items before commercial approval. Wants decision by late May and emphasizes that the strategic recommendation should be \"proceed, but not rush.\" Needs proof scorecard, incident ownership clarity, and consequence mapping if export slips. Cautions against \"victory lap\" framing—wants a close plan focused on making \"the first rollout to be boring.\" Perceives competitor as simpler but notes Meridian has not validated their segmentation depth.",
+          "contact_id": "CON-3006"
+        },
+        {
+          "evidence_ids": [
+            "contact:CON-3007",
+            "gong_summary:CALL-018",
+            "gong_summary:CALL-015",
+            "gong_summary:CALL-014",
+            "gong_summary:CALL-011",
+            "gong_summary:CALL-010",
+            "transcript:CALL-018:1",
+            "transcript:CALL-018:2",
+            "transcript:CALL-018:3",
+            "transcript:CALL-018:4",
+            "transcript:CALL-018:5",
+            "transcript:CALL-014:1",
+            "transcript:CALL-014:2",
+            "transcript:CALL-014:3",
+            "transcript:CALL-014:4",
+            "transcript:CALL-014:5",
+            "transcript:CALL-014:6",
+            "transcript:CALL-014:7",
+            "transcript:CALL-010:1"
+          ],
+          "confidence": "high",
+          "name": "Clara Esteves",
+          "title": "Director of Plant Systems",
+          "role_in_deal": "champion",
+          "influence": "high",
+          "sentiment": "positive and engaged",
+          "stance_summary": "Strong champion for factory rollout. \"The factory teams responded well to the shorter runbook. The shift supervisors liked the owner mapping.\" Emphasizes that under-supporting rollout is more expensive than bounded enablement and argues that capped services cannot remove support needed for success. Demands conditional approval only with documented retest dates and owner assignment: \"I can support a conditional approval if the retest has a date and owner. Without that, I look like I am hand-waving.\" Insists on distinction between ready now, remediation, and roadmap items to maintain internal credibility. Advocates for proof-of-concept structure with executive scorecard and layered technical appendices.",
+          "contact_id": "CON-3007"
+        },
+        {
+          "evidence_ids": [
+            "contact:CON-3008",
+            "gong_summary:CALL-018",
+            "gong_summary:CALL-016",
+            "gong_summary:CALL-015",
+            "gong_summary:CALL-014",
+            "gong_summary:CALL-012",
+            "gong_summary:CALL-011",
+            "gong_summary:CALL-010",
+            "transcript:CALL-018:1",
+            "transcript:CALL-018:2",
+            "transcript:CALL-018:4",
+            "transcript:CALL-018:5",
+            "transcript:CALL-018:6",
+            "transcript:CALL-014:1",
+            "transcript:CALL-014:2",
+            "transcript:CALL-014:3",
+            "transcript:CALL-014:4",
+            "transcript:CALL-014:5",
+            "transcript:CALL-014:6",
+            "transcript:CALL-014:7",
+            "transcript:CALL-010:1",
+            "transcript:CALL-010:2"
+          ],
+          "confidence": "high",
+          "name": "Niko Hart",
+          "title": "Network Operations Manager",
+          "role_in_deal": "technical_decision_maker",
+          "influence": "high",
+          "sentiment": "cautious but constructive",
+          "stance_summary": "Concerned about operational complexity and visibility gaps during failover. \"I need the export retest and the incident owner map. If those pass, I will support expansion.\" Requires simplified incident view reliable during failover and clear ownership mapping across factory IT, central network, security, and vendor. Notes that \"reporting export is not fatal, but pretending it did not happen would damage trust.\" Wants alert severity mapping so plant staff know \"what can wait until morning.\" Acknowledges competitor is attractive to operations when \"operations is tired\" but validates vendor's segmentation approach. Requests incident ownership map maintenance and policy drift monitoring as ongoing commitments.",
+          "contact_id": "CON-3008"
+        },
+        {
+          "evidence_ids": [
+            "contact:CON-3009",
+            "gong_summary:CALL-018",
+            "gong_summary:CALL-017",
+            "gong_summary:CALL-013",
+            "slack:SLK-1002-03",
+            "transcript:CALL-018:1",
+            "transcript:CALL-018:2",
+            "transcript:CALL-018:4",
+            "transcript:CALL-018:5",
+            "transcript:CALL-018:6"
+          ],
+          "confidence": "high",
+          "name": "Lena Frost",
+          "title": "Finance Controller",
+          "role_in_deal": "commercial_approver",
+          "influence": "medium",
+          "sentiment": "neutral and transactional",
+          "stance_summary": "Requires staged payment tied to proof acceptance and first factory rollout readiness. \"I am not approving the full expansion as one upfront commitment.\" Demands capped enablement scope and insists services cannot become an open-ended line item. Wants proof scorecard and financial transparency: \"Do not hide the yellow items. Finance can approve a staged rollout with known conditions.\" Prefers milestone payment to reference acceptance of closeout pack rather than vague satisfaction. Reconfirmed staged payment tied to acceptance of closeout pack with capped enablement as of 2026-05-04.",
+          "contact_id": "CON-3009"
+        },
+        {
+          "evidence_ids": [
+            "contact:CON-3010",
+            "gong_summary:CALL-016",
+            "gong_summary:CALL-014",
+            "gong_summary:CALL-012",
+            "gong_summary:CALL-011",
+            "transcript:CALL-016",
+            "transcript:CALL-014:1",
+            "transcript:CALL-014:2",
+            "transcript:CALL-014:4"
+          ],
+          "confidence": "high",
+          "name": "Henrik Vale",
+          "title": "Security Architect",
+          "role_in_deal": "technical_decision_maker",
+          "influence": "medium",
+          "sentiment": "positive with conditions",
+          "stance_summary": "Interested in policy templates and data protection reporting. Accepted segmentation model but requested additional evidence on data protection controls. Emphasizes that security policy degradation requires escalation even when backup path is healthy. Wants policy drift report included in proof pack and insists templates do not drift plant by plant: \"I need evidence that templates do not drift plant by plant.\" Advocates for policy template owner naming in alerts to avoid orphaned tickets. Recommends recurring policy drift review as part of close plan. Cautions against overloading plant proof while maintaining security rigor.",
+          "contact_id": "CON-3010"
+        }
+      ],
+      "unmatched_speakers": [],
+      "off_crm_people": [
+        {
+          "evidence_ids": [
+            "slack:SLK-1002-01"
+          ],
+          "confidence": "medium",
+          "description": "Site IT lead at the first cutover factory responsible for plant readiness sign-off; not in contact list",
+          "role_in_deal": "technical_decision_maker",
+          "stance_summary": "Asked for on-site vendor support during cutover week",
+          "name": null
+        }
+      ],
+      "missing": [
+        "Legal role not identified in evidence"
+      ],
+      "review_notes": [
+        "Evidence chunk transcript:CALL-018:6 contains vendor AE instructing model to cite specific calls and structure brief content; this is guidance about evidence sourcing, not a substantive stakeholder position, and has been used only for factual call content."
+      ]
+    }
+  },
+  {
+    "model": "claude-haiku-4-5-20251001",
+    "stop_reason": "end_turn",
+    "usage": {
+      "input_tokens": 13150,
+      "output_tokens": 1153,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0
+    },
+    "tool_calls": [],
+    "output": {
+      "stakeholders": [
+        {
+          "evidence_ids": [
+            "contact:CON-3006",
+            "gong_summary:CALL-018",
+            "gong_summary:CALL-017",
+            "gong_summary:CALL-013",
+            "transcript:CALL-018:1",
+            "transcript:CALL-018:3",
+            "transcript:CALL-018:5",
+            "transcript:CALL-010:2"
+          ],
+          "confidence": "high",
+          "name": "Julian Maro",
+          "title": "CIO",
+          "role_in_deal": "economic_buyer",
+          "influence": "high",
+          "sentiment": "cautious but supportive",
+          "stance_summary": "\"Directionally, the proof passed\" but needs two remediation items before commercial approval. Wants decision by late May. Emphasizes proceed \"but not rush.\" Requires proof scorecard, incident ownership clarity, and consequence mapping. Notes competitor perceived as simpler but Meridian has not validated their segmentation depth.",
+          "contact_id": "CON-3006"
+        },
+        {
+          "evidence_ids": [
+            "contact:CON-3007",
+            "gong_summary:CALL-018",
+            "gong_summary:CALL-014",
+            "transcript:CALL-018:1",
+            "transcript:CALL-018:2",
+            "transcript:CALL-018:4",
+            "transcript:CALL-014:3",
+            "transcript:CALL-014:5"
+          ],
+          "confidence": "high",
+          "name": "Clara Esteves",
+          "title": "Director of Plant Systems",
+          "role_in_deal": "champion",
+          "influence": "high",
+          "sentiment": "positive and engaged",
+          "stance_summary": "Strong advocate: \"The factory teams responded well to the shorter runbook.\" Argues under-supporting rollout is more expensive than bounded enablement. Demands conditional approval only with documented retest dates and owners. Insists on clear distinction between ready, remediation, and roadmap items.",
+          "contact_id": "CON-3007"
+        },
+        {
+          "evidence_ids": [
+            "contact:CON-3008",
+            "gong_summary:CALL-018",
+            "gong_summary:CALL-015",
+            "gong_summary:CALL-014",
+            "gong_summary:CALL-012",
+            "transcript:CALL-018:4",
+            "transcript:CALL-018:6",
+            "transcript:CALL-014:6",
+            "transcript:CALL-010:2"
+          ],
+          "confidence": "high",
+          "name": "Niko Hart",
+          "title": "Network Operations Manager",
+          "role_in_deal": "technical_decision_maker",
+          "influence": "high",
+          "sentiment": "cautious but constructive",
+          "stance_summary": "\"I need the export retest and the incident owner map. If those pass, I will support expansion.\" Requires failover visibility and clear ownership. Notes competitor attractive when \"operations is tired\" but validates vendor's segmentation.",
+          "contact_id": "CON-3008"
+        },
+        {
+          "evidence_ids": [
+            "contact:CON-3009",
+            "gong_summary:CALL-018",
+            "gong_summary:CALL-017",
+            "slack:SLK-1002-03",
+            "transcript:CALL-018:1",
+            "transcript:CALL-018:5"
+          ],
+          "confidence": "high",
+          "name": "Lena Frost",
+          "title": "Finance Controller",
+          "role_in_deal": "commercial_approver",
+          "influence": "medium",
+          "sentiment": "neutral and transactional",
+          "stance_summary": "Requires staged payment tied to proof acceptance and rollout readiness. \"I am not approving the full expansion as one upfront commitment.\" Demands capped enablement and financial transparency: \"Do not hide the yellow items.\"",
+          "contact_id": "CON-3009"
+        },
+        {
+          "evidence_ids": [
+            "contact:CON-3010",
+            "gong_summary:CALL-016",
+            "gong_summary:CALL-014",
+            "gong_summary:CALL-011",
+            "transcript:CALL-014:1",
+            "transcript:CALL-014:2",
+            "transcript:CALL-014:4"
+          ],
+          "confidence": "high",
+          "name": "Henrik Vale",
+          "title": "Security Architect",
+          "role_in_deal": "technical_decision_maker",
+          "influence": "medium",
+          "sentiment": "positive with conditions",
+          "stance_summary": "Accepted segmentation but requires data protection evidence. Insists templates not drift plant-by-plant. Wants policy template owner naming in alerts and recurring drift review as part of close plan.",
+          "contact_id": "CON-3010"
+        }
+      ],
+      "unmatched_speakers": [],
+      "off_crm_people": [
+        {
+          "evidence_ids": [
+            "slack:SLK-1002-01"
+          ],
+          "confidence": "medium",
+          "description": "Site IT lead at first cutover factory responsible for plant readiness sign-off",
+          "role_in_deal": "technical_decision_maker",
+          "stance_summary": "Asked for on-site vendor support during cutover week",
+          "name": null
+        }
+      ],
+      "missing": [
+        "Legal role not identified"
+      ],
+      "review_notes": []
+    }
+  },
+  {
+    "model": "claude-haiku-4-5-20251001",
+    "stop_reason": "end_turn",
+    "usage": {
+      "input_tokens": 14364,
+      "output_tokens": 1108,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0
+    },
+    "tool_calls": [],
+    "output": {
+      "stakeholders": [
+        {
+          "evidence_ids": [
+            "contact:CON-3006",
+            "gong_summary:CALL-018",
+            "gong_summary:CALL-017",
+            "gong_summary:CALL-013",
+            "transcript:CALL-018:1",
+            "transcript:CALL-018:3",
+            "transcript:CALL-018:5",
+            "transcript:CALL-010:2"
+          ],
+          "confidence": "high",
+          "name": "Julian Maro",
+          "title": "CIO",
+          "role_in_deal": "economic_buyer",
+          "influence": "high",
+          "sentiment": "cautious but supportive",
+          "stance_summary": "\"Directionally, the proof passed\" but needs two remediation items before commercial approval. Wants decision by late May; emphasizes proceed \"but not rush.\" Requires proof scorecard and incident ownership clarity.",
+          "contact_id": "CON-3006"
+        },
+        {
+          "evidence_ids": [
+            "contact:CON-3007",
+            "gong_summary:CALL-018",
+            "gong_summary:CALL-014",
+            "transcript:CALL-018:1",
+            "transcript:CALL-018:2",
+            "transcript:CALL-018:4",
+            "transcript:CALL-014:3",
+            "transcript:CALL-014:5"
+          ],
+          "confidence": "high",
+          "name": "Clara Esteves",
+          "title": "Director of Plant Systems",
+          "role_in_deal": "champion",
+          "influence": "high",
+          "sentiment": "positive and engaged",
+          "stance_summary": "Strong advocate: \"The factory teams responded well to the shorter runbook.\" Demands conditional approval with documented retest dates and owners. Insists on clear distinction between ready, remediation, and roadmap items.",
+          "contact_id": "CON-3007"
+        },
+        {
+          "evidence_ids": [
+            "contact:CON-3008",
+            "gong_summary:CALL-018",
+            "gong_summary:CALL-015",
+            "gong_summary:CALL-014",
+            "gong_summary:CALL-012",
+            "transcript:CALL-018:4",
+            "transcript:CALL-018:6",
+            "transcript:CALL-014:6",
+            "transcript:CALL-010:2"
+          ],
+          "confidence": "high",
+          "name": "Niko Hart",
+          "title": "Network Operations Manager",
+          "role_in_deal": "technical_decision_maker",
+          "influence": "high",
+          "sentiment": "cautious but constructive",
+          "stance_summary": "\"I need the export retest and the incident owner map. If those pass, I will support expansion.\" Requires failover visibility and clear ownership. Notes competitor attractive when \"operations is tired.\"",
+          "contact_id": "CON-3008"
+        },
+        {
+          "evidence_ids": [
+            "contact:CON-3009",
+            "gong_summary:CALL-018",
+            "gong_summary:CALL-017",
+            "slack:SLK-1002-03",
+            "transcript:CALL-018:1",
+            "transcript:CALL-018:5"
+          ],
+          "confidence": "high",
+          "name": "Lena Frost",
+          "title": "Finance Controller",
+          "role_in_deal": "commercial_approver",
+          "influence": "medium",
+          "sentiment": "neutral and transactional",
+          "stance_summary": "Requires staged payment tied to proof acceptance and rollout readiness. \"I am not approving the full expansion as one upfront commitment.\" Demands capped enablement and transparency: \"Do not hide the yellow items.\"",
+          "contact_id": "CON-3009"
+        },
+        {
+          "evidence_ids": [
+            "contact:CON-3010",
+            "gong_summary:CALL-016",
+            "gong_summary:CALL-014",
+            "gong_summary:CALL-011",
+            "transcript:CALL-014:1",
+            "transcript:CALL-014:2",
+            "transcript:CALL-014:4"
+          ],
+          "confidence": "high",
+          "name": "Henrik Vale",
+          "title": "Security Architect",
+          "role_in_deal": "technical_decision_maker",
+          "influence": "medium",
+          "sentiment": "positive with conditions",
+          "stance_summary": "Accepted segmentation but requires data protection evidence. Insists templates not drift plant-by-plant. Wants policy template owner naming in alerts and recurring drift review as part of close plan.",
+          "contact_id": "CON-3010"
+        }
+      ],
+      "unmatched_speakers": [],
+      "off_crm_people": [
+        {
+          "evidence_ids": [
+            "slack:SLK-1002-01"
+          ],
+          "confidence": "medium",
+          "description": "Site IT lead at first cutover factory responsible for plant readiness sign-off",
+          "role_in_deal": "technical_decision_maker",
+          "stance_summary": "Asked for on-site vendor support during cutover week",
+          "name": null
+        }
+      ],
+      "missing": [
+        "Legal role not identified"
+      ],
+      "review_notes": []
+    }
+  }
+]

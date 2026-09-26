@@ -1,0 +1,408 @@
+[
+  {
+    "model": "claude-haiku-4-5-20251001",
+    "stop_reason": "end_turn",
+    "usage": {
+      "input_tokens": 10672,
+      "output_tokens": 2055,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0
+    },
+    "tool_calls": [],
+    "output": {
+      "stakeholders": [
+        {
+          "evidence_ids": [
+            "contact:CON-3001",
+            "gong_summary:CALL-001",
+            "gong_summary:CALL-003",
+            "gong_summary:CALL-005",
+            "gong_summary:CALL-008",
+            "transcript:CALL-008:1",
+            "transcript:CALL-008:2",
+            "transcript:CALL-008:4",
+            "transcript:CALL-008:5",
+            "transcript:CALL-008:6",
+            "transcript:CALL-008:7",
+            "transcript:CALL-001:1"
+          ],
+          "confidence": "high",
+          "name": "Elena Voss",
+          "title": "Chief Information Security Officer",
+          "role_in_deal": "economic_buyer",
+          "influence": "high",
+          "sentiment": "cautiously_positive",
+          "stance_summary": "Renewal is confirmed and central to access control strategy. Requires measurable operational progress: reduction in regional exceptions and governance clarity. States \"My story is straightforward. We renew because the platform is central to access control, and the next phase reduces the exceptions that create audit noise\" (transcript:CALL-008:1). Wants executive summary, success metrics, baseline exception counts, and policy drift visibility. Approval is conditional on documented exception reduction over time and on brief positioning as \"documentation-heavy renewal with governance dependencies\" rather than expansion. Notes legal is \"near complete\" but not blocking. Requires named escalation owners, not generic titles.",
+          "contact_id": "CON-3001"
+        },
+        {
+          "evidence_ids": [
+            "contact:CON-3002",
+            "gong_summary:CALL-001",
+            "gong_summary:CALL-002",
+            "gong_summary:CALL-006",
+            "gong_summary:CALL-008",
+            "transcript:CALL-008:1",
+            "transcript:CALL-008:3",
+            "transcript:CALL-008:4",
+            "transcript:CALL-008:5",
+            "transcript:CALL-008:6",
+            "transcript:CALL-001:1"
+          ],
+          "confidence": "high",
+          "name": "Marco Devlin",
+          "title": "VP Infrastructure",
+          "role_in_deal": "technical_decision_maker",
+          "influence": "high",
+          "sentiment": "positive",
+          "stance_summary": "Owns branch migration plan and operational readiness. Requires named escalation owners and accountability paths for regional plants: \"I need the owner matrix. I know everyone agrees in principle, but when a plant manager pushes back, I need a named person and an escalation path\" (transcript:CALL-008:1). Requests success metrics beyond project management counts: exception reduction, closure time, baseline and target values. Emphasizes payment milestones should tie to readiness deliverables, not perfect outcomes. Supports signature if escalation path is real and support bridge schedule is confirmed. Flags that legacy-site plan should show temporary exceptions with defined review dates.",
+          "contact_id": "CON-3002"
+        },
+        {
+          "evidence_ids": [
+            "contact:CON-3005",
+            "gong_summary:CALL-004",
+            "gong_summary:CALL-005",
+            "gong_summary:CALL-007",
+            "gong_summary:CALL-009",
+            "transcript:CALL-004:2",
+            "transcript:CALL-004:3",
+            "transcript:CALL-004:4"
+          ],
+          "confidence": "high",
+          "name": "Amara Quinn",
+          "title": "Legal Counsel",
+          "role_in_deal": "legal",
+          "influence": "medium",
+          "sentiment": "neutral",
+          "stance_summary": "Reviewing liability language and data retention clause. Has confirmed most terms but requires narrower liability wording tied to \"documented service commitments rather than any indirect business interruption\" (transcript:CALL-004:2). Primary open item is data retention language with accurate policy citation: \"I need an accurate reference to the policy. If the citation is wrong, it will bounce back\" (transcript:CALL-004:4). Not a business blocker but will reopen agreement if language changes materially. Cautions against milestone language that conflicts with service agreement, preferring operational milestones over vague success promises. Wants confirmation that data retention policy excerpt name and version date are included. Not blocking signature but completion status is near-final.",
+          "contact_id": "CON-3005"
+        },
+        {
+          "evidence_ids": [
+            "contact:CON-3003",
+            "gong_summary:CALL-004",
+            "gong_summary:CALL-008",
+            "transcript:CALL-004:1",
+            "transcript:CALL-004:2",
+            "transcript:CALL-004:3",
+            "transcript:CALL-004:4",
+            "transcript:CALL-004:5",
+            "transcript:CALL-004:6",
+            "transcript:CALL-008:1",
+            "transcript:CALL-008:3",
+            "transcript:CALL-008:5",
+            "transcript:CALL-008:6",
+            "slack:SLK-1001-02"
+          ],
+          "confidence": "high",
+          "name": "Iris Calder",
+          "title": "Procurement Director",
+          "role_in_deal": "commercial_approver",
+          "influence": "medium",
+          "sentiment": "neutral",
+          "stance_summary": "Focused on renewal uplift justification, payment schedule structure, and order form clarity. Uplift accepted by business sponsor but requires clear documentation of value drivers: \"The uplift is not a surprise, but I need a better explanation of what changed\" (transcript:CALL-004:1). Requires payment schedule in writing for finance approval and requests two-milestone option: signature payment plus post-first-wave migration completion. Demands one clean order form with renewal term and products in single document, rejecting multiple attachments. Requires separate facts from recommendations in documentation: \"separate facts from recommendations in the memo. Facts are renewal term, covered products, billing options, and migration deliverables\" (transcript:CALL-004:5). Critical that payment schedule not be described as approved before finance review, and two-payment option cost impact must be transparent. Out of office 05-04 to 05-08; deputy can receive but not sign. Finance approval must land before 05-04 or signature delays to 05-17 close window.",
+          "contact_id": "CON-3003"
+        },
+        {
+          "evidence_ids": [
+            "contact:CON-3004",
+            "gong_summary:CALL-001",
+            "gong_summary:CALL-002",
+            "gong_summary:CALL-003",
+            "gong_summary:CALL-006",
+            "transcript:CALL-001:1"
+          ],
+          "confidence": "high",
+          "name": "Pavel Stone",
+          "title": "Global Network Lead",
+          "role_in_deal": "influencer",
+          "influence": "medium",
+          "sentiment": "positive",
+          "stance_summary": "Advocates for reducing bypass exceptions and linked renewal to measurable outcomes. Requests progress dashboards, weekly executive summary reporting, and quarterly success metrics. Raises concern about older plants with tight maintenance windows: \"Some have maintenance windows that are measured in minutes, not hours. If we force everything through the same migration path, we will either miss the renewal timeline or create outage risk\" (transcript:CALL-001:1). Notes competitor option exists but cheaper is not same as better. Recently requested reversal of pilot-first sequencing to prioritize legacy-appliance sites first, contradicting March planning session agreement (slack:SLK-1001-03); unclear if infrastructure owner agrees.",
+          "contact_id": "CON-3004"
+        }
+      ],
+      "unmatched_speakers": [],
+      "off_crm_people": [
+        {
+          "evidence_ids": [
+            "transcript:CALL-004:1",
+            "transcript:CALL-004:2",
+            "transcript:CALL-004:3",
+            "transcript:CALL-004:4"
+          ],
+          "confidence": "medium",
+          "description": "Vendor legal representative who negotiated liability language redlines and data retention policy citations",
+          "role_in_deal": "unknown",
+          "stance_summary": "Proposed narrower liability wording tied to documented service commitments. Offered to include policy citation and redline response. Clarified legal commitment is service delivery and support availability, not guarantee of zero issues at every site.",
+          "name": null
+        }
+      ],
+      "missing": [
+        "Business sponsor identity not named",
+        "Finance approval authority not identified by name",
+        "Site-specific plant managers or local constraint owners not named",
+        "Board audit committee contact not identified",
+        "Regional exception baseline counts not provided"
+      ],
+      "review_notes": [
+        "slack:SLK-1001-03 reports conflict: Pavel Stone requests legacy-appliance sites migrate before pilot sites, reversing March agreement; uncertain whether Marco Devlin concurs. Requires clarification.",
+        "Payment schedule timing is critical: slack:SLK-1001-02 flags Iris Calder out 05-04 to 05-08; finance approval must land before then or signature slips to 05-17 close date.",
+        "Elena Voss states legal is not blocking but brief should say 'near complete' not 'done' (transcript:CALL-008:7); contact record role is 'legal reviewer' but current status is genuinely open on data retention citation."
+      ]
+    }
+  },
+  {
+    "model": "claude-haiku-4-5-20251001",
+    "stop_reason": "end_turn",
+    "usage": {
+      "input_tokens": 12890,
+      "output_tokens": 1181,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0
+    },
+    "tool_calls": [],
+    "output": {
+      "stakeholders": [
+        {
+          "evidence_ids": [
+            "contact:CON-3001",
+            "gong_summary:CALL-008",
+            "transcript:CALL-008:1",
+            "transcript:CALL-008:2",
+            "transcript:CALL-008:4",
+            "transcript:CALL-008:7"
+          ],
+          "confidence": "high",
+          "name": "Elena Voss",
+          "title": "Chief Information Security Officer",
+          "role_in_deal": "economic_buyer",
+          "influence": "high",
+          "sentiment": "cautiously_positive",
+          "stance_summary": "Renewal confirmed and central to access control. Requires measurable exception reduction, quarterly metrics, baseline exception counts, and policy drift visibility. Wants brief positioned as \"documentation-heavy renewal\" not expansion. Legal near-complete, not blocking. Approval conditional on documented exception reduction over time.",
+          "contact_id": "CON-3001"
+        },
+        {
+          "evidence_ids": [
+            "contact:CON-3002",
+            "gong_summary:CALL-008",
+            "transcript:CALL-008:1",
+            "transcript:CALL-008:3",
+            "transcript:CALL-008:4",
+            "transcript:CALL-008:5"
+          ],
+          "confidence": "high",
+          "name": "Marco Devlin",
+          "title": "VP Infrastructure",
+          "role_in_deal": "technical_decision_maker",
+          "influence": "high",
+          "sentiment": "positive",
+          "stance_summary": "Owns migration plan. Requires named escalation owners and accountability paths for regional plants. Wants success metrics: exception reduction, closure time, baseline targets. Payment milestones tied to readiness deliverables, not perfect outcomes. Supports signature if escalation path real and support bridge confirmed.",
+          "contact_id": "CON-3002"
+        },
+        {
+          "evidence_ids": [
+            "contact:CON-3005",
+            "gong_summary:CALL-004",
+            "gong_summary:CALL-007",
+            "transcript:CALL-004:2",
+            "transcript:CALL-004:4"
+          ],
+          "confidence": "high",
+          "name": "Amara Quinn",
+          "title": "Legal Counsel",
+          "role_in_deal": "legal",
+          "influence": "medium",
+          "sentiment": "neutral",
+          "stance_summary": "Reviewing liability wording and data retention clause. Confirmed most terms; requires narrower liability tied to documented commitments and accurate policy citation. Open item not a business blocker. Will reopen if language changes materially. Wants policy name and version date included.",
+          "contact_id": "CON-3005"
+        },
+        {
+          "evidence_ids": [
+            "contact:CON-3003",
+            "gong_summary:CALL-004",
+            "gong_summary:CALL-008",
+            "transcript:CALL-004:1",
+            "transcript:CALL-004:5",
+            "transcript:CALL-008:1",
+            "slack:SLK-1001-02"
+          ],
+          "confidence": "high",
+          "name": "Iris Calder",
+          "title": "Procurement Director",
+          "role_in_deal": "commercial_approver",
+          "influence": "medium",
+          "sentiment": "neutral",
+          "stance_summary": "Uplift accepted; requires clear documentation of value drivers. Needs written payment schedule for finance approval; prefers two-milestone option. Demands one clean order form. Requires facts separate from recommendations. Out 05-04 to 05-08; finance approval must land before then.",
+          "contact_id": "CON-3003"
+        },
+        {
+          "evidence_ids": [
+            "contact:CON-3004",
+            "gong_summary:CALL-001",
+            "gong_summary:CALL-003",
+            "gong_summary:CALL-006",
+            "slack:SLK-1001-03"
+          ],
+          "confidence": "high",
+          "name": "Pavel Stone",
+          "title": "Global Network Lead",
+          "role_in_deal": "influencer",
+          "influence": "medium",
+          "sentiment": "positive",
+          "stance_summary": "Advocates reducing bypass exceptions. Requests dashboards, weekly reporting, quarterly metrics. Concerns about older plants with tight maintenance windows. Recently requested legacy-appliance sites migrate first, reversing March pilot-first plan; unclear if infrastructure owner agrees.",
+          "contact_id": "CON-3004"
+        }
+      ],
+      "unmatched_speakers": [],
+      "off_crm_people": [
+        {
+          "evidence_ids": [
+            "transcript:CALL-004:1"
+          ],
+          "confidence": "medium",
+          "description": "Person referenced by Elena Voss as business sponsor supporting renewal uplift",
+          "role_in_deal": "influencer",
+          "stance_summary": "Supportive of renewal and uplift decision",
+          "name": null
+        }
+      ],
+      "missing": [
+        "Finance approval authority not identified by name",
+        "Site-specific plant managers or local constraint owners not named",
+        "Regional exception baseline counts not provided"
+      ],
+      "review_notes": [
+        "slack:SLK-1001-03 reports conflict: Pavel Stone requests legacy-appliance sites migrate before pilot sites, reversing March agreement; Marco Devlin agreement status unclear. Requires clarification before signature.",
+        "slack:SLK-1001-02 flags timing constraint: Iris Calder out 05-04 to 05-08; finance approval of payment schedule must land before then or signature delays to 05-17 close."
+      ]
+    }
+  },
+  {
+    "model": "claude-haiku-4-5-20251001",
+    "stop_reason": "end_turn",
+    "usage": {
+      "input_tokens": 14132,
+      "output_tokens": 1126,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0
+    },
+    "tool_calls": [],
+    "output": {
+      "stakeholders": [
+        {
+          "evidence_ids": [
+            "contact:CON-3001",
+            "gong_summary:CALL-008",
+            "transcript:CALL-008:1",
+            "transcript:CALL-008:2",
+            "transcript:CALL-008:4",
+            "transcript:CALL-008:7"
+          ],
+          "confidence": "high",
+          "name": "Elena Voss",
+          "title": "Chief Information Security Officer",
+          "role_in_deal": "economic_buyer",
+          "influence": "high",
+          "sentiment": "cautiously_positive",
+          "stance_summary": "Renewal confirmed. Requires measurable exception reduction, quarterly metrics, baseline counts, and policy drift visibility. Brief should position as \"documentation-heavy renewal\" not expansion. Legal near-complete but still open. Approval conditional on documented exception reduction.",
+          "contact_id": "CON-3001"
+        },
+        {
+          "evidence_ids": [
+            "contact:CON-3002",
+            "gong_summary:CALL-008",
+            "transcript:CALL-008:1",
+            "transcript:CALL-008:3",
+            "transcript:CALL-008:4",
+            "transcript:CALL-008:5"
+          ],
+          "confidence": "high",
+          "name": "Marco Devlin",
+          "title": "VP Infrastructure",
+          "role_in_deal": "technical_decision_maker",
+          "influence": "high",
+          "sentiment": "positive",
+          "stance_summary": "Owns migration plan. Requires named escalation owners for regional plants. Wants success metrics on exception reduction and closure time. Payment milestones tied to readiness, not perfect outcomes. Supports signature if escalation path real.",
+          "contact_id": "CON-3002"
+        },
+        {
+          "evidence_ids": [
+            "contact:CON-3005",
+            "gong_summary:CALL-004",
+            "gong_summary:CALL-007",
+            "transcript:CALL-004:2",
+            "transcript:CALL-004:4"
+          ],
+          "confidence": "high",
+          "name": "Amara Quinn",
+          "title": "Legal Counsel",
+          "role_in_deal": "legal",
+          "influence": "medium",
+          "sentiment": "neutral",
+          "stance_summary": "Reviewing liability wording and data retention clause. Confirmed most terms; requires narrower liability tied to documented commitments and accurate policy citation. Open item not a business blocker. Will reopen if language changes materially.",
+          "contact_id": "CON-3005"
+        },
+        {
+          "evidence_ids": [
+            "contact:CON-3003",
+            "gong_summary:CALL-004",
+            "gong_summary:CALL-008",
+            "transcript:CALL-004:1",
+            "transcript:CALL-004:5",
+            "transcript:CALL-008:1",
+            "slack:SLK-1001-02"
+          ],
+          "confidence": "high",
+          "name": "Iris Calder",
+          "title": "Procurement Director",
+          "role_in_deal": "commercial_approver",
+          "influence": "medium",
+          "sentiment": "neutral",
+          "stance_summary": "Uplift accepted; requires clear documentation of value drivers. Needs written payment schedule for finance; prefers two-milestone option. Demands one clean order form. Requires facts separate from recommendations. Out 05-04 to 05-08.",
+          "contact_id": "CON-3003"
+        },
+        {
+          "evidence_ids": [
+            "contact:CON-3004",
+            "gong_summary:CALL-001",
+            "gong_summary:CALL-003",
+            "gong_summary:CALL-006",
+            "slack:SLK-1001-03"
+          ],
+          "confidence": "high",
+          "name": "Pavel Stone",
+          "title": "Global Network Lead",
+          "role_in_deal": "influencer",
+          "influence": "medium",
+          "sentiment": "positive",
+          "stance_summary": "Advocates reducing bypass exceptions. Requests dashboards, weekly reporting, quarterly metrics. Concerns about older plants with tight maintenance windows. Recently requested legacy-appliance sites migrate first; unclear if infrastructure owner agrees.",
+          "contact_id": "CON-3004"
+        }
+      ],
+      "unmatched_speakers": [],
+      "off_crm_people": [
+        {
+          "evidence_ids": [
+            "transcript:CALL-004:1"
+          ],
+          "confidence": "medium",
+          "description": "Business sponsor supporting renewal uplift",
+          "role_in_deal": "influencer",
+          "stance_summary": "Supportive of renewal and uplift decision",
+          "name": null
+        }
+      ],
+      "missing": [
+        "Finance approval authority not identified by name",
+        "Site-specific plant managers or local constraint owners not named",
+        "Regional exception baseline counts not provided"
+      ],
+      "review_notes": [
+        "slack:SLK-1001-03 reports conflict: Pavel Stone requests legacy-appliance sites migrate before pilot sites, reversing March agreement; Marco Devlin agreement status unclear. Requires clarification before signature.",
+        "slack:SLK-1001-02 flags timing constraint: Iris Calder out 05-04 to 05-08; finance approval of payment schedule must land before then or signature delays to 05-17 close."
+      ]
+    }
+  }
+]
