@@ -194,7 +194,8 @@ class StageError(StrictModel):
 
 
 class AuthorizeOutput(StrictModel):
-    """Exactly one of the two is set; a denied run keeps only the reason code."""
+    """Exactly one of the two is set. `reason_code` is an internal audit field: traces and API
+    responses must not expose it, or unknown and forbidden opportunities become distinguishable."""
 
     scope: AccessScope | None = None
     reason_code: DenialReason | None = None

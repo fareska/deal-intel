@@ -27,7 +27,6 @@ from deal_intel.contracts.runs import (
     SUBAGENT_STAGES,
     WORKING_STATES,
     AttemptStarted,
-    DenialDetail,
     FailureDetail,
     LeakIncident,
     RunErrorCode,
@@ -196,10 +195,8 @@ class Runner:
     def _run_single(self, attempt: Attempt, stage: StageName) -> None:
         try:
             env = self._env(attempt)
-            with self._stage_span(env, stage) as span:
-                detail = self._apply(attempt, stage, STAGE_WORK[stage](env))
-                if isinstance(detail, DenialDetail):
-                    span.set_attributes({SpanAttribute.REASON_CODE: detail.reason_code})
+            with self._stage_span(env, stage):
+                self._apply(attempt, stage, STAGE_WORK[stage](env))
         except Exception as error:
             raise StageFailed(stage, error) from error
 

@@ -100,6 +100,36 @@ def test_denied_run_stops_after_authorize_and_records_only_the_reason(run_bench)
         assert session.scalar(select(func.count()).select_from(LlmCallRow)) == 0
 
 
+UNKNOWN_OPPORTUNITY = "OPP-9999"
+
+
+def span_shape(spans) -> list[tuple[str, str, str, tuple[str, ...]]]:
+    """What a reader can compare across two traces once ids and timings are set aside."""
+    return sorted(
+        (span.kind, span.name, span.status, tuple(sorted(span.attributes or {})))
+        for span in spans
+    )
+
+
+def test_denied_traces_look_identical_for_unknown_and_forbidden_opportunities(run_bench) -> None:
+    agents = run_bench.agents("OPP-1003")
+    unknown = run_bench.run(agents, "USR-5007", UNKNOWN_OPPORTUNITY)
+    forbidden = run_bench.run(agents, "USR-5007", "OPP-1003")
+
+    assert unknown.state is forbidden.state is RunState.DENIED
+    assert span_shape(run_bench.spans(unknown.run_id)) == span_shape(
+        run_bench.spans(forbidden.run_id)
+    )
+
+
+def test_no_span_of_a_denied_run_names_the_reason(run_bench) -> None:
+    record = run_bench.run(run_bench.agents("OPP-1003"), "USR-5007", "OPP-1003")
+
+    assert all(
+        "reason_code" not in (span.attributes or {}) for span in run_bench.spans(record.run_id)
+    )
+
+
 def test_denied_run_leaks_nothing_through_events_or_spans(run_bench) -> None:
     record = run_bench.run(run_bench.agents("OPP-1003"), "USR-5007", "OPP-1003")
     payload = json.dumps({"reason_code": DenialReason.ACCOUNT_NOT_ALLOWED.value})

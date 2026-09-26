@@ -63,9 +63,11 @@
     <li>v{{ item.version }} · {{ item.source }} · {{ item.rendered_at }}</li>
     {% endfor %}
   </ul>
+  {% if status.user_id == viewer_id %}
   <form method="post" action="{{ ui_prefix }}/runs/{{ status.run_id }}/replay{% if viewer_id %}?{{ viewer_param }}={{ viewer_id }}{% endif %}">
     <button type="submit">Replay</button>
   </form>
+  {% endif %}
 </section>
 
 <section class="panel">

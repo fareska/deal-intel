@@ -1,3 +1,7 @@
+from http import HTTPStatus
+
+import pytest
+
 from deal_intel.api.request_context import REQUEST_ID_HEADER
 from deal_intel.api.schemas import ErrorCode, ErrorResponse
 from deal_intel.contracts.access import DENIED_MESSAGE
@@ -197,6 +201,35 @@ def test_approvals_list_and_decide(api_client) -> None:
     )
     assert status.state is RunState.COMPLETED
     assert status.pending_approvals == 0
+
+
+def test_second_reader_gets_not_found_for_a_brief_outside_their_scope(api_client) -> None:
+    run_id = create_completed_run(api_client, REQUESTER_1001, OPP_1001)
+
+    response = api_client.get(f"/runs/{run_id}/brief", params={"user_id": NARROW_READER})
+
+    assert response.status_code == HTTPStatus.NOT_FOUND
+
+
+@pytest.mark.parametrize("action", ["replay", "resume"])
+def test_only_the_requester_may_replay_or_resume(api_client, action: str) -> None:
+    run_id = create_completed_run(api_client, REQUESTER_1003, OPP_1003)
+    assert api_client.get(f"/runs/{run_id}", params={"user_id": DEAL_DESK}).status_code == 200
+
+    response = api_client.post(f"/runs/{run_id}/{action}", params={"user_id": DEAL_DESK})
+
+    assert response.status_code == HTTPStatus.FORBIDDEN
+
+
+def test_denied_trace_responses_do_not_distinguish_unknown_from_forbidden(api_client) -> None:
+    unknown = create_completed_run(api_client, NARROW_READER, "OPP-9999")
+    forbidden = create_completed_run(api_client, NARROW_READER, OPP_1003)
+
+    def attribute_keys(run_id: str) -> list[list[str]]:
+        body = api_client.get(f"/runs/{run_id}/trace", params={"user_id": NARROW_READER}).json()
+        return sorted(sorted(span["attributes"]) for span in body["spans"])
+
+    assert attribute_keys(unknown) == attribute_keys(forbidden)
 
 
 def test_resume_of_a_completed_run_conflicts(api_client) -> None:

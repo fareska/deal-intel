@@ -61,7 +61,6 @@ class SpanAttribute(StrEnum):
     GUARDRAIL_WARNINGS = "guardrail_warnings"
     FEEDBACK_COUNT = "feedback_count"
     ERROR_CODE = "error_code"
-    REASON_CODE = "reason_code"
 
 
 class TraceSpanRecord(StrictModel):

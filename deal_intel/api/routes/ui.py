@@ -9,7 +9,7 @@ from deal_intel.api.dependencies import get_db_session, get_runtime
 from deal_intel.api.errors import NotFound
 from deal_intel.api.runtime import AppRuntime
 from deal_intel.api.services.approvals import approvals_for, decide_approval
-from deal_intel.api.services.catalog import list_opportunities
+from deal_intel.api.services.catalog import opportunities_open_to
 from deal_intel.api.services.runs import (
     brief_versions,
     latest_brief_response,
@@ -38,7 +38,7 @@ from deal_intel.api.templating import (
 )
 from deal_intel.contracts.api import BriefFormat, CreateRunRequest, DecisionRequest, span_depths
 from deal_intel.contracts.approvals import Decision
-from deal_intel.contracts.reference import USER_ID_PATTERN, UserProfile
+from deal_intel.contracts.reference import OPPORTUNITY_ID_PATTERN, USER_ID_PATTERN, UserProfile
 from deal_intel.contracts.runs import REPLAYABLE_STATES, WAIT_STATES
 
 LANDING_TEMPLATE = "index.html"
@@ -63,10 +63,11 @@ def landing(request: Request, users: UserChoices) -> HTMLResponse:
 
 @router.get("/runs/new", response_class=HTMLResponse)
 def new_run_page(request: Request, session: DbSession, users: UserChoices) -> HTMLResponse:
+    viewer = viewer_id_of(request)
     return templates.TemplateResponse(
         request,
         NEW_RUN_TEMPLATE,
-        {"users": users, "opportunities": list_opportunities(session)},
+        {"users": users, "opportunities": opportunities_open_to(session, viewer)},
     )
 
 
@@ -75,21 +76,23 @@ def create_run_from_form(
     request: Request,
     session: DbSession,
     runtime: Runtime,
-    opportunity_id: Annotated[str, Form()],
-    user_id: Annotated[str, Form(pattern=USER_ID_PATTERN)],
+    opportunity_id: Annotated[str, Form(pattern=OPPORTUNITY_ID_PATTERN)],
     fresh: Annotated[str | None, Form()] = None,
 ) -> RedirectResponse:
+    viewer = viewer_id_of(request)
+    if viewer is None:
+        raise NotFound()
     accepted = start_run(
         session,
         CreateRunRequest(
-            opportunity_id=opportunity_id, user_id=user_id, fresh=fresh == FRESH_FIELD
+            opportunity_id=opportunity_id, user_id=viewer, fresh=fresh == FRESH_FIELD
         ),
         runtime.executor,
         runtime.settings,
         runtime.clock(),
     )
     return RedirectResponse(
-        with_viewer(f"{UI_PATH_PREFIX}/runs/{accepted.run_id}", user_id),
+        with_viewer(f"{UI_PATH_PREFIX}/runs/{accepted.run_id}", viewer),
         status_code=HTTPStatus.SEE_OTHER,
     )
 

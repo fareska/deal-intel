@@ -5,7 +5,7 @@ from datetime import datetime
 from sqlalchemy import func, select
 from sqlalchemy.orm import Session
 
-from deal_intel.api.errors import Conflict, NotFound
+from deal_intel.api.errors import Conflict, Forbidden, NotFound
 from deal_intel.config import Settings
 from deal_intel.contracts.access import Allowed
 from deal_intel.contracts.api import (
@@ -135,6 +135,14 @@ def load_readable_run(session: Session, run_id: str, reader_user_id: str) -> Run
         raise NotFound() from error
     if not can_read_run(session, reader_user_id, run):
         raise NotFound()
+    return run
+
+
+def load_owned_run(session: Session, run_id: str, reader_user_id: str) -> RunRecord:
+    """Replay and resume write new state and spend the requester's budget, so only they may."""
+    run = load_readable_run(session, run_id, reader_user_id)
+    if reader_user_id != run.user_id:
+        raise Forbidden()
     return run
 
 
@@ -310,7 +318,7 @@ def span_duration_ms(row: TraceSpanRow) -> int | None:
 def replay_run(
     session: Session, run_id: str, reader_user_id: str, now: datetime | None = None
 ) -> BriefResponse:
-    run = load_readable_run(session, run_id, reader_user_id)
+    run = load_owned_run(session, run_id, reader_user_id)
     if run.state not in REPLAYABLE_STATES:
         raise Conflict()
     try:
@@ -330,7 +338,7 @@ def replay_run(
 def resume_run(
     session: Session, run_id: str, reader_user_id: str, executor: RunExecutor
 ) -> RunStatusResponse:
-    run = load_readable_run(session, run_id, reader_user_id)
+    run = load_owned_run(session, run_id, reader_user_id)
     if run.state not in STARTABLE_STATES:
         raise Conflict()
     session.commit()

@@ -35,6 +35,9 @@ def test_polls_run_status_only_while_working() -> None:
     assert not polls_run_status("FAILED")
 
 
+ECLIPSE_OPTION = 'value="OPP-1003"'
+
+
 def test_new_run_page_has_selectors_and_fresh_checkbox(api_client) -> None:
     response = api_client.get(f"{UI_PATH_PREFIX}/runs/new", params={"user_id": REQUESTER_1001})
 
@@ -43,6 +46,50 @@ def test_new_run_page_has_selectors_and_fresh_checkbox(api_client) -> None:
     assert 'name="user_id"' in response.text
     assert 'name="fresh"' in response.text
     assert "Fresh run (live model calls)" in response.text
+
+
+def test_new_run_page_hides_opportunities_the_viewer_may_not_run(api_client) -> None:
+    page = api_client.get(f"{UI_PATH_PREFIX}/runs/new", params={"user_id": NARROW_READER})
+
+    assert page.status_code == 200
+    assert ECLIPSE_OPTION not in page.text
+    assert "Eclipse" not in page.text
+
+
+def test_new_run_page_lists_opportunities_the_viewer_may_run(api_client) -> None:
+    page = api_client.get(f"{UI_PATH_PREFIX}/runs/new", params={"user_id": REQUESTER_1003})
+
+    assert ECLIPSE_OPTION in page.text
+
+
+def test_new_run_page_without_a_viewer_lists_nothing(api_client) -> None:
+    page = api_client.get(f"{UI_PATH_PREFIX}/runs/new")
+
+    assert 'name="opportunity_id"' not in page.text
+
+
+def test_malformed_opportunity_id_is_rejected_not_a_server_error(api_client) -> None:
+    response = api_client.post(
+        f"{UI_PATH_PREFIX}/runs",
+        params={"user_id": REQUESTER_1003},
+        data={"opportunity_id": "not-an-id", "user_id": REQUESTER_1003},
+    )
+
+    assert response.status_code == 422
+
+
+def test_new_run_form_starts_as_the_viewer_not_the_posted_user(api_client) -> None:
+    response = api_client.post(
+        f"{UI_PATH_PREFIX}/runs",
+        params={"user_id": REQUESTER_1001},
+        data={"opportunity_id": OPP_1001, "user_id": REQUESTER_1003},
+        follow_redirects=False,
+    )
+
+    assert response.status_code == 303
+    run_id = response.headers["location"].split("/")[-1].split("?")[0]
+    status = api_client.get(f"/runs/{run_id}", params={"user_id": REQUESTER_1001}).json()
+    assert status["user_id"] == REQUESTER_1001
 
 
 def test_brief_page_renders_nine_sections_and_citations(api_client) -> None:

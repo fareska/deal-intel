@@ -4,7 +4,10 @@
 <section class="panel">
   <h1>New run</h1>
   <p class="muted">Starts a negotiation brief for the selected opportunity as the selected user. Check fresh run to bypass idempotency and the model-output cache.</p>
-  <form class="stack" method="post" action="{{ ui_prefix }}/runs">
+  {% if viewer_id %}
+  <form class="stack" method="post" action="{{ ui_prefix }}/runs?{{ viewer_param }}={{ viewer_id }}">
+    <input type="hidden" name="user_id" value="{{ viewer_id }}">
+    <p class="muted">Requesting as {{ viewer_id }}.</p>
     <label for="opportunity-select">Opportunity</label>
     <select id="opportunity-select" name="opportunity_id" required>
       <option value="">Choose an opportunity</option>
@@ -12,18 +15,17 @@
       <option value="{{ opportunity.opportunity_id }}">{{ opportunity.opportunity_name }} ({{ opportunity.opportunity_id }})</option>
       {% endfor %}
     </select>
-    <label for="run-user-select">Requesting user</label>
-    <select id="run-user-select" name="user_id" required>
-      <option value="">Choose a user</option>
-      {% for user in users %}
-      <option value="{{ user.user_id }}"{% if user.user_id == viewer_id %} selected{% endif %}>{{ user.user_name }} ({{ user.user_id }})</option>
-      {% endfor %}
-    </select>
+    {% if not opportunities %}
+    <p class="muted">No opportunities are open to {{ viewer_id }}.</p>
+    {% endif %}
     <label class="checkbox">
       <input type="checkbox" name="fresh" value="fresh">
       Fresh run (live model calls)
     </label>
-    <button type="submit">Start run</button>
+    <button type="submit"{% if not opportunities %} disabled{% endif %}>Start run</button>
   </form>
+  {% else %}
+  <p class="muted">Choose who you are in the viewer menu to see the opportunities you can run.</p>
+  {% endif %}
 </section>
 {% endblock %}
