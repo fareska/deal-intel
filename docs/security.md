@@ -135,7 +135,7 @@ flowchart TB
 
 > Status: implemented (M0, M2).
 
-- `anthropic_api_key` is a `SecretStr` and is unwrapped only when building the SDK client (`build_sdk_client()` in `deal_intel/llm/anthropic_client.py`). `.env.example` tells the user to export the key in the shell and contains only placeholders.
+- `anthropic_api_key` is a `SecretStr` and is unwrapped only when building the SDK client (`build_sdk_client()` in `deal_intel/llm/anthropic_client.py`). `.env.example` names `ANTHROPIC_API_KEY`; the real value goes in gitignored `.env`, which Compose (`env_file`) and Settings both read.
 - `.env` and `.env.*` are git-ignored (except `.env.example`) and excluded from the image by `.dockerignore`.
 - `alembic.ini` never holds a URL; `deal_intel/db/migrations/env.py` reads it from settings.
 - `scripts/record_fixtures.py` refuses to make billed calls unless `RECORD_FIXTURES=1` and `LLM_CLIENT=anthropic`.

@@ -291,7 +291,7 @@ The mix of levels inside `OPP-1003` is deliberate: it proves the retriever filte
 
 | Variable | Default | Purpose |
 |---|---|---|
-| `ANTHROPIC_API_KEY` | none | Model access; set in the shell, never committed |
+| `ANTHROPIC_API_KEY` | none | Model access; set in `.env` (gitignored), never committed |
 | `DATABASE_URL`, `TEST_DATABASE_URL` | local Compose URLs | Postgres |
 | `MODEL_STRATEGY`, `MODEL_EXTRACTION` | `claude-sonnet-4-6`, `claude-haiku-4-5-20251001` | Routing |
 | `STRATEGY_EFFORT` | `medium` | Strategy agent reasoning effort |

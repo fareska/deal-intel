@@ -356,7 +356,7 @@ Implemented: `GET /healthz`, `GET /readyz` (`deal_intel/api/routes/health.py`); 
 
 ## 15. Configuration
 
-Settings are `deal_intel/config.py` (`pydantic-settings`, read from the environment and `.env`). `DATABASE_URL` has no default, so the app fails fast without it; `.env.example` holds local Compose URLs and placeholders only.
+Settings are `deal_intel/config.py` (`pydantic-settings`, read from the environment and `.env`). `DATABASE_URL` has no default, so the app fails fast without it; `.env.example` holds local Compose URLs and placeholders only. The Compose `app` service loads that same `.env` (`env_file`); put `ANTHROPIC_API_KEY` there so live calls work inside the container. Do not also set it under `environment:` — an empty host export would override the file.
 
 | Variable | Code default | Used by |
 |---|---|---|

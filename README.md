@@ -25,13 +25,19 @@ uv sync --group dev
 
 ```bash
 cp .env.example .env
-# Export the key in the shell when you need live calls. Do not write it into .env.
-export ANTHROPIC_API_KEY=...
+# Put the Anthropic key in .env (gitignored). Compose and host tools both read that file.
+# ANTHROPIC_API_KEY=sk-ant-...
 
 make up
 make migrate
 make generate-slack
 make ingest
+```
+
+After you change `.env`, recreate the app container so it reloads the file:
+
+```bash
+docker compose up -d --no-deps --force-recreate --wait app
 ```
 
 `make up` builds the app image and starts Postgres and the API (`docker compose up -d --build --wait`). Ports are bound to localhost only: `127.0.0.1:8000` (app) and `127.0.0.1:5432` (Postgres).
@@ -54,11 +60,11 @@ Admin commands (`ingest`, `generate-slack`) run in-process and need `DATABASE_UR
 
 ## Configuration
 
-Environment variables match `docs/PLAN.md` section 7. Defaults below are the values in `deal_intel/config.py` and `.env.example`. Pydantic-settings reads `.env`; `ANTHROPIC_API_KEY` should stay in the shell or a secrets manager, never in a committed file.
+Environment variables match `docs/PLAN.md` section 7. Defaults below are the values in `deal_intel/config.py` and `.env.example`. Pydantic-settings and Compose both read `.env`. Put `ANTHROPIC_API_KEY` in `.env` for live calls. `.env` is gitignored; never commit a real key.
 
 | Variable | Default | Purpose |
 |---|---|---|
-| `ANTHROPIC_API_KEY` | none | Model access; set in the shell, never committed |
+| `ANTHROPIC_API_KEY` | none | Model access; set in `.env`, never committed |
 | `DATABASE_URL`, `TEST_DATABASE_URL` | local Compose URLs | Postgres (`deal_intel` and `deal_intel_test`) |
 | `MODEL_STRATEGY` | `claude-sonnet-4-6` | Strategy-agent model |
 | `MODEL_EXTRACTION` | `claude-haiku-4-5-20251001` | Extraction-agent model (conversation intelligence, stakeholder map) |
