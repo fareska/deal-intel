@@ -1,0 +1,6 @@
+pricing_note_id	opportunity_id	current_acv	proposed_acv	requested_discount	renewal_uplift	commercial_risk	approval_status	pricing_notes
+PN-4001	OPP-1001	3900000	4217500	4	8	medium	not_required	Customer accepted uplift range if payment schedule and migration success metrics are documented.
+PN-4002	OPP-1001	3900000	4217500	0	8	low	not_required	No new concession requested in final document review, legal language remains the only open issue.
+PN-4003	OPP-1002	1850000	2384000	6	29	medium	not_required	Expansion price assumes staged factory rollout and includes minimum enablement scope.
+PN-4004	OPP-1003	2035000	1879000	18	-8	high	pending_deal_desk	Procurement requested a material concession and shorter term, approval required before recommending this position.
+PN-4005	OPP-1003	2035000	1975000	12	-3	high	pending_legal_and_manager	Alternative package reduces discount but includes liability language and restricted evidence review dependencies.

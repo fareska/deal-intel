@@ -1,0 +1,7 @@
+user_id	user_name	role	allowed_account_ids	allowed_source_types	can_view_sensitive_pricing	can_request_approval	can_view_restricted_account
+USR-5001	Maya Levin	Account Owner	ACC-2001	salesforce,gong,slack,pricing,policies	false	true	false
+USR-5002	Owen Patel	Account Owner	ACC-2002	salesforce,gong,slack,pricing,policies	false	true	false
+USR-5003	Nora Chen	Restricted Account Owner	ACC-2003	salesforce,gong,slack,pricing,policies	true	true	true
+USR-5004	Sam Hale	Sales Leader	ACC-2001,ACC-2002	salesforce,gong,slack,pricing,policies	false	true	false
+USR-5005	Rina Vale	Deal Desk Approver	ACC-2001,ACC-2002,ACC-2003	salesforce,gong,slack,pricing,policies	true	true	true
+USR-5007	Harper Noor	Unauthorized Requester	ACC-2001	salesforce,gong	false	false	false

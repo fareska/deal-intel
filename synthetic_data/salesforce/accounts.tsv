@@ -1,0 +1,4 @@
+account_id	account_name	industry	region	country	employee_band	current_products	account_health	strategic_notes	access_level
+ACC-2001	Northstar Foods Cooperative	Food and beverage operations	EMEA	Ireland	12000-18000	Secure access gateway, branch edge, cloud application control	Stable	Strategic renewal with executive visibility, operations team wants fewer regional exceptions and clearer migration ownership.	standard
+ACC-2002	Meridian Appliances Group	Industrial manufacturing	EMEA	Portugal	7000-11000	Network security platform, remote access pilot	Mixed	Expansion depends on proof success, reporting gaps, and confidence in operational support for factories.	standard
+ACC-2003	Eclipse BioMaterials Ltd	Specialty materials	APAC	Singapore	5000-9000	Private access, secure web gateway, data protection pilot	At risk	Restricted account with sensitive pricing notes, legal constraints, and board-level cost pressure.	restricted
