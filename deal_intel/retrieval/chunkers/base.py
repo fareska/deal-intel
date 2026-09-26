@@ -22,6 +22,7 @@ from deal_intel.retrieval.sensitivity import SensitivityRule
 YES = "yes"
 NO = "no"
 LIST_SEPARATOR = ", "
+LABEL_SEPARATOR = ": "
 
 
 class SourceFormatError(ValueError):
@@ -82,7 +83,9 @@ def make_chunk(context: IngestContext, draft: ChunkDraft) -> EvidenceChunk:
 def labelled_text(heading: str, fields: Sequence[tuple[str, object]]) -> str:
     """Labels let a query such as "close date" hit the right line and tell the model what a
     bare number means."""
-    return "\n".join([heading, *(f"{label}: {format_value(value)}" for label, value in fields)])
+    return "\n".join(
+        [heading, *(f"{label}{LABEL_SEPARATOR}{format_value(value)}" for label, value in fields)]
+    )
 
 
 def format_value(value: object) -> str:
@@ -97,5 +100,10 @@ def format_value(value: object) -> str:
     return str(value)
 
 
+def plain_number(value: Decimal | int) -> str:
+    """`18`, not `18.00` or `1.8E+1`, whatever scale the value was stored with."""
+    return f"{Decimal(value).normalize():f}"
+
+
 def percent(value: Decimal | int) -> str:
-    return f"{value}%"
+    return f"{plain_number(value)}%"

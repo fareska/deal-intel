@@ -111,6 +111,16 @@ def extract_quotes(text: str) -> list[str]:
     return [match[1] for match in QUOTE_PATTERN.finditer(text) if is_quotation(match[1])]
 
 
+def strip_verified_quotes(text: str, is_verified: Callable[[str], bool]) -> str:
+    """Removes every quotation that passes `is_verified`, leaving the writer's own words."""
+
+    def replace(match: re.Match[str]) -> str:
+        quote = match[1]
+        return "" if is_quotation(quote) and is_verified(quote) else match[0]
+
+    return QUOTE_PATTERN.sub(replace, text)
+
+
 def unquote_unverified(text: str, is_verified: Callable[[str], bool]) -> tuple[str, list[str]]:
     """Removes the quotation marks around every quotation that fails `is_verified`, keeping the
     words as a paraphrase. Returns the new text and the quotations that failed."""

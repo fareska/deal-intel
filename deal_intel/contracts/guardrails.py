@@ -45,7 +45,13 @@ class GuardrailCheck(StrEnum):
     NUMBERS = "numbers"
     QUOTES = "quotes"
     NAMES = "names"
+    APPROVAL_WORDING = "approval_wording"
+    CUSTOMER_FACING_LEAK = "customer_facing_leak"
+    DEGRADED_INPUTS = "degraded_inputs"
     RETRY = "retry"
+    LANGUAGE_LINT = "language_lint"
+    APPROVAL_CONSISTENCY = "approval_consistency"
+    LEAKAGE_CANARIES = "leakage_canaries"
 
 
 class GuardrailOutcome(StrEnum):

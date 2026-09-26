@@ -85,6 +85,10 @@ class Settings(BaseSettings):
         ChunkKind.SLACK: 0.7,
     }
     search_k: int = 10
+    # Evidence pack budgets per agent, in estimated tokens.
+    budget_conversation_intelligence_tokens: int = 12_000
+    budget_stakeholder_map_tokens: int = 6_000
+    budget_negotiation_strategy_tokens: int = 6_000
 
     # The strategy prompt names these fields and the policy engine reads them, so a threshold
     # shown to the model can never differ from the one that routes approvals.
@@ -95,6 +99,8 @@ class Settings(BaseSettings):
     app_env: AppEnv = AppEnv.DEV
     log_level: str = "INFO"
     api_base_url: str = "http://localhost:8000"
+    api_timeout_seconds: float = 30.0
+    api_max_request_body_bytes: int = 65_536
 
     @field_validator("reliability_weights")
     @classmethod

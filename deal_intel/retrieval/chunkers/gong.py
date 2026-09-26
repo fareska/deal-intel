@@ -8,6 +8,7 @@ from deal_intel.retrieval.tsv import parse_rows
 
 # Each participant reads "Name, Title", so participants need a separator other than a comma.
 PARTICIPANT_SEPARATOR = "; "
+SUMMARY_LABEL = "Summary"
 
 
 def chunk_gong_summaries(context: IngestContext) -> list[EvidenceChunk]:
@@ -38,7 +39,7 @@ def summary_draft(summary: GongCallSummary, contacts: Mapping[str, Contact]) -> 
             ("Stage at call", summary.stage_at_call),
             ("Duration", summary.duration),
             ("Participants", participants),
-            ("Summary", summary.summary),
+            (SUMMARY_LABEL, summary.summary),
             ("Key points", summary.key_points),
             ("Customer sentiment", summary.customer_sentiment),
             ("Risks", summary.risks),

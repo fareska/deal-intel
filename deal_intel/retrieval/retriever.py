@@ -103,6 +103,19 @@ class ScopedRetriever:
         ranked = sorted(scored, key=rank_key)[:limit]
         return self._result(RetrievalOperation.SEARCH, requested, query, ranked)
 
+    def get(
+        self, chunk_ids: Iterable[str], source_types: Iterable[SourceType] | None = None
+    ) -> RetrievalResult:
+        """An id outside the scope is absent from the result exactly as an unknown id is."""
+        requested = as_requested(source_types)
+        statement = (
+            self._scoped_select(requested)
+            .where(EvidenceChunkRow.chunk_id.in_(sorted(set(chunk_ids))))
+            .order_by(EvidenceChunkRow.chunk_id)
+        )
+        chunks = [self._scored(row, BASELINE_LEXICAL) for row in self._session.scalars(statement)]
+        return self._result(RetrievalOperation.GET, requested, None, chunks)
+
     def build_pack(
         self,
         agent_name: str,

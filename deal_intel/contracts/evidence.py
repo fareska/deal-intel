@@ -49,6 +49,7 @@ CITATION_ID_FIELDS: dict[ChunkKind, str] = {
 class RetrievalOperation(StrEnum):
     LIST = "list"
     SEARCH = "search"
+    GET = "get"
 
 
 def make_chunk_id(kind: ChunkKind, source_key: str, segment: int | None = None) -> str:

@@ -37,9 +37,17 @@ def assert_pack_in_scope(
     """`source_types`, when given, also holds the pack to the agent's own source list."""
     if pack.opportunity_id != scope.opportunity_id:
         raise ScopeViolation("evidence pack was built for a different opportunity")
-    offending = out_of_scope_ids(scope, pack.chunks, source_types)
+    assert_chunks_in_scope(pack.chunks, scope, source_types)
+
+
+def assert_chunks_in_scope(
+    chunks: Iterable[PackChunk],
+    scope: AccessScope,
+    source_types: Iterable[SourceType] | None = None,
+) -> None:
+    offending = out_of_scope_ids(scope, chunks, source_types)
     if offending:
-        raise ScopeViolation(f"{len(offending)} pack chunks are outside the scope", offending)
+        raise ScopeViolation(f"{len(offending)} chunks are outside the scope", offending)
 
 
 def is_empty_pack(pack: EvidencePack) -> bool:

@@ -26,12 +26,17 @@ from deal_intel.contracts.guardrails import (
 from deal_intel.guardrails.text import (
     extract_figures,
     normalise_whitespace,
+    strip_verified_quotes,
     unquote_unverified,
 )
+from deal_intel.guardrails.wording import approval_assertions, internal_workflow_terms
 
 EVIDENCE_IDS_FIELD = "evidence_ids"
 NAME_FIELD = "name"
 CONTACT_ID_FIELD = "contact_id"
+CUSTOMER_FACING_FIELD = "customer_facing"
+# Only the action is said to the customer; its rationale is internal and names approvals.
+CUSTOMER_FACING_TEXT_FIELD = "action"
 
 type Validator[OutputT: BaseModel] = Callable[[OutputT, EvidenceIndex], GuardrailReport[OutputT]]
 type TextFieldValue = str | list[str]
@@ -212,13 +217,19 @@ def review_numbers(item: EvidenceBacked, evidence: EvidenceIndex) -> Review:
     return Review(None, (problem,))
 
 
-def review_quotes(item: EvidenceBacked, evidence: EvidenceIndex) -> Review:
+def verbatim_check(item: EvidenceBacked, evidence: EvidenceIndex) -> Callable[[str], bool]:
+    """Whether a quotation appears word for word in a chunk the item cites."""
     cited = [normalise_whitespace(text) for text in evidence.cited_texts(item.evidence_ids)]
 
     def is_verbatim(quote: str) -> bool:
         needle = normalise_whitespace(quote)
         return any(needle in text for text in cited)
 
+    return is_verbatim
+
+
+def review_quotes(item: EvidenceBacked, evidence: EvidenceIndex) -> Review:
+    is_verbatim = verbatim_check(item, evidence)
     updates: dict[str, TextFieldValue] = {}
     failed: list[str] = []
     for name, value in text_fields(item).items():
@@ -259,6 +270,43 @@ def review_names(item: EvidenceBacked, evidence: EvidenceIndex) -> Review:
     return Review(None, tuple(problems)) if problems else Review(item)
 
 
+def review_approval_wording(item: EvidenceBacked, evidence: EvidenceIndex) -> Review:
+    """A verbatim quotation of evidence may report a claimed approval; the item's own words may
+    not assert one."""
+    is_verbatim = verbatim_check(item, evidence)
+    asserted = [
+        phrase
+        for value in text_fields(item).values()
+        for text in as_list(value)
+        for phrase in approval_assertions(strip_verified_quotes(text, is_verbatim))
+    ]
+    if not asserted:
+        return Review(item)
+    listed = ", ".join(dict.fromkeys(asserted))
+    problem = Problem(
+        detail=listed,
+        feedback=f'asserts an approval ("{listed}"); nothing is approved at this stage. State '
+        "which approval is needed, or report a claimed approval as unverified.",
+    )
+    return Review(None, (problem,))
+
+
+def review_customer_facing_wording(item: EvidenceBacked, evidence: EvidenceIndex) -> Review:
+    if getattr(item, CUSTOMER_FACING_FIELD, False) is not True:
+        return Review(item)
+    text = getattr(item, CUSTOMER_FACING_TEXT_FIELD, "")
+    leaked = internal_workflow_terms(text) if isinstance(text, str) else []
+    if not leaked:
+        return Review(item)
+    listed = ", ".join(dict.fromkeys(leaked))
+    problem = Problem(
+        detail=listed,
+        feedback=f"is customer_facing but its {CUSTOMER_FACING_TEXT_FIELD} mentions internal "
+        f'workflow ("{listed}"); remove it or set customer_facing to false.',
+    )
+    return Review(None, (problem,))
+
+
 def validate_citations[OutputT: BaseModel](
     output: OutputT, evidence: EvidenceIndex
 ) -> GuardrailReport[OutputT]:
@@ -283,9 +331,29 @@ def validate_names[OutputT: BaseModel](
     return review_items(output, GuardrailCheck.NAMES, evidence, review_names)
 
 
+def validate_approval_wording[OutputT: BaseModel](
+    output: OutputT, evidence: EvidenceIndex
+) -> GuardrailReport[OutputT]:
+    return review_items(output, GuardrailCheck.APPROVAL_WORDING, evidence, review_approval_wording)
+
+
+def validate_customer_facing_wording[OutputT: BaseModel](
+    output: OutputT, evidence: EvidenceIndex
+) -> GuardrailReport[OutputT]:
+    return review_items(
+        output, GuardrailCheck.CUSTOMER_FACING_LEAK, evidence, review_customer_facing_wording
+    )
+
+
 # Citations run first, so the later checks only read cited chunks that exist.
 FINDING_CHECKS: tuple[Validator, ...] = (validate_citations, validate_numbers, validate_quotes)
 STAKEHOLDER_CHECKS: tuple[Validator, ...] = (validate_citations, validate_names, validate_quotes)
+# The wording checks follow the quote check, so only quotations it verified are exempt.
+STRATEGY_CHECKS: tuple[Validator, ...] = (
+    *FINDING_CHECKS,
+    validate_approval_wording,
+    validate_customer_facing_wording,
+)
 
 
 def run_checks[OutputT: BaseModel](

@@ -5,7 +5,7 @@ otherwise, so hand-written fixtures stay readable and malformed outputs can stil
 """
 
 import json
-from collections.abc import Sequence
+from collections.abc import Iterable, Sequence
 from pathlib import Path
 
 from pydantic import TypeAdapter
@@ -16,6 +16,10 @@ from deal_intel.llm.errors import FixtureMissing
 FIXTURE_SUFFIX = ".json"
 RECORD_HINT = "record it with RECORD_FIXTURES=1 and LLM_CLIENT=anthropic"
 RECORDED_TURNS = TypeAdapter(list[RecordedTurn])
+
+
+def fixtures_recorded(root: Path, agent_names: Iterable[str]) -> bool:
+    return all(any((root / agent).glob(f"*{FIXTURE_SUFFIX}")) for agent in agent_names)
 
 
 def fixture_path(root: Path, agent_name: str, input_hash: str) -> Path:

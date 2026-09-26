@@ -7,6 +7,8 @@ from sqlalchemy.orm import Session, sessionmaker
 
 from deal_intel.config import get_settings
 
+AUTOCOMMIT = "AUTOCOMMIT"
+
 
 @lru_cache
 def get_engine() -> Engine:
@@ -16,6 +18,15 @@ def get_engine() -> Engine:
 @lru_cache
 def get_session_factory() -> sessionmaker[Session]:
     return sessionmaker(bind=get_engine(), expire_on_commit=False)
+
+
+def autocommit_factory(session_factory: sessionmaker[Session]) -> sessionmaker[Session]:
+    """Sessions whose every statement commits at once, for reads that surround a model call:
+    a call that takes a minute must not hold a transaction, or its locks, for that minute."""
+    engine: Engine = session_factory.kw["bind"]
+    return sessionmaker(
+        bind=engine.execution_options(isolation_level=AUTOCOMMIT), expire_on_commit=False
+    )
 
 
 @contextmanager
