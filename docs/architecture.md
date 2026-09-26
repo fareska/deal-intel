@@ -7,7 +7,7 @@ Status markers: every section says whether it describes code that exists or desi
 - `> Status: implemented (Mx)` means the behaviour is in the repository and the cited modules can be read.
 - `> Status: planned (Mx)` means the section is taken from `docs/PLAN.md` and must be checked against the code when milestone Mx lands.
 
-At the time of writing, M0 to M6 are in the working tree. M7 live artifacts (recorded fixtures, measured cost and latency, SVG exports, screenshots) are not yet produced.
+M0 to M7 are in the working tree. Live artifacts, screenshots, and measured cost/latency live under `artifacts/2026-09-26/`. Diagram SVGs are in `docs/diagrams/`.
 
 Companion documents: `docs/security.md` (threat model and controls). Diagram sources live in `docs/diagrams/*.mmd`; the copies embedded here must be kept in sync with them.
 
@@ -362,10 +362,10 @@ Settings are `deal_intel/config.py` (`pydantic-settings`, read from the environm
 |---|---|---|
 | `ANTHROPIC_API_KEY` | none (`SecretStr`) | `build_sdk_client()`; falls back to the SDK reading the environment |
 | `DATABASE_URL`, `TEST_DATABASE_URL` | required, optional | `deal_intel/db/session.py`, `tests/conftest.py` |
-| `MODEL_STRATEGY`, `MODEL_EXTRACTION` | `claude-opus-5-5`, `claude-haiku-4-5-20251001` | `route_for()` |
-| `STRATEGY_EFFORT` | `high` | `route_for()` |
+| `MODEL_STRATEGY`, `MODEL_EXTRACTION` | `claude-sonnet-4-6`, `claude-haiku-4-5-20251001` | `route_for()` |
+| `STRATEGY_EFFORT` | `medium` | `route_for()` |
 | `MAX_TOOL_CALLS` | `4` | `ToolLoop` |
-| `RUN_INPUT_TOKEN_BUDGET` | `80000` | defined; enforced by the runner (planned M4) |
+| `RUN_INPUT_TOKEN_BUDGET` | `250000` | defined; enforced by the runner |
 | `DAILY_COST_BUDGET_USD` | `20` | defined; enforced by the executor (planned M4) |
 | `RUN_EXECUTOR_WORKERS` | `2` | defined; executor (planned M4) |
 | `APPROVAL_EXPIRY_HOURS` | `168` | defined; policy engine (planned M4) |
@@ -436,19 +436,21 @@ The production path restores what C1 and C2 removed: a managed queue with worker
 
 ## 17. Measured values
 
-Filled from `scripts/evaluate.py` and live runs. Values stay TBD until M7 records fixtures.
+Fixture-replay column is `scripts/evaluate.py --from-fixtures` (four eval pairs, fake client, 2026-09-26). Live column is `artifacts/2026-09-26/` (`USR-5001/OPP-1001` and `USR-5003/OPP-1003` billed; `USR-5002/OPP-1002` is output-cache replay at $0; denial has no model calls). `--from-artifacts` hardcodes several rates to 1.0; do not treat that script path as a measurement.
 
-| Metric | Baseline | Source |
+| Metric | Fixture replay | Live pack (2026-09-26) |
 |---|---|---|
-| Citation validity | TBD | `tests/fixtures/eval_baseline.json` |
-| Grounded-number rate | TBD | same |
-| Section completeness | TBD | same |
-| Approval routing accuracy | TBD | same |
-| Denial correctness | TBD | same |
-| Degraded rate | TBD | same |
-| Mean cost USD / tokens per brief | TBD | same |
-| Guardrail drops by check | TBD | same |
-| Cost per brief, by agent | TBD | measured in M7 |
-| Run latency, end to end and per stage | TBD | measured in M7 |
-| Tool calls per agent call | TBD | measured in M7 |
-| Model routing (two-model vs single at low effort) | TBD | measured in M7 |
+| Citation validity | 1.000 | not separately scored; briefs exported |
+| Grounded-number rate | 0.994 | not separately scored |
+| Section completeness | 1.000 | 1.000 on exported Brief JSON |
+| Approval routing accuracy | 1.000 | Deal Desk + escalations match design on OPP-1003 |
+| Denial correctness | 1.000 | `USR-5007/OPP-1003` DENIED, 2-span authorize trace |
+| Degraded rate | 0.000 | 0 |
+| Mean cost USD / tokens per brief | $0.5814 / 164362 in, 22732 out | see per-run rows below |
+| Guardrail drops by check | none | `approval_wording` dropped 2 items on OPP-1003 |
+| Cost per brief, by agent | fixture accounting | OPP-1001: CI $0.042, SM $0.056, NS $0.882. OPP-1003: NS $0.962 (CI/SM cache hits) |
+| Run latency, end to end | n/a | OPP-1001 640s; OPP-1003 579s; OPP-1002 replay 0.3s; denial 51ms |
+| Tool calls per agent call | n/a | OPP-1001: 4 tools (3 search, 1 get). OPP-1003: 3 tools |
+| Model routing (two-model vs single at low effort) | not run | not run |
+
+Live spend recorded in `artifacts/2026-09-26/README.md`: **$1.942817** (OPP-1001 $0.980386 + OPP-1003 $0.962431). Strategy on OPP-1001 was ~604s / 4 LLM turns.

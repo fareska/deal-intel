@@ -1,0 +1,88 @@
+{
+  "requests": [
+    {
+      "approval_id": "48a4bdf52f964cbb8fdbcd8e9c17ab2d",
+      "run_id": "b8e2e65c8a914958800e3aac25da0657",
+      "subject_id": "action:A2",
+      "recommendation_ids": [
+        "action:A2"
+      ],
+      "rule_ids": [
+        "R7"
+      ],
+      "required_role": "human_reviewer",
+      "account_id": "ACC-2002",
+      "access_level": "standard",
+      "eligible_user_ids": [
+        "USR-5004",
+        "USR-5005"
+      ],
+      "status": "pending",
+      "proposed_values": {},
+      "summary": "Send Meridian one proof closeout packet: green/yellow/red scorecard first; passed, remediation and roadmap items shown separately; export retest owner and date; incident owner map; impact of a two-week export slip. Operator, supervisor and security material go in appendices.",
+      "evidence_ids": [
+        "transcript:CALL-018:4",
+        "transcript:CALL-018:5",
+        "transcript:CALL-018:6",
+        "transcript:CALL-014:4",
+        "transcript:CALL-014:5"
+      ],
+      "created_at": "2026-09-26T16:38:15.450394Z",
+      "expires_at": "2026-10-03T16:38:15.450394Z"
+    },
+    {
+      "approval_id": "560c5159d36241af809a8e8f6ec1194c",
+      "run_id": "b8e2e65c8a914958800e3aac25da0657",
+      "subject_id": "action:A8",
+      "recommendation_ids": [
+        "action:A8"
+      ],
+      "rule_ids": [
+        "R5"
+      ],
+      "required_role": "legal",
+      "account_id": "ACC-2002",
+      "access_level": "standard",
+      "eligible_user_ids": [],
+      "status": "escalated",
+      "proposed_values": {},
+      "summary": "Before sharing externally, send the security evidence appendix (data protection controls and policy drift report) for legal review.",
+      "evidence_ids": [
+        "gong_summary:CALL-016",
+        "transcript:CALL-014:4",
+        "policy:rule-5"
+      ],
+      "created_at": "2026-09-26T16:38:15.450394Z",
+      "expires_at": "2026-10-03T16:38:15.450394Z"
+    },
+    {
+      "approval_id": "cabecc2148174e72a2bdf19fca84a9b2",
+      "run_id": "b8e2e65c8a914958800e3aac25da0657",
+      "subject_id": "action:A1",
+      "recommendation_ids": [
+        "action:A1"
+      ],
+      "rule_ids": [
+        "R7"
+      ],
+      "required_role": "human_reviewer",
+      "account_id": "ACC-2002",
+      "access_level": "standard",
+      "eligible_user_ids": [
+        "USR-5004",
+        "USR-5005"
+      ],
+      "status": "pending",
+      "proposed_values": {},
+      "summary": "Confirm with the AE exactly what went to Julian Maro's office. Check it against the CALL-018 list: scorecard, export retest date and owner, incident owner map, and staged commercial option with capped enablement. Get proof it was received.",
+      "evidence_ids": [
+        "slack:SLK-1002-02",
+        "transcript:CALL-018:4",
+        "sfdc_opp:OPP-1002"
+      ],
+      "created_at": "2026-09-26T16:38:15.450394Z",
+      "expires_at": "2026-10-03T16:38:15.450394Z"
+    }
+  ],
+  "events": []
+}

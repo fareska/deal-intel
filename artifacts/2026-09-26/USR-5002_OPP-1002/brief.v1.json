@@ -1,0 +1,1245 @@
+{
+  "metadata": {
+    "run_id": "b8e2e65c8a914958800e3aac25da0657",
+    "opportunity_id": "OPP-1002",
+    "version": 1,
+    "source": "run",
+    "max_access_level": "standard",
+    "degraded": false,
+    "cost_usd": "0.000000",
+    "rendered_at": "2026-09-26T16:38:15.479923Z"
+  },
+  "deal_snapshot": {
+    "lines": [
+      {
+        "text": "Account: Meridian Appliances Group (ACC-2002)",
+        "citations": [
+          "source=synthetic_data/salesforce/opportunities.tsv, opportunity_id=OPP-1002"
+        ]
+      },
+      {
+        "text": "Stage: 3.0 Prove",
+        "citations": [
+          "source=synthetic_data/salesforce/opportunities.tsv, opportunity_id=OPP-1002"
+        ]
+      },
+      {
+        "text": "Type: Expansion",
+        "citations": [
+          "source=synthetic_data/salesforce/opportunities.tsv, opportunity_id=OPP-1002"
+        ]
+      },
+      {
+        "text": "Forecast category: Best Case",
+        "citations": [
+          "source=synthetic_data/salesforce/opportunities.tsv, opportunity_id=OPP-1002"
+        ]
+      },
+      {
+        "text": "ACV: 2384000",
+        "citations": [
+          "source=synthetic_data/salesforce/opportunities.tsv, opportunity_id=OPP-1002"
+        ]
+      },
+      {
+        "text": "TCV: 7152000",
+        "citations": [
+          "source=synthetic_data/salesforce/opportunities.tsv, opportunity_id=OPP-1002"
+        ]
+      },
+      {
+        "text": "Renewal term months: 36",
+        "citations": [
+          "source=synthetic_data/salesforce/opportunities.tsv, opportunity_id=OPP-1002"
+        ]
+      },
+      {
+        "text": "Probability: 54%",
+        "citations": [
+          "source=synthetic_data/salesforce/opportunities.tsv, opportunity_id=OPP-1002"
+        ]
+      },
+      {
+        "text": "Close date: 2026-05-29",
+        "citations": [
+          "source=synthetic_data/salesforce/opportunities.tsv, opportunity_id=OPP-1002"
+        ]
+      },
+      {
+        "text": "Owner: Owen Patel",
+        "citations": [
+          "source=synthetic_data/salesforce/opportunities.tsv, opportunity_id=OPP-1002"
+        ]
+      },
+      {
+        "text": "Primary competitor: EdgeSphere Secure",
+        "citations": [
+          "source=synthetic_data/salesforce/opportunities.tsv, opportunity_id=OPP-1002"
+        ]
+      },
+      {
+        "text": "Risk level: medium",
+        "citations": [
+          "source=synthetic_data/salesforce/opportunities.tsv, opportunity_id=OPP-1002"
+        ]
+      },
+      {
+        "text": "Approval required: no",
+        "citations": [
+          "source=synthetic_data/salesforce/opportunities.tsv, opportunity_id=OPP-1002"
+        ]
+      },
+      {
+        "text": "Restricted access: no",
+        "citations": [
+          "source=synthetic_data/salesforce/opportunities.tsv, opportunity_id=OPP-1002"
+        ]
+      },
+      {
+        "text": "Region: EMEA, Portugal",
+        "citations": [
+          "source=synthetic_data/salesforce/opportunities.tsv, opportunity_id=OPP-1002"
+        ]
+      },
+      {
+        "text": "Industry: Industrial manufacturing",
+        "citations": [
+          "source=synthetic_data/salesforce/opportunities.tsv, opportunity_id=OPP-1002"
+        ]
+      },
+      {
+        "text": "Next step: Deliver reporting proof pack and factory cutover risk register by 2026-05-08",
+        "citations": [
+          "source=synthetic_data/salesforce/opportunities.tsv, opportunity_id=OPP-1002"
+        ]
+      },
+      {
+        "text": "Industry: Industrial manufacturing",
+        "citations": [
+          "source=synthetic_data/salesforce/accounts.tsv, account_id=ACC-2002"
+        ]
+      },
+      {
+        "text": "Region: EMEA, Portugal",
+        "citations": [
+          "source=synthetic_data/salesforce/accounts.tsv, account_id=ACC-2002"
+        ]
+      },
+      {
+        "text": "Employees: 7000-11000",
+        "citations": [
+          "source=synthetic_data/salesforce/accounts.tsv, account_id=ACC-2002"
+        ]
+      },
+      {
+        "text": "Current products: Network security platform, remote access pilot",
+        "citations": [
+          "source=synthetic_data/salesforce/accounts.tsv, account_id=ACC-2002"
+        ]
+      },
+      {
+        "text": "Account health: Mixed",
+        "citations": [
+          "source=synthetic_data/salesforce/accounts.tsv, account_id=ACC-2002"
+        ]
+      },
+      {
+        "text": "Strategic notes: Expansion depends on proof success, reporting gaps, and confidence in operational support for factories.",
+        "citations": [
+          "source=synthetic_data/salesforce/accounts.tsv, account_id=ACC-2002"
+        ]
+      },
+      {
+        "text": "Access level: standard",
+        "citations": [
+          "source=synthetic_data/salesforce/accounts.tsv, account_id=ACC-2002"
+        ]
+      }
+    ],
+    "pricing_notes": [
+      {
+        "text": "Pricing note PN-4003 for OPP-1002: Current ACV: 1850000; Proposed ACV: 2384000; Requested discount: 6%; Renewal uplift: 29%; Commercial risk: medium; Approval status: not_required; Notes: Expansion price assumes staged factory rollout and includes minimum enablement scope.",
+        "citations": [
+          "source=synthetic_data/pricing/pricing_notes.tsv, pricing_note_id=PN-4003"
+        ]
+      }
+    ],
+    "pricing_visibility": "visible"
+  },
+  "executive_summary": {
+    "sentences": [
+      {
+        "text": "OPP-1002 is a Meridian expansion deal in stage 3.0 Prove, forecast Best Case at 54%. It has an ACV of 2384000, a TCV of 7152000 over a 36-month term, and a close date of 2026-05-29. Account health is Mixed.",
+        "citations": [
+          "source=synthetic_data/salesforce/opportunities.tsv, opportunity_id=OPP-1002",
+          "source=synthetic_data/salesforce/accounts.tsv, account_id=ACC-2002"
+        ]
+      },
+      {
+        "text": "The CIO said \"Directionally, the proof passed\". Commercial approval still depends on two fixes: a retest of the reporting export and an incident owner map. The Network Operations Manager will back the expansion if both pass.",
+        "citations": [
+          "source=synthetic_data/gong/transcripts/OPP-1002_CALL-018.md, call_id=CALL-018, segment=1",
+          "source=synthetic_data/gong/gong_call_summaries.tsv, call_id=CALL-018",
+          "source=synthetic_data/gong/transcripts/OPP-1002_CALL-018.md, call_id=CALL-018, segment=4"
+        ]
+      },
+      {
+        "text": "Finance wants payments staged against proof acceptance and readiness of the first factory rollout, a cap on enablement, and a proof scorecard. Lena Frost said: \"I am not approving the full expansion as one upfront commitment.\"",
+        "citations": [
+          "source=synthetic_data/gong/transcripts/OPP-1002_CALL-018.md, call_id=CALL-018, segment=1",
+          "source=synthetic_data/gong/transcripts/OPP-1002_CALL-018.md, call_id=CALL-018, segment=4",
+          "source=synthetic_data/gong/gong_call_summaries.tsv, call_id=CALL-017"
+        ]
+      },
+      {
+        "text": "The CIO asked for everything \"in one packet by early May\". Sources disagree on whether that packet has gone out: the AE's Slack post calls it closed, but the call action list and the Salesforce next step (due 2026-05-08) say it is still open.",
+        "citations": [
+          "source=synthetic_data/gong/transcripts/OPP-1002_CALL-018.md, call_id=CALL-018, segment=4",
+          "source=synthetic_data/slack/account_team_updates.tsv, update_id=SLK-1002-02",
+          "source=synthetic_data/salesforce/opportunities.tsv, opportunity_id=OPP-1002"
+        ]
+      },
+      {
+        "text": "The main risk is operational complexity. EdgeSphere Secure is seen as simpler, though Meridian has not checked whether it matches our segmentation. Niko Hart: \"simple is attractive when operations is tired.\"",
+        "citations": [
+          "source=synthetic_data/gong/transcripts/OPP-1002_CALL-018.md, call_id=CALL-018, segment=3",
+          "source=synthetic_data/gong/transcripts/OPP-1002_CALL-018.md, call_id=CALL-018, segment=7",
+          "source=synthetic_data/salesforce/opportunities.tsv, opportunity_id=OPP-1002"
+        ]
+      },
+      {
+        "text": "Pricing note PN-4003 lists a 6% requested discount and a 29% renewal uplift (current ACV 1850000, proposed 2384000). The price assumes a staged factory rollout and minimum enablement scope.",
+        "citations": [
+          "source=synthetic_data/pricing/pricing_notes.tsv, pricing_note_id=PN-4003"
+        ]
+      }
+    ]
+  },
+  "buyer_goals": {
+    "goals": [
+      {
+        "text": "Achieve no unplanned production impact and clear failover visibility during factory connectivity, with a report showing what improved.",
+        "citations": [
+          "source=synthetic_data/gong/transcripts/OPP-1002_CALL-010.md, call_id=CALL-010, segment=1",
+          "source=synthetic_data/gong/transcripts/OPP-1002_CALL-010.md, call_id=CALL-010, segment=2"
+        ]
+      },
+      {
+        "text": "Establish clear ownership across factory IT, central network, security, and vendor so teams do not point at each other during incidents.",
+        "citations": [
+          "source=synthetic_data/gong/transcripts/OPP-1002_CALL-010.md, call_id=CALL-010, segment=1",
+          "source=synthetic_data/gong/transcripts/OPP-1002_CALL-010.md, call_id=CALL-010, segment=2"
+        ]
+      },
+      {
+        "text": "Prove that failover visibility works during shift changes, addressing uptime as the primary driver.",
+        "citations": [
+          "source=synthetic_data/gong/transcripts/OPP-1002_CALL-010.md, call_id=CALL-010, segment=1"
+        ]
+      },
+      {
+        "text": "Create alert severity mapping so plant staff know what can wait until morning and what requires urgent escalation.",
+        "citations": [
+          "source=synthetic_data/gong/transcripts/OPP-1002_CALL-010.md, call_id=CALL-010, segment=3"
+        ]
+      },
+      {
+        "text": "Build a staged rollout with operator tasks that plant teams trust, not just architecture validation.",
+        "citations": [
+          "source=synthetic_data/gong/transcripts/OPP-1002_CALL-010.md, call_id=CALL-010, segment=3",
+          "source=synthetic_data/gong/transcripts/OPP-1002_CALL-010.md, call_id=CALL-010, segment=4"
+        ]
+      },
+      {
+        "text": "Mark proof items distinctly as passed, remediation-required, or roadmap, distinguishing what is ready now from what will change after signature.",
+        "citations": [
+          "source=synthetic_data/gong/transcripts/OPP-1002_CALL-018.md, call_id=CALL-018, segment=4",
+          "source=synthetic_data/gong/transcripts/OPP-1002_CALL-018.md, call_id=CALL-018, segment=5"
+        ]
+      },
+      {
+        "text": "Include conditional approval criteria with named dates and owners, so internal stakeholders can support expansion without hand-waving.",
+        "citations": [
+          "source=synthetic_data/gong/transcripts/OPP-1002_CALL-018.md, call_id=CALL-018, segment=6"
+        ]
+      },
+      {
+        "text": "Obtain staged payment terms tied to proof acceptance and first factory rollout readiness, with capped enablement scope.",
+        "citations": [
+          "source=synthetic_data/gong/gong_call_summaries.tsv, call_id=CALL-013",
+          "source=synthetic_data/gong/transcripts/OPP-1002_CALL-018.md, call_id=CALL-018, segment=2",
+          "source=synthetic_data/gong/transcripts/OPP-1002_CALL-018.md, call_id=CALL-018, segment=4"
+        ]
+      }
+    ],
+    "drivers": [
+      {
+        "text": "Factory uptime is the primary operational driver; production line connectivity losses during shift changes directly impact plant managers.",
+        "citations": [
+          "source=synthetic_data/gong/transcripts/OPP-1002_CALL-010.md, call_id=CALL-010, segment=1"
+        ]
+      },
+      {
+        "text": "Avoid factory-by-factory exceptions and reduce operational noise through standardized platform expansion.",
+        "citations": [
+          "source=synthetic_data/gong/transcripts/OPP-1002_CALL-010.md, call_id=CALL-010, segment=1",
+          "source=synthetic_data/gong/transcripts/OPP-1002_CALL-010.md, call_id=CALL-010, segment=5"
+        ]
+      },
+      {
+        "text": "Expand platform to additional factories after proof on two representative sites, one high-volume and one with older equipment.",
+        "citations": [
+          "source=synthetic_data/gong/gong_call_summaries.tsv, call_id=CALL-010"
+        ]
+      },
+      {
+        "text": "Gain confidence that platform decisions can be made locally by plant teams without always requiring vendor escalation.",
+        "citations": [
+          "source=synthetic_data/gong/transcripts/OPP-1002_CALL-010.md, call_id=CALL-010, segment=1",
+          "source=synthetic_data/gong/transcripts/OPP-1002_CALL-010.md, call_id=CALL-010, segment=2"
+        ]
+      }
+    ],
+    "objections": [
+      {
+        "text": "Competitor solution appears simpler for plant staff, creating attraction when operations teams are fatigued by complexity.",
+        "citations": [
+          "source=synthetic_data/gong/gong_call_summaries.tsv, call_id=CALL-012",
+          "source=synthetic_data/gong/transcripts/OPP-1002_CALL-010.md, call_id=CALL-010, segment=4"
+        ]
+      },
+      {
+        "text": "Training burden and enablement gaps may reduce champion confidence, particularly for night-shift staff.",
+        "citations": [
+          "source=synthetic_data/gong/gong_call_summaries.tsv, call_id=CALL-014"
+        ]
+      },
+      {
+        "text": "Current troubleshooting flow has too many product terms and requires operators to know which layer failed, making it unfriendly for factory use.",
+        "citations": [
+          "source=synthetic_data/gong/transcripts/OPP-1002_CALL-014.md, call_id=CALL-014, segment=1"
+        ]
+      },
+      {
+        "text": "Operational complexity remains the main risk to expansion, despite strong strategic value and positive proof.",
+        "citations": [
+          "source=synthetic_data/gong/transcripts/OPP-1002_CALL-018.md, call_id=CALL-018, segment=3"
+        ]
+      },
+      {
+        "text": "Finance concern that services cap could limit rollout support needed for success.",
+        "citations": [
+          "source=synthetic_data/gong/gong_call_summaries.tsv, call_id=CALL-017"
+        ]
+      }
+    ],
+    "competitors": [
+      {
+        "text": "Competitor is perceived as simpler for plant staff operations.",
+        "citations": [
+          "source=synthetic_data/gong/gong_call_summaries.tsv, call_id=CALL-012"
+        ]
+      },
+      {
+        "text": "Competitor solution is simpler, or at least appears simpler, though Meridian has not validated equal segmentation depth from that option.",
+        "citations": [
+          "source=synthetic_data/gong/transcripts/OPP-1002_CALL-010.md, call_id=CALL-010, segment=3",
+          "source=synthetic_data/gong/transcripts/OPP-1002_CALL-010.md, call_id=CALL-010, segment=4"
+        ]
+      }
+    ]
+  },
+  "stakeholder_map": {
+    "stakeholders": [
+      {
+        "name": "Julian Maro",
+        "title": "CIO",
+        "role_in_deal": "economic_buyer",
+        "influence": "high",
+        "sentiment": "cautious but supportive",
+        "stance": "\"Directionally, the proof passed\" but needs two remediation items before commercial approval. Wants decision by late May; emphasizes proceed \"but not rush.\" Requires proof scorecard and incident ownership clarity.",
+        "citations": [
+          "source=synthetic_data/salesforce/contacts.tsv, contact_id=CON-3006",
+          "source=synthetic_data/gong/gong_call_summaries.tsv, call_id=CALL-018",
+          "source=synthetic_data/gong/gong_call_summaries.tsv, call_id=CALL-017",
+          "source=synthetic_data/gong/gong_call_summaries.tsv, call_id=CALL-013",
+          "source=synthetic_data/gong/transcripts/OPP-1002_CALL-018.md, call_id=CALL-018, segment=1",
+          "source=synthetic_data/gong/transcripts/OPP-1002_CALL-018.md, call_id=CALL-018, segment=3",
+          "source=synthetic_data/gong/transcripts/OPP-1002_CALL-018.md, call_id=CALL-018, segment=5",
+          "source=synthetic_data/gong/transcripts/OPP-1002_CALL-010.md, call_id=CALL-010, segment=2"
+        ]
+      },
+      {
+        "name": "Clara Esteves",
+        "title": "Director of Plant Systems",
+        "role_in_deal": "champion",
+        "influence": "high",
+        "sentiment": "positive and engaged",
+        "stance": "Strong advocate: \"The factory teams responded well to the shorter runbook.\" Demands conditional approval with documented retest dates and owners. Insists on clear distinction between ready, remediation, and roadmap items.",
+        "citations": [
+          "source=synthetic_data/salesforce/contacts.tsv, contact_id=CON-3007",
+          "source=synthetic_data/gong/gong_call_summaries.tsv, call_id=CALL-018",
+          "source=synthetic_data/gong/gong_call_summaries.tsv, call_id=CALL-014",
+          "source=synthetic_data/gong/transcripts/OPP-1002_CALL-018.md, call_id=CALL-018, segment=1",
+          "source=synthetic_data/gong/transcripts/OPP-1002_CALL-018.md, call_id=CALL-018, segment=2",
+          "source=synthetic_data/gong/transcripts/OPP-1002_CALL-018.md, call_id=CALL-018, segment=4",
+          "source=synthetic_data/gong/transcripts/OPP-1002_CALL-014.md, call_id=CALL-014, segment=3",
+          "source=synthetic_data/gong/transcripts/OPP-1002_CALL-014.md, call_id=CALL-014, segment=5"
+        ]
+      },
+      {
+        "name": "Niko Hart",
+        "title": "Network Operations Manager",
+        "role_in_deal": "technical_decision_maker",
+        "influence": "high",
+        "sentiment": "cautious but constructive",
+        "stance": "\"I need the export retest and the incident owner map. If those pass, I will support expansion.\" Requires failover visibility and clear ownership. Notes competitor attractive when \"operations is tired.\"",
+        "citations": [
+          "source=synthetic_data/salesforce/contacts.tsv, contact_id=CON-3008",
+          "source=synthetic_data/gong/gong_call_summaries.tsv, call_id=CALL-018",
+          "source=synthetic_data/gong/gong_call_summaries.tsv, call_id=CALL-015",
+          "source=synthetic_data/gong/gong_call_summaries.tsv, call_id=CALL-014",
+          "source=synthetic_data/gong/gong_call_summaries.tsv, call_id=CALL-012",
+          "source=synthetic_data/gong/transcripts/OPP-1002_CALL-018.md, call_id=CALL-018, segment=4",
+          "source=synthetic_data/gong/transcripts/OPP-1002_CALL-018.md, call_id=CALL-018, segment=6",
+          "source=synthetic_data/gong/transcripts/OPP-1002_CALL-014.md, call_id=CALL-014, segment=6",
+          "source=synthetic_data/gong/transcripts/OPP-1002_CALL-010.md, call_id=CALL-010, segment=2"
+        ]
+      },
+      {
+        "name": "Lena Frost",
+        "title": "Finance Controller",
+        "role_in_deal": "commercial_approver",
+        "influence": "medium",
+        "sentiment": "neutral and transactional",
+        "stance": "Requires staged payment tied to proof acceptance and rollout readiness. \"I am not approving the full expansion as one upfront commitment.\" Demands capped enablement and transparency: Do not hide the yellow items.",
+        "citations": [
+          "source=synthetic_data/salesforce/contacts.tsv, contact_id=CON-3009",
+          "source=synthetic_data/gong/gong_call_summaries.tsv, call_id=CALL-018",
+          "source=synthetic_data/gong/gong_call_summaries.tsv, call_id=CALL-017",
+          "source=synthetic_data/slack/account_team_updates.tsv, update_id=SLK-1002-03",
+          "source=synthetic_data/gong/transcripts/OPP-1002_CALL-018.md, call_id=CALL-018, segment=1",
+          "source=synthetic_data/gong/transcripts/OPP-1002_CALL-018.md, call_id=CALL-018, segment=5"
+        ]
+      },
+      {
+        "name": "Henrik Vale",
+        "title": "Security Architect",
+        "role_in_deal": "technical_decision_maker",
+        "influence": "medium",
+        "sentiment": "positive with conditions",
+        "stance": "Accepted segmentation but requires data protection evidence. Insists templates not drift plant-by-plant. Wants policy template owner naming in alerts and recurring drift review as part of close plan.",
+        "citations": [
+          "source=synthetic_data/salesforce/contacts.tsv, contact_id=CON-3010",
+          "source=synthetic_data/gong/gong_call_summaries.tsv, call_id=CALL-016",
+          "source=synthetic_data/gong/gong_call_summaries.tsv, call_id=CALL-014",
+          "source=synthetic_data/gong/gong_call_summaries.tsv, call_id=CALL-011",
+          "source=synthetic_data/gong/transcripts/OPP-1002_CALL-014.md, call_id=CALL-014, segment=1",
+          "source=synthetic_data/gong/transcripts/OPP-1002_CALL-014.md, call_id=CALL-014, segment=2",
+          "source=synthetic_data/gong/transcripts/OPP-1002_CALL-014.md, call_id=CALL-014, segment=4"
+        ]
+      }
+    ],
+    "off_crm_people": [
+      {
+        "text": "Site IT lead at first cutover factory responsible for plant readiness sign-off (technical_decision_maker): Asked for on-site vendor support during cutover week",
+        "citations": [
+          "source=synthetic_data/slack/account_team_updates.tsv, update_id=SLK-1002-01"
+        ]
+      }
+    ],
+    "unmatched_speakers": [],
+    "roles_missing": [
+      "legal"
+    ]
+  },
+  "negotiation_state": {
+    "assessment": {
+      "text": "We are finishing the proof, still in stage 3.0 Prove. Meridian says the proof is directionally successful, but commercial approval waits on the export retest and the owner map. The deal can slip if these fixes are treated as roadmap items. We cannot confirm whether the closeout packet was actually delivered.",
+      "citations": [
+        "source=synthetic_data/gong/gong_call_summaries.tsv, call_id=CALL-018",
+        "source=synthetic_data/gong/transcripts/OPP-1002_CALL-018.md, call_id=CALL-018, segment=1",
+        "source=synthetic_data/gong/transcripts/OPP-1002_CALL-018.md, call_id=CALL-018, segment=2",
+        "source=synthetic_data/gong/transcripts/OPP-1002_CALL-018.md, call_id=CALL-018, segment=4",
+        "source=synthetic_data/gong/transcripts/OPP-1002_CALL-018.md, call_id=CALL-018, segment=5",
+        "source=synthetic_data/gong/transcripts/OPP-1002_CALL-018.md, call_id=CALL-018, segment=6",
+        "source=synthetic_data/gong/gong_call_summaries.tsv, call_id=CALL-017",
+        "source=synthetic_data/slack/account_team_updates.tsv, update_id=SLK-1002-01",
+        "source=synthetic_data/slack/account_team_updates.tsv, update_id=SLK-1002-02",
+        "source=synthetic_data/slack/account_team_updates.tsv, update_id=SLK-1002-03",
+        "source=synthetic_data/pricing/pricing_notes.tsv, pricing_note_id=PN-4003",
+        "source=synthetic_data/salesforce/opportunities.tsv, opportunity_id=OPP-1002"
+      ]
+    },
+    "customer_position": {
+      "text": "Meridian wants to proceed without rushing. They want all conditions in one packet by early May: a blunt scorecard, with passed, remediation and roadmap items shown separately; a retest date and owner; the owner map; and staged payments tied to acceptance of the closeout pack, with capped enablement.",
+      "citations": [
+        "source=synthetic_data/gong/gong_call_summaries.tsv, call_id=CALL-018",
+        "source=synthetic_data/gong/transcripts/OPP-1002_CALL-018.md, call_id=CALL-018, segment=1",
+        "source=synthetic_data/gong/transcripts/OPP-1002_CALL-018.md, call_id=CALL-018, segment=2",
+        "source=synthetic_data/gong/transcripts/OPP-1002_CALL-018.md, call_id=CALL-018, segment=4",
+        "source=synthetic_data/gong/transcripts/OPP-1002_CALL-018.md, call_id=CALL-018, segment=5",
+        "source=synthetic_data/gong/transcripts/OPP-1002_CALL-018.md, call_id=CALL-018, segment=6",
+        "source=synthetic_data/gong/gong_call_summaries.tsv, call_id=CALL-017",
+        "source=synthetic_data/slack/account_team_updates.tsv, update_id=SLK-1002-01",
+        "source=synthetic_data/slack/account_team_updates.tsv, update_id=SLK-1002-02",
+        "source=synthetic_data/slack/account_team_updates.tsv, update_id=SLK-1002-03",
+        "source=synthetic_data/pricing/pricing_notes.tsv, pricing_note_id=PN-4003",
+        "source=synthetic_data/salesforce/opportunities.tsv, opportunity_id=OPP-1002"
+      ]
+    },
+    "vendor_position": {
+      "text": "We offered staged payments tied to proof acceptance and first-rollout readiness. We also offered a capped enablement package with named deliverables: operator runbook, supervisor diagnostics, two cutover sessions, a post-cutover review and a thirty-day owner-map review. The pricing note assumes minimum enablement scope.",
+      "citations": [
+        "source=synthetic_data/gong/gong_call_summaries.tsv, call_id=CALL-018",
+        "source=synthetic_data/gong/transcripts/OPP-1002_CALL-018.md, call_id=CALL-018, segment=1",
+        "source=synthetic_data/gong/transcripts/OPP-1002_CALL-018.md, call_id=CALL-018, segment=2",
+        "source=synthetic_data/gong/transcripts/OPP-1002_CALL-018.md, call_id=CALL-018, segment=4",
+        "source=synthetic_data/gong/transcripts/OPP-1002_CALL-018.md, call_id=CALL-018, segment=5",
+        "source=synthetic_data/gong/transcripts/OPP-1002_CALL-018.md, call_id=CALL-018, segment=6",
+        "source=synthetic_data/gong/gong_call_summaries.tsv, call_id=CALL-017",
+        "source=synthetic_data/slack/account_team_updates.tsv, update_id=SLK-1002-01",
+        "source=synthetic_data/slack/account_team_updates.tsv, update_id=SLK-1002-02",
+        "source=synthetic_data/slack/account_team_updates.tsv, update_id=SLK-1002-03",
+        "source=synthetic_data/pricing/pricing_notes.tsv, pricing_note_id=PN-4003",
+        "source=synthetic_data/salesforce/opportunities.tsv, opportunity_id=OPP-1002"
+      ]
+    },
+    "open_items": [
+      {
+        "text": "Reporting export retest: date and owner not yet confirmed in evidence",
+        "citations": [
+          "source=synthetic_data/gong/gong_call_summaries.tsv, call_id=CALL-018",
+          "source=synthetic_data/gong/transcripts/OPP-1002_CALL-018.md, call_id=CALL-018, segment=1",
+          "source=synthetic_data/gong/transcripts/OPP-1002_CALL-018.md, call_id=CALL-018, segment=2",
+          "source=synthetic_data/gong/transcripts/OPP-1002_CALL-018.md, call_id=CALL-018, segment=4",
+          "source=synthetic_data/gong/transcripts/OPP-1002_CALL-018.md, call_id=CALL-018, segment=5",
+          "source=synthetic_data/gong/transcripts/OPP-1002_CALL-018.md, call_id=CALL-018, segment=6",
+          "source=synthetic_data/gong/gong_call_summaries.tsv, call_id=CALL-017",
+          "source=synthetic_data/slack/account_team_updates.tsv, update_id=SLK-1002-01",
+          "source=synthetic_data/slack/account_team_updates.tsv, update_id=SLK-1002-02",
+          "source=synthetic_data/slack/account_team_updates.tsv, update_id=SLK-1002-03",
+          "source=synthetic_data/pricing/pricing_notes.tsv, pricing_note_id=PN-4003",
+          "source=synthetic_data/salesforce/opportunities.tsv, opportunity_id=OPP-1002"
+        ]
+      },
+      {
+        "text": "Incident owner map, and who maintains it after the first rollout",
+        "citations": [
+          "source=synthetic_data/gong/gong_call_summaries.tsv, call_id=CALL-018",
+          "source=synthetic_data/gong/transcripts/OPP-1002_CALL-018.md, call_id=CALL-018, segment=1",
+          "source=synthetic_data/gong/transcripts/OPP-1002_CALL-018.md, call_id=CALL-018, segment=2",
+          "source=synthetic_data/gong/transcripts/OPP-1002_CALL-018.md, call_id=CALL-018, segment=4",
+          "source=synthetic_data/gong/transcripts/OPP-1002_CALL-018.md, call_id=CALL-018, segment=5",
+          "source=synthetic_data/gong/transcripts/OPP-1002_CALL-018.md, call_id=CALL-018, segment=6",
+          "source=synthetic_data/gong/gong_call_summaries.tsv, call_id=CALL-017",
+          "source=synthetic_data/slack/account_team_updates.tsv, update_id=SLK-1002-01",
+          "source=synthetic_data/slack/account_team_updates.tsv, update_id=SLK-1002-02",
+          "source=synthetic_data/slack/account_team_updates.tsv, update_id=SLK-1002-03",
+          "source=synthetic_data/pricing/pricing_notes.tsv, pricing_note_id=PN-4003",
+          "source=synthetic_data/salesforce/opportunities.tsv, opportunity_id=OPP-1002"
+        ]
+      },
+      {
+        "text": "Whether the closeout packet has been delivered and what it contained (sources disagree)",
+        "citations": [
+          "source=synthetic_data/gong/gong_call_summaries.tsv, call_id=CALL-018",
+          "source=synthetic_data/gong/transcripts/OPP-1002_CALL-018.md, call_id=CALL-018, segment=1",
+          "source=synthetic_data/gong/transcripts/OPP-1002_CALL-018.md, call_id=CALL-018, segment=2",
+          "source=synthetic_data/gong/transcripts/OPP-1002_CALL-018.md, call_id=CALL-018, segment=4",
+          "source=synthetic_data/gong/transcripts/OPP-1002_CALL-018.md, call_id=CALL-018, segment=5",
+          "source=synthetic_data/gong/transcripts/OPP-1002_CALL-018.md, call_id=CALL-018, segment=6",
+          "source=synthetic_data/gong/gong_call_summaries.tsv, call_id=CALL-017",
+          "source=synthetic_data/slack/account_team_updates.tsv, update_id=SLK-1002-01",
+          "source=synthetic_data/slack/account_team_updates.tsv, update_id=SLK-1002-02",
+          "source=synthetic_data/slack/account_team_updates.tsv, update_id=SLK-1002-03",
+          "source=synthetic_data/pricing/pricing_notes.tsv, pricing_note_id=PN-4003",
+          "source=synthetic_data/salesforce/opportunities.tsv, opportunity_id=OPP-1002"
+        ]
+      },
+      {
+        "text": "Figures for the staged commercial option, which Finance still wants to see",
+        "citations": [
+          "source=synthetic_data/gong/gong_call_summaries.tsv, call_id=CALL-018",
+          "source=synthetic_data/gong/transcripts/OPP-1002_CALL-018.md, call_id=CALL-018, segment=1",
+          "source=synthetic_data/gong/transcripts/OPP-1002_CALL-018.md, call_id=CALL-018, segment=2",
+          "source=synthetic_data/gong/transcripts/OPP-1002_CALL-018.md, call_id=CALL-018, segment=4",
+          "source=synthetic_data/gong/transcripts/OPP-1002_CALL-018.md, call_id=CALL-018, segment=5",
+          "source=synthetic_data/gong/transcripts/OPP-1002_CALL-018.md, call_id=CALL-018, segment=6",
+          "source=synthetic_data/gong/gong_call_summaries.tsv, call_id=CALL-017",
+          "source=synthetic_data/slack/account_team_updates.tsv, update_id=SLK-1002-01",
+          "source=synthetic_data/slack/account_team_updates.tsv, update_id=SLK-1002-02",
+          "source=synthetic_data/slack/account_team_updates.tsv, update_id=SLK-1002-03",
+          "source=synthetic_data/pricing/pricing_notes.tsv, pricing_note_id=PN-4003",
+          "source=synthetic_data/salesforce/opportunities.tsv, opportunity_id=OPP-1002"
+        ]
+      },
+      {
+        "text": "Size of the enablement cap versus the risk of under-supporting the rollout",
+        "citations": [
+          "source=synthetic_data/gong/gong_call_summaries.tsv, call_id=CALL-018",
+          "source=synthetic_data/gong/transcripts/OPP-1002_CALL-018.md, call_id=CALL-018, segment=1",
+          "source=synthetic_data/gong/transcripts/OPP-1002_CALL-018.md, call_id=CALL-018, segment=2",
+          "source=synthetic_data/gong/transcripts/OPP-1002_CALL-018.md, call_id=CALL-018, segment=4",
+          "source=synthetic_data/gong/transcripts/OPP-1002_CALL-018.md, call_id=CALL-018, segment=5",
+          "source=synthetic_data/gong/transcripts/OPP-1002_CALL-018.md, call_id=CALL-018, segment=6",
+          "source=synthetic_data/gong/gong_call_summaries.tsv, call_id=CALL-017",
+          "source=synthetic_data/slack/account_team_updates.tsv, update_id=SLK-1002-01",
+          "source=synthetic_data/slack/account_team_updates.tsv, update_id=SLK-1002-02",
+          "source=synthetic_data/slack/account_team_updates.tsv, update_id=SLK-1002-03",
+          "source=synthetic_data/pricing/pricing_notes.tsv, pricing_note_id=PN-4003",
+          "source=synthetic_data/salesforce/opportunities.tsv, opportunity_id=OPP-1002"
+        ]
+      },
+      {
+        "text": "Site IT lead for the first cutover factory, and whether on-site cutover support is in scope",
+        "citations": [
+          "source=synthetic_data/gong/gong_call_summaries.tsv, call_id=CALL-018",
+          "source=synthetic_data/gong/transcripts/OPP-1002_CALL-018.md, call_id=CALL-018, segment=1",
+          "source=synthetic_data/gong/transcripts/OPP-1002_CALL-018.md, call_id=CALL-018, segment=2",
+          "source=synthetic_data/gong/transcripts/OPP-1002_CALL-018.md, call_id=CALL-018, segment=4",
+          "source=synthetic_data/gong/transcripts/OPP-1002_CALL-018.md, call_id=CALL-018, segment=5",
+          "source=synthetic_data/gong/transcripts/OPP-1002_CALL-018.md, call_id=CALL-018, segment=6",
+          "source=synthetic_data/gong/gong_call_summaries.tsv, call_id=CALL-017",
+          "source=synthetic_data/slack/account_team_updates.tsv, update_id=SLK-1002-01",
+          "source=synthetic_data/slack/account_team_updates.tsv, update_id=SLK-1002-02",
+          "source=synthetic_data/slack/account_team_updates.tsv, update_id=SLK-1002-03",
+          "source=synthetic_data/pricing/pricing_notes.tsv, pricing_note_id=PN-4003",
+          "source=synthetic_data/salesforce/opportunities.tsv, opportunity_id=OPP-1002"
+        ]
+      },
+      {
+        "text": "Data protection evidence and policy drift report for the Security Architect",
+        "citations": [
+          "source=synthetic_data/gong/gong_call_summaries.tsv, call_id=CALL-018",
+          "source=synthetic_data/gong/transcripts/OPP-1002_CALL-018.md, call_id=CALL-018, segment=1",
+          "source=synthetic_data/gong/transcripts/OPP-1002_CALL-018.md, call_id=CALL-018, segment=2",
+          "source=synthetic_data/gong/transcripts/OPP-1002_CALL-018.md, call_id=CALL-018, segment=4",
+          "source=synthetic_data/gong/transcripts/OPP-1002_CALL-018.md, call_id=CALL-018, segment=5",
+          "source=synthetic_data/gong/transcripts/OPP-1002_CALL-018.md, call_id=CALL-018, segment=6",
+          "source=synthetic_data/gong/gong_call_summaries.tsv, call_id=CALL-017",
+          "source=synthetic_data/slack/account_team_updates.tsv, update_id=SLK-1002-01",
+          "source=synthetic_data/slack/account_team_updates.tsv, update_id=SLK-1002-02",
+          "source=synthetic_data/slack/account_team_updates.tsv, update_id=SLK-1002-03",
+          "source=synthetic_data/pricing/pricing_notes.tsv, pricing_note_id=PN-4003",
+          "source=synthetic_data/salesforce/opportunities.tsv, opportunity_id=OPP-1002"
+        ]
+      },
+      {
+        "text": "Consequence analysis: does a two-week export slip block all expansion or only the first two factories?",
+        "citations": [
+          "source=synthetic_data/gong/gong_call_summaries.tsv, call_id=CALL-018",
+          "source=synthetic_data/gong/transcripts/OPP-1002_CALL-018.md, call_id=CALL-018, segment=1",
+          "source=synthetic_data/gong/transcripts/OPP-1002_CALL-018.md, call_id=CALL-018, segment=2",
+          "source=synthetic_data/gong/transcripts/OPP-1002_CALL-018.md, call_id=CALL-018, segment=4",
+          "source=synthetic_data/gong/transcripts/OPP-1002_CALL-018.md, call_id=CALL-018, segment=5",
+          "source=synthetic_data/gong/transcripts/OPP-1002_CALL-018.md, call_id=CALL-018, segment=6",
+          "source=synthetic_data/gong/gong_call_summaries.tsv, call_id=CALL-017",
+          "source=synthetic_data/slack/account_team_updates.tsv, update_id=SLK-1002-01",
+          "source=synthetic_data/slack/account_team_updates.tsv, update_id=SLK-1002-02",
+          "source=synthetic_data/slack/account_team_updates.tsv, update_id=SLK-1002-03",
+          "source=synthetic_data/pricing/pricing_notes.tsv, pricing_note_id=PN-4003",
+          "source=synthetic_data/salesforce/opportunities.tsv, opportunity_id=OPP-1002"
+        ]
+      }
+    ],
+    "urgency": {
+      "text": "high: CIO wants decision by late May; all deliverables must arrive in single packet by early May. Deal may slip if proof remediation is treated as roadmap rather than close plan.",
+      "citations": [
+        "source=synthetic_data/gong/gong_call_summaries.tsv, call_id=CALL-017",
+        "source=synthetic_data/gong/transcripts/OPP-1002_CALL-018.md, call_id=CALL-018, segment=4"
+      ]
+    },
+    "commitments": [
+      {
+        "text": "Niko Hart will support expansion if export retest and incident owner map pass.",
+        "citations": [
+          "source=synthetic_data/gong/gong_call_summaries.tsv, call_id=CALL-018",
+          "source=synthetic_data/gong/transcripts/OPP-1002_CALL-018.md, call_id=CALL-018, segment=1"
+        ]
+      },
+      {
+        "text": "Lena Frost (Finance) will approve staged payment if vendor provides staged commercial option with capped enablement, proof scorecard, and clear milestone structure.",
+        "citations": [
+          "source=synthetic_data/gong/gong_call_summaries.tsv, call_id=CALL-018",
+          "source=synthetic_data/gong/transcripts/OPP-1002_CALL-018.md, call_id=CALL-018, segment=4"
+        ]
+      },
+      {
+        "text": "Julian Maro needs all required documentation in one packet by early May, with distinction between ready items and roadmap items.",
+        "citations": [
+          "source=synthetic_data/gong/transcripts/OPP-1002_CALL-018.md, call_id=CALL-018, segment=4",
+          "source=synthetic_data/gong/transcripts/OPP-1002_CALL-018.md, call_id=CALL-018, segment=5"
+        ]
+      },
+      {
+        "text": "Runbook will be rewritten in operator language with product terms moved to appendix, and will include owner groups and policy drift evidence.",
+        "citations": [
+          "source=synthetic_data/gong/transcripts/OPP-1002_CALL-014.md, call_id=CALL-014, segment=3",
+          "source=synthetic_data/gong/transcripts/OPP-1002_CALL-014.md, call_id=CALL-014, segment=4"
+        ]
+      }
+    ],
+    "action_items": [
+      {
+        "text": "Send proof closeout pack including passed items, remediation items with dates and owners, and roadmap items marked separately. Include proof scorecard, export retest date, incident owner map, and staged commercial option with capped enablement. (vendor)",
+        "citations": [
+          "source=synthetic_data/gong/transcripts/OPP-1002_CALL-018.md, call_id=CALL-018, segment=4"
+        ]
+      },
+      {
+        "text": "Schedule and conduct reporting export retest before proof acceptance, with named owner and target date in closeout pack. (vendor)",
+        "citations": [
+          "source=synthetic_data/gong/transcripts/OPP-1002_CALL-018.md, call_id=CALL-018, segment=4"
+        ]
+      },
+      {
+        "text": "Provide proof scorecard with blunt green, yellow, red status for each item, marking reporting export as yellow if still failing. (vendor)",
+        "citations": [
+          "source=synthetic_data/gong/gong_call_summaries.tsv, call_id=CALL-013",
+          "source=synthetic_data/gong/transcripts/OPP-1002_CALL-018.md, call_id=CALL-018, segment=4"
+        ]
+      },
+      {
+        "text": "Develop capped enablement package with named deliverables: operator runbook, supervisor diagnostics, two factory cutover sessions, post-cutover review, and thirty-day incident ownership map maintenance. (vendor)",
+        "citations": [
+          "source=synthetic_data/gong/transcripts/OPP-1002_CALL-018.md, call_id=CALL-018, segment=2",
+          "source=synthetic_data/gong/transcripts/OPP-1002_CALL-018.md, call_id=CALL-018, segment=4"
+        ]
+      },
+      {
+        "text": "Structure proof pack as scorecard first, then operator appendix, supervisor appendix, and security evidence appendix, with executive layer showing whether proof reduces rollout risk. (vendor)",
+        "citations": [
+          "source=synthetic_data/gong/transcripts/OPP-1002_CALL-014.md, call_id=CALL-014, segment=4",
+          "source=synthetic_data/gong/transcripts/OPP-1002_CALL-014.md, call_id=CALL-014, segment=5"
+        ]
+      },
+      {
+        "text": "Assign owner and target date for reporting export retest in proof closeout pack so payment milestone can reference acceptance of closeout pack. (vendor)",
+        "citations": [
+          "source=synthetic_data/gong/transcripts/OPP-1002_CALL-018.md, call_id=CALL-018, segment=6"
+        ]
+      },
+      {
+        "text": "Model and present consequence analysis: if reporting export slips by two weeks, determine whether it blocks all expansion or only first two factories. (vendor)",
+        "citations": [
+          "source=synthetic_data/gong/transcripts/OPP-1002_CALL-018.md, call_id=CALL-018, segment=4",
+          "source=synthetic_data/gong/transcripts/OPP-1002_CALL-018.md, call_id=CALL-018, segment=5"
+        ]
+      },
+      {
+        "text": "Identify and engage site IT lead for first cutover factory who holds plant readiness sign-off; assess whether on-site support during cutover week is in scope or requires separate agreement. (joint)",
+        "citations": [
+          "source=synthetic_data/slack/account_team_updates.tsv, update_id=SLK-1002-01"
+        ]
+      },
+      {
+        "text": "Document recurring policy drift review cadence and thirty-day owner-map review process as part of close plan to address risk that runbook becomes stale after rollout. (vendor)",
+        "citations": [
+          "source=synthetic_data/gong/transcripts/OPP-1002_CALL-014.md, call_id=CALL-014, segment=7",
+          "source=synthetic_data/gong/transcripts/OPP-1002_CALL-018.md, call_id=CALL-018, segment=2"
+        ]
+      }
+    ]
+  },
+  "next_actions": {
+    "actions": [
+      {
+        "id": "A1",
+        "action": "Confirm with the AE exactly what went to Julian Maro's office. Check it against the CALL-018 list: scorecard, export retest date and owner, incident owner map, and staged commercial option with capped enablement. Get proof it was received.",
+        "owner_role": "Sales Manager",
+        "rationale": {
+          "text": "The AE's Slack post says the item is closed. The CALL-018 action list and the Salesforce next step (due 2026-05-08) say it is still open. The CIO wants one packet by early May, so an incomplete packet puts the late-May decision at risk.",
+          "citations": [
+            "source=synthetic_data/slack/account_team_updates.tsv, update_id=SLK-1002-02",
+            "source=synthetic_data/gong/transcripts/OPP-1002_CALL-018.md, call_id=CALL-018, segment=4",
+            "source=synthetic_data/salesforce/opportunities.tsv, opportunity_id=OPP-1002"
+          ]
+        },
+        "labels": [
+          {
+            "kind": "pending",
+            "role": "human_reviewer",
+            "actor_user_id": null,
+            "decided_on": null
+          }
+        ],
+        "rule_ids": [
+          "R7"
+        ],
+        "proposed_values": {},
+        "customer_facing": false,
+        "customer_language": null,
+        "confidence": "high",
+        "citations": [
+          "source=synthetic_data/slack/account_team_updates.tsv, update_id=SLK-1002-02",
+          "source=synthetic_data/gong/transcripts/OPP-1002_CALL-018.md, call_id=CALL-018, segment=4",
+          "source=synthetic_data/salesforce/opportunities.tsv, opportunity_id=OPP-1002"
+        ]
+      },
+      {
+        "id": "A2",
+        "action": "Send Meridian one proof closeout packet: green/yellow/red scorecard first; passed, remediation and roadmap items shown separately; export retest owner and date; incident owner map; impact of a two-week export slip. Operator, supervisor and security material go in appendices.",
+        "owner_role": "Account Executive with Customer Success",
+        "rationale": {
+          "text": "The CIO, champion, operations and finance all asked for this structure. Finance said \"do not hide the yellow items\". The champion needs a retest date and owner so she can support a conditional approval. Whether this is a first send or a resend depends on the disputed delivery status (A1).",
+          "citations": [
+            "source=synthetic_data/gong/transcripts/OPP-1002_CALL-018.md, call_id=CALL-018, segment=4",
+            "source=synthetic_data/gong/transcripts/OPP-1002_CALL-018.md, call_id=CALL-018, segment=5",
+            "source=synthetic_data/gong/transcripts/OPP-1002_CALL-018.md, call_id=CALL-018, segment=6",
+            "source=synthetic_data/gong/transcripts/OPP-1002_CALL-014.md, call_id=CALL-014, segment=4",
+            "source=synthetic_data/gong/transcripts/OPP-1002_CALL-014.md, call_id=CALL-014, segment=5"
+          ]
+        },
+        "labels": [
+          {
+            "kind": "pending",
+            "role": "human_reviewer",
+            "actor_user_id": null,
+            "decided_on": null
+          }
+        ],
+        "rule_ids": [
+          "R7"
+        ],
+        "proposed_values": {},
+        "customer_facing": true,
+        "customer_language": null,
+        "confidence": "high",
+        "citations": [
+          "source=synthetic_data/gong/transcripts/OPP-1002_CALL-018.md, call_id=CALL-018, segment=4",
+          "source=synthetic_data/gong/transcripts/OPP-1002_CALL-018.md, call_id=CALL-018, segment=5",
+          "source=synthetic_data/gong/transcripts/OPP-1002_CALL-018.md, call_id=CALL-018, segment=6",
+          "source=synthetic_data/gong/transcripts/OPP-1002_CALL-014.md, call_id=CALL-014, segment=4",
+          "source=synthetic_data/gong/transcripts/OPP-1002_CALL-014.md, call_id=CALL-014, segment=5"
+        ]
+      },
+      {
+        "id": "A3",
+        "action": "Agree a date for the basic reporting export retest with Niko Hart, name an owner, and run it before proof acceptance.",
+        "owner_role": "Solutions Engineer",
+        "rationale": {
+          "text": "Niko Hart said a slipped export \"blocks my sign-off\". One export failed during the pilot review. The retest is the main gate for technical sign-off.",
+          "citations": [
+            "source=synthetic_data/gong/transcripts/OPP-1002_CALL-018.md, call_id=CALL-018, segment=5",
+            "source=synthetic_data/gong/gong_call_summaries.tsv, call_id=CALL-015",
+            "source=synthetic_data/gong/transcripts/OPP-1002_CALL-018.md, call_id=CALL-018, segment=1"
+          ]
+        },
+        "labels": [],
+        "rule_ids": [],
+        "proposed_values": {},
+        "customer_facing": true,
+        "customer_language": null,
+        "confidence": "high",
+        "citations": [
+          "source=synthetic_data/gong/transcripts/OPP-1002_CALL-018.md, call_id=CALL-018, segment=5",
+          "source=synthetic_data/gong/gong_call_summaries.tsv, call_id=CALL-015",
+          "source=synthetic_data/gong/transcripts/OPP-1002_CALL-018.md, call_id=CALL-018, segment=1"
+        ]
+      },
+      {
+        "id": "A5",
+        "action": "Ask Clara Esteves to introduce the site IT lead who holds plant readiness sign-off for the first cutover factory, and add them to the stakeholder plan.",
+        "owner_role": "Solutions Engineer",
+        "rationale": {
+          "text": "A sign-off holder is missing from the CRM contacts. The off-CRM site IT lead could block the first cutover.",
+          "citations": [
+            "source=synthetic_data/slack/account_team_updates.tsv, update_id=SLK-1002-01"
+          ]
+        },
+        "labels": [],
+        "rule_ids": [],
+        "proposed_values": {},
+        "customer_facing": true,
+        "customer_language": null,
+        "confidence": "medium",
+        "citations": [
+          "source=synthetic_data/slack/account_team_updates.tsv, update_id=SLK-1002-01"
+        ]
+      },
+      {
+        "id": "A6",
+        "action": "Decide internally whether on-site support in cutover week fits inside the capped enablement package or needs its own scope and price. Do this before the commercial option goes out.",
+        "owner_role": "Customer Success Manager with Account Executive",
+        "rationale": {
+          "text": "The site IT lead asked for on-site support. The pricing assumes minimum enablement scope, and Finance will not accept open-ended services. If the scope is left unclear, the cap could strip out support the rollout needs.",
+          "citations": [
+            "source=synthetic_data/slack/account_team_updates.tsv, update_id=SLK-1002-01",
+            "source=synthetic_data/gong/transcripts/OPP-1002_CALL-018.md, call_id=CALL-018, segment=2",
+            "source=synthetic_data/pricing/pricing_notes.tsv, pricing_note_id=PN-4003"
+          ]
+        },
+        "labels": [],
+        "rule_ids": [],
+        "proposed_values": {},
+        "customer_facing": false,
+        "customer_language": null,
+        "confidence": "medium",
+        "citations": [
+          "source=synthetic_data/slack/account_team_updates.tsv, update_id=SLK-1002-01",
+          "source=synthetic_data/gong/transcripts/OPP-1002_CALL-018.md, call_id=CALL-018, segment=2",
+          "source=synthetic_data/pricing/pricing_notes.tsv, pricing_note_id=PN-4003"
+        ]
+      },
+      {
+        "id": "A7",
+        "action": "Write into the close plan a thirty-day review of the owner map after the first rollout and a recurring policy drift review, with owners for each.",
+        "owner_role": "Customer Success Manager",
+        "rationale": {
+          "text": "Niko Hart warned the runbook can go stale by day thirty. Henrik Vale named policy drift as a risk. The champion asked to see an operating model, not just a proof.",
+          "citations": [
+            "source=synthetic_data/gong/transcripts/OPP-1002_CALL-014.md, call_id=CALL-014, segment=7",
+            "source=synthetic_data/gong/transcripts/OPP-1002_CALL-018.md, call_id=CALL-018, segment=3",
+            "source=synthetic_data/gong/transcripts/OPP-1002_CALL-014.md, call_id=CALL-014, segment=4"
+          ]
+        },
+        "labels": [],
+        "rule_ids": [],
+        "proposed_values": {},
+        "customer_facing": true,
+        "customer_language": null,
+        "confidence": "high",
+        "citations": [
+          "source=synthetic_data/gong/transcripts/OPP-1002_CALL-014.md, call_id=CALL-014, segment=7",
+          "source=synthetic_data/gong/transcripts/OPP-1002_CALL-018.md, call_id=CALL-018, segment=3",
+          "source=synthetic_data/gong/transcripts/OPP-1002_CALL-014.md, call_id=CALL-014, segment=4"
+        ]
+      },
+      {
+        "id": "A8",
+        "action": "Before sharing externally, send the security evidence appendix (data protection controls and policy drift report) for legal review.",
+        "owner_role": "Solutions Engineer with Legal",
+        "rationale": {
+          "text": "Under policy rule 5, customer-specific security language needs legal approval before it is shared externally. The Security Architect asked for data protection evidence.",
+          "citations": [
+            "source=synthetic_data/gong/gong_call_summaries.tsv, call_id=CALL-016",
+            "source=synthetic_data/gong/transcripts/OPP-1002_CALL-014.md, call_id=CALL-014, segment=4",
+            "source=synthetic_data/policies/deal_desk_policy.md, rule=5"
+          ]
+        },
+        "labels": [
+          {
+            "kind": "escalated",
+            "role": "legal",
+            "actor_user_id": null,
+            "decided_on": null
+          }
+        ],
+        "rule_ids": [
+          "R5"
+        ],
+        "proposed_values": {},
+        "customer_facing": false,
+        "customer_language": null,
+        "confidence": "medium",
+        "citations": [
+          "source=synthetic_data/gong/gong_call_summaries.tsv, call_id=CALL-016",
+          "source=synthetic_data/gong/transcripts/OPP-1002_CALL-014.md, call_id=CALL-014, segment=4",
+          "source=synthetic_data/policies/deal_desk_policy.md, rule=5"
+        ]
+      },
+      {
+        "id": "A9",
+        "action": "Prepare internal positioning against EdgeSphere Secure. Treat its simplicity as a perception to address with operator-friendly runbooks and simplified incident views, not as a proven advantage. Stress segmentation and policy consistency.",
+        "owner_role": "Account Executive",
+        "rationale": {
+          "text": "The CIO named operational complexity as our risk and segmentation as our advantage. Meridian has not checked whether the competitor's segmentation is as deep as ours.",
+          "citations": [
+            "source=synthetic_data/gong/transcripts/OPP-1002_CALL-018.md, call_id=CALL-018, segment=3",
+            "source=synthetic_data/gong/transcripts/OPP-1002_CALL-018.md, call_id=CALL-018, segment=7",
+            "source=synthetic_data/gong/transcripts/OPP-1002_CALL-010.md, call_id=CALL-010, segment=4",
+            "source=synthetic_data/salesforce/opportunities.tsv, opportunity_id=OPP-1002"
+          ]
+        },
+        "labels": [],
+        "rule_ids": [],
+        "proposed_values": {},
+        "customer_facing": false,
+        "customer_language": null,
+        "confidence": "high",
+        "citations": [
+          "source=synthetic_data/gong/transcripts/OPP-1002_CALL-018.md, call_id=CALL-018, segment=3",
+          "source=synthetic_data/gong/transcripts/OPP-1002_CALL-018.md, call_id=CALL-018, segment=7",
+          "source=synthetic_data/gong/transcripts/OPP-1002_CALL-010.md, call_id=CALL-010, segment=4",
+          "source=synthetic_data/salesforce/opportunities.tsv, opportunity_id=OPP-1002"
+        ]
+      }
+    ],
+    "policy_items": []
+  },
+  "missing_information": {
+    "items": [
+      "Confirmed date and owner for the reporting export retest",
+      "What the closeout packet sent to the CIO's office contained, and whether it was received",
+      "Actual figures for the staged payment schedule and the size of the enablement cap",
+      "Identity of the site IT lead for the first cutover factory",
+      "Whether on-site cutover support is in scope",
+      "Start date for the first factory rollout",
+      "Customer legal contact; no legal role identified",
+      "Status of the data protection evidence requested in CALL-016",
+      "A direct statement from Lena Frost after CALL-018 (the only later source is a second-hand CSM Slack post)",
+      "No explicit budget or contract value discussed in evidence.",
+      "No discussion of timeline for first factory rollout start date.",
+      "No competitor name provided, only references to simplicity perception.",
+      "No evidence on whether proof scorecard has been shared or Julian Maro's response to it.",
+      "No details on remediation timeline or export retest scheduling status since the call.",
+      "No discussion of whether on-site cutover support falls within vendor scope or is a separate service.",
+      "Legal role not identified",
+      "No legal stakeholder has been identified."
+    ]
+  },
+  "source_evidence": {
+    "entries": [
+      {
+        "chunk_id": "sfdc_opp:OPP-1002",
+        "citation": "source=synthetic_data/salesforce/opportunities.tsv, opportunity_id=OPP-1002",
+        "excerpt": "Opportunity OPP-1002: Meridian Appliances Group - Factory Connectivity Expansion Account: Meridian Appliances Group (ACC-2002) Stage: 3.0 Prove Type: Expansion Forecast category: Best Case ACV: 238..."
+      },
+      {
+        "chunk_id": "sfdc_account:ACC-2002",
+        "citation": "source=synthetic_data/salesforce/accounts.tsv, account_id=ACC-2002",
+        "excerpt": "Account ACC-2002: Meridian Appliances Group Industry: Industrial manufacturing Region: EMEA, Portugal Employees: 7000-11000 Current products: Network security platform, remote access pilot Account..."
+      },
+      {
+        "chunk_id": "pricing:PN-4003",
+        "citation": "source=synthetic_data/pricing/pricing_notes.tsv, pricing_note_id=PN-4003",
+        "excerpt": "Pricing note PN-4003 for OPP-1002 Current ACV: 1850000 Proposed ACV: 2384000 Requested discount: 6% Renewal uplift: 29% Commercial risk: medium Approval status: not_required Notes: Expansion price..."
+      },
+      {
+        "chunk_id": "transcript:CALL-018:1",
+        "citation": "source=synthetic_data/gong/transcripts/OPP-1002_CALL-018.md, call_id=CALL-018, segment=1",
+        "excerpt": "Call CALL-018 | Opportunity OPP-1002 | Date 2026-04-25 | Access standard | Segment 1 Title: Proof closeout and expansion path Vendor AE: We are closing the proof phase today. I would like to separa..."
+      },
+      {
+        "chunk_id": "gong_summary:CALL-018",
+        "citation": "source=synthetic_data/gong/gong_call_summaries.tsv, call_id=CALL-018",
+        "excerpt": "Gong call CALL-018: Proof closeout and expansion path Opportunity: OPP-1002 Call date: 2026-04-25 Stage at call: 3.0 Prove Duration: 53:12 Participants: Julian Maro, CIO; Clara Esteves, Director of..."
+      },
+      {
+        "chunk_id": "transcript:CALL-018:4",
+        "citation": "source=synthetic_data/gong/transcripts/OPP-1002_CALL-018.md, call_id=CALL-018, segment=4",
+        "excerpt": "Call CALL-018 | Opportunity OPP-1002 | Date 2026-04-25 | Access standard | Segment 4 Title: Proof closeout and expansion path Clara Esteves: Yes. Do not write a victory lap. Write a close plan. Nik..."
+      },
+      {
+        "chunk_id": "gong_summary:CALL-017",
+        "citation": "source=synthetic_data/gong/gong_call_summaries.tsv, call_id=CALL-017",
+        "excerpt": "Gong call CALL-017: Commercial milestone discussion Opportunity: OPP-1002 Call date: 2026-04-22 Stage at call: 3.0 Prove Duration: 36:33 Participants: Julian Maro, CIO; Lena Frost, Finance Controll..."
+      },
+      {
+        "chunk_id": "slack:SLK-1002-02",
+        "citation": "source=synthetic_data/slack/account_team_updates.tsv, update_id=SLK-1002-02",
+        "excerpt": "Slack update SLK-1002-02 in #acct-meridian on 2026-05-01 by AE Proof closeout pack went to Julian Maro's office last week, I consider that item closed."
+      },
+      {
+        "chunk_id": "transcript:CALL-018:3",
+        "citation": "source=synthetic_data/gong/transcripts/OPP-1002_CALL-018.md, call_id=CALL-018, segment=3",
+        "excerpt": "Call CALL-018 | Opportunity OPP-1002 | Date 2026-04-25 | Access standard | Segment 3 Title: Proof closeout and expansion path Niko Hart: Include incident ownership map maintenance. It will become s..."
+      },
+      {
+        "chunk_id": "transcript:CALL-018:7",
+        "citation": "source=synthetic_data/gong/transcripts/OPP-1002_CALL-018.md, call_id=CALL-018, segment=7",
+        "excerpt": "Call CALL-018 | Opportunity OPP-1002 | Date 2026-04-25 | Access standard | Segment 7 Title: Proof closeout and expansion path Vendor AE: For source evidence, the brief should cite this call for con..."
+      },
+      {
+        "chunk_id": "transcript:CALL-010:1",
+        "citation": "source=synthetic_data/gong/transcripts/OPP-1002_CALL-010.md, call_id=CALL-010, segment=1",
+        "excerpt": "Call CALL-010 | Opportunity OPP-1002 | Date 2026-03-14 | Access standard | Segment 1 Title: Factory connectivity discovery Vendor AE: The purpose of this discovery session is to understand what Mer..."
+      },
+      {
+        "chunk_id": "transcript:CALL-010:2",
+        "citation": "source=synthetic_data/gong/transcripts/OPP-1002_CALL-010.md, call_id=CALL-010, segment=2",
+        "excerpt": "Call CALL-010 | Opportunity OPP-1002 | Date 2026-03-14 | Access standard | Segment 2 Title: Factory connectivity discovery Niko Hart: Yes, but it has to be reliable during failover. If the view is..."
+      },
+      {
+        "chunk_id": "transcript:CALL-010:3",
+        "citation": "source=synthetic_data/gong/transcripts/OPP-1002_CALL-010.md, call_id=CALL-010, segment=3",
+        "excerpt": "Call CALL-010 | Opportunity OPP-1002 | Date 2026-03-14 | Access standard | Segment 3 Title: Factory connectivity discovery Niko Hart: Add alert severity mapping. Right now every alert feels urgent...."
+      },
+      {
+        "chunk_id": "transcript:CALL-010:4",
+        "citation": "source=synthetic_data/gong/transcripts/OPP-1002_CALL-010.md, call_id=CALL-010, segment=4",
+        "excerpt": "Call CALL-010 | Opportunity OPP-1002 | Date 2026-03-14 | Access standard | Segment 4 Title: Factory connectivity discovery Clara Esteves: There is also a competitor conversation. They are simpler,..."
+      },
+      {
+        "chunk_id": "transcript:CALL-018:5",
+        "citation": "source=synthetic_data/gong/transcripts/OPP-1002_CALL-018.md, call_id=CALL-018, segment=5",
+        "excerpt": "Call CALL-018 | Opportunity OPP-1002 | Date 2026-04-25 | Access standard | Segment 5 Title: Proof closeout and expansion path Clara Esteves: And mark what is ready now versus what is a roadmap item..."
+      },
+      {
+        "chunk_id": "transcript:CALL-018:6",
+        "citation": "source=synthetic_data/gong/transcripts/OPP-1002_CALL-018.md, call_id=CALL-018, segment=6",
+        "excerpt": "Call CALL-018 | Opportunity OPP-1002 | Date 2026-04-25 | Access standard | Segment 6 Title: Proof closeout and expansion path Clara Esteves: I can support a conditional approval if the retest has a..."
+      },
+      {
+        "chunk_id": "gong_summary:CALL-013",
+        "citation": "source=synthetic_data/gong/gong_call_summaries.tsv, call_id=CALL-013",
+        "excerpt": "Gong call CALL-013: Executive proof checkpoint Opportunity: OPP-1002 Call date: 2026-04-04 Stage at call: 3.0 Prove Duration: 32:28 Participants: Julian Maro, CIO; Clara Esteves, Director of Plant..."
+      },
+      {
+        "chunk_id": "transcript:CALL-018:2",
+        "citation": "source=synthetic_data/gong/transcripts/OPP-1002_CALL-018.md, call_id=CALL-018, segment=2",
+        "excerpt": "Call CALL-018 | Opportunity OPP-1002 | Date 2026-04-25 | Access standard | Segment 2 Title: Proof closeout and expansion path Vendor AE: The staged option would tie payment to proof acceptance and..."
+      },
+      {
+        "chunk_id": "transcript:CALL-010:5",
+        "citation": "source=synthetic_data/gong/transcripts/OPP-1002_CALL-010.md, call_id=CALL-010, segment=5",
+        "excerpt": "Call CALL-010 | Opportunity OPP-1002 | Date 2026-03-14 | Access standard | Segment 5 Title: Factory connectivity discovery Clara Esteves: Include the shift supervisors early. They will tell you whe..."
+      },
+      {
+        "chunk_id": "gong_summary:CALL-010",
+        "citation": "source=synthetic_data/gong/gong_call_summaries.tsv, call_id=CALL-010",
+        "excerpt": "Gong call CALL-010: Factory connectivity discovery Opportunity: OPP-1002 Call date: 2026-03-14 Stage at call: 2.0 Discovery Duration: 51:39 Participants: Julian Maro, CIO; Clara Esteves, Director o..."
+      },
+      {
+        "chunk_id": "gong_summary:CALL-012",
+        "citation": "source=synthetic_data/gong/gong_call_summaries.tsv, call_id=CALL-012",
+        "excerpt": "Gong call CALL-012: Failover tabletop exercise Opportunity: OPP-1002 Call date: 2026-03-28 Stage at call: 3.0 Prove Duration: 44:17 Participants: Niko Hart, Network Operations Manager; Henrik Vale,..."
+      },
+      {
+        "chunk_id": "gong_summary:CALL-014",
+        "citation": "source=synthetic_data/gong/gong_call_summaries.tsv, call_id=CALL-014",
+        "excerpt": "Gong call CALL-014: Troubleshooting enablement session Opportunity: OPP-1002 Call date: 2026-04-10 Stage at call: 3.0 Prove Duration: 67:41 Participants: Clara Esteves, Director of Plant Systems; N..."
+      },
+      {
+        "chunk_id": "transcript:CALL-014:1",
+        "citation": "source=synthetic_data/gong/transcripts/OPP-1002_CALL-014.md, call_id=CALL-014, segment=1",
+        "excerpt": "Call CALL-014 | Opportunity OPP-1002 | Date 2026-04-10 | Access standard | Segment 1 Title: Troubleshooting enablement session Vendor Customer Success: Today's session is a practical walkthrough. W..."
+      },
+      {
+        "chunk_id": "contact:CON-3006",
+        "citation": "source=synthetic_data/salesforce/contacts.tsv, contact_id=CON-3006",
+        "excerpt": "Contact CON-3006: Julian Maro, CIO Account: Meridian Appliances Group (ACC-2002) Role in deal: Economic buyer Influence: high Sentiment: neutral Location: Lisbon Last interaction: 2026-04-22 Notes:..."
+      },
+      {
+        "chunk_id": "contact:CON-3007",
+        "citation": "source=synthetic_data/salesforce/contacts.tsv, contact_id=CON-3007",
+        "excerpt": "Contact CON-3007: Clara Esteves, Director of Plant Systems Account: Meridian Appliances Group (ACC-2002) Role in deal: Technical champion Influence: high Sentiment: positive Location: Porto Last in..."
+      },
+      {
+        "chunk_id": "transcript:CALL-014:3",
+        "citation": "source=synthetic_data/gong/transcripts/OPP-1002_CALL-014.md, call_id=CALL-014, segment=3",
+        "excerpt": "Call CALL-014 | Opportunity OPP-1002 | Date 2026-04-10 | Access standard | Segment 3 Title: Troubleshooting enablement session Henrik Vale: The policy template should name the application group and..."
+      },
+      {
+        "chunk_id": "transcript:CALL-014:5",
+        "citation": "source=synthetic_data/gong/transcripts/OPP-1002_CALL-014.md, call_id=CALL-014, segment=5",
+        "excerpt": "Call CALL-014 | Opportunity OPP-1002 | Date 2026-04-10 | Access standard | Segment 5 Title: Troubleshooting enablement session Julian Maro: Yes. And keep the scorecard blunt. Green, yellow, red. If..."
+      },
+      {
+        "chunk_id": "contact:CON-3008",
+        "citation": "source=synthetic_data/salesforce/contacts.tsv, contact_id=CON-3008",
+        "excerpt": "Contact CON-3008: Niko Hart, Network Operations Manager Account: Meridian Appliances Group (ACC-2002) Role in deal: Operations evaluator Influence: medium Sentiment: cautious Location: Braga Last i..."
+      },
+      {
+        "chunk_id": "gong_summary:CALL-015",
+        "citation": "source=synthetic_data/gong/gong_call_summaries.tsv, call_id=CALL-015",
+        "excerpt": "Gong call CALL-015: Plant pilot results review Opportunity: OPP-1002 Call date: 2026-04-15 Stage at call: 3.0 Prove Duration: 49:02 Participants: Julian Maro, CIO; Clara Esteves, Director of Plant..."
+      },
+      {
+        "chunk_id": "transcript:CALL-014:6",
+        "citation": "source=synthetic_data/gong/transcripts/OPP-1002_CALL-014.md, call_id=CALL-014, segment=6",
+        "excerpt": "Call CALL-014 | Opportunity OPP-1002 | Date 2026-04-10 | Access standard | Segment 6 Title: Troubleshooting enablement session Vendor AE: We can structure it as scorecard first, then operator appen..."
+      },
+      {
+        "chunk_id": "contact:CON-3009",
+        "citation": "source=synthetic_data/salesforce/contacts.tsv, contact_id=CON-3009",
+        "excerpt": "Contact CON-3009: Lena Frost, Finance Controller Account: Meridian Appliances Group (ACC-2002) Role in deal: Budget approver Influence: medium Sentiment: neutral Location: Lisbon Last interaction:..."
+      },
+      {
+        "chunk_id": "slack:SLK-1002-03",
+        "citation": "source=synthetic_data/slack/account_team_updates.tsv, update_id=SLK-1002-03",
+        "excerpt": "Slack update SLK-1002-03 in #acct-meridian on 2026-05-04 by CSM Lena Frost reconfirmed that finance approves only a staged payment tied to acceptance of the closeout pack, with capped enablement."
+      },
+      {
+        "chunk_id": "contact:CON-3010",
+        "citation": "source=synthetic_data/salesforce/contacts.tsv, contact_id=CON-3010",
+        "excerpt": "Contact CON-3010: Henrik Vale, Security Architect Account: Meridian Appliances Group (ACC-2002) Role in deal: Technical evaluator Influence: medium Sentiment: positive Location: Porto Last interact..."
+      },
+      {
+        "chunk_id": "gong_summary:CALL-016",
+        "citation": "source=synthetic_data/gong/gong_call_summaries.tsv, call_id=CALL-016",
+        "excerpt": "Gong call CALL-016: Security architecture review Opportunity: OPP-1002 Call date: 2026-04-19 Stage at call: 3.0 Prove Duration: 39:56 Participants: Henrik Vale, Security Architect; Niko Hart, Netwo..."
+      },
+      {
+        "chunk_id": "gong_summary:CALL-011",
+        "citation": "source=synthetic_data/gong/gong_call_summaries.tsv, call_id=CALL-011",
+        "excerpt": "Gong call CALL-011: Reporting requirements workshop Opportunity: OPP-1002 Call date: 2026-03-21 Stage at call: 3.0 Prove Duration: 58:03 Participants: Clara Esteves, Director of Plant Systems; Niko..."
+      },
+      {
+        "chunk_id": "transcript:CALL-014:2",
+        "citation": "source=synthetic_data/gong/transcripts/OPP-1002_CALL-014.md, call_id=CALL-014, segment=2",
+        "excerpt": "Call CALL-014 | Opportunity OPP-1002 | Date 2026-04-10 | Access standard | Segment 2 Title: Troubleshooting enablement session Henrik Vale, Security Architect: Be careful. If the backup path is hea..."
+      },
+      {
+        "chunk_id": "transcript:CALL-014:4",
+        "citation": "source=synthetic_data/gong/transcripts/OPP-1002_CALL-014.md, call_id=CALL-014, segment=4",
+        "excerpt": "Call CALL-014 | Opportunity OPP-1002 | Date 2026-04-10 | Access standard | Segment 4 Title: Troubleshooting enablement session Niko Hart: The runbook is close, but not ready. It has too many produc..."
+      },
+      {
+        "chunk_id": "slack:SLK-1002-01",
+        "citation": "source=synthetic_data/slack/account_team_updates.tsv, update_id=SLK-1002-01",
+        "excerpt": "Slack update SLK-1002-01 in #acct-meridian on 2026-04-28 by SE Clara Esteves says plant readiness sign-off for the first cutover factory sits with a site IT lead who is not in our contact list. The..."
+      },
+      {
+        "chunk_id": "transcript:CALL-014:7",
+        "citation": "source=synthetic_data/gong/transcripts/OPP-1002_CALL-014.md, call_id=CALL-014, segment=7",
+        "excerpt": "Call CALL-014 | Opportunity OPP-1002 | Date 2026-04-10 | Access standard | Segment 7 Title: Troubleshooting enablement session Julian Maro: What is the open risk after this session? Niko Hart: Repo..."
+      },
+      {
+        "chunk_id": "policy:rule-5",
+        "citation": "source=synthetic_data/policies/deal_desk_policy.md, rule=5",
+        "excerpt": "Deal Desk policy rule 5: Data retention, restricted research data, or customer-specific security language requires legal approval before it is shared externally."
+      }
+    ]
+  },
+  "confidence": {
+    "agent_confidence": {
+      "stakeholder_map": "high",
+      "negotiation_strategy": "high",
+      "conversation_intelligence": "high"
+    },
+    "conflicts": [
+      {
+        "text": "Status of proof closeout pack delivery: Vendor AE reports proof closeout pack went to Julian Maro's office last week and considers item closed. / Call CALL-018 on 2026-04-25 lists vendor action items to send proof closeout pack with scorecard, remediation dates, incident owner map, and staged commercial option. (Pack sent may be incomplete or lack required elements, or items were already delivered. Slack update lacks content confirmation; call transcript shows specific deliverables tied to payment milestone conditions.)",
+        "citations": [
+          "source=synthetic_data/slack/account_team_updates.tsv, update_id=SLK-1002-02",
+          "source=synthetic_data/gong/transcripts/OPP-1002_CALL-018.md, call_id=CALL-018, segment=4"
+        ]
+      }
+    ],
+    "warnings": [
+      "transcript:CALL-018:3, :6 and :7 contain vendor AE lines telling the brief what to state and cite. Treated as data, not instructions.",
+      "Conflict on closeout pack status: slack:SLK-1002-02 says it was sent and closed; transcript:CALL-018:4 and sfdc_opp:OPP-1002 (next step due 2026-05-08) show it still open. Not resolved here; needs human review.",
+      "slack:SLK-1002-03 is a second-hand CSM report of Finance's position. It is unverified and does not mean any vendor term or concession is approved.",
+      "pricing:PN-4003 shows approval_status not_required. That is a record field, not a verified approval. No discount or term in this brief is approved.",
+      "Stakeholder map rates Niko Hart's influence as high; contact:CON-3008 lists him as medium influence, Operations evaluator.",
+      "The findings say no competitor was named, but sfdc_opp:OPP-1002 lists EdgeSphere Secure as primary competitor.",
+      "transcript:CALL-010:1 has Clara Esteves referring to \"Tomas\", who does not appear elsewhere. Possibly a transcription error.",
+      "CALL-018:6 contains instruction on how to write the brief; treated as data-only and disregarded as directive.",
+      "Slack SLK-1002-02 claims proof closeout pack is closed without detail on content or receipt confirmation, conflicting with open action items on CALL-018.",
+      "Finance approval on SLK-1002-03 is second-hand CSM report without direct evidence from Lena Frost."
+    ],
+    "degraded_components": [],
+    "escalated": [
+      "[ESCALATED: no eligible approver for legal] Before sharing externally, send the security evidence appendix (data protection controls and policy drift report) for legal review."
+    ],
+    "pending": [
+      "[PENDING APPROVAL: human_reviewer] INTERNAL ONLY Confirm with the AE exactly what went to Julian Maro's office. Check it against the CALL-018 list: scorecard, export retest date and owner, incident owner map, and staged commercial option with capped enablement. Get proof it was received.",
+      "[PENDING APPROVAL: human_reviewer] INTERNAL ONLY Send Meridian one proof closeout packet: green/yellow/red scorecard first; passed, remediation and roadmap items shown separately; export retest owner and date; incident owner map; impact of a two-week export slip. Operator, supervisor and security material go in appendices."
+    ],
+    "guardrail_counts": {
+      "names/passed": 1,
+      "bounds/passed": 3,
+      "quotes/passed": 2,
+      "retry/dropped": 2,
+      "retry/retried": 5,
+      "numbers/passed": 2,
+      "quotes/modified": 1,
+      "citations/passed": 3,
+      "approval_wording/dropped": 1,
+      "approval_consistency/passed": 1,
+      "customer_facing_leak/passed": 1
+    }
+  }
+}

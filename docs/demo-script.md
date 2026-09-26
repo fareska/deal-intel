@@ -2,7 +2,7 @@
 
 Interview outline from `docs/PLAN.md` section 8. Walk the four scenarios: `USR-5001/OPP-1001`, `USR-5003/OPP-1003` with a `USR-5005` decision, `USR-5007/OPP-1003` denied, and `USR-5002/OPP-1002` on the CLI.
 
-Live `--fresh` runs and their costs are **TBD until M7 recording**. For the interview, start `--fresh` on the first scenario so the model is visible, and keep the other three pre-started (or replayed) if latency is a problem. The strategy call can run for minutes at `STRATEGY_EFFORT=high`. While it runs, stay on the trace page.
+Recorded pack (`artifacts/2026-09-26/`): OPP-1001 live `--fresh` **$0.98 / ~11 min**; OPP-1003 live **$0.96 / ~10 min**; OPP-1002 cache replay **$0 / 0.3s**; denial **$0 / 51ms**. Total billed **$1.94**. For the interview, start `--fresh` on the first scenario so the model is visible, and keep the other three pre-started (or replayed) if latency is a problem. Strategy at `STRATEGY_EFFORT=medium` can sit for ~10 minutes; stay on the trace page.
 
 UI base: [http://127.0.0.1:8000/ui](http://127.0.0.1:8000/ui). Identity is the **Viewing as** selector.
 
@@ -18,7 +18,7 @@ UI base: [http://127.0.0.1:8000/ui](http://127.0.0.1:8000/ui). Identity is the *
 
 ## 1. UI as `USR-5001`: `OPP-1001` (about 3 minutes)
 
-Set **Viewing as** to `USR-5001`. **New run** → opportunity `OPP-1001`, requesting user `USR-5001`. Check **Fresh run (live model calls)** if this is the billed run (cost **TBD**). Submit.
+Set **Viewing as** to `USR-5001`. **New run** → opportunity `OPP-1001`, requesting user `USR-5001`. Check **Fresh run (live model calls)** if this is the billed run (recorded **$0.98**). Submit.
 
 The status panel polls until a terminal state. Open the brief.
 
@@ -29,7 +29,7 @@ Walk:
 - Confidence and Review Warnings (highlighted near the top): design expects the `SLK-1001-03` pilot-sequencing conflict (Pavel Stone vs the March pilot-first plan).
 - Missing Information or Next Actions: design expects the `SLK-1001-02` out-of-office context (Iris Calder 05-04 to 05-08; finance approval of the payment schedule).
 
-CLI equivalent (live, cost **TBD**):
+CLI equivalent (live, recorded **$0.98**):
 
 ```bash
 uv run deal-intel generate --opp OPP-1001 --user USR-5001 --wait --fresh
@@ -45,7 +45,7 @@ If the fresh run is still going, narrate the tree as spans appear instead of wai
 
 ## 3. UI as `USR-5003`: `OPP-1003`, then `USR-5005` (about 3 minutes)
 
-Switch **Viewing as** to `USR-5003`. New run on `OPP-1003` (fresh only if you intend another billed call; cost **TBD**).
+Switch **Viewing as** to `USR-5003`. New run on `OPP-1003` (fresh only if you intend another billed call; recorded **$0.96**).
 
 Walk:
 
@@ -58,7 +58,7 @@ Switch **Viewing as** to `USR-5005`. Open **Approvals**. The pending Deal Desk i
 
 Return to the brief. Version 2 should show `[APPROVED by USR-5005 on <date>]` and `[REJECTED]`, and templated customer-safe language where an approved customer-facing item exists.
 
-CLI equivalent (live, cost **TBD**):
+CLI equivalent (live, recorded **$0.96**):
 
 ```bash
 uv run deal-intel generate --opp OPP-1003 --user USR-5003 --wait --fresh
@@ -67,13 +67,15 @@ uv run deal-intel approvals decide <approval_id> --user USR-5005 --approve --not
 uv run deal-intel approvals decide <approval_id> --user USR-5005 --reject --note "no"
 ```
 
+The recorded pack billed strategy at **$0.96** even without `--fresh` (extraction was cached).
+
 ## 4. UI as `USR-5007`: denied `OPP-1003` (about 2 minutes)
 
 Switch **Viewing as** to `USR-5007`. Request `OPP-1003` (new run or a direct brief URL).
 
 Show the generic not-found page. Unknown and unauthorised reads use the same copy; the page must not name Eclipse, BioMaterials, or `ACC-2003`.
 
-A generate as this user ends `DENIED` with `You are not authorized to generate a brief for this request.` The denied run's trace is two spans (authorize, done); there are no retrieval rows. Mention that `tests/safety/test_leakage.py` scans this denial, the brief surfaces, API bodies, and spans for out-of-scope canaries. Live canary counts are **TBD (measured in M7 live)**.
+A generate as this user ends `DENIED` with `You are not authorized to generate a brief for this request.` The denied run's trace is two spans (authorize, done); there are no retrieval rows. Mention that `tests/safety/test_leakage.py` scans this denial, the brief surfaces, API bodies, and spans for out-of-scope canaries. Leakage suite: 0 canary hits (22 safety tests passed, 2026-09-26).
 
 CLI equivalent (exit 3):
 
@@ -87,7 +89,7 @@ uv run deal-intel generate --opp OPP-1003 --user USR-5007 --wait --fresh
 uv run deal-intel generate --opp OPP-1002 --user USR-5002 --wait --fresh
 ```
 
-Live, cost **TBD**. Show:
+The recorded pack used a **$0** cache replay (258ms), not `--fresh`. Show:
 
 - Conflict citing `slack:SLK-1002-02` against Gong or Salesforce (proof closeout is not closed).
 - Stakeholder map: off-CRM site IT lead from `SLK-1002-01` (not in `contacts.tsv`).
@@ -96,8 +98,8 @@ Optional: `uv run deal-intel runs trace <run_id> --user USR-5002`.
 
 ## 6. Close (about 2 minutes)
 
-- `uv run python scripts/evaluate.py --from-fixtures` — print the metrics table. Say that `--live` and the measured cost per brief are **TBD (measured in M7 live)** until fixtures are recorded.
-- Configured routing: extraction on `claude-haiku-4-5-20251001`, strategy on `claude-opus-5-5` at `STRATEGY_EFFORT=high`. Whether the Opus-class model is worth it is an M7 measurement, not a claim today.
+- `uv run python scripts/evaluate.py --from-fixtures` — citation 1.000, grounded-number 0.994, completeness 1.000. Live pack total **$1.94** (1001 $0.98 + 1003 $0.96; 1002 replay $0). `--live` comparison vs a single model was not run.
+- Configured routing: extraction on `claude-haiku-4-5-20251001`, strategy on `claude-sonnet-4-6` at `STRATEGY_EFFORT=medium`. Opus 5.5 remains priced if you set `MODEL_STRATEGY=claude-opus-5-5`.
 - What breaks first in production: the in-process executor (C1; a managed queue and workers come later), simulated identity, static TSV permissions and evidence, secrets in the environment, and unbounded spend without a model gateway. Details in `docs/technical-overview.md`.
 
 ## If the UI is unavailable

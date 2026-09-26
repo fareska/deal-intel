@@ -5,9 +5,10 @@ Confirmed against the Anthropic docs on 2026-09-26:
   `messages.create`, with the schema from the SDK's `transform_schema`. The `parse()` helper is
   not used because it validates every text block, including text on tool-use turns; the shared
   client validates the final text against the output model itself, as it does for fixtures.
-- Thinking: Opus 5.5 always thinks adaptively and rejects `disabled` or `budget_tokens`; the
-  strategy route sends `thinking: {"type": "adaptive"}` and `output_config.effort`. Haiku 4.5
-  does not support effort, so the extraction route sends neither.
+- Thinking: Opus 5.5 and Sonnet 4.6 accept adaptive thinking; Opus rejects `disabled` or
+  `budget_tokens`. The strategy route sends `thinking: {"type": "adaptive"}` and
+  `output_config.effort`. Haiku 4.5 does not support effort, so the extraction route sends
+  neither.
 - Tools: `tool_use` blocks in the reply, `tool_result` blocks (first in the next user message)
   in the answer. Opus 5.5 rejects forced tool choice, so the model is steered by the prompt and
   withdrawn tools use `tool_choice: {"type": "none"}`; the tools stay declared because the

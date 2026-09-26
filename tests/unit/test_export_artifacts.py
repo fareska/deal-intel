@@ -67,15 +67,15 @@ def test_readme_fills_settings_and_tbd_cost(export_mod) -> None:
     text = export_mod.render_readme(
         ON_DATE,
         [("USR-5001_OPP-1001/brief.v1.md", "Brief Markdown")],
-        "claude-opus-5-5",
+        "claude-sonnet-4-6",
         "claude-haiku-4-5-20251001",
-        "high",
+        "medium",
         export_mod.MISSING,
         "abc123",
     )
 
-    assert "`MODEL_STRATEGY` | claude-opus-5-5" in text
-    assert "`STRATEGY_EFFORT` | high" in text
+    assert "`MODEL_STRATEGY` | claude-sonnet-4-6" in text
+    assert "`STRATEGY_EFFORT` | medium" in text
     assert "Total cost: TBD" in text
     assert "Commit: `abc123`" in text
     assert "`USR-5001_OPP-1001/brief.v1.md`" in text

@@ -1,0 +1,168 @@
+{
+  "requests": [
+    {
+      "approval_id": "1369dd1c4ce64fb2b5e468708cecb571",
+      "run_id": "022534328b1c4a07b4a250b17252816c",
+      "subject_id": "action:A4",
+      "recommendation_ids": [
+        "action:A4"
+      ],
+      "rule_ids": [
+        "R5"
+      ],
+      "required_role": "legal",
+      "account_id": "ACC-2003",
+      "access_level": "sensitive_pricing",
+      "eligible_user_ids": [],
+      "status": "escalated",
+      "proposed_values": {},
+      "summary": "Coordinate with Mateo Ruan to confirm research IT exception-owner sign-off on the exception workflow covering automatic expiration, reapproval path, and audit trail ownership, targeting completion by 2026-05-19.",
+      "evidence_ids": [
+        "slack:SLK-1003-03",
+        "transcript:CALL-027:3",
+        "transcript:CALL-027:7",
+        "contact:CON-3012",
+        "transcript:CALL-019:5"
+      ],
+      "created_at": "2026-09-26T18:06:33.459347Z",
+      "expires_at": "2026-10-03T18:06:33.459347Z"
+    },
+    {
+      "approval_id": "5191fa846d194c469c7fecec2ed21a6f",
+      "run_id": "022534328b1c4a07b4a250b17252816c",
+      "subject_id": "pricing:PN-4004",
+      "recommendation_ids": [
+        "action:A1"
+      ],
+      "rule_ids": [
+        "R7"
+      ],
+      "required_role": "human_reviewer",
+      "account_id": "ACC-2003",
+      "access_level": "sensitive_pricing",
+      "eligible_user_ids": [
+        "USR-5005"
+      ],
+      "status": "pending",
+      "proposed_values": {
+        "uplift_pct": "-8.00",
+        "discount_pct": "18.00"
+      },
+      "summary": "Pricing note PN-4004: requested discount 18%, renewal uplift -8%",
+      "evidence_ids": [
+        "pricing:PN-4004",
+        "pricing:PN-4005",
+        "policy:rule-1",
+        "policy:rule-2",
+        "policy:rule-3",
+        "transcript:CALL-027:1",
+        "transcript:CALL-027:2",
+        "slack:SLK-1003-02"
+      ],
+      "created_at": "2026-09-26T18:06:33.459347Z",
+      "expires_at": "2026-10-03T18:06:33.459347Z"
+    },
+    {
+      "approval_id": "5f73b5a9a5454817ac296c6df7e770c2",
+      "run_id": "022534328b1c4a07b4a250b17252816c",
+      "subject_id": "pricing:PN-4005",
+      "recommendation_ids": [
+        "pricing:PN-4005"
+      ],
+      "rule_ids": [
+        "R1",
+        "R3"
+      ],
+      "required_role": "deal_desk",
+      "account_id": "ACC-2003",
+      "access_level": "sensitive_pricing",
+      "eligible_user_ids": [
+        "USR-5005"
+      ],
+      "status": "pending",
+      "proposed_values": {
+        "uplift_pct": "-3.00",
+        "discount_pct": "12.00"
+      },
+      "summary": "Pricing note PN-4005: requested discount 12%, renewal uplift -3%",
+      "evidence_ids": [
+        "pricing:PN-4005"
+      ],
+      "created_at": "2026-09-26T18:06:33.459347Z",
+      "expires_at": "2026-10-03T18:06:33.459347Z"
+    },
+    {
+      "approval_id": "e5c0a8825000435e8a449a0cdedc568d",
+      "run_id": "022534328b1c4a07b4a250b17252816c",
+      "subject_id": "pricing:PN-4004",
+      "recommendation_ids": [
+        "pricing:PN-4004",
+        "action:A1"
+      ],
+      "rule_ids": [
+        "R2"
+      ],
+      "required_role": "sales_leader",
+      "account_id": "ACC-2003",
+      "access_level": "sensitive_pricing",
+      "eligible_user_ids": [],
+      "status": "escalated",
+      "proposed_values": {
+        "uplift_pct": "-8.00",
+        "discount_pct": "18.00"
+      },
+      "summary": "Pricing note PN-4004: requested discount 18%, renewal uplift -8%",
+      "evidence_ids": [
+        "pricing:PN-4004",
+        "pricing:PN-4005",
+        "policy:rule-1",
+        "policy:rule-2",
+        "policy:rule-3",
+        "transcript:CALL-027:1",
+        "transcript:CALL-027:2",
+        "slack:SLK-1003-02"
+      ],
+      "created_at": "2026-09-26T18:06:33.459347Z",
+      "expires_at": "2026-10-03T18:06:33.459347Z"
+    },
+    {
+      "approval_id": "f64f745131cf40ea97556b379605d83f",
+      "run_id": "022534328b1c4a07b4a250b17252816c",
+      "subject_id": "pricing:PN-4004",
+      "recommendation_ids": [
+        "pricing:PN-4004",
+        "action:A1"
+      ],
+      "rule_ids": [
+        "R1",
+        "R2",
+        "R3"
+      ],
+      "required_role": "deal_desk",
+      "account_id": "ACC-2003",
+      "access_level": "sensitive_pricing",
+      "eligible_user_ids": [
+        "USR-5005"
+      ],
+      "status": "pending",
+      "proposed_values": {
+        "uplift_pct": "-8.00",
+        "discount_pct": "18.00"
+      },
+      "summary": "Pricing note PN-4004: requested discount 18%, renewal uplift -8%",
+      "evidence_ids": [
+        "pricing:PN-4004",
+        "pricing:PN-4005",
+        "policy:rule-1",
+        "policy:rule-2",
+        "policy:rule-3",
+        "transcript:CALL-027:1",
+        "transcript:CALL-027:2",
+        "slack:SLK-1003-02"
+      ],
+      "created_at": "2026-09-26T18:06:33.459347Z",
+      "expires_at": "2026-10-03T18:06:33.459347Z"
+    }
+  ],
+  "events": []
+}

@@ -12,8 +12,9 @@ from deal_intel.contracts.llm import Effort, ModelPrice
 from deal_intel.contracts.reference import LowMediumHigh
 
 # Confirmed against platform.claude.com/docs/en/about-claude/models/overview (2026-09-26).
-DEFAULT_MODEL_STRATEGY = "claude-opus-5-5"
+DEFAULT_MODEL_STRATEGY = "claude-sonnet-4-6"
 DEFAULT_MODEL_EXTRACTION = "claude-haiku-4-5-20251001"
+MODEL_STRATEGY_OPUS = "claude-opus-5-5"
 
 
 class LlmClientKind(StrEnum):
@@ -38,12 +39,18 @@ class Settings(BaseSettings):
     llm_client: LlmClientKind = LlmClientKind.ANTHROPIC
     model_strategy: str = DEFAULT_MODEL_STRATEGY
     model_extraction: str = DEFAULT_MODEL_EXTRACTION
-    strategy_effort: Effort = Effort.HIGH
+    strategy_effort: Effort = Effort.MEDIUM
     # Read from the environment as JSON, for example
     # MODEL_PRICES_USD_PER_MTOK='{"<model>": {"input": 1, "output": 5, ...}}'.
     # cache_write is the 5-minute rate, the only cache TTL the client requests.
     model_prices_usd_per_mtok: dict[str, ModelPrice] = {
         DEFAULT_MODEL_STRATEGY: ModelPrice(
+            input=Decimal("3"),
+            output=Decimal("15"),
+            cache_write=Decimal("3.75"),
+            cache_read=Decimal("0.30"),
+        ),
+        MODEL_STRATEGY_OPUS: ModelPrice(
             input=Decimal("4"),
             output=Decimal("20"),
             cache_write=Decimal("5"),
@@ -63,7 +70,7 @@ class Settings(BaseSettings):
     llm_timeout_seconds: float = 600.0
     llm_sdk_max_retries: int = 3
     llm_fixtures_root: Path = Path("tests/fixtures/llm")
-    run_input_token_budget: int = 80_000
+    run_input_token_budget: int = 250_000
     daily_cost_budget_usd: float = 20.0
     record_fixtures: bool = False
 

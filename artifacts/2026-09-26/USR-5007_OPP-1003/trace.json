@@ -1,0 +1,36 @@
+{
+  "run_id": "6bde5547d9a7451c949b838d0cb0cda5",
+  "redacted": false,
+  "spans": [
+    {
+      "span_id": "14aa3890584f4e96b01ef6d99d486a0a",
+      "parent_span_id": null,
+      "kind": "run",
+      "name": "run",
+      "started_at": "2026-09-26T14:17:57.468978Z",
+      "ended_at": "2026-09-26T14:17:57.511904Z",
+      "status": "ok",
+      "duration_ms": 42,
+      "attributes": {
+        "run_id": "6bde5547d9a7451c949b838d0cb0cda5",
+        "user_id": "USR-5007",
+        "opportunity_id": "OPP-1003"
+      }
+    },
+    {
+      "span_id": "d0aad8ef5fa24e3c89dd8807e886a24e",
+      "parent_span_id": "14aa3890584f4e96b01ef6d99d486a0a",
+      "kind": "stage",
+      "name": "stage.authorize",
+      "started_at": "2026-09-26T14:17:57.501761Z",
+      "ended_at": "2026-09-26T14:17:57.509131Z",
+      "status": "ok",
+      "duration_ms": 7,
+      "attributes": {
+        "stage": "authorize",
+        "run_id": "6bde5547d9a7451c949b838d0cb0cda5",
+        "reason_code": "ACCOUNT_NOT_ALLOWED"
+      }
+    }
+  ]
+}

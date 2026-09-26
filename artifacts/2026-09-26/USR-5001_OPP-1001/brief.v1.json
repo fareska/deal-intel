@@ -1,0 +1,1155 @@
+{
+  "metadata": {
+    "run_id": "3c49a101ee5d482aaaabe71217de9951",
+    "opportunity_id": "OPP-1001",
+    "version": 1,
+    "source": "run",
+    "max_access_level": "standard",
+    "degraded": false,
+    "cost_usd": "0.980386",
+    "rendered_at": "2026-09-26T17:38:50.290335Z"
+  },
+  "deal_snapshot": {
+    "lines": [
+      {
+        "text": "Account: Northstar Foods Cooperative (ACC-2001)",
+        "citations": [
+          "source=synthetic_data/salesforce/opportunities.tsv, opportunity_id=OPP-1001"
+        ]
+      },
+      {
+        "text": "Stage: 6.0 Order Review",
+        "citations": [
+          "source=synthetic_data/salesforce/opportunities.tsv, opportunity_id=OPP-1001"
+        ]
+      },
+      {
+        "text": "Type: Renewal",
+        "citations": [
+          "source=synthetic_data/salesforce/opportunities.tsv, opportunity_id=OPP-1001"
+        ]
+      },
+      {
+        "text": "Forecast category: Commit",
+        "citations": [
+          "source=synthetic_data/salesforce/opportunities.tsv, opportunity_id=OPP-1001"
+        ]
+      },
+      {
+        "text": "ACV: 4217500",
+        "citations": [
+          "source=synthetic_data/salesforce/opportunities.tsv, opportunity_id=OPP-1001"
+        ]
+      },
+      {
+        "text": "TCV: 12652500",
+        "citations": [
+          "source=synthetic_data/salesforce/opportunities.tsv, opportunity_id=OPP-1001"
+        ]
+      },
+      {
+        "text": "Renewal term months: 36",
+        "citations": [
+          "source=synthetic_data/salesforce/opportunities.tsv, opportunity_id=OPP-1001"
+        ]
+      },
+      {
+        "text": "Probability: 78%",
+        "citations": [
+          "source=synthetic_data/salesforce/opportunities.tsv, opportunity_id=OPP-1001"
+        ]
+      },
+      {
+        "text": "Close date: 2026-05-17",
+        "citations": [
+          "source=synthetic_data/salesforce/opportunities.tsv, opportunity_id=OPP-1001"
+        ]
+      },
+      {
+        "text": "Owner: Maya Levin",
+        "citations": [
+          "source=synthetic_data/salesforce/opportunities.tsv, opportunity_id=OPP-1001"
+        ]
+      },
+      {
+        "text": "Primary competitor: LegacyNet Shield",
+        "citations": [
+          "source=synthetic_data/salesforce/opportunities.tsv, opportunity_id=OPP-1001"
+        ]
+      },
+      {
+        "text": "Risk level: medium",
+        "citations": [
+          "source=synthetic_data/salesforce/opportunities.tsv, opportunity_id=OPP-1001"
+        ]
+      },
+      {
+        "text": "Approval required: no",
+        "citations": [
+          "source=synthetic_data/salesforce/opportunities.tsv, opportunity_id=OPP-1001"
+        ]
+      },
+      {
+        "text": "Restricted access: no",
+        "citations": [
+          "source=synthetic_data/salesforce/opportunities.tsv, opportunity_id=OPP-1001"
+        ]
+      },
+      {
+        "text": "Region: EMEA, Ireland",
+        "citations": [
+          "source=synthetic_data/salesforce/opportunities.tsv, opportunity_id=OPP-1001"
+        ]
+      },
+      {
+        "text": "Industry: Food and beverage operations",
+        "citations": [
+          "source=synthetic_data/salesforce/opportunities.tsv, opportunity_id=OPP-1001"
+        ]
+      },
+      {
+        "text": "Next step: Send revised order form and migration success plan by 2026-04-28",
+        "citations": [
+          "source=synthetic_data/salesforce/opportunities.tsv, opportunity_id=OPP-1001"
+        ]
+      },
+      {
+        "text": "Industry: Food and beverage operations",
+        "citations": [
+          "source=synthetic_data/salesforce/accounts.tsv, account_id=ACC-2001"
+        ]
+      },
+      {
+        "text": "Region: EMEA, Ireland",
+        "citations": [
+          "source=synthetic_data/salesforce/accounts.tsv, account_id=ACC-2001"
+        ]
+      },
+      {
+        "text": "Employees: 12000-18000",
+        "citations": [
+          "source=synthetic_data/salesforce/accounts.tsv, account_id=ACC-2001"
+        ]
+      },
+      {
+        "text": "Current products: Secure access gateway, branch edge, cloud application control",
+        "citations": [
+          "source=synthetic_data/salesforce/accounts.tsv, account_id=ACC-2001"
+        ]
+      },
+      {
+        "text": "Account health: Stable",
+        "citations": [
+          "source=synthetic_data/salesforce/accounts.tsv, account_id=ACC-2001"
+        ]
+      },
+      {
+        "text": "Strategic notes: Strategic renewal with executive visibility, operations team wants fewer regional exceptions and clearer migration ownership.",
+        "citations": [
+          "source=synthetic_data/salesforce/accounts.tsv, account_id=ACC-2001"
+        ]
+      },
+      {
+        "text": "Access level: standard",
+        "citations": [
+          "source=synthetic_data/salesforce/accounts.tsv, account_id=ACC-2001"
+        ]
+      }
+    ],
+    "pricing_notes": [
+      {
+        "text": "Pricing note PN-4001 for OPP-1001: Current ACV: 3900000; Proposed ACV: 4217500; Requested discount: 4%; Renewal uplift: 8%; Commercial risk: medium; Approval status: not_required; Notes: Customer accepted uplift range if payment schedule and migration success metrics are documented.",
+        "citations": [
+          "source=synthetic_data/pricing/pricing_notes.tsv, pricing_note_id=PN-4001"
+        ]
+      },
+      {
+        "text": "Pricing note PN-4002 for OPP-1001: Current ACV: 3900000; Proposed ACV: 4217500; Requested discount: 0%; Renewal uplift: 8%; Commercial risk: low; Approval status: not_required; Notes: No new concession requested in final document review, legal language remains the only open issue.",
+        "citations": [
+          "source=synthetic_data/pricing/pricing_notes.tsv, pricing_note_id=PN-4002"
+        ]
+      }
+    ],
+    "pricing_visibility": "visible"
+  },
+  "executive_summary": {
+    "sentences": [
+      {
+        "text": "OPP-1001 is at Stage 6.0 Order Review: $4,217,500 ACV, 8% renewal uplift, 36-month term, forecast Commit at 78% probability; the latest pricing note records no new concession and states 'legal language remains the only open issue.'",
+        "citations": [
+          "source=synthetic_data/salesforce/opportunities.tsv, opportunity_id=OPP-1001",
+          "source=synthetic_data/pricing/pricing_notes.tsv, pricing_note_id=PN-4002",
+          "source=synthetic_data/pricing/pricing_notes.tsv, pricing_note_id=PN-4001"
+        ]
+      },
+      {
+        "text": "All three executive stakeholders are aligned on renewal contingent on a single consolidated final packet—executive summary, success metrics, named owner matrix, payment schedule, data retention citation, legacy-site review dates, and support bridge schedule—delivered by 2026-04-28.",
+        "citations": [
+          "source=synthetic_data/gong/gong_call_summaries.tsv, call_id=CALL-008",
+          "source=synthetic_data/gong/transcripts/OPP-1001_CALL-008.md, call_id=CALL-008, segment=4",
+          "source=synthetic_data/gong/transcripts/OPP-1001_CALL-008.md, call_id=CALL-008, segment=5"
+        ]
+      },
+      {
+        "text": "A critical timing constraint exists: Iris Calder is out of office 05-04 to 05-08 and her deputy cannot sign; finance approval of the payment schedule must land before 05-04 or signature will slip toward the 05-17 close date.",
+        "citations": [
+          "source=synthetic_data/slack/account_team_updates.tsv, update_id=SLK-1001-02",
+          "source=synthetic_data/gong/transcripts/OPP-1001_CALL-008.md, call_id=CALL-008, segment=5"
+        ]
+      },
+      {
+        "text": "Legal is near complete—not done—with data retention citation accuracy as the sole remaining legal open item; Amara Quinn confirmed 'I am not blocking the deal. I just need an accurate reference to the policy,' but Elena Voss cautioned the brief should say 'near complete rather than done.'",
+        "citations": [
+          "source=synthetic_data/gong/transcripts/OPP-1001_CALL-008.md, call_id=CALL-008, segment=1",
+          "source=synthetic_data/gong/transcripts/OPP-1001_CALL-004.md, call_id=CALL-004, segment=4",
+          "source=synthetic_data/gong/gong_call_summaries.tsv, call_id=CALL-009",
+          "source=synthetic_data/gong/transcripts/OPP-1001_CALL-008.md, call_id=CALL-008, segment=6"
+        ]
+      },
+      {
+        "text": "A site sequencing conflict requires urgent resolution: a 2026-05-02 Slack update reports Pavel Stone reversing the March-agreed pilot-first migration sequence to request legacy-appliance sites migrate first, without confirmed endorsement from Marco Devlin or Elena Voss.",
+        "citations": [
+          "source=synthetic_data/slack/account_team_updates.tsv, update_id=SLK-1001-03",
+          "source=synthetic_data/gong/gong_call_summaries.tsv, call_id=CALL-002"
+        ]
+      }
+    ]
+  },
+  "buyer_goals": {
+    "goals": [
+      {
+        "text": "Reduce regional exceptions that create governance and audit complications.",
+        "citations": [
+          "source=synthetic_data/gong/gong_call_summaries.tsv, call_id=CALL-001",
+          "source=synthetic_data/gong/transcripts/OPP-1001_CALL-001.md, call_id=CALL-001, segment=1"
+        ]
+      },
+      {
+        "text": "Establish clear ownership and escalation path for migration blockers across regional plants.",
+        "citations": [
+          "source=synthetic_data/gong/gong_call_summaries.tsv, call_id=CALL-001",
+          "source=synthetic_data/gong/transcripts/OPP-1001_CALL-001.md, call_id=CALL-001, segment=2"
+        ]
+      },
+      {
+        "text": "Obtain weekly dashboard tracking exceptions opened and closed, sites migrated, and sites at risk.",
+        "citations": [
+          "source=synthetic_data/gong/gong_call_summaries.tsv, call_id=CALL-001",
+          "source=synthetic_data/gong/transcripts/OPP-1001_CALL-001.md, call_id=CALL-001, segment=2"
+        ]
+      },
+      {
+        "text": "Measure and demonstrate measurable reduction in unmanaged access and cloud policy drift.",
+        "citations": [
+          "source=synthetic_data/gong/gong_call_summaries.tsv, call_id=CALL-003",
+          "source=synthetic_data/gong/transcripts/OPP-1001_CALL-008.md, call_id=CALL-008, segment=2"
+        ]
+      },
+      {
+        "text": "Frame renewal as operational progress and risk reduction, not just deployment activity.",
+        "citations": [
+          "source=synthetic_data/gong/transcripts/OPP-1001_CALL-001.md, call_id=CALL-001, segment=1"
+        ]
+      },
+      {
+        "text": "Obtain clear documentation of uplift explanation showing what changed to justify renewal cost increase.",
+        "citations": [
+          "source=synthetic_data/gong/transcripts/OPP-1001_CALL-004.md, call_id=CALL-004, segment=1",
+          "source=synthetic_data/gong/transcripts/OPP-1001_CALL-004.md, call_id=CALL-004, segment=2"
+        ]
+      },
+      {
+        "text": "Secure executive summary and success metrics demonstrating platform value for access control and exception reduction.",
+        "citations": [
+          "source=synthetic_data/gong/gong_call_summaries.tsv, call_id=CALL-008",
+          "source=synthetic_data/gong/transcripts/OPP-1001_CALL-008.md, call_id=CALL-008, segment=1"
+        ]
+      },
+      {
+        "text": "Establish named owner groups with accountability for each region, not generic titles.",
+        "citations": [
+          "source=synthetic_data/gong/transcripts/OPP-1001_CALL-008.md, call_id=CALL-008, segment=1"
+        ]
+      },
+      {
+        "text": "Obtain flexible payment schedule tied to operational milestones, with option for split payments at signature and post-first-wave.",
+        "citations": [
+          "source=synthetic_data/gong/transcripts/OPP-1001_CALL-004.md, call_id=CALL-004, segment=2"
+        ]
+      },
+      {
+        "text": "CISO requires success metrics for policy drift monitoring visible to board audit committee.",
+        "citations": [
+          "source=synthetic_data/gong/gong_call_summaries.tsv, call_id=CALL-008",
+          "source=synthetic_data/gong/transcripts/OPP-1001_CALL-008.md, call_id=CALL-008, segment=1"
+        ]
+      },
+      {
+        "text": "Receive first-wave site selection balanced across cooperative, moderate, and operationally difficult regions.",
+        "citations": [
+          "source=synthetic_data/gong/transcripts/OPP-1001_CALL-001.md, call_id=CALL-001, segment=4"
+        ]
+      },
+      {
+        "text": "Avoid normalizing exceptions through clear legacy-site plan with distinct categories and closure timelines.",
+        "citations": [
+          "source=synthetic_data/gong/transcripts/OPP-1001_CALL-001.md, call_id=CALL-001, segment=4"
+        ]
+      }
+    ],
+    "drivers": [
+      {
+        "text": "Platform is central to access control; every regional exception becomes a governance conversation requiring board-level review.",
+        "citations": [
+          "source=synthetic_data/gong/transcripts/OPP-1001_CALL-001.md, call_id=CALL-001, segment=1"
+        ]
+      },
+      {
+        "text": "Board audit committee asked about unmanaged cloud access; policy drift findings and remediation status must be visible.",
+        "citations": [
+          "source=synthetic_data/gong/transcripts/OPP-1001_CALL-001.md, call_id=CALL-001, segment=2"
+        ]
+      },
+      {
+        "text": "Older plant equipment has limited maintenance windows measured in minutes, creating operational constraints for migration.",
+        "citations": [
+          "source=synthetic_data/gong/gong_call_summaries.tsv, call_id=CALL-002",
+          "source=synthetic_data/gong/transcripts/OPP-1001_CALL-001.md, call_id=CALL-001, segment=2"
+        ]
+      },
+      {
+        "text": "Finance and procurement require confidence that migration support is real, not just a commercial claim.",
+        "citations": [
+          "source=synthetic_data/gong/transcripts/OPP-1001_CALL-004.md, call_id=CALL-004, segment=2"
+        ]
+      },
+      {
+        "text": "Regional leadership cooperation is critical; if first-wave becomes political, entire renewal story becomes problematic.",
+        "citations": [
+          "source=synthetic_data/gong/transcripts/OPP-1001_CALL-001.md, call_id=CALL-001, segment=4"
+        ]
+      },
+      {
+        "text": "Executive approval depends on evidence that exceptions will shrink over time, not remain permanent.",
+        "citations": [
+          "source=synthetic_data/gong/transcripts/OPP-1001_CALL-008.md, call_id=CALL-008, segment=4"
+        ]
+      }
+    ],
+    "objections": [
+      {
+        "text": "Renewal cost uplift lacks sufficient justification; cheaper alternatives exist but are acknowledged as less integrated.",
+        "citations": [
+          "source=synthetic_data/gong/gong_call_summaries.tsv, call_id=CALL-003",
+          "source=synthetic_data/gong/transcripts/OPP-1001_CALL-004.md, call_id=CALL-004, segment=1"
+        ]
+      },
+      {
+        "text": "Liability clause wording is broader than privacy team approved; must be narrowed to tie obligation to documented service commitments.",
+        "citations": [
+          "source=synthetic_data/gong/gong_call_summaries.tsv, call_id=CALL-004",
+          "source=synthetic_data/gong/transcripts/OPP-1001_CALL-004.md, call_id=CALL-004, segment=1"
+        ]
+      },
+      {
+        "text": "Older sites with legacy appliances may require temporary bypasses that could conflict with stated security goals.",
+        "citations": [
+          "source=synthetic_data/gong/gong_call_summaries.tsv, call_id=CALL-002",
+          "source=synthetic_data/gong/gong_call_summaries.tsv, call_id=CALL-001",
+          "source=synthetic_data/gong/transcripts/OPP-1001_CALL-001.md, call_id=CALL-001, segment=1"
+        ]
+      },
+      {
+        "text": "Data retention language requires accurate policy citation; incorrect citation will cause legal to reopen redlines.",
+        "citations": [
+          "source=synthetic_data/gong/gong_call_summaries.tsv, call_id=CALL-007",
+          "source=synthetic_data/gong/gong_call_summaries.tsv, call_id=CALL-004"
+        ]
+      },
+      {
+        "text": "If dashboards are delivered late, buyer may hold back signature until final week.",
+        "citations": [
+          "source=synthetic_data/gong/gong_call_summaries.tsv, call_id=CALL-006"
+        ]
+      }
+    ],
+    "competitors": [
+      {
+        "text": "Competitor mentioned as cheaper but less integrated with current platform ecosystem.",
+        "citations": [
+          "source=synthetic_data/gong/gong_call_summaries.tsv, call_id=CALL-003"
+        ]
+      }
+    ]
+  },
+  "stakeholder_map": {
+    "stakeholders": [
+      {
+        "name": "Elena Voss",
+        "title": "Chief Information Security Officer",
+        "role_in_deal": "economic_buyer",
+        "influence": "high",
+        "sentiment": "cautiously_positive",
+        "stance": "Renewal is central to access control. Supports if platform reduces regional exceptions and shows measurable risk reduction. Requires executive summary, success metrics with baselines, data retention citation, and temporary legacy-site exceptions with review dates.",
+        "citations": [
+          "source=synthetic_data/salesforce/contacts.tsv, contact_id=CON-3001",
+          "source=synthetic_data/gong/gong_call_summaries.tsv, call_id=CALL-008",
+          "source=synthetic_data/gong/transcripts/OPP-1001_CALL-008.md, call_id=CALL-008, segment=1",
+          "source=synthetic_data/gong/transcripts/OPP-1001_CALL-008.md, call_id=CALL-008, segment=2",
+          "source=synthetic_data/gong/transcripts/OPP-1001_CALL-008.md, call_id=CALL-008, segment=7"
+        ]
+      },
+      {
+        "name": "Marco Devlin",
+        "title": "VP Infrastructure",
+        "role_in_deal": "technical_decision_maker",
+        "influence": "high",
+        "sentiment": "positive",
+        "stance": "Owns migration plan. Needs named escalation owners by region, not generic titles. Requires success metrics (exception reduction, closure time, first-wave completion) separate from payment milestones. Supports if escalation path is real and support bridge demonstrated.",
+        "citations": [
+          "source=synthetic_data/salesforce/contacts.tsv, contact_id=CON-3002",
+          "source=synthetic_data/gong/gong_call_summaries.tsv, call_id=CALL-008",
+          "source=synthetic_data/gong/transcripts/OPP-1001_CALL-008.md, call_id=CALL-008, segment=1",
+          "source=synthetic_data/gong/transcripts/OPP-1001_CALL-008.md, call_id=CALL-008, segment=3",
+          "source=synthetic_data/gong/transcripts/OPP-1001_CALL-008.md, call_id=CALL-008, segment=4"
+        ]
+      },
+      {
+        "name": "Amara Quinn",
+        "title": "Legal Counsel",
+        "role_in_deal": "legal",
+        "influence": "medium",
+        "sentiment": "neutral",
+        "stance": "Open on liability wording: needs narrower language tied to documented service commitments. Requires accurate data retention policy citation with name and version date. Not blocking if citation is accurate. Prefers operational milestones over success promises.",
+        "citations": [
+          "source=synthetic_data/salesforce/contacts.tsv, contact_id=CON-3005",
+          "source=synthetic_data/gong/gong_call_summaries.tsv, call_id=CALL-004",
+          "source=synthetic_data/gong/gong_call_summaries.tsv, call_id=CALL-007",
+          "source=synthetic_data/gong/transcripts/OPP-1001_CALL-004.md, call_id=CALL-004, segment=2",
+          "source=synthetic_data/gong/transcripts/OPP-1001_CALL-004.md, call_id=CALL-004, segment=3"
+        ]
+      },
+      {
+        "name": "Iris Calder",
+        "title": "Procurement Director",
+        "role_in_deal": "commercial_approver",
+        "influence": "medium",
+        "sentiment": "neutral",
+        "stance": "Needs uplift explanation, payment schedule options in writing (tied to first-wave readiness and support bridge, not outcomes). Finance must approve before 05-04 or signature slips. Out 05-04 to 05-08; deputy cannot sign. Wants clean, simple paperwork.",
+        "citations": [
+          "source=synthetic_data/salesforce/contacts.tsv, contact_id=CON-3003",
+          "source=synthetic_data/gong/gong_call_summaries.tsv, call_id=CALL-004",
+          "source=synthetic_data/gong/gong_call_summaries.tsv, call_id=CALL-008",
+          "source=synthetic_data/gong/transcripts/OPP-1001_CALL-004.md, call_id=CALL-004, segment=1",
+          "source=synthetic_data/gong/transcripts/OPP-1001_CALL-004.md, call_id=CALL-004, segment=2",
+          "source=synthetic_data/gong/transcripts/OPP-1001_CALL-008.md, call_id=CALL-008, segment=1",
+          "source=synthetic_data/gong/transcripts/OPP-1001_CALL-008.md, call_id=CALL-008, segment=5"
+        ]
+      },
+      {
+        "name": "Pavel Stone",
+        "title": "Global Network Lead",
+        "role_in_deal": "influencer",
+        "influence": "medium",
+        "sentiment": "positive",
+        "stance": "Advocates for reducing bypass exceptions. Needs reporting on migration progress via weekly summary and dashboards. Old plants have tight maintenance windows; forcing single path risks outage or delay. Recently requested legacy-appliance sites migrate before pilot sites, reversing March agreement.",
+        "citations": [
+          "source=synthetic_data/salesforce/contacts.tsv, contact_id=CON-3004",
+          "source=synthetic_data/gong/gong_call_summaries.tsv, call_id=CALL-001",
+          "source=synthetic_data/gong/gong_call_summaries.tsv, call_id=CALL-002",
+          "source=synthetic_data/gong/gong_call_summaries.tsv, call_id=CALL-003"
+        ]
+      }
+    ],
+    "off_crm_people": [],
+    "unmatched_speakers": [],
+    "roles_missing": [
+      "champion"
+    ]
+  },
+  "negotiation_state": {
+    "assessment": {
+      "text": "Stage 6.0 Order Review. Elena Voss described this as a 'documentation-heavy renewal with governance dependencies'—no active pricing negotiation. Commercial terms agreed. Key blockers: packet delivery by 2026-04-28; finance approval of payment schedule before 2026-05-04; legal sign-off on data retention citation; resolution of site sequencing conflict.",
+      "citations": [
+        "source=synthetic_data/salesforce/opportunities.tsv, opportunity_id=OPP-1001",
+        "source=synthetic_data/gong/gong_call_summaries.tsv, call_id=CALL-008",
+        "source=synthetic_data/gong/transcripts/OPP-1001_CALL-008.md, call_id=CALL-008, segment=7",
+        "source=synthetic_data/pricing/pricing_notes.tsv, pricing_note_id=PN-4002",
+        "source=synthetic_data/gong/transcripts/OPP-1001_CALL-004.md, call_id=CALL-004, segment=6",
+        "source=synthetic_data/slack/account_team_updates.tsv, update_id=SLK-1001-02",
+        "source=synthetic_data/slack/account_team_updates.tsv, update_id=SLK-1001-03"
+      ]
+    },
+    "customer_position": {
+      "text": "Aligned on renewal at $4,217,500 ACV with 8% uplift; no further discount requests. Signature contingent on complete packet by 2026-04-28 and finance approving payment schedule before Iris Calder's OOO (05-04). Elena Voss's support is conditional on exceptions demonstrably shrinking; Marco Devlin requires named owner groups; Iris Calder requires clean, simple paperwork.",
+      "citations": [
+        "source=synthetic_data/salesforce/opportunities.tsv, opportunity_id=OPP-1001",
+        "source=synthetic_data/gong/gong_call_summaries.tsv, call_id=CALL-008",
+        "source=synthetic_data/gong/transcripts/OPP-1001_CALL-008.md, call_id=CALL-008, segment=7",
+        "source=synthetic_data/pricing/pricing_notes.tsv, pricing_note_id=PN-4002",
+        "source=synthetic_data/gong/transcripts/OPP-1001_CALL-004.md, call_id=CALL-004, segment=6",
+        "source=synthetic_data/slack/account_team_updates.tsv, update_id=SLK-1001-02",
+        "source=synthetic_data/slack/account_team_updates.tsv, update_id=SLK-1001-03"
+      ]
+    },
+    "vendor_position": {
+      "text": "Commercially agreed at $4,217,500 ACV, 8% uplift; both pricing notes show approval_status not_required. No new concessions pending. Vendor must deliver a complete, accurate final packet, obtain legal approval for data retention language before external sharing, and confirm internally that the two-payment schedule does not alter total contract value.",
+      "citations": [
+        "source=synthetic_data/salesforce/opportunities.tsv, opportunity_id=OPP-1001",
+        "source=synthetic_data/gong/gong_call_summaries.tsv, call_id=CALL-008",
+        "source=synthetic_data/gong/transcripts/OPP-1001_CALL-008.md, call_id=CALL-008, segment=7",
+        "source=synthetic_data/pricing/pricing_notes.tsv, pricing_note_id=PN-4002",
+        "source=synthetic_data/gong/transcripts/OPP-1001_CALL-004.md, call_id=CALL-004, segment=6",
+        "source=synthetic_data/slack/account_team_updates.tsv, update_id=SLK-1001-02",
+        "source=synthetic_data/slack/account_team_updates.tsv, update_id=SLK-1001-03"
+      ]
+    },
+    "open_items": [
+      {
+        "text": "Data retention policy citation: must include policy name and version date; requires legal approval before external delivery per policy rule 5",
+        "citations": [
+          "source=synthetic_data/salesforce/opportunities.tsv, opportunity_id=OPP-1001",
+          "source=synthetic_data/gong/gong_call_summaries.tsv, call_id=CALL-008",
+          "source=synthetic_data/gong/transcripts/OPP-1001_CALL-008.md, call_id=CALL-008, segment=7",
+          "source=synthetic_data/pricing/pricing_notes.tsv, pricing_note_id=PN-4002",
+          "source=synthetic_data/gong/transcripts/OPP-1001_CALL-004.md, call_id=CALL-004, segment=6",
+          "source=synthetic_data/slack/account_team_updates.tsv, update_id=SLK-1001-02",
+          "source=synthetic_data/slack/account_team_updates.tsv, update_id=SLK-1001-03"
+        ]
+      },
+      {
+        "text": "Finance approval of payment schedule: must land before 2026-05-04 (Iris Calder OOO); deputy cannot sign",
+        "citations": [
+          "source=synthetic_data/salesforce/opportunities.tsv, opportunity_id=OPP-1001",
+          "source=synthetic_data/gong/gong_call_summaries.tsv, call_id=CALL-008",
+          "source=synthetic_data/gong/transcripts/OPP-1001_CALL-008.md, call_id=CALL-008, segment=7",
+          "source=synthetic_data/pricing/pricing_notes.tsv, pricing_note_id=PN-4002",
+          "source=synthetic_data/gong/transcripts/OPP-1001_CALL-004.md, call_id=CALL-004, segment=6",
+          "source=synthetic_data/slack/account_team_updates.tsv, update_id=SLK-1001-02",
+          "source=synthetic_data/slack/account_team_updates.tsv, update_id=SLK-1001-03"
+        ]
+      },
+      {
+        "text": "Named owner groups by region in owner matrix: Marco Devlin requires accountable named groups, not generic titles such as 'regional IT'",
+        "citations": [
+          "source=synthetic_data/salesforce/opportunities.tsv, opportunity_id=OPP-1001",
+          "source=synthetic_data/gong/gong_call_summaries.tsv, call_id=CALL-008",
+          "source=synthetic_data/gong/transcripts/OPP-1001_CALL-008.md, call_id=CALL-008, segment=7",
+          "source=synthetic_data/pricing/pricing_notes.tsv, pricing_note_id=PN-4002",
+          "source=synthetic_data/gong/transcripts/OPP-1001_CALL-004.md, call_id=CALL-004, segment=6",
+          "source=synthetic_data/slack/account_team_updates.tsv, update_id=SLK-1001-02",
+          "source=synthetic_data/slack/account_team_updates.tsv, update_id=SLK-1001-03"
+        ]
+      },
+      {
+        "text": "Legacy-site review dates: every legacy-site exception must carry a defined review date to demonstrate exceptions will shrink over time",
+        "citations": [
+          "source=synthetic_data/salesforce/opportunities.tsv, opportunity_id=OPP-1001",
+          "source=synthetic_data/gong/gong_call_summaries.tsv, call_id=CALL-008",
+          "source=synthetic_data/gong/transcripts/OPP-1001_CALL-008.md, call_id=CALL-008, segment=7",
+          "source=synthetic_data/pricing/pricing_notes.tsv, pricing_note_id=PN-4002",
+          "source=synthetic_data/gong/transcripts/OPP-1001_CALL-004.md, call_id=CALL-004, segment=6",
+          "source=synthetic_data/slack/account_team_updates.tsv, update_id=SLK-1001-02",
+          "source=synthetic_data/slack/account_team_updates.tsv, update_id=SLK-1001-03"
+        ]
+      },
+      {
+        "text": "Site sequencing conflict: Pavel Stone reversed agreed pilot-first order; Marco Devlin and Elena Voss confirmation required before migration plan is finalised",
+        "citations": [
+          "source=synthetic_data/salesforce/opportunities.tsv, opportunity_id=OPP-1001",
+          "source=synthetic_data/gong/gong_call_summaries.tsv, call_id=CALL-008",
+          "source=synthetic_data/gong/transcripts/OPP-1001_CALL-008.md, call_id=CALL-008, segment=7",
+          "source=synthetic_data/pricing/pricing_notes.tsv, pricing_note_id=PN-4002",
+          "source=synthetic_data/gong/transcripts/OPP-1001_CALL-004.md, call_id=CALL-004, segment=6",
+          "source=synthetic_data/slack/account_team_updates.tsv, update_id=SLK-1001-02",
+          "source=synthetic_data/slack/account_team_updates.tsv, update_id=SLK-1001-03"
+        ]
+      },
+      {
+        "text": "Baseline exception counts by region and category: Elena Voss noted 'without baseline, success metrics become hand-wavy'",
+        "citations": [
+          "source=synthetic_data/salesforce/opportunities.tsv, opportunity_id=OPP-1001",
+          "source=synthetic_data/gong/gong_call_summaries.tsv, call_id=CALL-008",
+          "source=synthetic_data/gong/transcripts/OPP-1001_CALL-008.md, call_id=CALL-008, segment=7",
+          "source=synthetic_data/pricing/pricing_notes.tsv, pricing_note_id=PN-4002",
+          "source=synthetic_data/gong/transcripts/OPP-1001_CALL-004.md, call_id=CALL-004, segment=6",
+          "source=synthetic_data/slack/account_team_updates.tsv, update_id=SLK-1001-02",
+          "source=synthetic_data/slack/account_team_updates.tsv, update_id=SLK-1001-03"
+        ]
+      },
+      {
+        "text": "Internal confirmation that two-payment milestone schedule does not change total contract value",
+        "citations": [
+          "source=synthetic_data/salesforce/opportunities.tsv, opportunity_id=OPP-1001",
+          "source=synthetic_data/gong/gong_call_summaries.tsv, call_id=CALL-008",
+          "source=synthetic_data/gong/transcripts/OPP-1001_CALL-008.md, call_id=CALL-008, segment=7",
+          "source=synthetic_data/pricing/pricing_notes.tsv, pricing_note_id=PN-4002",
+          "source=synthetic_data/gong/transcripts/OPP-1001_CALL-004.md, call_id=CALL-004, segment=6",
+          "source=synthetic_data/slack/account_team_updates.tsv, update_id=SLK-1001-02",
+          "source=synthetic_data/slack/account_team_updates.tsv, update_id=SLK-1001-03"
+        ]
+      },
+      {
+        "text": "Liability clause narrowing: vendor committed to language tying obligation to documented service commitments rather than indirect business interruption; final redline response must be included in packet",
+        "citations": [
+          "source=synthetic_data/salesforce/opportunities.tsv, opportunity_id=OPP-1001",
+          "source=synthetic_data/gong/gong_call_summaries.tsv, call_id=CALL-008",
+          "source=synthetic_data/gong/transcripts/OPP-1001_CALL-008.md, call_id=CALL-008, segment=7",
+          "source=synthetic_data/pricing/pricing_notes.tsv, pricing_note_id=PN-4002",
+          "source=synthetic_data/gong/transcripts/OPP-1001_CALL-004.md, call_id=CALL-004, segment=6",
+          "source=synthetic_data/slack/account_team_updates.tsv, update_id=SLK-1001-02",
+          "source=synthetic_data/slack/account_team_updates.tsv, update_id=SLK-1001-03"
+        ]
+      }
+    ],
+    "urgency": {
+      "text": "high: Elena Voss can support signature in May window if final packet arrives on schedule; Iris Calder is out of office 05-04 to 05-08 and cannot sign, requiring finance approval of payment schedule before 05-04 to avoid signature slipping toward 05-17. Final packet must be delivered by 2026-04-28.",
+      "citations": [
+        "source=synthetic_data/gong/gong_call_summaries.tsv, call_id=CALL-008",
+        "source=synthetic_data/gong/transcripts/OPP-1001_CALL-008.md, call_id=CALL-008, segment=1",
+        "source=synthetic_data/slack/account_team_updates.tsv, update_id=SLK-1001-02"
+      ]
+    },
+    "commitments": [
+      {
+        "text": "Vendor will send rollout owner matrix, exception closure timeline, draft dashboard fields, and legacy-site plan.",
+        "citations": [
+          "source=synthetic_data/gong/transcripts/OPP-1001_CALL-001.md, call_id=CALL-001, segment=1"
+        ]
+      },
+      {
+        "text": "Vendor will produce a draft dashboard with exception fields, escalation path, and weekly export capability.",
+        "citations": [
+          "source=synthetic_data/gong/transcripts/OPP-1001_CALL-001.md, call_id=CALL-001, segment=2"
+        ]
+      },
+      {
+        "text": "Vendor will propose narrower liability language tying obligation to documented service commitments rather than indirect business interruption.",
+        "citations": [
+          "source=synthetic_data/gong/transcripts/OPP-1001_CALL-004.md, call_id=CALL-004, segment=1"
+        ]
+      },
+      {
+        "text": "Vendor will draft two payment options: standard annual billing and milestone schedule tied to first migration wave.",
+        "citations": [
+          "source=synthetic_data/gong/transcripts/OPP-1001_CALL-004.md, call_id=CALL-004, segment=2"
+        ]
+      },
+      {
+        "text": "Vendor will define milestone as completion of first-wave readiness checklist and support bridge schedule, not business outcome acceptance.",
+        "citations": [
+          "source=synthetic_data/gong/transcripts/OPP-1001_CALL-004.md, call_id=CALL-004, segment=3"
+        ]
+      },
+      {
+        "text": "Vendor will provide one clean order form with renewal term and covered products in single document.",
+        "citations": [
+          "source=synthetic_data/gong/transcripts/OPP-1001_CALL-004.md, call_id=CALL-004, segment=3"
+        ]
+      },
+      {
+        "text": "Vendor will include policy citation and redline response for data retention clause with accurate policy reference and version date.",
+        "citations": [
+          "source=synthetic_data/gong/transcripts/OPP-1001_CALL-004.md, call_id=CALL-004, segment=4"
+        ]
+      },
+      {
+        "text": "Vendor will provide executive summary and success metrics showing platform value for access control and exception reduction.",
+        "citations": [
+          "source=synthetic_data/gong/transcripts/OPP-1001_CALL-008.md, call_id=CALL-008, segment=1",
+          "source=synthetic_data/gong/gong_call_summaries.tsv, call_id=CALL-008"
+        ]
+      },
+      {
+        "text": "Vendor will include success metrics: active regional exceptions, average exception age, first-wave sites completed, rollback events, support response time, and policy drift findings.",
+        "citations": [
+          "source=synthetic_data/gong/transcripts/OPP-1001_CALL-008.md, call_id=CALL-008, segment=2"
+        ]
+      },
+      {
+        "text": "Vendor will define review dates for every legacy-site exception to show exceptions shrink over time.",
+        "citations": [
+          "source=synthetic_data/gong/transcripts/OPP-1001_CALL-008.md, call_id=CALL-008, segment=4"
+        ]
+      },
+      {
+        "text": "Vendor will provide owner matrix with named owner groups by region for accountability.",
+        "citations": [
+          "source=synthetic_data/gong/transcripts/OPP-1001_CALL-008.md, call_id=CALL-008, segment=1"
+        ]
+      },
+      {
+        "text": "Vendor will position renewal as operational assurance and control maturity improvement, not expansion.",
+        "citations": [
+          "source=synthetic_data/gong/gong_call_summaries.tsv, call_id=CALL-008",
+          "source=synthetic_data/gong/transcripts/OPP-1001_CALL-008.md, call_id=CALL-008, segment=3"
+        ]
+      }
+    ],
+    "action_items": [
+      {
+        "text": "Deliver comprehensive final packet including executive summary, success metrics with policy drift, owner matrix with named groups, accurate data retention policy citation and reference, legacy-site review dates, payment schedule options, and support bridge schedule. Avoid expansion framing; position as renewal with operational assurance. (vendor, Vendor Account Team, due 2026-04-28)",
+        "citations": [
+          "source=synthetic_data/gong/transcripts/OPP-1001_CALL-008.md, call_id=CALL-008, segment=5"
+        ]
+      },
+      {
+        "text": "Obtain finance approval of payment schedule before 2026-05-04 to prevent signature delay. Iris Calder will be out of office 05-04 to 05-08 and her deputy cannot sign; approval must land before her departure. (customer, due 2026-05-04)",
+        "citations": [
+          "source=synthetic_data/slack/account_team_updates.tsv, update_id=SLK-1001-02"
+        ]
+      },
+      {
+        "text": "Northstar to confirm first-wave site selection balanced across cooperative, moderate, and operationally difficult regions, and name regional approvers for escalation path. (customer)",
+        "citations": [
+          "source=synthetic_data/gong/transcripts/OPP-1001_CALL-001.md, call_id=CALL-001, segment=2",
+          "source=synthetic_data/gong/gong_call_summaries.tsv, call_id=CALL-001"
+        ]
+      },
+      {
+        "text": "Vendor to flag assumptions clearly in first versions of rollout owner matrix, exception closure timeline, and dashboard fields. (vendor, due 2026-03-18)",
+        "citations": [
+          "source=synthetic_data/gong/transcripts/OPP-1001_CALL-001.md, call_id=CALL-001, segment=1"
+        ]
+      },
+      {
+        "text": "Vendor to confirm internally that two-payment milestone schedule does not change total contract value, and communicate clearly. (vendor)",
+        "citations": [
+          "source=synthetic_data/gong/transcripts/OPP-1001_CALL-004.md, call_id=CALL-004, segment=3"
+        ]
+      },
+      {
+        "text": "Vendor to provide separate explanatory memo documenting uplift justification: base renewal, expanded branch coverage, additional cloud application controls, and operational enablement items. (vendor)",
+        "citations": [
+          "source=synthetic_data/gong/transcripts/OPP-1001_CALL-004.md, call_id=CALL-004, segment=3"
+        ]
+      },
+      {
+        "text": "Vendor to attach approved data-retention policy excerpt and signature checklist to document review package. (vendor)",
+        "citations": [
+          "source=synthetic_data/gong/gong_call_summaries.tsv, call_id=CALL-009",
+          "source=synthetic_data/slack/account_team_updates.tsv, update_id=SLK-1001-01"
+        ]
+      }
+    ]
+  },
+  "next_actions": {
+    "actions": [
+      {
+        "id": "A1",
+        "action": "Finalise the data retention policy citation—including the exact policy name and version date—and route the revised language and approved policy excerpt to internal legal review and approval before including it in the final packet.",
+        "owner_role": "Vendor Legal Representative",
+        "rationale": {
+          "text": "Amara Quinn stated 'if the citation is wrong, it will bounce back' and specified the need for 'the policy name and version date'; CALL-009 confirmed legal review nearly complete pending citation accuracy. Policy rule 5 requires legal approval before data retention language is shared externally. This is a prerequisite to A3.",
+          "citations": [
+            "source=synthetic_data/gong/transcripts/OPP-1001_CALL-004.md, call_id=CALL-004, segment=4",
+            "source=synthetic_data/gong/transcripts/OPP-1001_CALL-004.md, call_id=CALL-004, segment=6",
+            "source=synthetic_data/gong/gong_call_summaries.tsv, call_id=CALL-007",
+            "source=synthetic_data/gong/gong_call_summaries.tsv, call_id=CALL-009",
+            "source=synthetic_data/policies/deal_desk_policy.md, rule=5"
+          ]
+        },
+        "labels": [
+          {
+            "kind": "escalated",
+            "role": "legal",
+            "actor_user_id": null,
+            "decided_on": null
+          }
+        ],
+        "rule_ids": [
+          "R5"
+        ],
+        "proposed_values": {},
+        "customer_facing": false,
+        "customer_language": null,
+        "confidence": "high",
+        "citations": [
+          "source=synthetic_data/gong/transcripts/OPP-1001_CALL-004.md, call_id=CALL-004, segment=4",
+          "source=synthetic_data/gong/transcripts/OPP-1001_CALL-004.md, call_id=CALL-004, segment=6",
+          "source=synthetic_data/gong/gong_call_summaries.tsv, call_id=CALL-007",
+          "source=synthetic_data/gong/gong_call_summaries.tsv, call_id=CALL-009",
+          "source=synthetic_data/policies/deal_desk_policy.md, rule=5"
+        ]
+      },
+      {
+        "id": "A2",
+        "action": "Confirm internally that the two-payment milestone schedule does not change total contract value, and prepare the uplift explanation memo separating base renewal from operational enablement items before including in the final packet.",
+        "owner_role": "Deal Desk / Account Executive",
+        "rationale": {
+          "text": "Iris Calder stated 'Finance will also ask whether the two-payment option changes total cost. If it does, show that. If it does not, say so clearly.' She also requested uplift separated in the explanation (not order form). Amara Quinn cautioned against any payment schedule 'offered but not approved.' Internal confirmation must precede packet delivery (A3).",
+          "citations": [
+            "source=synthetic_data/gong/transcripts/OPP-1001_CALL-004.md, call_id=CALL-004, segment=6",
+            "source=synthetic_data/gong/transcripts/OPP-1001_CALL-004.md, call_id=CALL-004, segment=2",
+            "source=synthetic_data/gong/transcripts/OPP-1001_CALL-004.md, call_id=CALL-004, segment=5",
+            "source=synthetic_data/gong/transcripts/OPP-1001_CALL-004.md, call_id=CALL-004, segment=1"
+          ]
+        },
+        "labels": [],
+        "rule_ids": [],
+        "proposed_values": {},
+        "customer_facing": false,
+        "customer_language": null,
+        "confidence": "high",
+        "citations": [
+          "source=synthetic_data/gong/transcripts/OPP-1001_CALL-004.md, call_id=CALL-004, segment=6",
+          "source=synthetic_data/gong/transcripts/OPP-1001_CALL-004.md, call_id=CALL-004, segment=2",
+          "source=synthetic_data/gong/transcripts/OPP-1001_CALL-004.md, call_id=CALL-004, segment=5",
+          "source=synthetic_data/gong/transcripts/OPP-1001_CALL-004.md, call_id=CALL-004, segment=1"
+        ]
+      },
+      {
+        "id": "A3",
+        "action": "Deliver the consolidated final packet by 2026-04-28: executive summary, success metrics including policy drift, named owner matrix, payment schedule options, data retention citation, legacy-site review dates, and support bridge schedule. Frame as operational renewal, not expansion.",
+        "owner_role": "Account Executive",
+        "rationale": {
+          "text": "Elena Voss confirmed she 'can support signature in the May window' if the packet arrives on schedule; Iris Calder stated 'Send it as one packet'; Marco Devlin supports 'if the escalation path is real.' Data retention section must clear legal approval (A1) and TCV neutrality confirmed (A2) before delivery per policy rule 5.",
+          "citations": [
+            "source=synthetic_data/gong/transcripts/OPP-1001_CALL-008.md, call_id=CALL-008, segment=4",
+            "source=synthetic_data/gong/transcripts/OPP-1001_CALL-008.md, call_id=CALL-008, segment=5",
+            "source=synthetic_data/gong/gong_call_summaries.tsv, call_id=CALL-008",
+            "source=synthetic_data/gong/transcripts/OPP-1001_CALL-004.md, call_id=CALL-004, segment=3",
+            "source=synthetic_data/gong/transcripts/OPP-1001_CALL-008.md, call_id=CALL-008, segment=3"
+          ]
+        },
+        "labels": [
+          {
+            "kind": "escalated",
+            "role": "legal",
+            "actor_user_id": null,
+            "decided_on": null
+          }
+        ],
+        "rule_ids": [
+          "R5"
+        ],
+        "proposed_values": {},
+        "customer_facing": true,
+        "customer_language": null,
+        "confidence": "high",
+        "citations": [
+          "source=synthetic_data/gong/transcripts/OPP-1001_CALL-008.md, call_id=CALL-008, segment=4",
+          "source=synthetic_data/gong/transcripts/OPP-1001_CALL-008.md, call_id=CALL-008, segment=5",
+          "source=synthetic_data/gong/gong_call_summaries.tsv, call_id=CALL-008",
+          "source=synthetic_data/gong/transcripts/OPP-1001_CALL-004.md, call_id=CALL-004, segment=3",
+          "source=synthetic_data/gong/transcripts/OPP-1001_CALL-008.md, call_id=CALL-008, segment=3"
+        ]
+      },
+      {
+        "id": "A4",
+        "action": "Confirm with Northstar procurement that the payment schedule has reached finance for review and request the expected finance approval date to ensure signature can proceed within the May window.",
+        "owner_role": "Account Executive / Customer Success Manager",
+        "rationale": {
+          "text": "Iris Calder is out of office 05-04 to 05-08 and her deputy cannot sign; finance approval must land before her departure or signature slips toward the 05-17 close. Iris Calder warned in CALL-008 that describing the payment schedule as 'approved before finance sees it...would be wrong'—this follow-up facilitates the customer's internal process without pre-empting it.",
+          "citations": [
+            "source=synthetic_data/slack/account_team_updates.tsv, update_id=SLK-1001-02",
+            "source=synthetic_data/gong/transcripts/OPP-1001_CALL-008.md, call_id=CALL-008, segment=5",
+            "source=synthetic_data/gong/transcripts/OPP-1001_CALL-004.md, call_id=CALL-004, segment=5"
+          ]
+        },
+        "labels": [],
+        "rule_ids": [],
+        "proposed_values": {},
+        "customer_facing": true,
+        "customer_language": null,
+        "confidence": "high",
+        "citations": [
+          "source=synthetic_data/slack/account_team_updates.tsv, update_id=SLK-1001-02",
+          "source=synthetic_data/gong/transcripts/OPP-1001_CALL-008.md, call_id=CALL-008, segment=5",
+          "source=synthetic_data/gong/transcripts/OPP-1001_CALL-004.md, call_id=CALL-004, segment=5"
+        ]
+      },
+      {
+        "id": "A5",
+        "action": "Engage Marco Devlin to confirm the agreed site sequencing before finalising migration plan documents: Pavel Stone has requested legacy-appliance sites migrate first, reversing the March pilot-first agreement, without confirmed endorsement from Devlin or Elena Voss.",
+        "owner_role": "Customer Success Manager / Account Executive",
+        "rationale": {
+          "text": "A 2026-05-02 Slack update reports the reversal with no confirmation from Marco Devlin or Elena Voss. CALL-002 documented the original pilot-first sequence. Unresolved conflict risks reopening migration scope after packet delivery. Confidence is medium: unclear if this is an operational change or Pavel Stone's preference. Per policy rule 7, conflicting evidence requires human reviewer escalation.",
+          "citations": [
+            "source=synthetic_data/slack/account_team_updates.tsv, update_id=SLK-1001-03",
+            "source=synthetic_data/gong/gong_call_summaries.tsv, call_id=CALL-002",
+            "source=synthetic_data/salesforce/contacts.tsv, contact_id=CON-3002",
+            "source=synthetic_data/salesforce/contacts.tsv, contact_id=CON-3004"
+          ]
+        },
+        "labels": [
+          {
+            "kind": "pending",
+            "role": "human_reviewer",
+            "actor_user_id": null,
+            "decided_on": null
+          }
+        ],
+        "rule_ids": [
+          "R7"
+        ],
+        "proposed_values": {},
+        "customer_facing": false,
+        "customer_language": null,
+        "confidence": "medium",
+        "citations": [
+          "source=synthetic_data/slack/account_team_updates.tsv, update_id=SLK-1001-03",
+          "source=synthetic_data/gong/gong_call_summaries.tsv, call_id=CALL-002",
+          "source=synthetic_data/salesforce/contacts.tsv, contact_id=CON-3002",
+          "source=synthetic_data/salesforce/contacts.tsv, contact_id=CON-3004"
+        ]
+      }
+    ],
+    "policy_items": []
+  },
+  "missing_information": {
+    "items": [
+      "Baseline exception counts by region and category needed to anchor success metrics—without these, improvement cannot be demonstrated to the board audit committee",
+      "Finance approval status of payment schedule (pending; must be confirmed before 2026-05-04)",
+      "Confirmed named owner groups for each region (not yet documented in evidence; Marco Devlin requires named groups, not generic titles)",
+      "Data retention policy exact name and version date for accurate citation",
+      "Resolution of site sequencing conflict: whether Marco Devlin and Elena Voss have agreed to Pavel Stone's legacy-first reversal",
+      "Vendor internal confirmation that two-payment milestone schedule does not change total contract value",
+      "No Northstar finance contact identified to facilitate payment schedule approval before Iris Calder's OOO",
+      "Current baseline exception counts by category and region to anchor success metrics and demonstrate improvement",
+      "Finance approval status of payment schedule options",
+      "Confirmation of specific owner names or named owner groups for each region",
+      "Vendor internal approval of two-payment milestone schedule variant",
+      "Document citation version and format specification for data retention policy reference",
+      "Detailed definition of legacy-site plan categories and closure timeline assumptions",
+      "No finance contact identified to approve payment schedule",
+      "No regional site leads or plant managers identified for escalation matrix"
+    ]
+  },
+  "source_evidence": {
+    "entries": [
+      {
+        "chunk_id": "sfdc_opp:OPP-1001",
+        "citation": "source=synthetic_data/salesforce/opportunities.tsv, opportunity_id=OPP-1001",
+        "excerpt": "Opportunity OPP-1001: Northstar Foods Cooperative - Global Access Renewal Account: Northstar Foods Cooperative (ACC-2001) Stage: 6.0 Order Review Type: Renewal Forecast category: Commit ACV: 421750..."
+      },
+      {
+        "chunk_id": "sfdc_account:ACC-2001",
+        "citation": "source=synthetic_data/salesforce/accounts.tsv, account_id=ACC-2001",
+        "excerpt": "Account ACC-2001: Northstar Foods Cooperative Industry: Food and beverage operations Region: EMEA, Ireland Employees: 12000-18000 Current products: Secure access gateway, branch edge, cloud applica..."
+      },
+      {
+        "chunk_id": "pricing:PN-4001",
+        "citation": "source=synthetic_data/pricing/pricing_notes.tsv, pricing_note_id=PN-4001",
+        "excerpt": "Pricing note PN-4001 for OPP-1001 Current ACV: 3900000 Proposed ACV: 4217500 Requested discount: 4% Renewal uplift: 8% Commercial risk: medium Approval status: not_required Notes: Customer accepted..."
+      },
+      {
+        "chunk_id": "pricing:PN-4002",
+        "citation": "source=synthetic_data/pricing/pricing_notes.tsv, pricing_note_id=PN-4002",
+        "excerpt": "Pricing note PN-4002 for OPP-1001 Current ACV: 3900000 Proposed ACV: 4217500 Requested discount: 0% Renewal uplift: 8% Commercial risk: low Approval status: not_required Notes: No new concession re..."
+      },
+      {
+        "chunk_id": "gong_summary:CALL-008",
+        "citation": "source=synthetic_data/gong/gong_call_summaries.tsv, call_id=CALL-008",
+        "excerpt": "Gong call CALL-008: Final pre-signature negotiation prep Opportunity: OPP-1001 Call date: 2026-04-18 Stage at call: 6.0 Order Review Duration: 46:57 Participants: Elena Voss, Chief Information Secu..."
+      },
+      {
+        "chunk_id": "transcript:CALL-008:4",
+        "citation": "source=synthetic_data/gong/transcripts/OPP-1001_CALL-008.md, call_id=CALL-008, segment=4",
+        "excerpt": "Call CALL-008 | Opportunity OPP-1001 | Date 2026-04-18 | Access standard | Segment 4 Title: Final pre-signature negotiation prep Elena Voss: I also want the recommendation to avoid saying \"expansio..."
+      },
+      {
+        "chunk_id": "transcript:CALL-008:5",
+        "citation": "source=synthetic_data/gong/transcripts/OPP-1001_CALL-008.md, call_id=CALL-008, segment=5",
+        "excerpt": "Call CALL-008 | Opportunity OPP-1001 | Date 2026-04-18 | Access standard | Segment 5 Title: Final pre-signature negotiation prep Vendor AE: To summarize: final packet includes executive summary, su..."
+      },
+      {
+        "chunk_id": "slack:SLK-1001-02",
+        "citation": "source=synthetic_data/slack/account_team_updates.tsv, update_id=SLK-1001-02",
+        "excerpt": "Slack update SLK-1001-02 in #acct-northstar on 2026-04-29 by CSM Iris Calder is out of office 05-04 to 05-08. Her deputy can receive the signature package but cannot sign. Finance approval of the p..."
+      },
+      {
+        "chunk_id": "transcript:CALL-008:1",
+        "citation": "source=synthetic_data/gong/transcripts/OPP-1001_CALL-008.md, call_id=CALL-008, segment=1",
+        "excerpt": "Call CALL-008 | Opportunity OPP-1001 | Date 2026-04-18 | Access standard | Segment 1 Title: Final pre-signature negotiation prep Vendor AE: We are close to signature, so I want to confirm the final..."
+      },
+      {
+        "chunk_id": "transcript:CALL-004:4",
+        "citation": "source=synthetic_data/gong/transcripts/OPP-1001_CALL-004.md, call_id=CALL-004, segment=4",
+        "excerpt": "Call CALL-004 | Opportunity OPP-1001 | Date 2026-04-01 | Access standard | Segment 4 Title: Procurement commercial review Amara Quinn: For the data retention clause, I am not blocking the deal. I j..."
+      },
+      {
+        "chunk_id": "gong_summary:CALL-009",
+        "citation": "source=synthetic_data/gong/gong_call_summaries.tsv, call_id=CALL-009",
+        "excerpt": "Gong call CALL-009: Renewal document review Opportunity: OPP-1001 Call date: 2026-04-24 Stage at call: 6.0 Order Review Duration: 31:44 Participants: Iris Calder, Procurement Director; Amara Quinn,..."
+      },
+      {
+        "chunk_id": "transcript:CALL-008:6",
+        "citation": "source=synthetic_data/gong/transcripts/OPP-1001_CALL-008.md, call_id=CALL-008, segment=6",
+        "excerpt": "Call CALL-008 | Opportunity OPP-1001 | Date 2026-04-18 | Access standard | Segment 6 Title: Final pre-signature negotiation prep Iris Calder: If the payment schedule is described as approved before..."
+      },
+      {
+        "chunk_id": "slack:SLK-1001-03",
+        "citation": "source=synthetic_data/slack/account_team_updates.tsv, update_id=SLK-1001-03",
+        "excerpt": "Slack update SLK-1001-03 in #acct-northstar on 2026-05-02 by SE Pavel Stone now wants the two legacy-appliance sites migrated before the pilot sites, the reverse of the pilot-first sequencing agree..."
+      },
+      {
+        "chunk_id": "gong_summary:CALL-002",
+        "citation": "source=synthetic_data/gong/gong_call_summaries.tsv, call_id=CALL-002",
+        "excerpt": "Gong call CALL-002: Branch migration planning session Opportunity: OPP-1001 Call date: 2026-03-18 Stage at call: 5.0 Negotiate Duration: 55:04 Participants: Marco Devlin, VP Infrastructure; Pavel S..."
+      },
+      {
+        "chunk_id": "gong_summary:CALL-001",
+        "citation": "source=synthetic_data/gong/gong_call_summaries.tsv, call_id=CALL-001",
+        "excerpt": "Gong call CALL-001: Renewal kickoff and regional rollout review Opportunity: OPP-1001 Call date: 2026-03-11 Stage at call: 5.0 Negotiate Duration: 42:18 Participants: Elena Voss, Chief Information..."
+      },
+      {
+        "chunk_id": "transcript:CALL-001:1",
+        "citation": "source=synthetic_data/gong/transcripts/OPP-1001_CALL-001.md, call_id=CALL-001, segment=1",
+        "excerpt": "Call CALL-001 | Opportunity OPP-1001 | Date 2026-03-11 | Access standard | Segment 1 Title: Renewal kickoff and regional rollout review Vendor AE: Thanks for joining. The goal today is to confirm t..."
+      },
+      {
+        "chunk_id": "transcript:CALL-001:2",
+        "citation": "source=synthetic_data/gong/transcripts/OPP-1001_CALL-001.md, call_id=CALL-001, segment=2",
+        "excerpt": "Call CALL-001 | Opportunity OPP-1001 | Date 2026-03-11 | Access standard | Segment 2 Title: Renewal kickoff and regional rollout review Elena Voss: Yes. And I need it framed as risk reduction, not..."
+      },
+      {
+        "chunk_id": "gong_summary:CALL-003",
+        "citation": "source=synthetic_data/gong/gong_call_summaries.tsv, call_id=CALL-003",
+        "excerpt": "Gong call CALL-003: Security outcomes alignment Opportunity: OPP-1001 Call date: 2026-03-25 Stage at call: 5.0 Negotiate Duration: 37:49 Participants: Elena Voss, Chief Information Security Officer..."
+      },
+      {
+        "chunk_id": "transcript:CALL-008:2",
+        "citation": "source=synthetic_data/gong/transcripts/OPP-1001_CALL-008.md, call_id=CALL-008, segment=2",
+        "excerpt": "Call CALL-008 | Opportunity OPP-1001 | Date 2026-04-18 | Access standard | Segment 2 Title: Final pre-signature negotiation prep Elena Voss: Legal still needs the data retention citation, but Amara..."
+      },
+      {
+        "chunk_id": "transcript:CALL-004:1",
+        "citation": "source=synthetic_data/gong/transcripts/OPP-1001_CALL-004.md, call_id=CALL-004, segment=1",
+        "excerpt": "Call CALL-004 | Opportunity OPP-1001 | Date 2026-04-01 | Access standard | Segment 1 Title: Procurement commercial review Vendor AE: Today we are focused on the order form, payment schedule, and th..."
+      },
+      {
+        "chunk_id": "transcript:CALL-004:2",
+        "citation": "source=synthetic_data/gong/transcripts/OPP-1001_CALL-004.md, call_id=CALL-004, segment=2",
+        "excerpt": "Call CALL-004 | Opportunity OPP-1001 | Date 2026-04-01 | Access standard | Segment 2 Title: Procurement commercial review Vendor Legal Rep: We reviewed your comment. We can propose narrower wording..."
+      },
+      {
+        "chunk_id": "transcript:CALL-001:4",
+        "citation": "source=synthetic_data/gong/transcripts/OPP-1001_CALL-001.md, call_id=CALL-001, segment=4",
+        "excerpt": "Call CALL-001 | Opportunity OPP-1001 | Date 2026-03-11 | Access standard | Segment 4 Title: Renewal kickoff and regional rollout review Marco Devlin: One caveat: do not overpromise the timeline. So..."
+      },
+      {
+        "chunk_id": "gong_summary:CALL-004",
+        "citation": "source=synthetic_data/gong/gong_call_summaries.tsv, call_id=CALL-004",
+        "excerpt": "Gong call CALL-004: Procurement commercial review Opportunity: OPP-1001 Call date: 2026-04-01 Stage at call: 5.0 Negotiate Duration: 48:26 Participants: Iris Calder, Procurement Director; Amara Qui..."
+      },
+      {
+        "chunk_id": "gong_summary:CALL-007",
+        "citation": "source=synthetic_data/gong/gong_call_summaries.tsv, call_id=CALL-007",
+        "excerpt": "Gong call CALL-007: Legal and order form closeout Opportunity: OPP-1001 Call date: 2026-04-16 Stage at call: 6.0 Order Review Duration: 34:21 Participants: Iris Calder, Procurement Director; Amara..."
+      },
+      {
+        "chunk_id": "gong_summary:CALL-006",
+        "citation": "source=synthetic_data/gong/gong_call_summaries.tsv, call_id=CALL-006",
+        "excerpt": "Gong call CALL-006: Operational readiness workshop Opportunity: OPP-1001 Call date: 2026-04-12 Stage at call: 6.0 Order Review Duration: 63:12 Participants: Marco Devlin, VP Infrastructure; Pavel S..."
+      },
+      {
+        "chunk_id": "contact:CON-3001",
+        "citation": "source=synthetic_data/salesforce/contacts.tsv, contact_id=CON-3001",
+        "excerpt": "Contact CON-3001: Elena Voss, Chief Information Security Officer Account: Northstar Foods Cooperative (ACC-2001) Role in deal: Economic buyer Influence: high Sentiment: cautiously_positive Location..."
+      },
+      {
+        "chunk_id": "transcript:CALL-008:7",
+        "citation": "source=synthetic_data/gong/transcripts/OPP-1001_CALL-008.md, call_id=CALL-008, segment=7",
+        "excerpt": "Call CALL-008 | Opportunity OPP-1001 | Date 2026-04-18 | Access standard | Segment 7 Title: Final pre-signature negotiation prep Vendor AE: Should the recommended next action be to ask for signatur..."
+      },
+      {
+        "chunk_id": "contact:CON-3002",
+        "citation": "source=synthetic_data/salesforce/contacts.tsv, contact_id=CON-3002",
+        "excerpt": "Contact CON-3002: Marco Devlin, VP Infrastructure Account: Northstar Foods Cooperative (ACC-2001) Role in deal: Technical decision maker Influence: high Sentiment: positive Location: Dublin Last in..."
+      },
+      {
+        "chunk_id": "transcript:CALL-008:3",
+        "citation": "source=synthetic_data/gong/transcripts/OPP-1001_CALL-008.md, call_id=CALL-008, segment=3",
+        "excerpt": "Call CALL-008 | Opportunity OPP-1001 | Date 2026-04-18 | Access standard | Segment 3 Title: Final pre-signature negotiation prep Vendor AE: Good. We will add policy drift findings and remediation s..."
+      },
+      {
+        "chunk_id": "contact:CON-3005",
+        "citation": "source=synthetic_data/salesforce/contacts.tsv, contact_id=CON-3005",
+        "excerpt": "Contact CON-3005: Amara Quinn, Legal Counsel Account: Northstar Foods Cooperative (ACC-2001) Role in deal: Legal reviewer Influence: medium Sentiment: neutral Location: Dublin Last interaction: 202..."
+      },
+      {
+        "chunk_id": "transcript:CALL-004:3",
+        "citation": "source=synthetic_data/gong/transcripts/OPP-1001_CALL-004.md, call_id=CALL-004, segment=3",
+        "excerpt": "Call CALL-004 | Opportunity OPP-1001 | Date 2026-04-01 | Access standard | Segment 3 Title: Procurement commercial review Vendor AE: That is useful. We can draft two payment options: standard annua..."
+      },
+      {
+        "chunk_id": "contact:CON-3003",
+        "citation": "source=synthetic_data/salesforce/contacts.tsv, contact_id=CON-3003",
+        "excerpt": "Contact CON-3003: Iris Calder, Procurement Director Account: Northstar Foods Cooperative (ACC-2001) Role in deal: Commercial approver Influence: medium Sentiment: neutral Location: Cork Last intera..."
+      },
+      {
+        "chunk_id": "contact:CON-3004",
+        "citation": "source=synthetic_data/salesforce/contacts.tsv, contact_id=CON-3004",
+        "excerpt": "Contact CON-3004: Pavel Stone, Global Network Lead Account: Northstar Foods Cooperative (ACC-2001) Role in deal: Technical evaluator Influence: medium Sentiment: positive Location: Galway Last inte..."
+      },
+      {
+        "chunk_id": "transcript:CALL-004:6",
+        "citation": "source=synthetic_data/gong/transcripts/OPP-1001_CALL-004.md, call_id=CALL-004, segment=6",
+        "excerpt": "Call CALL-004 | Opportunity OPP-1001 | Date 2026-04-01 | Access standard | Segment 6 Title: Procurement commercial review Vendor Legal Rep: Agreed. The legal commitment is service delivery and supp..."
+      },
+      {
+        "chunk_id": "slack:SLK-1001-01",
+        "citation": "source=synthetic_data/slack/account_team_updates.tsv, update_id=SLK-1001-01",
+        "excerpt": "Slack update SLK-1001-01 in #acct-northstar on 2026-04-27 by AE Recap of the 04-24 document review with Iris Calder and Amara Quinn: procurement raised no new commercial asks, legal only needs the..."
+      },
+      {
+        "chunk_id": "policy:rule-5",
+        "citation": "source=synthetic_data/policies/deal_desk_policy.md, rule=5",
+        "excerpt": "Deal Desk policy rule 5: Data retention, restricted research data, or customer-specific security language requires legal approval before it is shared externally."
+      },
+      {
+        "chunk_id": "transcript:CALL-004:5",
+        "citation": "source=synthetic_data/gong/transcripts/OPP-1001_CALL-004.md, call_id=CALL-004, segment=5",
+        "excerpt": "Call CALL-004 | Opportunity OPP-1001 | Date 2026-04-01 | Access standard | Segment 5 Title: Procurement commercial review Vendor AE: Action items: vendor sends revised liability language, payment s..."
+      }
+    ]
+  },
+  "confidence": {
+    "agent_confidence": {
+      "stakeholder_map": "high",
+      "negotiation_strategy": "high",
+      "conversation_intelligence": "high"
+    },
+    "conflicts": [
+      {
+        "text": "Site sequencing priority for migration: March planning session agreed pilot sites should move first, with older appliance sites handled separately with exceptions. / Pavel Stone now wants legacy-appliance sites migrated before pilot sites, reversing the agreed sequencing. (Two contradictory sequencing plans cannot both be executed. The March agreement (pilot-first) and the May-02 request (legacy-first) represent different migration strategies. Unclear whether Marco Devlin and Elena Voss agree with the reversal, and whether this reflects a genuine change in operational constraints or a separate preference from the network lead.)",
+        "citations": [
+          "source=synthetic_data/gong/gong_call_summaries.tsv, call_id=CALL-002",
+          "source=synthetic_data/slack/account_team_updates.tsv, update_id=SLK-1001-03"
+        ]
+      }
+    ],
+    "warnings": [
+      "Discount conflict: pricing:PN-4001 records 4% requested discount; pricing:PN-4002 records 0% and states 'no new concession requested in final document review.' These cannot both be current; account team must confirm which note is operative before the packet is sent.",
+      "Sequencing conflict: slack:SLK-1001-03 reports Pavel Stone requesting legacy-first migration, contradicting the pilot-first sequence in gong_summary:CALL-002. Marco Devlin and Elena Voss have not confirmed the reversal. Unresolved; requires direct customer confirmation.",
+      "Elena Voss's support is conditional: contact:CON-3001 states she 'will not support expansion unless regional exception handling is reduced'; transcript:CALL-008:4 records approval 'dependent on showing that exceptions shrink over time.' External communications must preserve this condition.",
+      "Payment schedule is not approved and must not be described as such: Iris Calder stated in transcript:CALL-008:5 that describing the payment schedule as 'approved before finance sees it...would be wrong.' Payment schedule remains pending finance review.",
+      "Legal citation is near complete, not done: Elena Voss stated in transcript:CALL-008:6 that the brief should say 'near complete rather than done.' Data retention citation remains open pending accuracy confirmation; any communication must preserve this characterisation.",
+      "Slack update SLK-1001-03 reports Pavel Stone reversing agreed-upon site sequencing without clear confirmation from Marco Devlin or Elena Voss; this requires clarification before final site list is confirmed.",
+      "Elena Voss explicitly cautioned against turning her conditional support into unconditional approval in transcript:CALL-001:4; any communication citing her commitment must preserve the condition that exception plan be credible.",
+      "Iris Calder warned in transcript:CALL-004:5 against describing vendor payment schedule as 'approved' before finance sees it; payment schedule remains pending finance review, not approved.",
+      "Elena Voss stated in transcript:CALL-008:7 that brief should say legal is 'near complete' rather than 'done'; legal citation is still open pending accuracy confirmation."
+    ],
+    "degraded_components": [],
+    "escalated": [
+      "[ESCALATED: no eligible approver for legal] Finalise the data retention policy citation—including the exact policy name and version date—and route the revised language and approved policy excerpt to internal legal review and approval before including it in the final packet.",
+      "[ESCALATED: no eligible approver for legal] Deliver the consolidated final packet by 2026-04-28: executive summary, success metrics including policy drift, named owner matrix, payment schedule options, data retention citation, legacy-site review dates, and support bridge schedule. Frame as operational renewal, not expansion."
+    ],
+    "pending": [
+      "[PENDING APPROVAL: human_reviewer] INTERNAL ONLY Engage Marco Devlin to confirm the agreed site sequencing before finalising migration plan documents: Pavel Stone has requested legacy-appliance sites migrate first, reversing the March pilot-first agreement, without confirmed endorsement from Devlin or Elena Voss."
+    ],
+    "guardrail_counts": {
+      "names/passed": 1,
+      "bounds/passed": 2,
+      "quotes/passed": 3,
+      "retry/retried": 4,
+      "bounds/warning": 1,
+      "numbers/passed": 2,
+      "citations/passed": 3,
+      "approval_wording/passed": 1,
+      "approval_consistency/passed": 1,
+      "customer_facing_leak/passed": 1
+    }
+  }
+}

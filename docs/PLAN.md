@@ -293,10 +293,10 @@ The mix of levels inside `OPP-1003` is deliberate: it proves the retriever filte
 |---|---|---|
 | `ANTHROPIC_API_KEY` | none | Model access; set in the shell, never committed |
 | `DATABASE_URL`, `TEST_DATABASE_URL` | local Compose URLs | Postgres |
-| `MODEL_STRATEGY`, `MODEL_EXTRACTION` | Opus-class, Haiku-class model ids (confirmed in M2) | Routing |
-| `STRATEGY_EFFORT` | `high` | Strategy agent reasoning effort |
+| `MODEL_STRATEGY`, `MODEL_EXTRACTION` | `claude-sonnet-4-6`, `claude-haiku-4-5-20251001` | Routing |
+| `STRATEGY_EFFORT` | `medium` | Strategy agent reasoning effort |
 | `MAX_TOOL_CALLS` | `4` | Tool loop bound per agent call |
-| `RUN_INPUT_TOKEN_BUDGET` | `80000` | Hard cap per run (raised from 60k to cover tool results) |
+| `RUN_INPUT_TOKEN_BUDGET` | `250000` | Hard cap per run (raised after a live Sonnet + tool-loop run billed 191k input tokens) |
 | `DAILY_COST_BUDGET_USD` | `20` | Executor refuses new runs above this |
 | `RUN_EXECUTOR_WORKERS` | `2` | Concurrent runs in the API process |
 | `APPROVAL_EXPIRY_HOURS` | `168` | Pending approvals expire after this |

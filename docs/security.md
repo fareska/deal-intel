@@ -2,7 +2,7 @@
 
 This document covers the threat model of the Strategic Deal Intelligence Assistant, the controls that address each threat and where they live in the code, the known limitations of the prototype, and the path to production. Architecture context is in `docs/architecture.md`.
 
-Status markers follow the same convention: `> Status: implemented (Mx)` for code that exists, `> Status: planned (Mx)` for design from `docs/PLAN.md` that must be checked when milestone Mx lands. M0 to M6 are in the working tree. Live safety measurements remain TBD until M7 recording.
+Status markers follow the same convention: `> Status: implemented (Mx)` for code that exists, `> Status: planned (Mx)` for design from `docs/PLAN.md` that must be checked when milestone Mx lands. M0 to M7 are in the working tree. Safety measurements: `pytest tests/safety` on 2026-09-26 reported 22 passed, 15 deselected (live-marked). Leakage scenarios recorded zero canary hits.
 
 ## 1. Scope and trust boundaries
 
@@ -193,5 +193,5 @@ flowchart TB
 
 Existing tests that back the controls are named in section 3.1 and live under `tests/unit/`. The M6 suites live under `tests/safety/` (injection, leakage, verbal approval, scope assertion with a broken predicate builder).
 
-- Safety suite results: TBD (measured in M7)
-- Canary hits across the four leakage scenarios: TBD (measured in M7)
+- Safety suite results: 22 passed, 15 deselected (`not live`), 2026-09-26
+- Canary hits across the four leakage scenarios: 0 (`tests/safety/test_leakage.py`)

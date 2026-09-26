@@ -484,8 +484,8 @@ def test_cost_prices_all_four_token_counts(settings: Settings) -> None:
     )
 
     assert cost_usd(prices, DEFAULT_MODEL_EXTRACTION, USAGE) == HAIKU_COST
-    # 1000 * 4 + 500 * 20 + 2000 * 5 + 10000 * 0.20, per million tokens.
-    assert cost_usd(prices, DEFAULT_MODEL_STRATEGY, usage) == Decimal("0.026")
+    # 1000 * 3 + 500 * 15 + 2000 * 3.75 + 10000 * 0.30, per million tokens.
+    assert cost_usd(prices, DEFAULT_MODEL_STRATEGY, usage) == Decimal("0.021")
 
 
 def test_unknown_model_price_raises(settings: Settings) -> None:

@@ -1,0 +1,88 @@
+{
+  "requests": [
+    {
+      "approval_id": "4e323070d31743f9bacf34af8d070651",
+      "run_id": "3c49a101ee5d482aaaabe71217de9951",
+      "subject_id": "action:A1",
+      "recommendation_ids": [
+        "action:A1"
+      ],
+      "rule_ids": [
+        "R5"
+      ],
+      "required_role": "legal",
+      "account_id": "ACC-2001",
+      "access_level": "standard",
+      "eligible_user_ids": [],
+      "status": "escalated",
+      "proposed_values": {},
+      "summary": "Finalise the data retention policy citation\u2014including the exact policy name and version date\u2014and route the revised language and approved policy excerpt to internal legal review and approval before including it in the final packet.",
+      "evidence_ids": [
+        "transcript:CALL-004:4",
+        "transcript:CALL-004:6",
+        "gong_summary:CALL-007",
+        "gong_summary:CALL-009",
+        "policy:rule-5"
+      ],
+      "created_at": "2026-09-26T17:38:50.252415Z",
+      "expires_at": "2026-10-03T17:38:50.252415Z"
+    },
+    {
+      "approval_id": "705b24a02f404e12aba5b9ac5fcd1ea4",
+      "run_id": "3c49a101ee5d482aaaabe71217de9951",
+      "subject_id": "action:A3",
+      "recommendation_ids": [
+        "action:A3"
+      ],
+      "rule_ids": [
+        "R5"
+      ],
+      "required_role": "legal",
+      "account_id": "ACC-2001",
+      "access_level": "standard",
+      "eligible_user_ids": [],
+      "status": "escalated",
+      "proposed_values": {},
+      "summary": "Deliver the consolidated final packet by 2026-04-28: executive summary, success metrics including policy drift, named owner matrix, payment schedule options, data retention citation, legacy-site review dates, and support bridge schedule. Frame as operational renewal, not expansion.",
+      "evidence_ids": [
+        "transcript:CALL-008:4",
+        "transcript:CALL-008:5",
+        "gong_summary:CALL-008",
+        "transcript:CALL-004:3",
+        "transcript:CALL-008:3"
+      ],
+      "created_at": "2026-09-26T17:38:50.252415Z",
+      "expires_at": "2026-10-03T17:38:50.252415Z"
+    },
+    {
+      "approval_id": "7bb268da6b3f4ddc8f0c606420873b2c",
+      "run_id": "3c49a101ee5d482aaaabe71217de9951",
+      "subject_id": "action:A5",
+      "recommendation_ids": [
+        "action:A5"
+      ],
+      "rule_ids": [
+        "R7"
+      ],
+      "required_role": "human_reviewer",
+      "account_id": "ACC-2001",
+      "access_level": "standard",
+      "eligible_user_ids": [
+        "USR-5004",
+        "USR-5005"
+      ],
+      "status": "pending",
+      "proposed_values": {},
+      "summary": "Engage Marco Devlin to confirm the agreed site sequencing before finalising migration plan documents: Pavel Stone has requested legacy-appliance sites migrate first, reversing the March pilot-first agreement, without confirmed endorsement from Devlin or Elena Voss.",
+      "evidence_ids": [
+        "slack:SLK-1001-03",
+        "gong_summary:CALL-002",
+        "contact:CON-3002",
+        "contact:CON-3004"
+      ],
+      "created_at": "2026-09-26T17:38:50.252415Z",
+      "expires_at": "2026-10-03T17:38:50.252415Z"
+    }
+  ],
+  "events": []
+}

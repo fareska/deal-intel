@@ -2,7 +2,7 @@
 
 This is a short account of how the Strategic Deal Intelligence Assistant is built, where the production path differs from the prototype, and which numbers are still unmeasured. The full design is in `docs/architecture.md`. Security controls are in `docs/security.md`.
 
-Measured cost, latency, and evaluation figures are **TBD (measured in M7 live)**. This document does not invent them.
+Measured figures below come from `scripts/evaluate.py --from-fixtures` and `artifacts/2026-09-26/` (2026-09-26). `USR-5002/OPP-1002` in that pack is a cache replay ($0), not a billed `--fresh` run.
 
 ## Architecture summary
 
@@ -53,13 +53,13 @@ The renderer writes a typed `Brief` and Markdown with the nine section headings 
 
 `PostgresTracer` writes `trace_spans`. Span attributes are a whitelist of short tokens; evidence text cannot be stored. `llm_calls` stores ids, token counts, cost, stop reason, and latency, not prompt or completion text. Logs are JSON with `run_id` and `span_id`, filtered for secret patterns.
 
-Cost is computed from `MODEL_PRICES_USD_PER_MTOK` and the four token counts the provider reports (input, output, cache write, cache read). That is an accounting path, not a measured result. Cache hit rate, tokens per agent, and USD per brief from live runs are **TBD (measured in M7 live)**.
+Cost is computed from `MODEL_PRICES_USD_PER_MTOK` and the four token counts the provider reports (input, output, cache write, cache read). Live pack totals: OPP-1001 $0.980386 (191733 billed input tokens, 9 provider turns); OPP-1003 $0.962431 (strategy only; extraction stages were cache hits at 32ms); OPP-1002 $0 / 258ms replay; denial $0 / 51ms. Combined billed spend **$1.942817**. Strategy cache-read tokens were 12561 (OPP-1001) and 16748 (OPP-1003).
 
 ## Evaluation
 
 `scripts/evaluate.py --from-fixtures` runs the four eval pairs with the fake client and prints citation validity, grounded-number rate, section completeness, approval routing accuracy, denial correctness, degraded rate, mean cost and tokens, and guardrail drops. Safety suites under `tests/safety/` cover injection, leakage, verbal approval (`SLK-1003-02` must not become an approved status), and a broken scope predicate that must raise `ScopeViolation` before any model call.
 
-`--live` exists and requires `LIVE_LLM_TESTS=1`. Live columns, and any comparison of two-model routing against a single model at low effort, are **TBD (measured in M7 live)**.
+`--live` exists and requires `LIVE_LLM_TESTS=1`. A two-model vs single-model-at-low-effort comparison was not run. Fixture-replay metrics (2026-09-26): citation 1.000, grounded-number 0.994, section completeness 1.000, approval routing 1.000, denial 1.000, degraded 0, mean $0.5814 / 164362 input tokens.
 
 ## Failure handling
 
@@ -93,23 +93,24 @@ Connectors (Salesforce, Gong, Slack), row-level security, notifications for appr
 
 ## Measured values
 
-All rows are **TBD (measured in M7 live)**. Do not treat configured prices or the committed fixture baseline as live measurements.
-
-| Metric | Value | Source once recorded |
+| Metric | Value | Source |
 |---|---|---|
-| Citation validity | TBD (measured in M7 live) | `scripts/evaluate.py --live` |
-| Grounded-number rate | TBD (measured in M7 live) | same |
-| Section completeness | TBD (measured in M7 live) | same |
-| Approval routing accuracy | TBD (measured in M7 live) | same |
-| Denial correctness | TBD (measured in M7 live) | same |
-| Degraded rate | TBD (measured in M7 live) | same |
-| Mean cost USD / tokens per brief | TBD (measured in M7 live) | `llm_calls` over the four demo runs |
-| Cost per brief, by agent | TBD (measured in M7 live) | same |
-| Guardrail drops by check | TBD (measured in M7 live) | evaluation report |
-| Run latency, end to end and per stage | TBD (measured in M7 live) | `trace_spans` |
-| Tool calls per agent call | TBD (measured in M7 live) | traces |
-| Cache hit rate | TBD (measured in M7 live) | `llm_calls` / output cache |
-| Two-model routing vs single model at low effort | TBD (measured in M7 live) | comparison run |
-| Safety suite results / canary hits | TBD (measured in M7 live) | `tests/safety/` against live fixtures |
+| Citation validity | 1.000 | `scripts/evaluate.py --from-fixtures` |
+| Grounded-number rate | 0.994 | same |
+| Section completeness | 1.000 | same; exported Brief JSON also 1.000 |
+| Approval routing accuracy | 1.000 | same |
+| Denial correctness | 1.000 | same; live `USR-5007/OPP-1003` DENIED |
+| Degraded rate | 0.000 | same |
+| Mean cost USD / tokens (fixtures) | $0.5814 / 164362 in, 22732 out | same |
+| Live cost, OPP-1001 | $0.980386 · CI $0.042 · SM $0.056 · NS $0.882 | `artifacts/2026-09-26/USR-5001_OPP-1001/llm_calls.json` |
+| Live cost, OPP-1003 | $0.962431 · NS only (CI/SM cache) | `USR-5003_OPP-1003/llm_calls.json` |
+| Live cost, OPP-1002 | $0 (cache replay, not `--fresh`) | `USR-5002_OPP-1002/llm_calls.json` is `[]` |
+| Pack total | $1.942817 | `artifacts/2026-09-26/README.md` |
+| Guardrail drops by check | fixture: none; live OPP-1003: `approval_wording` dropped 2 | evaluation report / brief warnings |
+| Run latency | 1001 640s (strategy 604s); 1003 579s; 1002 0.3s; denial 51ms | `trace_spans` |
+| Tool calls | 1001: 4; 1003: 3 | traces |
+| Cache | 1003 extraction stages 32ms hits; strategy cache-read 12.6k / 16.7k tokens | `llm_calls` |
+| Two-model routing vs single at low effort | not run | — |
+| Safety suite / canary hits | 22 passed, 15 deselected (live); 0 canary hits in the leakage scenarios | `pytest tests/safety` |
 
 `tests/fixtures/eval_baseline.json` is the committed regression baseline for `--from-fixtures`. It is not a live measurement.

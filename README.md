@@ -60,11 +60,11 @@ Environment variables match `docs/PLAN.md` section 7. Defaults below are the val
 |---|---|---|
 | `ANTHROPIC_API_KEY` | none | Model access; set in the shell, never committed |
 | `DATABASE_URL`, `TEST_DATABASE_URL` | local Compose URLs | Postgres (`deal_intel` and `deal_intel_test`) |
-| `MODEL_STRATEGY` | `claude-opus-5-5` | Strategy-agent model |
+| `MODEL_STRATEGY` | `claude-sonnet-4-6` | Strategy-agent model |
 | `MODEL_EXTRACTION` | `claude-haiku-4-5-20251001` | Extraction-agent model (conversation intelligence, stakeholder map) |
-| `STRATEGY_EFFORT` | `high` | Strategy-agent reasoning effort (`low`, `medium`, `high`, `xhigh`, `max`) |
+| `STRATEGY_EFFORT` | `medium` | Strategy-agent reasoning effort (`low`, `medium`, `high`, `xhigh`, `max`) |
 | `MAX_TOOL_CALLS` | `4` | Tool-loop bound per agent call |
-| `RUN_INPUT_TOKEN_BUDGET` | `80000` | Hard cap per run |
+| `RUN_INPUT_TOKEN_BUDGET` | `250000` | Hard cap per run (live Sonnet + tools billed ~192k on OPP-1001) |
 | `DAILY_COST_BUDGET_USD` | `20` | Executor refuses new runs once today's `llm_calls` spend reaches this |
 | `RUN_EXECUTOR_WORKERS` | `2` | Concurrent runs in the API process |
 | `APPROVAL_EXPIRY_HOURS` | `168` | Pending approvals expire after this |
@@ -79,6 +79,7 @@ Configured prices (USD per million tokens, not measured spend):
 
 | Model | Input | Output | Cache write (5 min) | Cache read |
 |---|---|---|---|---|
+| `claude-sonnet-4-6` | 3 | 15 | 3.75 | 0.30 |
 | `claude-opus-5-5` | 4 | 20 | 5 | 0.20 |
 | `claude-haiku-4-5-20251001` | 1 | 5 | 1.25 | 0.10 |
 
@@ -86,9 +87,7 @@ Further settings live in `deal_intel/config.py` (pack token budgets, policy thre
 
 ## Demo scenarios
 
-Four scenarios. Commands that pass `--fresh` call the live model, bypass idempotency and the output cache, and **cost money**. Live last lines, token counts, and USD per brief are **TBD until M7 recording**.
-
-Expected terminal behaviour below is from the design and the deterministic harness (`docs/PLAN.md` M4/M5), not from a recorded live run.
+Four scenarios. Commands that pass `--fresh` call the live model, bypass idempotency and the output cache, and **cost money**. Recorded pack (`artifacts/2026-09-26/`): OPP-1001 **$0.98 / ~11 min**, OPP-1003 **$0.96 / ~10 min**, OPP-1002 cache replay **$0**, denial **$0**. Total billed **$1.94**. Raise `RUN_INPUT_TOKEN_BUDGET` to at least 250000 before a live strategy run; 80000 fails around 192k tokens.
 
 ```bash
 # 1. Standard late-stage renewal. Design: completes, or awaits a human_reviewer
@@ -103,7 +102,7 @@ uv run deal-intel generate --opp OPP-1002 --user USR-5002 --wait --fresh
 #    eligible to USR-5005; sales_leader and legal escalated.
 uv run deal-intel generate --opp OPP-1003 --user USR-5003 --wait --fresh
 uv run deal-intel approvals list --user USR-5005
-# Then, with ids from the list (live ids TBD):
+# Then, with ids from `approvals list`:
 # uv run deal-intel approvals decide <id> --user USR-5005 --approve --note "..."
 # uv run deal-intel approvals decide <id> --user USR-5005 --reject --note "..."
 
@@ -113,18 +112,18 @@ uv run deal-intel generate --opp OPP-1003 --user USR-5007 --wait --fresh
 
 A successful `--wait` prints the brief Markdown (including when the run is `AWAITING_APPROVAL`). A denial prints `You are not authorized to generate a brief for this request.` and exits 3. A failed run exits 4. An unreachable API exits 5. Omit `--fresh` to reuse an idempotent run when the evidence hash, prompt hashes, and model config match.
 
-`--fresh` and `RECORD_FIXTURES=1` are the live path. Do not run them until you intend to spend tokens. Expected total for the four scenarios is under a few dollars once recorded; the measured total is **TBD**.
+`--fresh` and `RECORD_FIXTURES=1` are the live path. Do not run them until you intend to spend tokens. Recorded billed total for this pack is **$1.94** (1002 was not `--fresh`).
 
-Without `--fresh`, and with `LLM_CLIENT=fake` plus recorded fixtures, the same commands replay from disk. Agent fixtures for the three authorised pairs are not recorded yet (`tests/fixtures/llm/` holds only harness test fixtures).
+Without `--fresh`, and with recorded fixtures or the output cache, the same commands can replay. Agent fixtures for the three authorised pairs are under `tests/fixtures/llm/`.
 
 ## UI walkthrough
 
 Open [http://127.0.0.1:8000/ui](http://127.0.0.1:8000/ui). Every page has a **Viewing as** selector; the chosen `user_id` travels as a query parameter and is the simulated identity.
 
-1. Set **Viewing as** to `USR-5001` (account owner). Open **New run**. Choose opportunity `OPP-1001`, requesting user `USR-5001`. Check **Fresh run (live model calls)** only when you intend a billed run (cost **TBD**). Submit. The status panel polls every two seconds until a terminal state, and also works with a manual refresh (no JavaScript required).
+1. Set **Viewing as** to `USR-5001` (account owner). Open **New run**. Choose opportunity `OPP-1001`, requesting user `USR-5001`. Check **Fresh run (live model calls)** only when you intend a billed run (recorded **$0.98**). Submit. The status panel polls every two seconds until a terminal state, and also works with a manual refresh (no JavaScript required).
 2. When the brief is ready, the page shows Confidence and Review Warnings near the top (highlighted when warnings or conflicts exist), cost and tokens by agent, version history with a Replay button, then the nine sections: Deal Snapshot, Executive Summary, Buyer Goals and Business Drivers, Stakeholder Map, Negotiation State, Recommended Next Actions, Missing Information, Source Evidence, and the warnings already shown. Snapshot figures are copied from Salesforce by code. Design expects the `SLK-1001-03` pilot-sequencing conflict in Confidence and Review Warnings, and the `SLK-1001-02` out-of-office context in Missing Information or Next Actions.
 3. Open **Trace** from the status panel. Spans show kind, name, status, duration, tokens, and cost. Evidence appears as ids only.
-4. Switch **Viewing as** to `USR-5003`. New run on `OPP-1003`, optionally fresh (live, cost **TBD**). Design: pending Deal Desk approval, escalated sales-leader and legal approvals, internal-only labels, and the "verbally okayed" Slack update (`SLK-1003-02`) as a conflict, not as an approval.
+4. Switch **Viewing as** to `USR-5003`. New run on `OPP-1003`, optionally fresh (recorded **$0.96**). Design: pending Deal Desk approval, escalated sales-leader and legal approvals, internal-only labels, and the "verbally okayed" Slack update (`SLK-1003-02`) as a conflict, not as an approval.
 5. Switch **Viewing as** to `USR-5005` (Deal Desk). Open **Approvals**. Approve one pending item and reject another (note field optional). Return to the brief; version 2 should show the new labels and, when a customer-facing item was approved, templated customer-safe language.
 6. Switch **Viewing as** to `USR-5007`. Request `OPP-1003`. The UI shows the generic not-found page for unknown and unauthorised reads alike. A generate as this user ends `DENIED` with the generic message and a short trace (no retrieval rows).
 
@@ -139,7 +138,7 @@ make check          # ruff lint + format check, then pytest
 uv run pytest -q    # same tests; live-marked tests are deselected
 ```
 
-`make check` is `ruff check .`, `ruff format --check .`, and `uv run pytest -q`. Pytest defaults to `-m 'not live'`. Live model tests require `LIVE_LLM_TESTS=1` and `LLM_CLIENT=anthropic`, and they spend money (cost **TBD**).
+`make check` is `ruff check .`, `ruff format --check .`, and `uv run pytest -q`. Pytest defaults to `-m 'not live'`. Live model tests require `LIVE_LLM_TESTS=1` and `LLM_CLIENT=anthropic`, and they spend money.
 
 Safety and regression suites: `uv run pytest tests/safety tests/regression -q`.
 
@@ -149,9 +148,9 @@ Safety and regression suites: `uv run pytest tests/safety tests/regression -q`.
 uv run python scripts/evaluate.py --from-fixtures
 ```
 
-This runs the four eval pairs (`USR-5001/OPP-1001`, `USR-5002/OPP-1002`, `USR-5003/OPP-1003`, `USR-5007/OPP-1003`) against the test database with the fake client and prints the metrics table (citation validity, grounded-number rate, section completeness, approval routing, denial correctness, degraded rate, mean cost and tokens, guardrail drops). Until agent fixtures are recorded, the script notes that it is using stub agents.
+This runs the four eval pairs (`USR-5001/OPP-1001`, `USR-5002/OPP-1002`, `USR-5003/OPP-1003`, `USR-5007/OPP-1003`) against the test database with the fake client and prints the metrics table. Recorded fixture-replay rates (2026-09-26): citation 1.000, grounded-number 0.994, completeness 1.000.
 
-`--from-artifacts DIR` reads brief JSON from an artifacts folder. `--live` requires `LIVE_LLM_TESTS=1` and the Anthropic client; measured live numbers are **TBD**. `--write-baseline` rewrites `tests/fixtures/eval_baseline.json` and is never automatic.
+`--from-artifacts DIR` reads Brief JSON (several rates are hardcoded to 1.0). `--live` requires `LIVE_LLM_TESTS=1` and the Anthropic client. `--write-baseline` rewrites `tests/fixtures/eval_baseline.json` and is never automatic.
 
 ## Documentation
 
@@ -162,7 +161,8 @@ This runs the four eval pairs (`USR-5001/OPP-1001`, `USR-5002/OPP-1002`, `USR-50
 | `docs/security.md` | Threat model and controls |
 | `docs/deliverables.md` | Assignment item → file |
 | `docs/demo-script.md` | 15-minute interview outline |
-| `docs/diagrams/*.mmd` | Mermaid sources (SVG export pending) |
+| `docs/diagrams/*.mmd` | Mermaid sources |
+| `docs/diagrams/*.svg` | Exported logical, deployment, permissions, run-state views |
 | `docs/PLAN.md` | Milestone plan (do not treat as the built system) |
 
-Live run outputs will land under `artifacts/<date>/` after M7 recording. That folder is empty except for `.gitkeep`.
+Live and replay outputs: `artifacts/2026-09-26/` (briefs, traces, `llm_calls`, approvals, screenshots, README).
